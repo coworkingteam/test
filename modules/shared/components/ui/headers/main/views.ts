@@ -1,38 +1,57 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
+export const Wrapper = styled.div<{ isScroll: boolean }>`
   left: 0;
-  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  transition: all 0.4s ease 0s;
 
-  background-color: ${({ theme }) => theme.colors.gray500};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray600};
+  padding: ${({ isScroll }) => (isScroll ? '15px 70px' : '58px 70px')};
+  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, .75)'};
+
+  @media (max-width: 768px) {
+    padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
+  }
 `;
 
 export const IWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 5px 10px;
   margin: 0 auto;
-
-  max-width: ${({ theme }) => theme.dimensions.pageMaxWidth}px;
 `;
 
 export const LWrapper = styled.div`
-  flex: 1;
-
   img {
-    display: block;
-    max-height: 20px;
+    height: 36px;
+    width: 36px;
   }
+
+  ${({ theme }) => theme.templates.centerContent};
+
+  @media (max-width: 768px) {
+    img {
+      height: 26px;
+      width: 26px;
+    }
+  }
+`;
+
+export const RWrapper = styled.div`
+  flex: 1;
+  justify-content: center;
 
   ${({ theme }) => theme.templates.centerItems};
 `;
 
-export const RWrapper = styled.div`
-  flex: 2;
-  justify-content: flex-end;
+export const LogoText = styled.p`
+  font-weight: 500;
+  font-size: 26px;
+  margin: 0 0 0 10px;
 
-  ${({ theme }) => theme.templates.centerItems};
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;

@@ -1,5 +1,4 @@
 export const menuItems = [
-  { l: 'People', h: '/people' },
-  { l: 'Planets', h: '/planets' },
-  { l: 'Starships', h: '/starships' }
+  { l: 'Услуги', h: '/people' },
+  { l: 'Вопросы и ответы', h: '/people' }
 ];

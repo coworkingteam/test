@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Logo = () => (
   <Link href='/' passHref>
     <a>
-      <img src='/static/logos/SW-Logo.png' alt='sw-logo' />
+      <img src='/static/icons/logo.svg' alt='sw-logo' />
     </a>
   </Link>
 );

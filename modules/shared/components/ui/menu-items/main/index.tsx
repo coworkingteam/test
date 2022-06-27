@@ -7,25 +7,28 @@ import styled from 'styled-components';
 interface Props {
   href: string;
   label: string;
+  isScroll?: boolean;
 }
 
-const MenuI = styled.div`
-  padding: 5px 10px;
+const MenuI = styled.div<{ isScroll?: boolean }>`
+  padding: 5px 50px;
+  font-size: 14px;
 
   a {
     text-decoration: none;
-    transition: opacity 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme, isScroll }) => (isScroll ? theme.colors.black600 : theme.colors.white)};
 
     &:hover {
       opacity: 0.8;
+      text-decoration: underline;
     }
   }
 `;
 
-const MenuItem: React.FC<Props> = ({ href, label }) => (
-  <MenuI>
+const MenuItem: React.FC<Props> = ({ href, label, isScroll }) => (
+  <MenuI isScroll={isScroll}>
     <Link href={href} passHref>
       <a>{label}</a>
     </Link>
