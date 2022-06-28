@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 export const InnerWrapper = styled.div`
   display: flex;
   max-width: 1440px;
-  margin: 68px 0;
+  margin: 54px 0;
 
   @media (max-width: 1000px) {
     flex-direction: column-reverse;
@@ -30,7 +30,7 @@ export const InnerWrapper = styled.div`
 
 export const LeftSide = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -39,20 +39,20 @@ export const LeftSide = styled.div`
   button {
     max-width: 300px;
     height: 100%;
-    max-height: 82px;
+    max-height: 66px;
   }
 `;
 
 export const RightSide = styled.div`
   width: 100%;
-  margin-left: 40px;
-  max-width: 600px;
+  margin-left: 32px;
+  max-width: 480px;
 
   @media (max-width: 1000px) {
-    margin: 40px 0 0 0;
+    margin: 32px 0 0 0;
   }
 `;
 
 export const Icon = styled.img`
-  margin-right: 20px;
+  margin-right: 16px;
 `;

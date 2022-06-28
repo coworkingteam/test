@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Nagel';
+  src: url('./Nagel_Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nagel';
+  src: url('./Nagel_Medium.otf');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nagel';
+  src: url('./Nagel_Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}

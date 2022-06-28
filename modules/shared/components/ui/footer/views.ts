@@ -18,25 +18,25 @@ export const Wrapper = styled.div`
 export const IWrapper = styled.div`
   max-width: 1450px;
   width: 100%;
-  padding: 96px 110px;
+  padding: 76px 88px;
   margin: 0 auto;
   justify-content: center;
   display: grid;
-  gap: 45px 120px;
-  grid-template-columns: repeat(auto-fill, 210px);
+  gap: 36px 96px;
+  grid-template-columns: repeat(auto-fill, 200px);
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
   div {
     padding: 0;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    padding: 96px 0;
+    padding: 76px 0;
 
     div {
-      font-size: 20px;
+      font-size: 16px;
       text-align: center;
     }
   }
@@ -44,15 +44,15 @@ export const IWrapper = styled.div`
 
 export const FAQWrapper = styled.div`
   max-width: 1450px;
-  font-size: 20px;
+  font-size: 16px;
   width: 100%;
-  padding: 24px 110px;
+  padding: 20px 88px;
   opacity: 0.7;
 
   color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 768px) {
-    padding: 24px 10px;
+    padding: 20px 10px;
     font-size: 14px;
     text-align: center;
   }

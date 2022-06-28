@@ -25,6 +25,7 @@
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
     "react-accessible-accordion": "^5.0.0",
+    "react-burger-menu": "^3.0.8",
     "react-dom": "17.0.2",
     "react-gradient": "^1.0.2",
     "react-phone-input-2": "^2.15.0",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@types/node": "^17.0.8",
     "@types/react": "^17.0.38",
+    "@types/react-burger-menu": "^2.8.3",
     "@types/react-slick": "^0.23.8",
     "@types/styled-components": "^5.1.20",
     "@typescript-eslint/eslint-plugin": "^5.9.1",

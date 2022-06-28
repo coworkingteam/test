@@ -11,7 +11,15 @@ const Phone = () => {
 
   return (
     <Wrapper>
-      <PhoneInput country='pl' value={value} onChange={(phone) => setValue(phone)} />
+      <PhoneInput
+        country='pl'
+        autoFormat
+        value={value}
+        enableAreaCodeStretch
+        countryCodeEditable={false}
+        onlyCountries={['pl', 'ua', 'ge', 'by']}
+        onChange={(phone) => setValue(phone)}
+      />
     </Wrapper>
   );
 };

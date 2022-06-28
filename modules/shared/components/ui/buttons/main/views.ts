@@ -24,7 +24,7 @@ export const Wrapper = styled.button<{
   cursor: pointer;
   font-size: 16px;
   max-height: 60px;
-  font-weight: 600;
+  font-weight: 400;
   outline: none;
   padding: 18px 40px;
   position: relative;

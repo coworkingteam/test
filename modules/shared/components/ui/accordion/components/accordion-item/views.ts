@@ -8,9 +8,11 @@ export const Wrapper = styled.div<{ isActive: boolean; blackTheme: boolean }>`
   transition: all 650ms;
 
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
-  padding: ${({ isActive }) => (isActive ? '30px 30px 40px 30px' : '0 30px')};
+  padding: ${({ isActive }) => (isActive ? '24px 24px 32px 24px' : '0 24px')};
 
   svg {
+    width: 26px;
+
     line {
       stroke: ${({ blackTheme, theme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
     }
@@ -35,7 +37,7 @@ export const Wrapper = styled.div<{ isActive: boolean; blackTheme: boolean }>`
 export const ATitle = styled.p`
   margin: 0;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 26px;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -48,13 +50,13 @@ export const ATitleWrapper = styled.div<{ isActive: boolean; blackTheme: boolean
   justify-content: space-between;
   transition: max-height 650ms;
 
-  padding: ${({ isActive }) => (isActive ? '32px 0 20px 0' : '32px 0 33px 0')};
+  padding: ${({ isActive }) => (isActive ? '32px 0 20px 0' : '32px 0 32px 0')};
   border-top: 3px solid ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 `;
 
 export const AContent = styled.p<{ isActive: boolean }>`
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 180%;
   max-width: 1100px;
   transition: max-height 650ms;

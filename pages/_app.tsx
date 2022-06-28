@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import { theme } from '@md-styles/styled/theme';
 import { GlobalStyles } from '@md-styles/styled/global';
 // global css
+import 'public/fonts/styles.css';
 import 'normalize.css/normalize.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (

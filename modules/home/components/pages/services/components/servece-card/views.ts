@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   border-radius: 20px;
-  padding: 32px 24px;
+  padding: 26px 20px;
   display: flex;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   transition: opacity 0.2s linear;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
 
@@ -17,16 +17,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 61px;
-  height: 61px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
-  margin-right: 14px;
+  margin-right: 12px;
 `;
 
 export const Title = styled.p`
-  margin: 0 0 32px;
+  margin: 0 0 26px;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 32px;
 
   @media (max-width: 768px) {
     font-size: 20px;
@@ -35,7 +35,7 @@ export const Title = styled.p`
 
 export const Description = styled.p`
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
 
   color: ${({ theme }) => theme.colors.gray500};
 

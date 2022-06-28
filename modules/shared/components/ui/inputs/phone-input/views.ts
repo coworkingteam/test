@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
     border-radius: 10px 0 0 10px;
     outline: none !important;
     box-shadow: none !important;
-    padding: 10px !important;
 
     &:focus {
       outline: none;
@@ -36,10 +35,6 @@ export const Wrapper = styled.div`
 
       color: ${({ theme }) => theme.colors.black600};
     }
-  }
-
-  .flag-dropdown {
-    display: none;
   }
 
   .special-label {
