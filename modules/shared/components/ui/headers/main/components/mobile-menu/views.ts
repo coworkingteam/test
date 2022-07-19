@@ -13,12 +13,16 @@ export const MenuWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.black600};
 `;
 
-export const RWrapper = styled.div`
-  justify-content: center;
+export const MWrapper = styled.div`
   flex-direction: column;
-  ${({ theme }) => theme.templates.centerItems};
+  ${({ theme }) => theme.templates.centerContent};
 
   div {
     padding: 6px 10px;
   }
+`;
+
+export const SWrapper = styled.div`
+  flex-direction: column;
+  ${({ theme }) => theme.templates.centerContent};
 `;

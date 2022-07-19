@@ -5,7 +5,7 @@ interface Props {
 }
 
 const small = css`
-  //max-width: 200px;
+  max-width: 200px;
   max-height: 10px;
   font-size: 8px;
 
@@ -14,17 +14,18 @@ const small = css`
     max-height: 10px;
   }
 `;
+
 const medium = css`
-  //max-width: 400px;
+  max-width: 400px;
   font-size: 12px;
 
   img {
     max-width: 40px;
-    max-height: 10px;
+    max-height: 24px;
   }
 `;
 const large = css`
-  //max-width: 600px;
+  max-width: 600px;
   max-height: 55px;
   font-size: 18px;
 

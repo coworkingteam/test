@@ -53,8 +53,8 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
       <Title>Популярные Услуги</Title>
 
       <ArrowButtonsWrapper>
-        <ImageButton size='large' onClick={prevSlide} image='/static/icons/left-button.svg' />
-        <ImageButton size='large' onClick={nextSlide} image='/static/icons/right-button.svg' />
+        <ImageButton size='medium' onClick={prevSlide} image='/static/icons/left-button.svg' />
+        <ImageButton size='medium' onClick={nextSlide} image='/static/icons/right-button.svg' />
       </ArrowButtonsWrapper>
 
       <Slider ref={sliderRef} {...sliderSetting}>

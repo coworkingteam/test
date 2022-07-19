@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 // local
-import { Margin } from '@md-modules/shared/types/css';
+import { Margin, Padding } from '@md-modules/shared/types/css';
 import { ButtonPresets, buttonPresets } from './presets';
-import { getMarginStyle } from '@md-modules/shared/helpers/styled';
+import { getMarginStyle, getPaddingStyle } from '@md-modules/shared/helpers/styled';
 
 export interface WrapperStyle {
   height?: string;
@@ -10,7 +10,7 @@ export interface WrapperStyle {
   backgroundColor?: string;
 }
 
-export type ButtonStyle = WrapperStyle & Margin;
+export type ButtonStyle = WrapperStyle & Margin & Padding;
 
 export const Wrapper = styled.button<{
   buttonStyle?: ButtonStyle;
@@ -26,9 +26,9 @@ export const Wrapper = styled.button<{
   max-height: 60px;
   font-weight: 400;
   outline: none;
-  padding: 18px 40px;
+  padding: 14px 32px;
   position: relative;
-  transition: opacity 0.2s linear;
+  transition: all 0.2s linear;
 
   color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
 
@@ -55,13 +55,17 @@ export const Wrapper = styled.button<{
       height: ${buttonStyle.height};
     `};
 
+  ${({ buttonStyle }) => buttonStyle && getPaddingStyle('buttonStyle')};
   ${({ buttonStyle }) => buttonStyle && getMarginStyle('buttonStyle')};
 
   ${({ whiteBG, theme }) =>
     whiteBG &&
     css`
       background-color: ${theme.colors.white};
-      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+
+      &:hover {
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+      }
     `}
   ${({ disabled }) =>
     disabled &&

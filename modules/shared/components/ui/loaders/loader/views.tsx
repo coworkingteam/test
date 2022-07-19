@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 export const Circle = styled.div<{ index?: number }>`
   width: 100%;
   height: 100%;
+  z-index: 99999999;
   position: absolute;
   left: 0;
   top: 0;
@@ -20,7 +21,7 @@ export const Circle = styled.div<{ index?: number }>`
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    background-color: ${({ theme }) => theme.colors.green300};
+    background-color: ${({ theme }) => theme.colors.gray100};
     border-radius: 100%;
     -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
     animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;

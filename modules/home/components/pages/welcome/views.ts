@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 30px 70px 30px 100px;
+  position: relative;
+
+  canvas {
+    position: absolute;
+  }
+`;
+
+export const InnerWrapper = styled.div`
+  padding: 148px 70px 30px 100px;
   position: relative;
   min-height: 100vh;
   height: 100%;
@@ -15,7 +23,7 @@ export const Wrapper = styled.div`
 
   @media screen and (max-width: 1250px) {
     overflow: visible;
-    padding: 10px;
+    padding: 80px 10px 10px 10px;
   }
 `;
 

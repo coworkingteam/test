@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { ThemeProvider } from 'styled-components';
 import { AppProps } from 'next/app';
+// providers
+import { ThemeProvider } from 'styled-components';
+import LangProvider from '@md-modules/shared/i18n/providers/main';
 // local
 import { theme } from '@md-styles/styled/theme';
 import { GlobalStyles } from '@md-styles/styled/global';
@@ -17,8 +19,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
       <meta charSet='utf-8' />
     </Head>
+
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <LangProvider>
+        <Component {...pageProps} />
+      </LangProvider>
     </ThemeProvider>
     <GlobalStyles />
   </>
