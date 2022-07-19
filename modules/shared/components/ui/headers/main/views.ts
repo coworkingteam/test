@@ -11,7 +11,7 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   padding: ${({ isScroll }) => (isScroll ? '15px 70px' : '46px 70px')};
   background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, .75)'};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
   }
 `;
@@ -43,6 +43,8 @@ export const BurgerIcon = styled.img`
 `;
 
 export const LWrapper = styled.div`
+  cursor: pointer;
+
   img {
     height: 36px;
     width: 36px;

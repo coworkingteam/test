@@ -1,20 +1,33 @@
 import * as React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // view components
 import { Logo } from '@md-ui/logos/main';
 import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
 import { MenuItem } from '@md-ui/menu-items/main';
+import LangButton from '@md-ui/headers/main/components/lang-button';
 import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
+// context
+import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
 import { menuItems } from './constants';
+import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, LogoText, BurgerIcon } from './views';
 
+const BUTTON_STYLES = { mr: 26 };
+
 const Header = () => {
+  const { push } = useRouter();
+  const { setLocale, locale } = React.useContext(LangAPIContext);
+
   const [isScroll, setIsScroll] = React.useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = React.useState(false);
 
   const toggleMainMenu = () => setIsOpenBurgerMenu((prevState) => !prevState);
+  const onClickHome = () => push('/');
+  const onChangeLocale = (value: Locales) => setLocale(value);
 
   React.useEffect(() => {
     const scrollHandler = () => {
@@ -36,7 +49,7 @@ const Header = () => {
     <>
       <Wrapper isScroll={isScroll}>
         <IWrapper>
-          <LWrapper>
+          <LWrapper onClick={onClickHome}>
             <Logo />
 
             <LogoText>Aksis</LogoText>
@@ -48,7 +61,8 @@ const Header = () => {
             ))}
           </RWrapper>
 
-          <Button>+33 78 87 78 87</Button>
+          <Button buttonStyle={BUTTON_STYLES}>+33 78 87 78 87</Button>
+          <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
 
           <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />
         </IWrapper>

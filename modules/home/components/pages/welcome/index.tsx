@@ -1,36 +1,33 @@
 import React from 'react';
-// libs
-// @ts-ignore
-import { Gradient } from 'react-gradient';
 // components
+import CanvasGradient from '@md-ui/canvas-gradient';
 import Form from '@md-modules/home/components/pages/welcome/components/form';
-// constants
-import { COLORS } from '@md-modules/home/components/pages/welcome/constants';
 // views
 import {
   Title,
   Wrapper,
   SubTitle,
+  InnerWrapper,
   FormWrapper,
   FormDescription
 } from '@md-modules/home/components/pages/welcome/views';
 
-const Welcome = () => {
-  return (
-    <Gradient gradients={COLORS} element='div'>
-      <Wrapper>
-        <div>
-          <Title>Помощь с гос. услугами в Польше</Title>
-          <SubTitle>Разрешение на работу - вид на жительство - срочные документы</SubTitle>
-        </div>
+const Welcome = () => (
+  <Wrapper>
+    <CanvasGradient />
 
-        <FormWrapper>
-          <Form />
-          <FormDescription>Публичная офферта на обротку данных</FormDescription>
-        </FormWrapper>
-      </Wrapper>
-    </Gradient>
-  );
-};
+    <InnerWrapper>
+      <div>
+        <Title>Помощь с гос. услугами в Польше</Title>
+        <SubTitle>Разрешение на работу - вид на жительство - срочные документы</SubTitle>
+      </div>
+
+      <FormWrapper>
+        <Form />
+        <FormDescription>Публичная офферта на обротку данных</FormDescription>
+      </FormWrapper>
+    </InnerWrapper>
+  </Wrapper>
+);
 
 export default Welcome;

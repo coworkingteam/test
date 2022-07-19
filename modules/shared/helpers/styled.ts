@@ -4,17 +4,17 @@ import { Margin, Padding } from '@md-modules/shared/types/css';
 export const getMarginStyle = <P extends string>(key: P) => css<{
   [k in P]?: Margin;
 }>`
-  margin-left: ${({ [key]: textStyle }) => textStyle?.ml ?? 0}px;
-  margin-top: ${({ [key]: textStyle }) => textStyle?.mt ?? 0}px;
-  margin-right: ${({ [key]: textStyle }) => textStyle?.mr ?? 0}px;
-  margin-bottom: ${({ [key]: textStyle }) => textStyle?.mb ?? 0}px;
+  margin-left: ${({ [key]: textStyle }) => textStyle?.ml}px;
+  margin-top: ${({ [key]: textStyle }) => textStyle?.mt}px;
+  margin-right: ${({ [key]: textStyle }) => textStyle?.mr}px;
+  margin-bottom: ${({ [key]: textStyle }) => textStyle?.mb}px;
 `;
 
 export const getPaddingStyle = <P extends string>(key: P) => css<{
   [k in P]?: Padding;
 }>`
-  padding-left: ${({ [key]: textStyle }) => textStyle?.pl ?? 0}px;
-  padding-top: ${({ [key]: textStyle }) => textStyle?.pt ?? 0}px;
-  padding-right: ${({ [key]: textStyle }) => textStyle?.pr ?? 0}px;
-  padding-bottom: ${({ [key]: textStyle }) => textStyle?.pb ?? 0}px;
+  padding-left: ${({ [key]: textStyle }) => textStyle?.pl}px;
+  padding-top: ${({ [key]: textStyle }) => textStyle?.pt}px;
+  padding-right: ${({ [key]: textStyle }) => textStyle?.pr}px;
+  padding-bottom: ${({ [key]: textStyle }) => textStyle?.pb}px;
 `;

@@ -1,23 +1,26 @@
 import React from 'react';
 // components
-import { MenuItem } from '@md-ui/menu-items/main';
 import { Button } from '@md-ui/buttons/main';
+import { MenuItem } from '@md-ui/menu-items/main';
 // views
-import { MenuWrapper, RWrapper } from '@md-ui/headers/main/components/mobile-menu/views';
+import { MenuWrapper, MWrapper, SWrapper } from '@md-ui/headers/main/components/mobile-menu/views';
 
+// types
 interface Props {
   data: { l: string; h: string }[];
 }
 
 const MobileMenu: React.FC<Props> = ({ data }) => (
   <MenuWrapper>
-    <RWrapper>
+    <MWrapper>
       {data.map(({ l, h }) => (
         <MenuItem key={l} href={h} label={l} />
       ))}
-    </RWrapper>
+    </MWrapper>
 
-    <Button whiteBG>+33 78 87 78 87</Button>
+    <SWrapper>
+      <Button whiteBG>+33 78 87 78 87</Button>
+    </SWrapper>
   </MenuWrapper>
 );
 
