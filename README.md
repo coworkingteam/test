@@ -1,17 +1,3 @@
-## Cultum Front-end Starter Kit S (for test tasks)
-
-> Basic project structure organizations and start point for a new project
-
-## Getting Started
-
-~ Clone project into your local projects folder:
-
-`git clone git@gitlab.com:cultum/cultum-fe-starter-kit-s.git`
-
-~ Open cloned project in the `IDE`
-
-*deploy information goes here
-
 > Basic flow example:
 
 - MR's should be created to develop branch
@@ -55,8 +41,3 @@
 
 - Project has configured `Prettier` which helps stick to rules of coding style.
 - Check the shortcuts for your `IDE` to run `Prettier` for current file
-
-## Deployment
-
-Every merge request which merged to `Staging` or `Prod` branches runs the deployment process to corresponding live
-environment
