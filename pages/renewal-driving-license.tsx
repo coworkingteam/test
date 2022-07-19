@@ -4,10 +4,27 @@ import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service'
 const DATA: IServiceData = {
   welcome: {
     img: '/static/images/car.png',
-    title: 'welcome.title',
+    titleID: 'renewalDrivingLicense.welcome.title',
     button: {
-      title: 'welcome.button.title',
+      titleID: 'renewalDrivingLicense.welcome.button.title',
       onClick: () => {}
+    }
+  },
+  serviceRegistrationData: {
+    leftSide: {
+      filingApplicationID: 'renewalDrivingLicense.serviceRegistration.leftSide.filingApplication',
+      registrationID: 'renewalDrivingLicense.serviceRegistration.leftSide.registration',
+      priceIDS: [
+        'renewalDrivingLicense.serviceRegistration.leftSide.price',
+        'renewalDrivingLicense.serviceRegistration.leftSide.reMaking'
+      ]
+    },
+    rightSide: {
+      descriptionID: 'renewalDrivingLicense.serviceRegistration.rightSide.description',
+      button: {
+        titleID: 'renewalDrivingLicense.serviceRegistration.rightSide.button.title',
+        onClick: () => {}
+      }
     }
   }
 };

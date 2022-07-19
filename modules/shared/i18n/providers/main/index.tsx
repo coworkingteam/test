@@ -42,8 +42,6 @@ const LangProvider: React.FC = ({ children }) => {
     setLocaleState(storageLocale);
   }, []);
 
-  console.log(flatten(messages[localeState]));
-
   return (
     <IntlProvider textComponent={React.Fragment} messages={flatten(messages[localeState])} locale={localeState}>
       <LangAPIContext.Provider value={{ locale: localeState, setLocale }}>{children}</LangAPIContext.Provider>

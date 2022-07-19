@@ -8,9 +8,9 @@ import { Image, Wrapper, Title, LeftSide } from '@md-modules/shared/layouts/serv
 
 export interface WelcomeData {
   img?: string;
-  title: string;
+  titleID: string;
   button: {
-    title: string;
+    titleID: string;
     onClick?: () => void;
   };
 }
@@ -25,10 +25,10 @@ const Welcome: React.FC<Props> = ({ themeColor, data }) => {
     <Wrapper themeColor={themeColor}>
       <LeftSide>
         <Title>
-          <FormattedMessage id={data?.title} />
+          <FormattedMessage id={data?.titleID} />
         </Title>
         <Button onClick={data?.button?.onClick}>
-          <FormattedMessage id={data?.button?.title} />
+          <FormattedMessage id={data?.button?.titleID} />
         </Button>
       </LeftSide>
 
