@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // components
 import Plus from 'public/static/icons/plus';
 import Minus from 'public/static/icons/minus';
@@ -20,12 +22,16 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content, is
   return (
     <Wrapper blackTheme={blackTheme} isActive={isActive}>
       <ATitleWrapper blackTheme={blackTheme} isActive={isActive} onClick={onClick}>
-        <ATitle>{title}</ATitle>
+        <ATitle>
+          <FormattedMessage id={title} />
+        </ATitle>
 
         <ATitle>{isActive ? <Minus /> : <Plus />}</ATitle>
       </ATitleWrapper>
 
-      <AContent isActive={isActive}>{content}</AContent>
+      <AContent isActive={isActive}>
+        <FormattedMessage id={content} />
+      </AContent>
     </Wrapper>
   );
 };

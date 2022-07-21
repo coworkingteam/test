@@ -27,8 +27,8 @@ const Accordion: React.FC<Props> = ({ data, blackTheme }) => {
           {...item}
           key={item.id}
           blackTheme={blackTheme}
-          isActive={activeItemId === item.id}
           setIsActive={onClickActive}
+          isActive={activeItemId === item.id}
         />
       ))}
     </Wrapper>

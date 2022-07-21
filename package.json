@@ -24,6 +24,7 @@
     "@types/lodash": "^4.14.182",
     "flat": "^5.0.2",
     "lodash": "^4.17.21",
+    "lottie-web": "^5.9.6",
     "next": "12.0.8",
     "normalize.css": "^8.0.1",
     "react": "17.0.2",

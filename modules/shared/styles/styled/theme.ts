@@ -12,6 +12,7 @@ export const colors = {
   gray400: '#BEBEBE',
   gray500: '#6e6e6e',
   gray550: '#4d4d4d',
+  gray560: '#2121214d',
   gray600: '#191e2d',
   // yellow
   yellow400: '#FFD080',
@@ -39,6 +40,15 @@ export const templates = {
   centerItems: css`
     display: flex;
     align-items: center;
+  `,
+  ellipsis: css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  `,
+  dynamicFont: (s: { minSize: number; maxSize: number; minViewport: number; maxViewport: number }) => css`
+    font-size: ${() =>
+      `calc(${s.minSize}px + (${s.maxSize} - ${s.minSize}) * (100vw - ${s.minViewport}px) / (${s.maxViewport} - ${s.minViewport}))`};
   `
 };
 

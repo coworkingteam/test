@@ -16,12 +16,24 @@ import {
 
 export interface ServiceRegistrationData {
   leftSide: {
-    filingApplicationID: string;
-    registrationID: string;
-    priceIDS: string[];
+    filingApplication: {
+      titleID: string;
+      contentID: string;
+    };
+    registration: {
+      titleID: string;
+      contentID: string;
+    };
+    price: {
+      titleID: string;
+      contentsIDS: string[];
+    };
   };
   rightSide: {
-    descriptionID: string;
+    description: {
+      titleID: string;
+      contentID: string;
+    };
     button: {
       titleID: string;
       onClick?: () => void;
@@ -34,25 +46,31 @@ const ServiceRegistrationCard: React.FC<ServiceRegistrationData> = ({ leftSide, 
     <Wrapper>
       <RightSide>
         <InfoBlockWrapper>
-          <Title>Подача заявки:</Title>
+          <Title>
+            <FormattedMessage id={leftSide.filingApplication.titleID} />
+          </Title>
 
           <SubTitle>
-            <FormattedMessage id={leftSide.filingApplicationID} />
+            <FormattedMessage id={leftSide.filingApplication.contentID} />
           </SubTitle>
         </InfoBlockWrapper>
 
         <InfoBlockWrapper>
-          <Title>Регистрация:</Title>
+          <Title>
+            <FormattedMessage id={leftSide.registration.titleID} />
+          </Title>
 
           <SubTitle>
-            <FormattedMessage id={leftSide.registrationID} />
+            <FormattedMessage id={leftSide.registration.contentID} />
           </SubTitle>
         </InfoBlockWrapper>
 
         <InfoBlockWrapper>
-          <Title>Cтоимость</Title>
+          <Title>
+            <FormattedMessage id={leftSide.price.titleID} />
+          </Title>
 
-          {leftSide.priceIDS.map((priceID, index) => (
+          {leftSide.price.contentsIDS.map((priceID, index) => (
             <SubTitle key={index}>
               <FormattedMessage id={priceID} />
             </SubTitle>
@@ -61,10 +79,12 @@ const ServiceRegistrationCard: React.FC<ServiceRegistrationData> = ({ leftSide, 
       </RightSide>
       <LeftSide>
         <InfoBlockWrapper>
-          <Title>Описание услуги:</Title>
+          <Title>
+            <FormattedMessage id={rightSide.description.titleID} />
+          </Title>
 
           <SubTitle opacity={0.8}>
-            <FormattedMessage id={rightSide.descriptionID} />
+            <FormattedMessage id={rightSide.description.contentID} />
           </SubTitle>
         </InfoBlockWrapper>
 
