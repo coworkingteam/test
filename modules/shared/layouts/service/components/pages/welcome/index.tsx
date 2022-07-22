@@ -4,7 +4,13 @@ import { FormattedMessage } from 'react-intl';
 // components
 import { Button } from '@md-ui/buttons/main';
 // views
-import { Image, Wrapper, Title, LeftSide } from '@md-modules/shared/layouts/service/components/pages/welcome/views';
+import {
+  Image,
+  Wrapper,
+  Title,
+  LeftSide,
+  InnerWrapper
+} from '@md-modules/shared/layouts/service/components/pages/welcome/views';
 
 export interface WelcomeData {
   img?: string;
@@ -23,16 +29,18 @@ interface Props {
 const Welcome: React.FC<Props> = ({ themeColor, data }) => {
   return (
     <Wrapper themeColor={themeColor}>
-      <LeftSide>
-        <Title>
-          <FormattedMessage id={data?.titleID} />
-        </Title>
-        <Button onClick={data?.button?.onClick}>
-          <FormattedMessage id={data?.button?.titleID} />
-        </Button>
-      </LeftSide>
+      <InnerWrapper>
+        <LeftSide>
+          <Title>
+            <FormattedMessage id={data?.titleID} />
+          </Title>
+          <Button onClick={data?.button?.onClick}>
+            <FormattedMessage id={data?.button?.titleID} />
+          </Button>
+        </LeftSide>
 
-      <Image src={data?.img} />
+        <Image src={data?.img} />
+      </InnerWrapper>
     </Wrapper>
   );
 };

@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   padding: 26px 20px;
   display: flex;
   cursor: pointer;
+  width: 100%;
   margin-bottom: 32px;
   transition: opacity 0.2s linear;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);

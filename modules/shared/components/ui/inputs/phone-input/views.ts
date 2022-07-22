@@ -11,14 +11,14 @@ export const Wrapper = styled.div`
   }
 
   .react-tel-input .form-control {
-    border: solid 2px ${({ theme }) => theme.colors.black600} !important;
-    background-color: initial;
-    color: ${({ theme }) => theme.colors.black600} !important;
-    height: 60px;
+    height: 52px;
     width: 100%;
-    border-radius: 10px 0 0 10px;
+    border-radius: 15px;
     outline: none !important;
     box-shadow: none !important;
+
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black600} !important;
 
     &:focus {
       outline: none;

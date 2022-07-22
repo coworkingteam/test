@@ -17,7 +17,7 @@ const Services = () => {
           ))}
 
           <Button whiteBG>
-            <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' /> Cвязаться с нами
+            Проконсультироватся бесплатно <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
           </Button>
         </LeftSide>
 

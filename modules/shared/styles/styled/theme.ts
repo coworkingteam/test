@@ -21,7 +21,8 @@ export const colors = {
   // other
   black600: '#212121',
   black800: '#161616',
-  white: '#fff'
+  white: '#fff',
+  black: '#000'
 };
 
 export const templates = {

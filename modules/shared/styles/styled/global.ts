@@ -19,30 +19,13 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
   }
 
-  .rbc-time-view .rbc-time-view-resources {
-    width: 95vw
-  }
-
   .sidebar-tooltip {
-    opacity: 1 !important;
-  }
-
-  .rbc-time-content > .rbc-time-gutter {
-    display: none;
-  }
-
-  .rbc-label {
-    display: none;
-  }
-
-  .ProseMirror {
-    min-height: 90%;
-    outline: none;
-    outline-offset: unset;
-    padding: 15px 5px;
-
-    p, h1, h2, h3 {
-      margin: 0 !important;
+    margin: 0 !important;
+    border: unset !important;
+    background-color: unset !important;
+    
+    &:after {
+      display: none;
     }
   }
 `;

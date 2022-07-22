@@ -18,6 +18,7 @@ export const Wrapper = styled.button<{
   isLoading: boolean;
   disabled: boolean;
   whiteBG?: boolean;
+  withoutHoverAnimation?: boolean;
 }>`
   border-radius: 10px;
   border: none;
@@ -33,7 +34,18 @@ export const Wrapper = styled.button<{
   color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
 
   &:hover {
-    opacity: 0.9;
+    ${({ withoutHoverAnimation }) =>
+      !withoutHoverAnimation &&
+      css`
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
+        transform: translate3d(0, -2px, 0);
+
+        background: darken(${({ theme }) => theme.colors.red400}, 10%);
+      `}
+  }
+    
+    
+    
   }
 
   &:active {

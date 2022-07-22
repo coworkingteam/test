@@ -41,8 +41,8 @@ export const MessengersWrapper = styled.div`
 `;
 
 export const Messenger = styled.img`
-  width: 48px;
-  height: 48px;
+  width: 76px;
+  height: 76px;
   cursor: pointer;
   margin-right: 66px;
 

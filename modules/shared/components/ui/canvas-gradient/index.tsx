@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import { Gradient } from '@md-utils/gradient';
 
 export const Canvas = styled.canvas`
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
 `;
 
 const COLORS = [
@@ -22,6 +23,7 @@ const COLORS = [
   // '#a87ae1',
   // '#db8284',
   // '#ffd07f',
+
   '#A676E2',
   '#F37A76',
   '#FFD080',

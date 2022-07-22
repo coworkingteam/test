@@ -33,3 +33,7 @@ export const ToolTipItem = styled.p<{ isActive: boolean }>`
       background-color: ${theme.colors.white};
     `}
 `;
+
+export const ChangeLanguageIcon = styled.img`
+  cursor: pointer;
+`;
