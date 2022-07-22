@@ -58,6 +58,7 @@ export const AContent = styled.p<{ isActive: boolean }>`
   margin: 0;
   font-size: 16px;
   line-height: 180%;
+  white-space: pre-wrap;
   max-width: 1100px;
   transition: max-height 650ms;
 

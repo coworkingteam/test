@@ -1,4 +1,4 @@
 export const menuItems = [
-  { l: 'Услуги', h: '/people' },
+  { l: 'renewal-driving-license', h: '/renewal-driving-license' },
   { l: 'Вопросы и ответы', h: '/people' }
 ];

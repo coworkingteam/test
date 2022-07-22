@@ -1,10 +1,8 @@
 import * as React from 'react';
-// libs
-import type { LottiePlayer } from 'lottie-web';
 // hooks
 import { useRouter } from 'next/router';
 // view components
-// import { Logo } from '@md-ui/logos/main';
+import { Logo } from '@md-ui/logos/main';
 import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
 import { MenuItem } from '@md-ui/menu-items/main';
@@ -21,9 +19,6 @@ import { Wrapper, IWrapper, LWrapper, RWrapper, LogoText, BurgerIcon } from './v
 const BUTTON_STYLES = { mr: 26 };
 
 const Header = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const [lottie, setLottie] = React.useState<LottiePlayer | null>(null);
-
   const { push } = useRouter();
   const { setLocale, locale } = React.useContext(LangAPIContext);
 
@@ -50,33 +45,12 @@ const Header = () => {
     };
   }, []);
 
-  React.useEffect(() => {
-    import('lottie-web').then((Lottie) => setLottie(Lottie.default));
-  }, []);
-
-  React.useEffect(() => {
-    if (lottie && ref.current) {
-      const animation = lottie.loadAnimation({
-        container: ref.current,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '/static/animations/logo.json'
-      });
-
-      return () => animation.destroy();
-    }
-  }, [lottie]);
-
   return (
     <>
       <Wrapper isScroll={isScroll}>
         <IWrapper>
           <LWrapper onClick={onClickHome}>
-            {/*<Logo />*/}
-
-            <div style={{ width: '120px', height: '36px' }} ref={ref} />
-            {/*<Lottie options={defaultOptions} height={400} width={400} />*/}
+            <Logo />
 
             <LogoText>Aksis</LogoText>
           </LWrapper>

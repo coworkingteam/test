@@ -4,12 +4,14 @@ import CanvasGradient from '@md-ui/canvas-gradient';
 import Form from '@md-modules/home/components/pages/welcome/components/form';
 // views
 import {
+  Icon,
   Title,
   Wrapper,
   SubTitle,
   InnerWrapper,
   FormWrapper,
-  FormDescription
+  FormDescription,
+  LeftSide
 } from '@md-modules/home/components/pages/welcome/views';
 
 const Welcome = () => (
@@ -17,10 +19,12 @@ const Welcome = () => (
     <CanvasGradient />
 
     <InnerWrapper>
-      <div>
-        <Title>Помощь с гос. услугами в Польше</Title>
+      <LeftSide>
+        <Title>
+          Помощь с документами в Польше <Icon src='/static/icons/middle-arrow.svg' alt='send-arrow' />
+        </Title>
         <SubTitle>Разрешение на работу - вид на жительство - срочные документы</SubTitle>
-      </div>
+      </LeftSide>
 
       <FormWrapper>
         <Form />

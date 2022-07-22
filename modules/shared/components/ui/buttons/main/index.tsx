@@ -12,17 +12,26 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   whiteBG?: boolean;
   preset?: ButtonPresets;
   buttonStyle?: ButtonStyle;
+  withoutHoverAnimation?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   preset = 'default',
   disabled = false,
   children,
+  withoutHoverAnimation,
   whiteBG,
   isLoading = false,
   ...rest
 }) => (
-  <Wrapper whiteBG={whiteBG} disabled={disabled || isLoading} preset={preset} isLoading={isLoading} {...rest}>
+  <Wrapper
+    preset={preset}
+    whiteBG={whiteBG}
+    isLoading={isLoading}
+    disabled={disabled || isLoading}
+    withoutHoverAnimation={withoutHoverAnimation}
+    {...rest}
+  >
     <InnerWrapper>
       {isLoading ? (
         <LoaderWrapper>

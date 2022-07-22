@@ -39,14 +39,11 @@ const DATA: IServiceData = {
       }
     }
   },
-  serviceRegistrationFAQData: [
-    {
-      id: '1',
-      title: 'Варианты оформления польского оформления',
-      content:
-        'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.'
-    }
-  ]
+  serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
+    id: `${index}`,
+    title: `renewalDrivingLicense.serviceRegistrationFAQData.${index}.title`,
+    content: `renewalDrivingLicense.serviceRegistrationFAQData.${index}.content`
+  }))
 };
 
 const RenewalDrivingLicense = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor='#787A91' />;

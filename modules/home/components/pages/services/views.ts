@@ -5,26 +5,26 @@ export const Wrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   display: flex;
-  padding: 0 70px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px 10px 0px 0px;
 
   background-color: ${({ theme }) => theme.colors.black600};
-
-  @media (max-width: 768px) {
-    padding: 0 10px;
-  }
 `;
 
 export const InnerWrapper = styled.div`
   display: flex;
-  max-width: 1440px;
+  padding: 0 70px;
+  max-width: 1450px;
   margin: 54px 0;
 
   @media (max-width: 1000px) {
     flex-direction: column-reverse;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
   }
 `;
 
@@ -37,9 +37,12 @@ export const LeftSide = styled.div`
   align-items: center;
 
   button {
-    max-width: 300px;
     height: 100%;
     max-height: 66px;
+  }
+
+  @media (max-width: 1000px) {
+    max-width: unset;
   }
 `;
 
@@ -51,8 +54,12 @@ export const RightSide = styled.div`
   @media (max-width: 1000px) {
     margin: 32px 0 0 0;
   }
+
+  @media (max-width: 1000px) {
+    max-width: unset;
+  }
 `;
 
 export const Icon = styled.img`
-  margin-right: 16px;
+  margin-left: 16px;
 `;

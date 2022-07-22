@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div<{ themeColor?: string }>`
-  padding: 148px 70px 30px 100px;
-  position: relative;
+  padding: 148px 0 30px 0;
   min-height: 50vh;
   height: 100%;
-  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transform: translateZ(0px);
   overflow: hidden;
 
@@ -16,6 +14,18 @@ export const Wrapper = styled.div<{ themeColor?: string }>`
 
   @media screen and (max-width: 1250px) {
     padding: 80px 10px 40px 10px;
+  }
+`;
+
+export const InnerWrapper = styled.div<{ themeColor?: string }>`
+  max-width: 1450px;
+  padding: 0 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1250px) {
     flex-direction: column;
   }
 `;
@@ -32,7 +42,6 @@ export const Title = styled.p`
 
   @media (max-width: 1250px) {
     font-size: 42px;
-
     text-align: center;
   }
 `;

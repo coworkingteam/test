@@ -4,25 +4,29 @@ export const Wrapper = styled.div`
   min-height: 50vh;
   height: 100%;
   width: 100%;
-  padding: 0 70px;
   flex-direction: column;
 
   ${({ theme }) => theme.templates.centerContent}
   background-color: ${({ theme }) => theme.colors.black800};
+`;
+
+export const ContentWrapper = styled.div`
+  max-width: 1450px;
+  width: 100%;
+  padding: 0 70px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     padding: 0;
   }
 `;
 
-export const IWrapper = styled.div`
-  max-width: 1450px;
+export const InnerWrapper = styled.div`
   width: 100%;
-  padding: 76px 88px;
-  margin: 0 auto;
   justify-content: center;
   display: grid;
   gap: 36px 96px;
+  padding: 76px 88px;
   grid-template-columns: repeat(auto-fill, 200px);
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
@@ -43,11 +47,9 @@ export const IWrapper = styled.div`
 `;
 
 export const FAQWrapper = styled.div`
-  max-width: 1450px;
-  font-size: 16px;
-  width: 100%;
-  padding: 20px 88px;
+  font-size: 16px !important;
   opacity: 0.7;
+  padding: 20px 110px;
 
   color: ${({ theme }) => theme.colors.white};
 

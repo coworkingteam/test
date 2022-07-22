@@ -1,13 +1,36 @@
 import * as React from 'react';
-// components
-import Link from 'next/link';
+// libs
+import styled from 'styled-components';
+import { LottiePlayer } from 'lottie-web';
 
-const Logo = () => (
-  <Link href='/' passHref>
-    <a>
-      <img src='/static/icons/logo.svg' alt='sw-logo' />
-    </a>
-  </Link>
-);
+export const LogoBlock = styled.div`
+  width: 36px;
+  height: 36px;
+`;
+
+const Logo = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [lottie, setLottie] = React.useState<LottiePlayer | null>(null);
+
+  React.useEffect(() => {
+    import('lottie-web').then((Lottie) => setLottie(Lottie.default));
+  }, []);
+
+  React.useEffect(() => {
+    if (lottie && ref.current) {
+      const animation = lottie.loadAnimation({
+        container: ref.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/static/animations/LOADINGfast.json'
+      });
+
+      return () => animation.destroy();
+    }
+  }, [lottie]);
+
+  return <LogoBlock ref={ref} />;
+};
 
 export { Logo };
