@@ -22,7 +22,9 @@ export const colors = {
   black600: '#212121',
   black800: '#161616',
   white: '#fff',
-  black: '#000'
+  black: '#000',
+  // bg
+  greenBg: '#A3F1CB'
 };
 
 export const templates = {
