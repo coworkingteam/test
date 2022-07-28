@@ -36,12 +36,12 @@
     "react-hook-form": "^7.33.1",
     "react-intl": "3.9.3",
     "react-phone-input-2": "^2.15.0",
+    "react-scroll": "^1.8.7",
     "react-select": "^5.4.0",
     "react-slick": "^0.29.0",
     "react-tooltip": "^4.2.21",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.3",
-    "three": "^0.142.0"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2",
@@ -49,9 +49,9 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.38",
     "@types/react-burger-menu": "^2.8.3",
+    "@types/react-scroll": "^1.8.4",
     "@types/react-slick": "^0.23.8",
     "@types/styled-components": "^5.1.20",
-    "@types/three": "^0.142.0",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
     "babel-plugin-inline-react-svg": "^2.0.1",

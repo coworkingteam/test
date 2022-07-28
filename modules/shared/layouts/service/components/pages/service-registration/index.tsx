@@ -19,9 +19,11 @@ const ServiceRegistration: React.FC<Props> = ({ serviceRegistrationData, hasTabs
   return (
     <Wrapper hasTabs={hasTabs}>
       <ServiceRegistrationCard
+        linkID='hero'
         leftSide={serviceRegistrationData.leftSide}
         rightSide={serviceRegistrationData.rightSide}
       />
+
       <Accordion blackTheme data={serviceRegistrationFAQData} />
     </Wrapper>
   );

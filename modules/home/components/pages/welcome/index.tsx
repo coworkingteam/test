@@ -13,7 +13,6 @@ import {
   FormDescription,
   LeftSide
 } from '@md-modules/home/components/pages/welcome/views';
-
 const Welcome = () => (
   <Wrapper>
     <CanvasGradient />

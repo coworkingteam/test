@@ -1,9 +1,10 @@
 import React from 'react';
 import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service';
+import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/car.png',
+    img: '/static/images/renewal-driver-license.png',
     titleID: 'renewalDrivingLicense.welcome.title',
     button: {
       titleID: 'renewalDrivingLicense.welcome.button.title',
@@ -46,6 +47,8 @@ const DATA: IServiceData = {
   }))
 };
 
-const RenewalDrivingLicense = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor='#787A91' />;
+const RenewalDrivingLicense = () => (
+  <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.green150} />
+);
 
 export default RenewalDrivingLicense;
