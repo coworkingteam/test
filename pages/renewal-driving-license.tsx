@@ -47,6 +47,8 @@ const DATA: IServiceData = {
   }))
 };
 
-const RenewalDrivingLicense = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.greenBg} />;
+const RenewalDrivingLicense = () => (
+  <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.green150} />
+);
 
 export default RenewalDrivingLicense;

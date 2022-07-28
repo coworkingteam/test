@@ -41,9 +41,13 @@ export interface ServiceRegistrationData {
   };
 }
 
-const ServiceRegistrationCard: React.FC<ServiceRegistrationData> = ({ leftSide, rightSide }) => {
+interface Props extends ServiceRegistrationData {
+  linkID?: string;
+}
+
+const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID }) => {
   return (
-    <Wrapper>
+    <Wrapper id={linkID}>
       <RightSide>
         <InfoBlockWrapper>
           <Title>

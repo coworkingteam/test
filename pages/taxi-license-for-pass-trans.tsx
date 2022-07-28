@@ -23,10 +23,7 @@ const DATA: IServiceData = {
       },
       price: {
         titleID: 'taxiLicense.serviceRegistration.leftSide.price.title',
-        contentsIDS: [
-          'taxiLicense.serviceRegistration.leftSide.price.content',
-          'taxiLicense.serviceRegistration.leftSide.price.reMaking'
-        ]
+        contentsIDS: ['taxiLicense.serviceRegistration.leftSide.price.content']
       }
     },
     rightSide: {
@@ -47,6 +44,6 @@ const DATA: IServiceData = {
   }))
 };
 
-const TaxiLicenseForPT = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.greenBg} />;
+const TaxiLicenseForPT = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.green150} />;
 
 export default TaxiLicenseForPT;

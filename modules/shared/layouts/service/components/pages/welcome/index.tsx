@@ -13,7 +13,6 @@ import {
   StrafeButton,
   ArrowDown
 } from '@md-modules/shared/layouts/service/components/pages/welcome/views';
-import { Link } from 'react-scroll';
 
 export interface WelcomeData {
   img?: string;
@@ -44,13 +43,19 @@ const Welcome: React.FC<Props> = ({ themeColor, data }) => {
         </LeftSide>
 
         <Image src={data?.img} />
-
-        <Link activeClass='active' to='hero' spy={true} smooth={true} offset={-100} duration={500}>
-          <StrafeButton themeColor={themeColor}>
-            <ArrowDown src='/static/icons/arrow-down.png' />
-          </StrafeButton>
-        </Link>
       </InnerWrapper>
+
+      <StrafeButton
+        to='hero'
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={500}
+        activeClass='active'
+        themeColor={themeColor}
+      >
+        <ArrowDown src='/static/icons/arrow-down.svg' />
+      </StrafeButton>
     </Wrapper>
   );
 };
