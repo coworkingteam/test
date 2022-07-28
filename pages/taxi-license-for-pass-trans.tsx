@@ -1,5 +1,6 @@
 import React from 'react';
 import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service';
+import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
@@ -46,6 +47,6 @@ const DATA: IServiceData = {
   }))
 };
 
-const TaxiLicenseForPT = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor='#A3F1CB' />;
+const TaxiLicenseForPT = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.greenBg} />;
 
 export default TaxiLicenseForPT;
