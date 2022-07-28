@@ -14,7 +14,7 @@ import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 import { menuItems } from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
-import { Wrapper, IWrapper, LWrapper, RWrapper, LogoText, BurgerIcon } from './views';
+import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
 
 const BUTTON_STYLES = { mr: 26 };
 
@@ -51,8 +51,6 @@ const Header = () => {
         <IWrapper>
           <LWrapper onClick={onClickHome}>
             <Logo />
-
-            <LogoText>Aksis</LogoText>
           </LWrapper>
 
           <RWrapper>
@@ -62,9 +60,12 @@ const Header = () => {
           </RWrapper>
 
           <Button buttonStyle={BUTTON_STYLES}>+33 78 87 78 87</Button>
-          <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
 
-          <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />
+          <BurgerWrapper>
+            <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />
+
+            <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
+          </BurgerWrapper>
         </IWrapper>
       </Wrapper>
 

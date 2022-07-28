@@ -62,7 +62,7 @@ export const AContent = styled.p<{ isActive: boolean }>`
   max-width: 1100px;
   transition: max-height 650ms;
 
-  max-height: ${({ isActive }) => (isActive ? '20rem' : '0')};
+  max-height: ${({ isActive }) => (isActive ? '100vh' : '0')};
   overflow: ${({ isActive }) => (isActive ? 'none' : 'hidden')};
 
   @media (max-width: 768px) {

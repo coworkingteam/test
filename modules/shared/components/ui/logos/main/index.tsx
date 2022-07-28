@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { LottiePlayer } from 'lottie-web';
 
 export const LogoBlock = styled.div`
-  width: 36px;
+  width: 112px;
   height: 36px;
 `;
 
@@ -23,7 +23,7 @@ const Logo = () => {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/static/animations/LOADINGfast.json'
+        path: '/static/animations/logo.json'
       });
 
       return () => animation.destroy();

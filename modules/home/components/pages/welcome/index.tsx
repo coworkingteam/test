@@ -23,7 +23,7 @@ const Welcome = () => (
         <Title>
           Помощь с документами в Польше <Icon src='/static/icons/middle-arrow.svg' alt='send-arrow' />
         </Title>
-        <SubTitle>Разрешение на работу - вид на жительство - срочные документы</SubTitle>
+        <SubTitle>Разрешение на работу - вид на жительство - срочные документы - бизнес - консалтинг</SubTitle>
       </LeftSide>
 
       <FormWrapper>

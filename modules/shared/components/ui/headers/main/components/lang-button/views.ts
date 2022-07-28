@@ -1,12 +1,5 @@
 import styled, { css } from 'styled-components';
 
-export const LangTitle = styled.p`
-  margin: 0;
-  font-weight: 500;
-  font-size: 14px;
-  border-bottom: 1px solid;
-`;
-
 export const ToolTipWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;

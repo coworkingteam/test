@@ -35,6 +35,7 @@ export const BurgerIcon = styled.img`
   width: 30px;
   height: 30px;
   display: none;
+  margin-right: 16px;
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -70,12 +71,6 @@ export const RWrapper = styled.div`
   }
 `;
 
-export const LogoText = styled.p`
-  font-weight: 500;
-  font-size: 26px;
-  margin: 0 0 0 10px;
-
-  @media (max-width: 768px) {
-    font-size: 24px;
-  }
+export const BurgerWrapper = styled.div`
+  display: flex;
 `;
