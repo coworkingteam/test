@@ -3,7 +3,7 @@ import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service'
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/car.png',
+    img: '/static/images/renewal-driver-license.png',
     titleID: 'renewalDrivingLicense.welcome.title',
     button: {
       titleID: 'renewalDrivingLicense.welcome.button.title',

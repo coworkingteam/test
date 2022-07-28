@@ -111,3 +111,13 @@ export const Icon = styled.img`
     display: none;
   }
 `;
+export const Button = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: aqua;
+`;
+export const StrafeButton = styled(Button)`
+  bottom: -40px;
+`;

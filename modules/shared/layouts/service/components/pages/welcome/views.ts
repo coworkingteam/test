@@ -8,7 +8,6 @@ export const Wrapper = styled.div<{ themeColor?: string }>`
   justify-content: center;
   align-items: center;
   transform: translateZ(0px);
-  overflow: hidden;
 
   background-color: ${({ theme, themeColor }) => themeColor || theme.colors.green100};
 
@@ -66,4 +65,30 @@ export const LeftSide = styled.div`
   @media (max-width: 1250px) {
     margin: 44px 0 0 0;
   }
+`;
+export const Button = styled.div<{ themeColor?: string }>`
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: ${({ theme, themeColor }) => themeColor || theme.colors.green100};
+  transition: 0.4s;
+
+  &:hover {
+    font-size: 30px;
+  }
+`;
+export const StrafeButton = styled(Button)`
+  bottom: -20px;
+  left: calc(50% - 40px);
+`;
+export const ArrowDown = styled.img`
+  width: 40px;
+  height: 40px;
 `;

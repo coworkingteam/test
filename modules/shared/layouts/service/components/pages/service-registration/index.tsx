@@ -18,10 +18,13 @@ interface Props {
 const ServiceRegistration: React.FC<Props> = ({ serviceRegistrationData, hasTabs, serviceRegistrationFAQData }) => {
   return (
     <Wrapper hasTabs={hasTabs}>
-      <ServiceRegistrationCard
-        leftSide={serviceRegistrationData.leftSide}
-        rightSide={serviceRegistrationData.rightSide}
-      />
+      <div id='hero'>
+        <ServiceRegistrationCard
+          leftSide={serviceRegistrationData.leftSide}
+          rightSide={serviceRegistrationData.rightSide}
+        />
+      </div>
+
       <Accordion blackTheme data={serviceRegistrationFAQData} />
     </Wrapper>
   );

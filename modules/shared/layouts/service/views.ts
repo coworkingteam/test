@@ -14,3 +14,13 @@ export const TabItemsWrapper = styled.div`
   margin: 75px auto 32px auto;
   padding: 0 70px;
 `;
+export const Button = styled.div`
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: aqua;
+`;
+export const StrafeButton = styled(Button)`
+  bottom: -40px;
+`;
