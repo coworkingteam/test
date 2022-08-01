@@ -7,9 +7,10 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   z-index: 999;
   position: fixed;
   transition: all 0.4s ease 0s;
+  box-shadow: ${({ isScroll }) => isScroll && 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'};
 
   padding: ${({ isScroll }) => (isScroll ? '15px 70px' : '46px 70px')};
-  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, .75)'};
+  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.95)'};
 
   @media (max-width: 1100px) {
     padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};

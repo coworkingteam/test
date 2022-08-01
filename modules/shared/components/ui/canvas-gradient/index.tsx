@@ -10,6 +10,8 @@ export const Canvas = styled.canvas`
   height: 100%;
   width: 100%;
   min-height: 100vh;
+  position: absolute;
+
   --gradient-color-1: #a676e2;
   --gradient-color-2: #ffd080;
   --gradient-color-3: #f37a76;

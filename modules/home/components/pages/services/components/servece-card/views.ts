@@ -7,13 +7,13 @@ export const Wrapper = styled.div`
   cursor: pointer;
   width: 100%;
   margin-bottom: 32px;
-  transition: opacity 0.2s linear;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.2s linear;
 
   background: ${({ theme }) => theme.colors.white};
 
   &:hover {
     opacity: 0.9;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
 `;
 

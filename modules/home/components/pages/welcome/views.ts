@@ -2,27 +2,20 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100%;
-  //background-image: url('/static/images/gradient.svg');
-  //background-position: center;
-  //background-repeat: no-repeat;
-  //background-size: cover;
   display: flex;
 
+  position: relative;
   justify-content: center;
   align-items: center;
-
-  canvas {
-    position: absolute;
-  }
 `;
 
 export const InnerWrapper = styled.div`
   padding: 148px 70px 62px 100px;
-  position: relative;
   max-width: 1450px;
   min-height: 100vh;
   height: 100%;
   width: 100%;
+  position: relative;
   text-align: center;
   display: flex;
   align-items: flex-end;

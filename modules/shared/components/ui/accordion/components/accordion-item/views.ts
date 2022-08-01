@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div<{ isActive: boolean; blackTheme: boolean }>`
+export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  transition: all 650ms;
+  transition: all 450ms;
+  padding: 0 24px 32px 24px;
 
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
-  padding: ${({ isActive }) => (isActive ? '24px 24px 32px 24px' : '0 24px')};
 
   svg {
     width: 26px;
@@ -44,26 +44,21 @@ export const ATitle = styled.p`
   }
 `;
 
-export const ATitleWrapper = styled.div<{ isActive: boolean; blackTheme: boolean }>`
+export const ATitleWrapper = styled.div<{ blackTheme: boolean }>`
   display: flex;
   cursor: pointer;
+  padding-top: 32px;
   justify-content: space-between;
-  transition: max-height 650ms;
 
-  padding: ${({ isActive }) => (isActive ? '32px 0 20px 0' : '32px 0 32px 0')};
   border-top: 3px solid ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 `;
 
-export const AContent = styled.p<{ isActive: boolean }>`
-  margin: 0;
+export const AContent = styled.p`
   font-size: 16px;
   line-height: 180%;
-  white-space: pre-wrap;
+  margin: 16px 0 0 0;
   max-width: 1100px;
-  transition: max-height 650ms;
-
-  max-height: ${({ isActive }) => (isActive ? '100vh' : '0')};
-  overflow: ${({ isActive }) => (isActive ? 'none' : 'hidden')};
+  white-space: pre-wrap;
 
   @media (max-width: 768px) {
     font-size: 14px;

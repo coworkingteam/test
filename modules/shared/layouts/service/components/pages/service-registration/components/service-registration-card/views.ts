@@ -55,6 +55,7 @@ export const SubTitle = styled.p<{ opacity?: number }>`
   font-size: 20px;
   margin: 0 0 20px 0;
   white-space: pre-wrap;
+  line-height: 36px;
 
   opacity: ${({ opacity }) => opacity};
   color: ${({ theme }) => theme.colors.white};

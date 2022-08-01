@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colors } from '@md-styles/styled/theme';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -17,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     position: relative;
     font-size: 16px;
+    
+    color: ${colors.black600};
   }
 
   .sidebar-tooltip {

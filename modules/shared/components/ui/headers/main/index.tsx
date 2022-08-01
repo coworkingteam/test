@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 import { Logo } from '@md-ui/logos/main';
 import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
-import { MenuItem } from '@md-ui/menu-items/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
+import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar/';
+import DevelopersDropdown from '@md-ui/headers/main/components/animated-navbar/components/DropdownContents/DevelopersDropdown';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
@@ -45,6 +46,11 @@ const Header = () => {
     };
   }, []);
 
+  const navbarConfig = [
+    { title: 'Услуги', dropdown: DevelopersDropdown },
+    { title: 'Вопросы и ответы', dropdown: DevelopersDropdown }
+  ];
+
   return (
     <>
       <Wrapper isScroll={isScroll}>
@@ -54,12 +60,14 @@ const Header = () => {
           </LWrapper>
 
           <RWrapper>
-            {menuItems.map(({ l, h }) => (
-              <MenuItem isScroll={isScroll} key={l} href={h} label={l} />
-            ))}
+            <AnimatedNavbar isScroll={isScroll} data={navbarConfig} duration={300} />
+
+            {/*{menuItems.map(({ l, h }) => (*/}
+            {/*  <MenuItem isScroll={isScroll} key={l} href={h} label={l} />*/}
+            {/*))}*/}
           </RWrapper>
 
-          <Button buttonStyle={BUTTON_STYLES}>+33 78 87 78 87</Button>
+          <Button buttonStyle={BUTTON_STYLES}>+47 728 000 702</Button>
 
           <BurgerWrapper>
             <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />

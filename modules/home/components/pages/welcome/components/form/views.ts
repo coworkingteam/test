@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
+  max-height: 300px;
   flex-direction: column;
 
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(8px);
   padding: 46px 38px 72px 38px;
 
   border-radius: 15px;
@@ -30,6 +31,11 @@ export const ButtonWrapper = styled.div`
   width: max-content;
   bottom: -24px;
   transform: translatex(50%);
+
+  button {
+    height: 60px;
+    font-size: 20px;
+  }
 `;
 
 export const InputWrapper = styled.div`

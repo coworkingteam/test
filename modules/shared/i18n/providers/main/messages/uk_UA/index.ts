@@ -4,6 +4,6 @@ import renewalDrivingLicense from './pages/renewal-driving-license';
 
 export default {
   [LOCALES.UKRAINIAN]: {
-    renewalDrivingLicense: { ...renewalDrivingLicense }
+    renewalDrivingLicense
   }
 };

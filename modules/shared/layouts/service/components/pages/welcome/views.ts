@@ -69,7 +69,7 @@ export const Image = styled.img`
 
 export const LeftSide = styled.div`
   display: flex;
-  max-width: 480px;
+  max-width: 650px;
   flex-direction: column;
   align-items: flex-start;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 // libs
+import Collapsible from 'react-collapsible';
 import { FormattedMessage } from 'react-intl';
 // components
 import Plus from 'public/static/icons/plus';
@@ -8,30 +9,36 @@ import Minus from 'public/static/icons/minus';
 import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordion/components/accordion-item/views';
 
 interface Props {
-  id: string;
   title: string;
   content: string;
-  isActive: boolean;
   blackTheme?: boolean;
-  setIsActive: (id: string) => void;
 }
 
-const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content, isActive, id, setIsActive }) => {
-  const onClick = () => setIsActive(id);
+const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content }) => {
+  const [isActive, setIsActive] = React.useState(false);
 
-  return (
-    <Wrapper blackTheme={blackTheme} isActive={isActive}>
-      <ATitleWrapper blackTheme={blackTheme} isActive={isActive} onClick={onClick}>
+  const toggleAccordion = () => setIsActive((prevState) => !prevState);
+
+  const trigger = React.useMemo(
+    () => (
+      <ATitleWrapper blackTheme={blackTheme}>
         <ATitle>
           <FormattedMessage id={title} />
         </ATitle>
 
         <ATitle>{isActive ? <Minus /> : <Plus />}</ATitle>
       </ATitleWrapper>
+    ),
+    [isActive, blackTheme, title]
+  );
 
-      <AContent isActive={isActive}>
-        <FormattedMessage id={content} />
-      </AContent>
+  return (
+    <Wrapper isActive={isActive} blackTheme={blackTheme}>
+      <Collapsible onOpening={toggleAccordion} onClosing={toggleAccordion} transitionTime={200} trigger={trigger}>
+        <AContent>
+          <FormattedMessage id={content} />
+        </AContent>
+      </Collapsible>
     </Wrapper>
   );
 };

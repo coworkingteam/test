@@ -1,6 +1,8 @@
 import { DefaultTheme, css } from 'styled-components';
 
 export const colors = {
+  // purple
+  blue100: '#D0C6FD',
   // blue
   blue400: '#0070f3',
   // green

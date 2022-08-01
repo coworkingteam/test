@@ -12,7 +12,7 @@ const Footer = () => {
       <ContentWrapper>
         <InnerWrapper>
           {menuItems.map(({ l, h }, index) => (
-            <MenuItem key={index} href={h} label={l} />
+            <MenuItem whiteColor key={index} href={h} label={l} />
           ))}
         </InnerWrapper>
 

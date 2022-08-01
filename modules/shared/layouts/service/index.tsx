@@ -51,7 +51,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
       <Welcome data={activeData.welcome} themeColor={themeColor} />
 
       {hasTabs && (
-        <TabItemsWrapper>
+        <TabItemsWrapper id='hero'>
           {props.data.map((tab) => (
             <ChildrenItem
               key={tab.type}
@@ -69,6 +69,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
         serviceRegistrationData={activeData.serviceRegistrationData}
         serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
       />
+
       <ShortDescription themeColor={themeColor} />
       <Footer />
     </Wrapper>

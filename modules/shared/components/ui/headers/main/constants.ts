@@ -1,5 +1,7 @@
 export const menuItems = [
-  { l: 'renewal-driving-license', h: '/renewal-driving-license' },
-  { l: 'taxi-license-for-pass-trans', h: '/taxi-license-for-pass-trans' },
-  { l: 'Вопросы и ответы', h: '/people' }
+  { l: 'Вид на жительство', h: '/resident-card' },
+  { l: 'Загранпаспорт', h: '/international-passport' },
+  { l: 'Лицензия такси на пасажирские перевозоки', h: '/taxi-license-for-pass-trans' },
+  { l: 'Переоформление водительских прав на польские', h: '/renewal-driving-license' },
+  { l: 'Страхование автомобиля', h: '/car-insurance' }
 ];

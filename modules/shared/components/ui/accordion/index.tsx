@@ -16,20 +16,10 @@ const Wrapper = styled.div`
 `;
 
 const Accordion: React.FC<Props> = ({ data, blackTheme }) => {
-  const [activeItemId, setActiveItemId] = React.useState<string>();
-
-  const onClickActive = (id: string) => setActiveItemId((prevState) => (prevState === id ? undefined : id));
-
   return (
     <Wrapper>
       {data.map((item) => (
-        <AccordionItem
-          {...item}
-          key={item.id}
-          blackTheme={blackTheme}
-          setIsActive={onClickActive}
-          isActive={activeItemId === item.id}
-        />
+        <AccordionItem {...item} key={item.id} blackTheme={blackTheme} />
       ))}
     </Wrapper>
   );
