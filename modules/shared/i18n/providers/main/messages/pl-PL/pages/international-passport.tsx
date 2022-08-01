@@ -1,8 +1,8 @@
 export default {
   welcome: {
-    title: 'Получение и продление срока действия загранпаспорта Украины без выезда из Польши',
+    title: 'Uzyskanie i odnowienie okresu ważności paszport zagraniczny Ukrainy bez opuszczania Polski',
     button: {
-      title: 'Оформить загран',
+      title: 'Złóż wniosek o zagraniczną',
       onClick: () => {}
     }
   },
