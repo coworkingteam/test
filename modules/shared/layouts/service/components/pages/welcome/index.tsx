@@ -28,36 +28,34 @@ interface Props {
   data: WelcomeData;
 }
 
-const Welcome: React.FC<Props> = ({ themeColor, data }) => {
-  return (
-    <Wrapper themeColor={themeColor}>
-      <InnerWrapper>
-        <LeftSide>
-          <Title>
-            <FormattedMessage id={data?.titleID} />
-          </Title>
+const Welcome: React.FC<Props> = ({ themeColor, data }) => (
+  <Wrapper themeColor={themeColor}>
+    <InnerWrapper>
+      <LeftSide>
+        <Title>
+          <FormattedMessage id={data?.titleID} />
+        </Title>
 
-          <Button onClick={data?.button?.onClick}>
-            <FormattedMessage id={data?.button?.titleID} />
-          </Button>
-        </LeftSide>
+        <Button onClick={data?.button?.onClick}>
+          <FormattedMessage id={data?.button?.titleID} />
+        </Button>
+      </LeftSide>
 
-        <Image src={data?.img} />
-      </InnerWrapper>
+      <Image src={data?.img} />
+    </InnerWrapper>
 
-      <StrafeButton
-        to='hero'
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-        activeClass='active'
-        themeColor={themeColor}
-      >
-        <ArrowDown src='/static/icons/arrow-down.svg' />
-      </StrafeButton>
-    </Wrapper>
-  );
-};
+    <StrafeButton
+      to='hero'
+      spy={true}
+      smooth={true}
+      offset={-100}
+      duration={500}
+      activeClass='active'
+      themeColor={themeColor}
+    >
+      <ArrowDown src='/static/icons/arrow-down.svg' />
+    </StrafeButton>
+  </Wrapper>
+);
 
 export default Welcome;

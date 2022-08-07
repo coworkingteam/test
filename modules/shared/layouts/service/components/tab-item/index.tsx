@@ -13,7 +13,7 @@ interface Props {
 export const Item = styled.p<{ isActive?: boolean }>`
   cursor: pointer;
   font-weight: 500;
-  margin: 0 0 0 16px;
+  margin: 0 16px 0 0;
   font-size: 28px;
   text-transform: capitalize;
 

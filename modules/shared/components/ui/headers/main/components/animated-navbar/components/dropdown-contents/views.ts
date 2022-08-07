@@ -6,12 +6,12 @@ export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
   font-size: 1.2rem;
   margin-top: 0;
 
-  margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
   color: ${({ theme }) => theme.colors.black600};
+  margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
 `;
 
 export const LinkList = styled.div<{ marginLeft?: number }>`
-  margin-left: ${({ marginLeft }) => marginLeft || 0};
+  margin-left: ${({ marginLeft }) => marginLeft};
 
   div {
     padding: 4px 0;
@@ -25,11 +25,12 @@ export const DropdownSection = styled.div`
 `;
 
 export const DevelopersDropdownEl = styled.div`
-  width: 25rem;
+  width: max-content;
 `;
 
 export const Flex = styled.div`
   display: flex;
+
   > div:first-of-type {
     margin-right: 48px;
   }

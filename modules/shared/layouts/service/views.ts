@@ -6,30 +6,46 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.gray100};
 `;
 
-export const TabItemsWrapper = styled.div`
+export const TabItemsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  height: 100%;
+  min-height: 32px;
   position: relative;
-
-  max-width: 1450px;
   margin: 75px auto 32px auto;
-  padding: 0 70px;
+`;
+
+export const TabItemsWrapper = styled.div<{ isScroll: boolean }>`
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  z-index: 99;
+
+  border-radius: 0 0 20px 20px;
+  margin: ${({ isScroll }) => isScroll && '78px auto 32px auto'};
+  position: ${({ isScroll }) => (isScroll ? 'fixed' : 'relative')};
+  transition: ${({ isScroll }) => isScroll && 'background-color 0.2s ease'};
+  box-shadow: ${({ isScroll, theme }) => isScroll && theme.templates.boxShadow};
+  background-color: ${({ isScroll, theme }) => isScroll && theme.colors.white};
+
+  @media (max-width: 1100px) {
+    margin: ${({ isScroll }) => isScroll && '66px auto 32px auto'};
+  }
 `;
 
 export const InnerTabItemsWrapper = styled.div<{ isScroll: boolean }>`
-  left: 0;
-  top: 0;
+  display: flex;
   width: 100%;
-  z-index: 999;
-  position: fixed;
-  transition: all 0.4s ease 0s;
-  margin-top: 86px;
-  box-shadow: ${({ isScroll }) => isScroll && 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'};
-
-  padding: ${({ isScroll }) => (isScroll ? '15px 70px' : '46px 70px')};
-  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.95)'};
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: ${({ isScroll }) => (isScroll ? '16px 70px' : '0 70px')};
 
   @media (max-width: 1100px) {
-    padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
+    justify-content: center;
+
+    padding: ${({ isScroll }) => (isScroll ? '16px 15px' : '0 15px')};
   }
 `;

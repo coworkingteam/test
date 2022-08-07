@@ -10,7 +10,7 @@ import ShortDescription from '@md-modules/shared/layouts/service/components/page
 import { IAccordionItem } from '@md-modules/shared/types/accordion';
 import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card';
 // views
-import { TabItemsWrapper, Wrapper } from './views';
+import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper, Wrapper } from './views';
 
 export interface IServiceData {
   welcome: WelcomeData;
@@ -33,13 +33,34 @@ interface PropsWithTabs {
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
   const hasTabs = type === 'WITH_TABS';
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
 
+  const [isScroll, setIsScroll] = React.useState(false);
   const [activeDataType, setActiveDataType] = React.useState(hasTabs ? props.data[0]?.type : undefined);
 
   const activeData = React.useMemo(
     () => (hasTabs ? props.data?.find((i) => i.type === activeDataType)?.data : props.data),
     [activeDataType, props.data]
   );
+
+  const scrollHandler = () => {
+    const scrollHeight = wrapperRef.current?.scrollHeight || 0;
+
+    if (window.scrollY > scrollHeight - 46) {
+      setIsScroll(true);
+      return;
+    }
+
+    setIsScroll(false);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
 
   if (!activeData) {
     return null;
@@ -48,20 +69,26 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   return (
     <Wrapper>
       <Header />
-      <Welcome data={activeData.welcome} themeColor={themeColor} />
+      <div ref={wrapperRef}>
+        <Welcome data={activeData.welcome} themeColor={themeColor} />
+      </div>
 
       {hasTabs && (
-        <TabItemsWrapper id='hero'>
-          {props.data.map((tab) => (
-            <ChildrenItem
-              key={tab.type}
-              type={tab.type}
-              titleID={tab.titleID}
-              onClick={setActiveDataType}
-              isActive={activeDataType === tab.type}
-            />
-          ))}
-        </TabItemsWrapper>
+        <TabItemsContainer id='hero'>
+          <TabItemsWrapper isScroll={isScroll}>
+            <InnerTabItemsWrapper isScroll={isScroll}>
+              {props.data.map((tab) => (
+                <ChildrenItem
+                  key={tab.type}
+                  type={tab.type}
+                  titleID={tab.titleID}
+                  onClick={setActiveDataType}
+                  isActive={activeDataType === tab.type}
+                />
+              ))}
+            </InnerTabItemsWrapper>
+          </TabItemsWrapper>
+        </TabItemsContainer>
       )}
 
       <ServiceRegistration

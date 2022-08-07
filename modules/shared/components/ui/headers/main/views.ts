@@ -7,10 +7,11 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   z-index: 999;
   position: fixed;
   transition: all 0.4s ease 0s;
-  box-shadow: ${({ isScroll }) => isScroll && 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'};
 
-  padding: ${({ isScroll }) => (isScroll ? '15px 70px' : '46px 70px')};
-  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.95)'};
+  backdrop-filter: ${({ isScroll }) => isScroll && 'blur(8px)'};
+  box-shadow: ${({ isScroll, theme }) => isScroll && theme.templates.boxShadow};
+  padding: ${({ isScroll }) => (isScroll ? '0 70px' : '46px 70px')};
+  background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.85)'};
 
   @media (max-width: 1100px) {
     padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
@@ -20,7 +21,6 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
 export const IWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 5px 10px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
@@ -64,8 +64,7 @@ export const LWrapper = styled.div`
 
 export const RWrapper = styled.div`
   flex: 1;
-  justify-content: center;
-  ${({ theme }) => theme.templates.centerItems};
+  ${({ theme }) => theme.templates.centerContent};
 
   @media (max-width: 768px) {
     display: none;

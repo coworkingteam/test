@@ -36,6 +36,9 @@ export const templates = {
     right: 0;
     bottom: 0;
   `,
+  boxShadow: css`
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 50px;
+  `,
   centerContent: css`
     display: flex;
     align-items: center;

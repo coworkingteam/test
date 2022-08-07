@@ -7,12 +7,11 @@ import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
-import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar/';
-import DevelopersDropdown from '@md-ui/headers/main/components/animated-navbar/components/DropdownContents/DevelopersDropdown';
+import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
-import { menuItems } from './constants';
+import { menuItems, NAVBAR_CONFIG } from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
@@ -46,11 +45,6 @@ const Header = () => {
     };
   }, []);
 
-  const navbarConfig = [
-    { title: 'Услуги', dropdown: DevelopersDropdown },
-    { title: 'Вопросы и ответы', dropdown: DevelopersDropdown }
-  ];
-
   return (
     <>
       <Wrapper isScroll={isScroll}>
@@ -60,11 +54,7 @@ const Header = () => {
           </LWrapper>
 
           <RWrapper>
-            <AnimatedNavbar isScroll={isScroll} data={navbarConfig} duration={300} />
-
-            {/*{menuItems.map(({ l, h }) => (*/}
-            {/*  <MenuItem isScroll={isScroll} key={l} href={h} label={l} />*/}
-            {/*))}*/}
+            <AnimatedNavbar isScroll={isScroll} data={NAVBAR_CONFIG} duration={300} />
           </RWrapper>
 
           <Button buttonStyle={BUTTON_STYLES}>+47 728 000 702</Button>

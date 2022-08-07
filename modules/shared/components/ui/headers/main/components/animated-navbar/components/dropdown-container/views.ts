@@ -45,7 +45,6 @@ export const DropdownBackground = styled.div`
 `;
 
 export const AltBackground = styled.div<{ duration: number }>`
-  background-color: grey;
   width: 300%;
   height: 100%;
   position: absolute;
@@ -61,6 +60,7 @@ export const InvertedDiv = styled.div<{ absolute: boolean }>`
   position: ${({ absolute }) => (absolute ? 'absolute' : 'relative')};
   top: 0;
   left: 0;
+
   &:first-of-type {
     z-index: 1;
   }
