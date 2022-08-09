@@ -28,6 +28,7 @@ const Header = () => {
   const toggleMainMenu = () => setIsOpenBurgerMenu((prevState) => !prevState);
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
+  const onClickNumber = () => push('tel:+47 728 000 702');
 
   React.useEffect(() => {
     const scrollHandler = () => {
@@ -57,7 +58,9 @@ const Header = () => {
             <AnimatedNavbar isScroll={isScroll} data={NAVBAR_CONFIG} duration={300} />
           </RWrapper>
 
-          <Button buttonStyle={BUTTON_STYLES}>+47 728 000 702</Button>
+          <Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>
+            +47 728 000 702
+          </Button>
 
           <BurgerWrapper>
             <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />

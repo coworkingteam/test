@@ -14,6 +14,7 @@ export const MenuWrapper = styled.div`
 `;
 
 export const MWrapper = styled.div`
+  text-align: center;
   flex-direction: column;
   ${({ theme }) => theme.templates.centerContent};
 

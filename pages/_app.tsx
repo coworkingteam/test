@@ -1,7 +1,5 @@
 import * as React from 'react';
 import Router from 'next/router';
-// libs
-// import NProgress from 'nprogress';
 // providers
 import { ThemeProvider } from 'styled-components';
 import LangProvider from '@md-modules/shared/i18n/providers/main';

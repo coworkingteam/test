@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const getDropdownRootKeyFrame = ({ animatingOut, direction }: { direction: string; animatingOut: boolean }) => {
+const getDropdownRootKeyFrame = ({ animatingOut, direction }: { direction?: string; animatingOut: boolean }) => {
   if (!animatingOut && direction) return null;
   return keyframes`
   from {
@@ -15,7 +15,7 @@ const getDropdownRootKeyFrame = ({ animatingOut, direction }: { direction: strin
 };
 
 export const DropdownRoot = styled.div<{
-  direction: string;
+  direction?: string;
   duration: number;
   animatingOut: boolean;
 }>`
@@ -34,14 +34,13 @@ export const DropdownRoot = styled.div<{
 
 export const DropdownBackground = styled.div`
   transform-origin: 0 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
+  background: ${({ theme }) => theme.colors.white};
   margin-top: 16px;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
   will-change: transform;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 export const AltBackground = styled.div<{ duration: number }>`
@@ -55,7 +54,7 @@ export const AltBackground = styled.div<{ duration: number }>`
   transition: transform ${({ duration }) => duration}ms;
 `;
 
-export const InvertedDiv = styled.div<{ absolute: boolean }>`
+export const InvertedDiv = styled.div<{ absolute?: boolean }>`
   will-change: transform;
   position: ${({ absolute }) => (absolute ? 'absolute' : 'relative')};
   top: 0;

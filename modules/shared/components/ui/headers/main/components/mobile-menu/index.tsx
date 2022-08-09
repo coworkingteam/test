@@ -1,4 +1,6 @@
 import React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // components
 import { Button } from '@md-ui/buttons/main';
 import { MenuItem } from '@md-ui/menu-items/main';
@@ -10,18 +12,25 @@ interface Props {
   data: { l: string; h: string }[];
 }
 
-const MobileMenu: React.FC<Props> = ({ data }) => (
-  <MenuWrapper>
-    <MWrapper>
-      {data.map(({ l, h }) => (
-        <MenuItem key={l} href={h} label={l} />
-      ))}
-    </MWrapper>
+const MobileMenu: React.FC<Props> = ({ data }) => {
+  const { push } = useRouter();
+  const onClickNumber = () => push('tel:+47 728 000 702');
 
-    <SWrapper>
-      <Button whiteBG>+33 78 87 78 87</Button>
-    </SWrapper>
-  </MenuWrapper>
-);
+  return (
+    <MenuWrapper>
+      <MWrapper>
+        {data.map(({ l, h }) => (
+          <MenuItem whiteColor key={l} href={h} label={l} />
+        ))}
+      </MWrapper>
+
+      <SWrapper>
+        <Button onClick={onClickNumber} whiteBG>
+          +47 728 000 702
+        </Button>
+      </SWrapper>
+    </MenuWrapper>
+  );
+};
 
 export default MobileMenu;

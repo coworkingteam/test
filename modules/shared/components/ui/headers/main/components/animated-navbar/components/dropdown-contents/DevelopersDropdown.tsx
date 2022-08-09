@@ -11,14 +11,13 @@ const DevelopersDropdown = () => {
     <DevelopersDropdownEl>
       <DropdownSection data-first-dropdown-section>
         <Heading>Услуги</Heading>
+
         <Flex>
-          <div>
-            <LinkList>
-              {menuItems.map(({ l, h }) => (
-                <MenuItem isScroll key={l} href={h} label={l} />
-              ))}
-            </LinkList>
-          </div>
+          <LinkList>
+            {menuItems.map(({ l, h }) => (
+              <MenuItem isScroll key={l} href={h} label={l} />
+            ))}
+          </LinkList>
         </Flex>
       </DropdownSection>
     </DevelopersDropdownEl>

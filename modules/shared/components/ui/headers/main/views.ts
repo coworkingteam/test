@@ -13,7 +13,7 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   padding: ${({ isScroll }) => (isScroll ? '0 70px' : '46px 70px')};
   background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.85)'};
 
-  @media (max-width: 1100px) {
+  @media (max-width: 768px) {
     padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
   }
 `;

@@ -49,12 +49,12 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Rejestracja:',
-        content: '10 minut online'
+        title: 'Подача заявления:',
+        content: '1 день'
       },
       registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
+        title: 'Rejestracja:',
+        content: '10 minut online'
       },
       price: {
         title: 'Cena:',
