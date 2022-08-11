@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/resident-card.png',
+    img: '/static/images/crypto2.png',
     titleID: 'businessTokenization.welcome.title',
     button: {
       titleID: 'businessTokenization.welcome.button.title',

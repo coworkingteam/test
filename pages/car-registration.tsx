@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/resident-card.png',
+    img: '/static/images/carpl.png',
     titleID: 'carRegistration.welcome.title',
     button: {
       titleID: 'carRegistration.welcome.button.title',
@@ -47,6 +47,6 @@ const DATA: IServiceData = {
   }))
 };
 
-const CarRegistration = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.blue100} />;
+const CarRegistration = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.green150} />;
 
 export default CarRegistration;
