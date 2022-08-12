@@ -3,6 +3,7 @@ import TestDropdown from '@md-ui/headers/main/components/animated-navbar/compone
 
 export const menuItems = [
   { l: 'Вид на жительство', h: '/resident-card' },
+  { l: 'Долгосрочный вид на жительство', h: '/long-term-residence-permit' },
   { l: 'Загранпаспорт', h: '/international-passport' },
   { l: 'Лицензия такси на пасажирские перевозоки', h: '/taxi-license-for-pass-trans' },
   { l: 'Переоформление водительских прав на польские', h: '/renewal-driving-license' },

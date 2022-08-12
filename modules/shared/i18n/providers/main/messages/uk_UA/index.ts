@@ -7,6 +7,7 @@ import taxiLicense from './pages/taxi-license-for-pass-trans';
 import businessTokenization from './pages/business-tokenization';
 import internationalPassport from './pages/international-passport';
 import renewalDrivingLicense from './pages/renewal-driving-license';
+import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
   [LOCALES.UKRAINIAN]: {
@@ -16,6 +17,7 @@ export default {
     carRegistration,
     businessTokenization,
     renewalDrivingLicense,
-    internationalPassport
+    internationalPassport,
+    longTermResidencePermit
   }
 };

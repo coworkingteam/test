@@ -5,6 +5,7 @@ import carRegistration from './pages/car-registration';
 import taxiLicense from './pages/taxi-license-for-pass-trans';
 import businessTokenization from './pages/business-tokenization';
 import renewalDrivingLicense from './pages/renewal-driving-license';
+import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
   [LOCALES.ENGLISH]: {
@@ -12,6 +13,7 @@ export default {
     carInsurance,
     carRegistration,
     businessTokenization,
-    renewalDrivingLicense
+    renewalDrivingLicense,
+    longTermResidencePermit
   }
 };
