@@ -16,15 +16,15 @@ import {
 
 export interface ServiceRegistrationData {
   leftSide: {
-    filingApplication: {
+    filingApplication?: {
       titleID: string;
       contentID: string;
     };
-    registration: {
+    registration?: {
       titleID: string;
       contentID: string;
     };
-    price: {
+    price?: {
       titleID: string;
       contentsIDS: string[];
     };
@@ -49,37 +49,43 @@ const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID 
   return (
     <Wrapper id={linkID}>
       <RightSide>
-        <InfoBlockWrapper>
-          <Title>
-            <FormattedMessage id={leftSide.filingApplication.titleID} />
-          </Title>
+        {leftSide.filingApplication?.titleID && (
+          <InfoBlockWrapper>
+            <Title>
+              <FormattedMessage id={leftSide.filingApplication.titleID} />
+            </Title>
 
-          <SubTitle>
-            <FormattedMessage id={leftSide.filingApplication.contentID} />
-          </SubTitle>
-        </InfoBlockWrapper>
-
-        <InfoBlockWrapper>
-          <Title>
-            <FormattedMessage id={leftSide.registration.titleID} />
-          </Title>
-
-          <SubTitle>
-            <FormattedMessage id={leftSide.registration.contentID} />
-          </SubTitle>
-        </InfoBlockWrapper>
-
-        <InfoBlockWrapper>
-          <Title>
-            <FormattedMessage id={leftSide.price.titleID} />
-          </Title>
-
-          {leftSide.price.contentsIDS.map((priceID, index) => (
-            <SubTitle key={index}>
-              <FormattedMessage id={priceID} />
+            <SubTitle>
+              <FormattedMessage id={leftSide.filingApplication.contentID} />
             </SubTitle>
-          ))}
-        </InfoBlockWrapper>
+          </InfoBlockWrapper>
+        )}
+
+        {leftSide.registration?.titleID && (
+          <InfoBlockWrapper>
+            <Title>
+              <FormattedMessage id={leftSide.registration.titleID} />
+            </Title>
+
+            <SubTitle>
+              <FormattedMessage id={leftSide.registration.contentID} />
+            </SubTitle>
+          </InfoBlockWrapper>
+        )}
+
+        {leftSide.price?.titleID && (
+          <InfoBlockWrapper>
+            <Title>
+              <FormattedMessage id={leftSide.price.titleID} />
+            </Title>
+
+            {leftSide.price.contentsIDS.map((priceID, index) => (
+              <SubTitle key={index}>
+                <FormattedMessage id={priceID} />
+              </SubTitle>
+            ))}
+          </InfoBlockWrapper>
+        )}
       </RightSide>
       <LeftSide>
         <InfoBlockWrapper>

@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
 // components
+
 import Link from 'next/link';
 // libs
 import styled, { css } from 'styled-components';
@@ -11,7 +13,7 @@ interface Props {
   whiteColor?: boolean;
 }
 
-const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean }>`
+const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: boolean }>`
   padding: 0 34px;
   font-size: 16px;
 
@@ -35,15 +37,36 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean }>`
               ${whiteColor && 'text-decoration: underline'};
             }
           `}
+
+    ${({ isScroll, theme, whiteColor }) =>
+      isScroll && !whiteColor
+        ? css`
+            &:hover {
+              text-decoration: underline;
+            }
+          `
+        : css`
+            &:hover {
+              color: ${theme.colors.white};
+
+              ${whiteColor && 'text-decoration: underline'};
+            }
+          `}
   }
 `;
 
-const MenuItem: React.FC<Props> = ({ href, label, isScroll, whiteColor }) => (
-  <MenuI whiteColor={whiteColor} isScroll={isScroll}>
-    <Link href={href} passHref>
-      <a>{label}</a>
-    </Link>
-  </MenuI>
-);
+const MenuItem: React.FC<Props> = ({ href, label, isScroll, whiteColor }) => {
+  const { pathname } = useRouter();
+
+  const isActive = pathname.includes(href);
+
+  return (
+    <MenuI isActive={isActive} whiteColor={whiteColor} isScroll={isScroll}>
+      <Link href={href} passHref>
+        <a>{label}</a>
+      </Link>
+    </MenuI>
+  );
+};
 
 export { MenuItem };

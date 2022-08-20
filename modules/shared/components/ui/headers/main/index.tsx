@@ -11,7 +11,7 @@ import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
-import { menuItems, NAVBAR_CONFIG } from './constants';
+import { menuItemsRelatedCar, menuItemsRelatedHuman, menuItemsRelatedBusiness, NAVBAR_CONFIG } from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
@@ -71,7 +71,7 @@ const Header = () => {
       </Wrapper>
 
       <BurgerMenu isRight isOpen={isOpenBurgerMenu} pageWrapId='mobile-main-menu' width={260} onClose={toggleMainMenu}>
-        <MobileMenu data={menuItems} />
+        <MobileMenu data={menuItemsRelatedCar.concat(menuItemsRelatedHuman, menuItemsRelatedBusiness)} />
       </BurgerMenu>
     </>
   );
