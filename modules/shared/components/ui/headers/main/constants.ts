@@ -1,5 +1,4 @@
-import DevelopersDropdown from '@md-ui/headers/main/components/animated-navbar/components/dropdown-contents/DevelopersDropdown';
-import TestDropdown from '@md-ui/headers/main/components/animated-navbar/components/dropdown-contents/TestDropdown';
+import ServicesMenu from '@md-ui/headers/main/components/animated-navbar/components/dropdown-contents/services';
 
 export const menuItemsRelatedHuman = [
   { l: 'Вид на жительство', h: '/resident-card' },
@@ -19,7 +18,4 @@ export const menuItemsRelatedCar = [
 
 export const menuItemsRelatedBusiness = [{ l: 'Токенизация бизнеса в Польше', h: '/business-tokenization' }];
 
-export const NAVBAR_CONFIG = [
-  { title: 'Услуги', dropdown: DevelopersDropdown },
-  { title: 'Вопросы и ответы', dropdown: TestDropdown }
-];
+export const NAVBAR_CONFIG = [{ title: 'Услуги', dropdown: ServicesMenu }];

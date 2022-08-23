@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.templates.centerContent}
@@ -35,6 +36,11 @@ export const Image = styled.img`
   height: 170px;
   object-fit: cover;
   margin-bottom: 14px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    ${({ theme }) => theme.templates.boxShadow}
+  }
 `;
 
 export const Description = styled.p`

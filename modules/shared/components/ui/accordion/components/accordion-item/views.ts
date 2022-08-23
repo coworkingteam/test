@@ -6,8 +6,8 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   flex-direction: column;
   border-radius: 15px;
   transition: all 450ms;
-  padding: 0 24px 32px 24px;
 
+  padding: ${({ isActive }) => (isActive ? '0 24px 32px 24px' : '0 24px 0 24px ')};
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 
   svg {
@@ -44,12 +44,13 @@ export const ATitle = styled.p`
   }
 `;
 
-export const ATitleWrapper = styled.div<{ blackTheme: boolean }>`
+export const ATitleWrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   display: flex;
   cursor: pointer;
-  padding-top: 32px;
+  transition: padding 450ms;
   justify-content: space-between;
 
+  padding: ${({ isActive }) => (isActive ? '32px 0 0 0' : '32px 0')};
   border-top: 3px solid ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 `;
 

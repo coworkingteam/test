@@ -22,6 +22,7 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
+    align-items: center;
   }
 `;
 

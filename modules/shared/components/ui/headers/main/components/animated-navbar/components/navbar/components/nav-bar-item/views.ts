@@ -1,6 +1,15 @@
 import styled, { css } from 'styled-components';
 
-export const NavbarItemTitle = styled.div<{ isScroll: boolean }>`
+export const DropdownSlot = styled.div<{ isScroll: boolean }>`
+  position: absolute;
+  left: 50%;
+  margin-top: 8px;
+  transform: translateX(-50%);
+  perspective: 1500px;
+`;
+
+export const NavbarItemTitle = styled.p<{ isScroll: boolean }>`
+  margin: 0;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
@@ -8,29 +17,21 @@ export const NavbarItemTitle = styled.div<{ isScroll: boolean }>`
 
   color: ${({ theme }) => theme.colors.black600};
   padding: ${({ isScroll }) => (isScroll ? '30px 34px' : '14px 34px')};
-
-  ${({ isScroll, theme }) =>
-    isScroll
-      ? css`
-          &:hover {
-            text-decoration: underline;
-          }
-        `
-      : css`
-          &:hover {
-            color: ${theme.colors.white};
-          }
-        `}
 `;
 
-export const NavbarItemEl = styled.li`
+export const NavbarItemEl = styled.li<{ isScroll: boolean }>`
   position: relative;
-`;
 
-export const DropdownSlot = styled.div<{ isScroll: boolean }>`
-  position: absolute;
-  left: 50%;
-  margin-top: 8px;
-  transform: translateX(-50%);
-  perspective: 1500px;
+  &:hover {
+    > p {
+      ${({ isScroll, theme }) =>
+        isScroll
+          ? css`
+              text-decoration: underline !important;
+            `
+          : css`
+              color: ${theme.colors.white} !important;
+            `}
+    }
+  }
 `;

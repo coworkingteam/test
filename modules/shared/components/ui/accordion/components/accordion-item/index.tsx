@@ -21,7 +21,7 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content }) 
 
   const trigger = React.useMemo(
     () => (
-      <ATitleWrapper blackTheme={blackTheme}>
+      <ATitleWrapper isActive={isActive} blackTheme={blackTheme}>
         <ATitle>
           <FormattedMessage id={title} />
         </ATitle>

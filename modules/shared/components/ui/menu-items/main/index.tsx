@@ -1,7 +1,7 @@
 import * as React from 'react';
+// hooks
 import { useRouter } from 'next/router';
 // components
-
 import Link from 'next/link';
 // libs
 import styled, { css } from 'styled-components';
@@ -23,6 +23,26 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
 
     color: ${({ theme, whiteColor }) => (whiteColor ? theme.colors.white : theme.colors.black600)};
 
+    ${({ isScroll, theme, isActive, whiteColor }) => {
+      if (isActive) {
+        if (isScroll && whiteColor) {
+          return css`
+            color: ${theme.colors.white};
+          `;
+        }
+
+        if (isScroll && !whiteColor) {
+          return css`
+            text-decoration: underline;
+          `;
+        }
+
+        return css`
+          color: ${theme.colors.white};
+        `;
+      }
+    }}
+
     ${({ isScroll, theme, whiteColor }) =>
       isScroll && !whiteColor
         ? css`
@@ -33,23 +53,6 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
         : css`
             &:hover {
               color: ${theme.colors.white};
-
-              ${whiteColor && 'text-decoration: underline'};
-            }
-          `}
-
-    ${({ isScroll, theme, whiteColor }) =>
-      isScroll && !whiteColor
-        ? css`
-            &:hover {
-              text-decoration: underline;
-            }
-          `
-        : css`
-            &:hover {
-              color: ${theme.colors.white};
-
-              ${whiteColor && 'text-decoration: underline'};
             }
           `}
   }

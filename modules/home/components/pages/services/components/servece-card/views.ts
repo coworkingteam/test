@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   border-radius: 20px;
-  padding: 26px 20px;
+  padding: 32px 36px;
   display: flex;
   cursor: pointer;
   width: 100%;
@@ -11,9 +11,21 @@ export const Wrapper = styled.div`
 
   background: ${({ theme }) => theme.colors.white};
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &:hover {
     opacity: 0.9;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
   }
 `;
 

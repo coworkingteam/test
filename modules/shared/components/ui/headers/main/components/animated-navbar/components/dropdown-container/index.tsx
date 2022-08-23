@@ -1,16 +1,15 @@
 import React, { Children } from 'react';
 // libs
 import { Flipped } from 'react-flip-toolkit';
-// components
-import FadeContents from '@md-ui/headers/main/components/animated-navbar/components/dropdown-container/components/fade-contents';
 // helpers
 import { updateAltBackground } from '@md-ui/headers/main/components/animated-navbar/components/dropdown-container/helpers';
 // views
 import {
-  AltBackground,
-  DropdownBackground,
+  InvertedDiv,
   DropdownRoot,
-  InvertedDiv
+  FadeContainer,
+  AltBackground,
+  DropdownBackground
 } from '@md-ui/headers/main/components/animated-navbar/components/dropdown-container/views';
 
 interface Props {
@@ -41,9 +40,9 @@ const DropdownContainer: React.FC<Props> = ({ children, direction, animatingOut,
             <InvertedDiv>
               <AltBackground ref={altBackgroundEl} duration={duration} />
               <div ref={currentDropdownEl}>
-                <FadeContents direction={direction} duration={duration} animatingOut={animatingOut}>
+                <FadeContainer direction={direction} duration={duration} animatingOut={animatingOut}>
                   {currentDropdown}
-                </FadeContents>
+                </FadeContainer>
               </div>
             </InvertedDiv>
           </Flipped>
@@ -52,9 +51,9 @@ const DropdownContainer: React.FC<Props> = ({ children, direction, animatingOut,
             <InvertedDiv absolute>
               {prevDropdown && (
                 <div ref={prevDropdownEl}>
-                  <FadeContents animatingOut direction={direction} duration={duration}>
+                  <FadeContainer animatingOut direction={direction} duration={duration}>
                     {prevDropdown}
-                  </FadeContents>
+                  </FadeContainer>
                 </div>
               )}
             </InvertedDiv>

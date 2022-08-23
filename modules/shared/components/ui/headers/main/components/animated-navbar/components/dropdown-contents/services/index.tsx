@@ -2,11 +2,11 @@ import React from 'react';
 // components
 import { MenuItem } from '@md-ui/menu-items/main';
 // views
-import { DropdownSection, Heading, LinkList, Flex, DevelopersDropdownEl } from './views';
+import { DropdownSection, Heading, LinkList, Flex, DevelopersDropdownEl } from '../views';
 // constants
 import { menuItemsRelatedHuman, menuItemsRelatedCar, menuItemsRelatedBusiness } from '@md-ui/headers/main/constants';
 
-const DevelopersDropdown = () => {
+const ServicesMenu = () => {
   return (
     <DevelopersDropdownEl>
       <DropdownSection data-first-dropdown-section>
@@ -16,6 +16,14 @@ const DevelopersDropdown = () => {
 
             <LinkList>
               {menuItemsRelatedHuman.map(({ l, h }) => (
+                <MenuItem isScroll key={l} href={h} label={l} />
+              ))}
+            </LinkList>
+
+            <Heading>Бизнес</Heading>
+
+            <LinkList>
+              {menuItemsRelatedBusiness.map(({ l, h }) => (
                 <MenuItem isScroll key={l} href={h} label={l} />
               ))}
             </LinkList>
@@ -29,19 +37,10 @@ const DevelopersDropdown = () => {
               ))}
             </LinkList>
           </div>
-          <div>
-            <Heading>Бизнес</Heading>
-
-            <LinkList>
-              {menuItemsRelatedBusiness.map(({ l, h }) => (
-                <MenuItem isScroll key={l} href={h} label={l} />
-              ))}
-            </LinkList>
-          </div>
         </Flex>
       </DropdownSection>
     </DevelopersDropdownEl>
   );
 };
 
-export default DevelopersDropdown;
+export default ServicesMenu;

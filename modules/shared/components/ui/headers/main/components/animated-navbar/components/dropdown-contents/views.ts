@@ -10,8 +10,8 @@ export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
 `;
 
-export const LinkList = styled.div<{ marginLeft?: number }>`
-  margin-left: ${({ marginLeft }) => marginLeft};
+export const LinkList = styled.div`
+  margin: 16px 0;
 
   div {
     padding: 4px 0;

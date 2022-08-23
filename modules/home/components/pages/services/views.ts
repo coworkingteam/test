@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0 0;
 
   background-color: ${({ theme }) => theme.colors.black600};
 `;
@@ -19,7 +19,7 @@ export const InnerWrapper = styled.div`
   max-width: 1450px;
   margin: 54px 0;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     flex-direction: column-reverse;
   }
 
@@ -30,7 +30,7 @@ export const InnerWrapper = styled.div`
 
 export const LeftSide = styled.div`
   width: 100%;
-  max-width: 640px;
+  max-width: 740px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,25 +41,30 @@ export const LeftSide = styled.div`
     max-height: 66px;
   }
 
-  @media (max-width: 1000px) {
+  > div {
+    padding-right: 136px;
+  }
+
+  @media (max-width: 1200px) {
     max-width: unset;
+
+    > div {
+      padding-right: 20px;
+    }
   }
 `;
 
 export const RightSide = styled.div`
   width: 100%;
   margin-left: 32px;
-  max-width: 480px;
+  max-width: 530px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     margin: 32px 0 0 0;
-  }
-
-  @media (max-width: 1000px) {
     max-width: unset;
   }
 `;
 
 export const Icon = styled.img`
-  margin-left: 16px;
+  margin-right: 16px;
 `;

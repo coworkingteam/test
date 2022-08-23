@@ -17,7 +17,7 @@ const NavbarItem: React.FC<Props> = ({ children, title, isScroll, index, onMouse
   const onMouseEnterEvent = () => onMouseEnter(index);
 
   return (
-    <NavbarItemEl onMouseEnter={onMouseEnterEvent} onFocus={onMouseEnterEvent}>
+    <NavbarItemEl isScroll={isScroll} onMouseEnter={onMouseEnterEvent} onFocus={onMouseEnterEvent}>
       <NavbarItemTitle isScroll={isScroll}>{title}</NavbarItemTitle>
       <DropdownSlot isScroll={isScroll}>{children}</DropdownSlot>
     </NavbarItemEl>
