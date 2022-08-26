@@ -33,6 +33,8 @@ const sliderSetting = {
     {
       breakpoint: 768,
       settings: {
+        centerMode: true,
+        centerPadding: '30px',
         slidesToShow: 1,
         slidesToScroll: 1
       }
