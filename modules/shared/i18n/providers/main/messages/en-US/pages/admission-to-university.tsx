@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Admission to the University',
     button: {
-      title: 'Получить карту',
+      title: 'Apply for a high school',
       onClick: () => {}
     }
   },
@@ -58,8 +58,8 @@ export default {
         content: '7-14 days introductory campaign'
       },
       price: {
-        title: 'Price:',
-        content: 'null'
+        title: 'Estimated costs:',
+        content: 'PLN 600-6000 per semester\n' + '150-500 PLN enrolling fee\n' + 'PLN 14-18 legitimation fee\n'
       }
     },
     rightSide: {
@@ -71,7 +71,7 @@ export default {
           'The effectiveness of European higher education has been proved by many years of practice and achieved by a revised system of education, a huge selection of specialties and teachers with extensive subject experience. In addition, student status also opens up a whole range of opportunities from discounts on travel to participation in international exchange programs, as well as employment in well-known companies within the framework of practices\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Apply for a high school',
         onClick: () => {}
       }
     }

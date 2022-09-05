@@ -2,14 +2,14 @@ export default {
   welcome: {
     title: 'Zmiana prawa jazdy na polskie dla obcokrajowców',
     button: {
-      title: 'ROZPOCZNIJ',
+      title: 'Zamienić prawko',
       onClick: () => {}
     }
   },
 
   serviceRegistrationFAQData: [
     {
-      title: 'Jak złożyć podanie o przerobieniu prawa jazdy na polskie?',
+      title: 'Jak złożyć podanie o przerobieniu prawa jazdy na polskie ?',
       content:
         '- Wypełnij formularz wniosku o zmianę prawa jazdy. Można go otrzymać w urzędzie odpowiednim do adresu zameldowania lub pobrać z jego oficjalnej strony internetowej\n' +
         '- Podaj pakiet dokumentów wraz z formularzem i wszystkimi opłatami do swojego inspektora okręgowego. Zamiast swojego prawa jazdy otrzymasz tymczasowe, ważne do momentu otrzymania przerobionego\n' +
@@ -40,17 +40,15 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Złożenie podania:',
-        content: 'do 3 dni roboczych'
-      },
-      registration: {
-        title: 'Czas trwania:',
-        content: 'od 30 do 50 dni roboczych od momentu złożenia do momentu otrzymania'
+        title: 'Przybliżone terminy:',
+        content:
+          'Złożenie podania do 3 dni roboczych\n' +
+          'Od 30 do 50 dni roboczych od momentu złożenia do momentu otrzymania'
       },
       price: {
         title: 'Cena usługi:',
         content: '105 zł dla kategorji C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-        reMaking: 'Wyrobienie karty: 50 złotych'
+        reMaking: 'Przerobienie karty 50 złotych'
       }
     },
     rightSide: {
@@ -60,7 +58,7 @@ export default {
           'Posiadając ważne prawo jazdy swojego kraju masz prawo do przerobienia go na europejskie, co pozwala nie tylko na swobodne poruszanie się po krajach Unii Europejskiej oraz krajów Schengen, ale także na oficjalne zatrudnienie w branży transportowej . Co nie mniej ważne, taki dokument znajduje się w polskiej ujednoliconej bazie danych, więc nie ma potrzeby trzymania go pod ręką podczas wyjazdów, co dla wielu będzie znaczącym plusem!'
       },
       button: {
-        title: 'DOWIEDZ SIĘ WIĘCEJ',
+        title: 'Zamienić prawko',
         onClick: () => {}
       }
     }

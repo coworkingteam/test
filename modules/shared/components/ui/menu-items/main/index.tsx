@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 // libs
 import styled, { css } from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 interface Props {
   href: string;
@@ -66,7 +67,9 @@ const MenuItem: React.FC<Props> = ({ href, label, isScroll, whiteColor }) => {
   return (
     <MenuI isActive={isActive} whiteColor={whiteColor} isScroll={isScroll}>
       <Link href={href} passHref>
-        <a>{label}</a>
+        <a>
+          <FormattedMessage id={label} />
+        </a>
       </Link>
     </MenuI>
   );

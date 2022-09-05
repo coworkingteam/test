@@ -2,20 +2,20 @@ export default {
   welcome: {
     title: 'Ubezpieczenie samochodu w Polsce',
     button: {
-      title: 'Załatwić ubezpieczenie',
+      title: 'Zamówić polisę',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Dlaczego warto wykupić ubezpieczenie samochodu w Polsce?',
+      title: 'Dlaczego warto wykupić ubezpieczenie samochodu w Polsce ?',
       content:
         'Przede wszystkim trzeba zrozumieć, że ubezpieczenie samochodu w Polsce jest obowiązkowe, z wyjątkiem aut kolekcjonerskich, które nie są przeznaczone do jazdy oraz aut do jazdy próbnej, które mogą nie być ubezpieczone będąc na wystawie. W przypadku wszystkich innych pojazdów, w tym motocykli, obowiązuje prawo UOC (Ubezpieczenie Odpowiedzialności Cywilnej). Brak takiego ubezpieczenia będzie skutkować karą do 6 000 zł.\n' +
         '\n' +
         'Polisą ubezpieczeniową objęte są również straty kierowcy w razie wypadków lub klęsk żywiołowych (od gradu do powodzi), których zagrożenia nawiedzają każdego kierowcę na co dzień. Naturalnie bez polisy ubezpieczeniowej nie będziesz też w stanie zarobić na transporcie, przekraczać granicy, sprzedać czy wynająć auta.\n'
     },
     {
-      title: 'Którą polisę ubezpieczeniową wybrać i na czym polega różnica?',
+      title: 'Którą polisę ubezpieczeniową wybrać i na czym polega różnica ?',
       content:
         'Istnieje kilka rodzajów polis samochodowych, a przede wszystkim mówimy o ubezpieczeniach obowiązkowych i dobrowolnych. Obowiązkowe, zwane również UOC lub po prostu OS (Ubezpieczenie Odpowiedzialności Cywilnej) obejmuje:\n' +
         '- Pokrycie finansowych konsekwencji wypadku, niezależnie od tego kto prowadził samochód\n' +
@@ -31,7 +31,7 @@ export default {
         'Elastyczność dobrowolnych polis ubezpieczeniowych pozwala na wybór pakietu w oparciu o budżet lub ilość zagrożeń, od których chcesz się ubezpieczyć\n'
     },
     {
-      title: 'Którą polisę ubezpieczeniową wybrać i na czym polega różnica?',
+      title: 'Którą polisę ubezpieczeniową wybrać i na czym polega różnica ?',
       content:
         'Przede wszystkim musisz przygotować pakiet dokumentów, bez których nie dostaniesz ubezpieczenia samochodu, są to:\n' +
         '- Dowód rejestracyjny pojazdu (główny dokument zawierający informacje o modelu samochodu, mocy silnika, pojemności zbiornika paliwa itp.)\n' +
@@ -48,13 +48,9 @@ export default {
   ],
   serviceRegistration: {
     leftSide: {
-      filingApplication: {
-        title: 'Подача заявления:',
-        content: '1 день'
-      },
       registration: {
-        title: 'Rejestracja:',
-        content: '10 minut online'
+        title: 'Przybliżone terminy:',
+        content: 'Aplikacja 10 minut online'
       },
       price: {
         title: 'Cena:',
@@ -75,7 +71,7 @@ export default {
           'Nieterminowe odnowienie polisy ubezpieczeniowej grozi właścicielowi sporą grzywną, dlatego warto wiedzieć jak i gdzie uzyskać ubezpieczenie samochodu w Polsce oraz jakie są pułapki dla obcokrajowca lub nowego właściciela samochodu\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Zamówić polisę',
         onClick: () => {}
       }
     }

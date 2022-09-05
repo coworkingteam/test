@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Tokenization (cryptocurrency integration) of business in Poland',
     button: {
-      title: 'Получить карту',
+      title: 'Launch tokens',
       onClick: () => {}
     }
   },
@@ -43,10 +43,6 @@ export default {
         title: 'Approximate terms:',
         content: '1-99 business days\n' + 'from order to launch\n'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
         title: 'Price:',
         content: '1 PLN - "Homeless" package\n' + '1000 PLN - "Thug" package\n' + '10000 PLN - "Godfather" package\n'
@@ -61,7 +57,7 @@ export default {
           "The guarantor of the conversion of tokens into funds is the company itself, so their rate will not depend on the world market, but only on the company's assets value. Although, often even successful entrepreneurs are not always able to deal with the introduction of cryptocurrencies into their business on their own, so we offer a wide range of services from integration to full support and advice on further optimization\n"
       },
       button: {
-        title: 'Заменить права',
+        title: 'Launch tokens',
         onClick: () => {}
       }
     }

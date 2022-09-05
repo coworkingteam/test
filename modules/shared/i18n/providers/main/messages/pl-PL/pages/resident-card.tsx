@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Pomożemy wypełnić wniosek i przyspieszymy otrzymanie karty pobytu',
     button: {
-      title: 'Zdobądź kartę',
+      title: 'Otrzymać kartę',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Jak przebiega proces uzyskiwania pozwolenia na pobyt?',
+      title: 'Jak przebiega proces uzyskiwania pozwolenia na pobyt ?',
       content:
         'Proces uzyskania karty pobytu składa się z kilku etapów:\n' +
         '- Przede wszystkim jest to złożenie niezbędnych dokumentów wraz z wypełnionym formularzem zgłoszeniowym, w zależności od rodzaju dokumentów na podstawie których ubiegasz się o kartę:\n' +
@@ -20,7 +20,7 @@ export default {
         '- Z różnych powodów może się zdarzyć, że dostaniesz negatywną decyzję, ale udane odwołanie i tak pozwoli Ci uzyskać dokument bez rozpoczynania procesu od samego początku\n'
     },
     {
-      title: 'Dlaczego występują opóźnienia i jak ich uniknąć?',
+      title: 'Dlaczego występują opóźnienia i jak ich uniknąć ?',
       content:
         'Pierwszą trudnością jest długa lista oczekujących - w zależności od pory roku wirtualna recepcja może być zajęta nawet na 2 miesiące do przodu\n' +
         '- Rozwiązaniem może być zarejestrowanie się w kolejce jeszcze przed zebraniem wszystkich dokumentów. Czas oczekiwania na wizytę wystarczy na zdobycie niezbędnych zaświadczeń, a cenne tygodnie zostaną już zaoszczędzone\n' +
@@ -33,7 +33,7 @@ export default {
         '- Najlepszą rzeczą, jaką możesz zrobić podczas oczekiwania na swoją kartę, jest regularne sprawdzanie skrzynki pocztowej, zarówno fizycznej, jak i elektronicznej, aby odpowiedzieć tak szybko, jak to możliwe, i nie szczędząc wysiłku, aby jak najszybciej otrzymać i wysłać niezbędne dokumenty\n'
     },
     {
-      title: 'Jakie dokumenty i dane są potrzebne do złożenia wniosku?',
+      title: 'Jakie dokumenty i dane są potrzebne do złożenia wniosku ?',
       content:
         'Liczba i rodzaj niektórych dokumentów do uzyskania karty pobytu zależy od jej rodzaju (pobyt tymczasowy, służbowy, studencki, długoterminowy), ale generalnie lista jest taka sama dla każdego:\n' +
         '\n' +
@@ -61,14 +61,9 @@ export default {
           '\n' +
           '14 dni na wniosek o odwołanie decyzji w przypadku odmowy\n'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
-        title: 'Cтоимость:',
-        content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-        reMaking: 'За перевыпуск карты 50 зл'
+        title: 'Wartość usługi:',
+        content: '50 zł wyrobienie karty plastikowej'
       }
     },
     rightSide: {
@@ -80,7 +75,7 @@ export default {
           'Bez względu na to, na jakim etapie jest Twoja sprawa, nasz zespół specjaliści pomogą Ci nie tylko znaleźć i wyeliminować błędy w celu przyspieszenia procesu decyzyjnego, ale także poprawnie złożyć odwołanie w przypadku odmowy\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Otrzymać kartę',
         onClick: () => {}
       }
     }

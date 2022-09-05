@@ -17,16 +17,9 @@ const DATA: IServiceData = {
         titleID: 'longTermResidencePermit.serviceRegistration.leftSide.filingApplication.title',
         contentID: 'longTermResidencePermit.serviceRegistration.leftSide.filingApplication.content'
       },
-      registration: {
-        titleID: 'longTermResidencePermit.serviceRegistration.leftSide.registration.title',
-        contentID: 'longTermResidencePermit.serviceRegistration.leftSide.registration.content'
-      },
       price: {
         titleID: 'longTermResidencePermit.serviceRegistration.leftSide.price.title',
-        contentsIDS: [
-          'longTermResidencePermit.serviceRegistration.leftSide.price.content',
-          'longTermResidencePermit.serviceRegistration.leftSide.price.reMaking'
-        ]
+        contentsIDS: ['longTermResidencePermit.serviceRegistration.leftSide.price.content']
       }
     },
     rightSide: {

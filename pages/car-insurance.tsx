@@ -13,10 +13,6 @@ const DATA: IServiceData = {
   },
   serviceRegistrationData: {
     leftSide: {
-      filingApplication: {
-        titleID: 'carInsurance.serviceRegistration.leftSide.filingApplication.title',
-        contentID: 'carInsurance.serviceRegistration.leftSide.filingApplication.content'
-      },
       registration: {
         titleID: 'carInsurance.serviceRegistration.leftSide.registration.title',
         contentID: 'carInsurance.serviceRegistration.leftSide.registration.content'

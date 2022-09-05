@@ -191,7 +191,7 @@ class MiniGl {
             if (uniform.excludeFrom !== type) {
               if (uniform.type === 'array') {
                 return (
-                  uniform.value[0].getDeclaration(name, type, uniform.value.length) +
+                  uniform.value[0]?.getDeclaration(name, type, uniform.value.length) +
                   `\nconst int ${name}_length = ${uniform.value.length};`
                 );
               }

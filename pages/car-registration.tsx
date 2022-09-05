@@ -17,10 +17,6 @@ const DATA: IServiceData = {
         titleID: 'carRegistration.serviceRegistration.leftSide.filingApplication.title',
         contentID: 'carRegistration.serviceRegistration.leftSide.filingApplication.content'
       },
-      registration: {
-        titleID: 'carRegistration.serviceRegistration.leftSide.registration.title',
-        contentID: 'carRegistration.serviceRegistration.leftSide.registration.content'
-      },
       price: {
         titleID: 'carRegistration.serviceRegistration.leftSide.price.title',
         contentsIDS: [

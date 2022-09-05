@@ -1,25 +1,25 @@
 export default {
-  welcome: {
-    title: 'Obtaining and extending the validity of the passport of Ukraine without leaving Poland',
-    button: {
-      title: 'Оформить загран',
-      onClick: () => {}
-    }
-  },
-
   tabs: [
     {
+      welcome: {
+        title: 'Obtaining and extending the validity of the passport of Ukraine without leaving Poland',
+        button: {
+          title: 'Get Your passport',
+          onClick: () => {}
+        }
+      },
+
       title: 'Obtaining',
       serviceRegistrationFAQData: [
         {
-          title: 'Where can I get a passport and why is it needed?',
+          title: 'Where can I get a passport and why is it needed ?',
           content:
             'Only consulates have the legal right to issue foreign documents, and to obtain a Ukrainian passport, you should contact the Ukrainian consulate in Warsaw, Krakow, Lublin or Gdansk. Up-to-date information about queues, opening hours and current pick-up times can be found on the official websites of these consulates\n' +
             '\n' +
             'A passport is not only a document, but also an identity confirmation that must be provided at banks, government agencies, the police, when applying for a job and renting a home, so its expiration can lead to difficulties\n'
         },
         {
-          title: 'How to get a Ukrainian passport in Poland?',
+          title: 'How to get a Ukrainian passport in Poland ?',
           content:
             'In essence, the procedure looks exactly the same as in Ukraine, the minimal bundle of documents for applying for a passport includes:\n' +
             '- Internal passport (ID-card)\n' +
@@ -34,7 +34,7 @@ export default {
             '- Lack of free pages for visas and stamps\n'
         },
         {
-          title: 'How much will it cost to get a passport?',
+          title: 'How much will it cost to get a passport ?',
           content:
             'As mentioned earlier, the cost of the procedure in Poland is much higher than in Ukraine, so you should be prepared to pay the following consular fees:\n' +
             '- PLN 81 for submitting your application for consideration\n' +
@@ -48,11 +48,7 @@ export default {
         leftSide: {
           filingApplication: {
             title: 'Applying:',
-            content: '3-7 working days'
-          },
-          registration: {
-            title: 'Procedure:',
-            content: 'From application to receipt 50-70 working days'
+            content: '3-7 working days\n' + '\n' + 'From application to receipt 50-70 working days\n'
           },
           price: {
             title: 'Price:',
@@ -69,13 +65,21 @@ export default {
               'As you probably know, even if you have a residence permit, presenting a passport is mandatory for many institutions, so Ukrainian consulates provide a service for issuing biometric passports. The cost of such a procedure will be higher, as well as the waiting time, however, more and more people turn to consulates for this purpose\n'
           },
           button: {
-            title: 'Заменить права',
+            title: 'Get Your passport',
             onClick: () => {}
           }
         }
       }
     },
     {
+      welcome: {
+        title: 'Obtaining and extending the validity of the passport of Ukraine without leaving Poland',
+        button: {
+          title: 'Extend the expiration date',
+          onClick: () => {}
+        }
+      },
+
       title: 'Extending',
 
       serviceRegistrationFAQData: [
@@ -115,17 +119,12 @@ export default {
       serviceRegistration: {
         leftSide: {
           filingApplication: {
-            title: 'Registration:',
+            title: 'Approximate terms:',
             content: 'up to 7 business days\n' + 'Document can be received on the day of applying\n'
           },
-          registration: {
-            title: 'Регистрация:',
-            content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-          },
           price: {
-            title: 'Cтоимость:',
-            content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-            reMaking: 'За перевыпуск карты 50 зл'
+            title: 'Estimated costs:',
+            content: 'Depends on each consulate'
           }
         },
         rightSide: {
@@ -137,7 +136,7 @@ export default {
               'Fortunately for those who faced such a problem, the Ukrainian passport can be reissued without leaving Poland. The process of applying for such a service is not difficult, but keep in mind that the renewal of the passport expires in at least 3 months.\n'
           },
           button: {
-            title: 'Заменить права',
+            title: 'Extend the expiration date',
             onClick: () => {}
           }
         }

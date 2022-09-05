@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Licencja taxi na przewóz osób',
     button: {
-      title: 'Uzyskaj licencję',
+      title: 'Otrzymać licencję',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Jakie dokumenty są potrzebne do uzyskania licencji?',
+      title: 'Jakie dokumenty są potrzebne do uzyskania licencji ?',
       content:
         'Aby uzyskać licencję na przewóz osób taksówką, należy złożyć pakiet dokumentów w Wydziale Komunikacji i Transportu Starostwa Powiatowego. Pakiet ten musi zawierać:\n' +
         ' - Bezpośrednio samą ankietę aplikacyjną w której muszą być podane:\n' +
@@ -27,7 +27,7 @@ export default {
         ' - Pełnomocnictwo do czynności administracyjnych (jeżeli firma jest zarejestrowana na osobę trzecią) i potwierdzenie zapłaty za jego wystawienie\n'
     },
     {
-      title: 'Na jak długo wydawana jest licencja i ile kosztuje?',
+      title: 'Na jak długo wydawana jest licencja i ile kosztuje ?',
       content:
         'Już na etapie wypełniania wniosku można wybrać termin udzielenia licencji – od 2 do 50 lat. Wysokość opłaty i podatku (10%) za każdy pojazd będzie również zależeć od tego okresu:\n' +
         ' - 320 zł - od 2 do 15 lat + 35,20 zł za samochód + wypis 3,20 zł\n' +
@@ -43,7 +43,7 @@ export default {
         'Za dokonanie późniejszych zmian w treści licencji pobiera się opłatę w wysokości 10% opłaty za wydanie koncesji, a za wydanie wypisu po dokonywaniu zmian cena wynosi 5% opłaty za wydanie licencji\n'
     },
     {
-      title: 'Co może się nie udać i jak tego uniknąć?',
+      title: 'Co może się nie udać i jak tego uniknąć ?',
       content:
         'Najwięcej trudności pojawia się na etapie składania pakietu dokumentów, gdyż w razie błędów, niezgodności lub braku jakiegokolwiek zaświadczenia urząd daje tylko 7 dni na rozwiązanie problemu, po czym wniosek traci ważność i pieniądze nie zostaną zwrócone\n' +
         '- Aby tego uniknąć, musisz sprawdzać pocztę w pierwszych dniach po złożeniu wniosku i działać szybko lub skonsultować się z naszymi ekspertami, aby uniknąć wszelkich niespójności\n' +
@@ -61,12 +61,8 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Aplikacja:',
-        content: '1 dzień roboczy'
-      },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
+        title: 'Przybliżone terminy:',
+        content: 'Aplikacja 1 dzień roboczy'
       },
       price: {
         title: 'Cena:',
@@ -78,12 +74,14 @@ export default {
     },
     rightSide: {
       description: {
-        title: 'Описание услуги:',
+        title: 'Opis usługi:',
         content:
-          'Имея действующее водительское удостоверение Вашей страны у вас есть право переоформить его на европейское, позволяющее не только свободно перемещаться по странам Евросоюза и Шенгена также официально трудоустраиваться в сфере транспорта. Что не менее важно, такой документ занесён в международную базу, а значит нет необходимости держать его под рукой во время поездок, что для многих будет весомым плюсом!'
+          'W warunkach nowoczesnej urbanistyki prowadzenie samochodu dla wielu wiąże się z wieloma niedogodnościami, czy to z poszukiwaniem miejsca parkingowego, czy z ciągłymi wydatkami związanymi z utrzymaniem auta, dlatego z roku na rok rośnie zapotrzebowanie na usługi taksówkarskie, co przyciąga coraz więcej przedsiębiorców\n' +
+          '\n' +
+          'Niestety uzyskanie licencji taksówkowej to dość skomplikowany i czasochłonny proces, ze względu na konieczność uzyskania wielu dokumentów, dlatego oferujemy kompleksowe wsparcie i pomoc na wszystkich etapach procedury\n'
       },
       button: {
-        title: 'MORE INFORMATION',
+        title: 'Otrzymać licencję',
         onClick: () => {}
       }
     }

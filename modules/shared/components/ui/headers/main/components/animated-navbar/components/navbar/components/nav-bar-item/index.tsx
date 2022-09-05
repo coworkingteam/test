@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // views
 import {
   NavbarItemTitle,
@@ -18,7 +20,9 @@ const NavbarItem: React.FC<Props> = ({ children, title, isScroll, index, onMouse
 
   return (
     <NavbarItemEl isScroll={isScroll} onMouseEnter={onMouseEnterEvent} onFocus={onMouseEnterEvent}>
-      <NavbarItemTitle isScroll={isScroll}>{title}</NavbarItemTitle>
+      <NavbarItemTitle isScroll={isScroll}>
+        <FormattedMessage id={title} />
+      </NavbarItemTitle>
       <DropdownSlot isScroll={isScroll}>{children}</DropdownSlot>
     </NavbarItemEl>
   );

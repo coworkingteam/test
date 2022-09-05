@@ -1,14 +1,14 @@
 export default {
   welcome: {
-    title: 'Registration of a long-term residence permit in Poland',
+    title: 'Acquiring a long-term residence permit in Poland',
     button: {
-      title: 'Получить карту',
+      title: 'Get a residence permit',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Which way can I get a residence permit in Poland?',
+      title: 'Which way can I get a residence permit in Poland ?',
       content:
         'A residence permit in Poland can be obtained based on several factors, depending on your purpose of stay in the country, and a document confirming this purpose will be the main one when applying. You can get a card for the following reasons:\n' +
         '\n' +
@@ -23,7 +23,7 @@ export default {
         '- Family reunion. Not the most common way to get a residence permit, but if your parent, relative or child is an EU citizen, then upon providing a certificate confirming kinship, you can get a card for a period of 5 to 10 years\n'
     },
     {
-      title: 'What documents are needed to apply?',
+      title: 'What documents are needed to apply ?',
       content:
         'The number and type of documents for obtaining a citizen’s card depends on its type (temporary, work, student, long-term), but the core bundle remains unchanged:\n' +
         '\n' +
@@ -38,7 +38,7 @@ export default {
         'Most certificates and documents are not difficult to obtain, however, our experts guarantee all possible assistance in obtaining and processing them. A complete list of documents for your case can be found at on the official website of the consulate or by calling our hotline\n'
     },
     {
-      title: 'What is the card issue term and what does it depend on?',
+      title: 'What is the card issue term and what does it depend on ?',
       content:
         'For each reason for staying in Poland, there are recommended periods for a residence permit, but it is important to remember that the final decision remains with the consul, and it depends only on the specific case. For example, in the case of obtaining a card for study a year before its completion, it is unlikely that it will be possible to obtain it for more than a year. You cannot influence this decision, but the end of the term of the received card is not yet a signal to pack the luggage\n' +
         '\n' +
@@ -50,25 +50,12 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Примерные сроки:',
-        content:
-          '7-30 дней очередь на подачу заявления\n' +
-          '\n' +
-          '14 дней срок на подачу недостающих или\n' +
-          'дополнительных бумаг\n' +
-          '\n' +
-          '90 дней - средний срок для дела о выдаче карты\n' +
-          '\n' +
-          '14 дней на составление и отправку апелляции\n'
-      },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
+        title: 'Approximate terms:',
+        content: '60-90 days virtual queue\n' + 'The date for issuing the decision is individual\n'
       },
       price: {
-        title: 'Cтоимость:',
-        content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-        reMaking: 'За перевыпуск карты 50 зл'
+        title: 'Estimated costs:',
+        content: 'PLN 50 for issuing a plastic card'
       }
     },
     rightSide: {
@@ -80,7 +67,7 @@ export default {
           'It is difficult to call this process exhaustingly hard, but there is no doubt about its duration and complexity. It may seem especially difficult for newcomers, whose level of language skills and lack of bureaucratic experience only interferes, which is why it is most reliable to contact our team, whose experience and professionalism will help you get a residence permit without unnecessary difficulties!\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Get a residence permit',
         onClick: () => {}
       }
     }

@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Odprawa celna samochodu w Polsce',
     button: {
-      title: 'Получить карту',
+      title: 'Odprawić auto',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Co jest potrzebne do odprawy celnej samochodu w Polsce?',
+      title: 'Co jest potrzebne do odprawy celnej samochodu w Polsce ?',
       content:
         'Przede wszystkim należy przejść wstępny przegląd techniczny, gdyż kupując samochód z innego kraju (zwłaszcza z USA) jego wyposażenie może nie spełniać wymagań polskich komisji. Bardziej szczegółowe wymagania można znaleźć na oficjalnej stronie Służby Celnej lub Administracji Drogowej\n' +
         '\n' +
@@ -19,7 +19,7 @@ export default {
         'Oprócz dokumentów związanych z samochodem, Twoje również powinny być w porządku. Należy pamiętać, że tylko obywatel lub cudzoziemiec, który ma wszelkie podstawy prawne do przebywania w kraju i przekraczania jego granic, może dokonać odprawy celnej samochodu\n'
     },
     {
-      title: 'Jak przebiega procedura i jak długo trwa?',
+      title: 'Jak przebiega procedura i jak długo trwa ?',
       content:
         'Gdy dokumenty będą już zebrane, należy udać się do Urzędu Celnego i opłacić wszystkie należne akcyzy i cła, a z potwierdzeniem zapłaty i pakietem dokumentów można udać się do Urzędu Miasta\n' +
         '\n' +
@@ -28,7 +28,7 @@ export default {
         'Po wypełnieniu wszystkich formularzy należy udać się do inspektora na wizytę (sposób rejestracji zależy od konkretnego oddziału) i dostarczyć wszystkie niezbędne dokumenty, po czym w przypadku braku błędów i niespójności otrzymasz tymczasowy dowód rejestracyjny, komplet naklejek i tablicy na miejscu. W ciągu 30 dni od złożenia wniosku zostanie wyznaczona data otrzymania stałego dowodu rejestracyjnego\n'
     },
     {
-      title: 'Jakie są opłaty akcyzowe i cła za odprawę celną?',
+      title: 'Jakie są opłaty akcyzowe i cła za odprawę celną ?',
       content:
         'Aby uzyskać wyczerpujące wyjaśnienie wszystkich podatków i rodzajów opłat za pojazdy przemysłowe i specjalistyczne, możesz skontaktować się ze służbą celną, ale w przypadku samochodów osobowych obowiązują następujące akcyzy i podatki:\n' +
         '\n' +
@@ -69,7 +69,7 @@ export default {
           'Ogarnięcie dokumentów do przewozu samochodu do krajów byłego WNP zajmuje dużo czasu i składa się z kilku etapów, a jednym z nich jest odprawa celna. Ten proces nie jest najłatwiejszy i nie najszybszy, ale nawet biorąc pod uwagę jego złożoność i koszt, oszczędność pieniędzy i bogactwo wyboru w pełni uzasadnia wysiłek\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Odprawić auto',
         onClick: () => {}
       }
     }

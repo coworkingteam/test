@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // components
 import { MenuItem } from '@md-ui/menu-items/main';
 // views
@@ -12,7 +14,9 @@ const ServicesMenu = () => {
       <DropdownSection data-first-dropdown-section>
         <Flex>
           <div>
-            <Heading>Услуги</Heading>
+            <Heading>
+              <FormattedMessage id='menu.services.title' />
+            </Heading>
 
             <LinkList>
               {menuItemsRelatedHuman.map(({ l, h }) => (
@@ -20,7 +24,9 @@ const ServicesMenu = () => {
               ))}
             </LinkList>
 
-            <Heading>Бизнес</Heading>
+            <Heading>
+              <FormattedMessage id='menu.services.categories.forBusiness.title' />
+            </Heading>
 
             <LinkList>
               {menuItemsRelatedBusiness.map(({ l, h }) => (
@@ -29,7 +35,9 @@ const ServicesMenu = () => {
             </LinkList>
           </div>
           <div>
-            <Heading>Услуги для машини</Heading>
+            <Heading>
+              <FormattedMessage id='menu.services.categories.servicesForDrivers.title' />
+            </Heading>
 
             <LinkList>
               {menuItemsRelatedCar.map(({ l, h }) => (

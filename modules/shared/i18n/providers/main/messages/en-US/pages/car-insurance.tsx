@@ -2,20 +2,20 @@ export default {
   welcome: {
     title: 'Car insurance in Poland',
     button: {
-      title: 'Załatwić ubezpieczenie',
+      title: 'Get an insurance',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Why do You need car insurance in Poland?',
+      title: 'Why do You need car insurance in Poland ?',
       content:
         'First of all, you need to understand that car insurance in Poland is mandatory, with the exception of vintage collectible cars that are not intended for driving and cars for a test drive, which may not be insured while being exhibited. For all other vehicles, including motorcycles, the UOC (Ubezpieczenie Odpowiedzialności Cywilnej) law applies. Lack of such insurance will result in a fine of up to PLN 6,000.\n' +
         '\n' +
         'The insurance policy also covers the driver’s financial losses in the event of an accident or natural disasters (from hail to floods), the risks of which haunt every driver daily. Naturally, without an insurance policy, you will also not be able to earn money on your transport, cross borders, sell or rent your car.\n'
     },
     {
-      title: 'Which insurance policy to choose and what is the difference?',
+      title: 'Which insurance policy to choose and what is the difference ?',
       content:
         'There are several types of car insurance policies, and above all, we are talking about mandatory and optional insurance. Mandatory, also known as UOC (Ubiezpieczenie Odpowiedzialności Cywilnej) or simply OC covers:\n' +
         '- Financial consequences of an accident, regardless of who was driving the vehicle at the moment of the accident\n' +
@@ -31,7 +31,7 @@ export default {
         'The flexibility of the optional insurance policies allows you to choose a package based on the budget or the number of threats you want to insure against\n'
     },
     {
-      title: 'What documents are needed for car insurance?',
+      title: 'What documents are needed for car insurance ?',
       content:
         'First of all, you need to prepare a bundle of documents without which you will be unable to apply for insurance. The list include:\n' +
         '- Vehicle registration certificate (the main document containing information about the car model, engine power, fuel tank capacity, etc.)\n' +
@@ -47,13 +47,9 @@ export default {
   ],
   serviceRegistration: {
     leftSide: {
-      filingApplication: {
-        title: 'Applying:',
-        content: '1 day'
-      },
       registration: {
-        title: 'Registration:',
-        content: '10 minutes online'
+        title: 'Approximate terms:',
+        content: 'Registration 10 minutes online'
       },
       price: {
         title: 'Estimated price:',
@@ -70,7 +66,7 @@ export default {
           'For an untimely renewal of the insurance policy, each car owner faces a considerable fine, so it is important to know how and where to get car insurance in Poland, and what are the pitfalls for a foreigner or a new car owner.\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Get an insurance',
         onClick: () => {}
       }
     }

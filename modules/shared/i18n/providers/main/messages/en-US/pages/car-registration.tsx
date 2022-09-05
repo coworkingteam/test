@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Car registration in Poland',
     button: {
-      title: 'Получить карту',
+      title: 'Register a vehicle',
       onClick: () => {}
     }
   },
@@ -59,10 +59,6 @@ export default {
         title: 'Approximate terms:',
         content: 'Up to 30 days from application submission to receipt'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
         title: 'Service cost:',
         content:
@@ -81,7 +77,7 @@ export default {
           'The second tempting factor for buying a car in Europe is its price, since the principle of transport taxation here is very financially pleasing. The last obstacle before becoming a happy owner of the shiny Mercedes is its registration, so our team will be happy to take over this process so that you can take the wheel as soon as possible\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Register a vehicle',
         onClick: () => {}
       }
     }

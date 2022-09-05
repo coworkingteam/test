@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Car deregistration in Poland',
     button: {
-      title: 'Получить карту',
+      title: 'Deregister a car',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'How and where should I deregister a car?',
+      title: 'How and where should I deregister a car ?',
       content:
         "First of all, you need to contact the city municipal institution (Urząd Miejski) at the place of the car’s registration, preferably already having all the necessary documents with you. Forms such as de-registration application and personal data usage agreement can be obtained locally or pre-downloaded and printed. Depending on the city, registration can be done online or on a first-come, first-served basis to the inspector's window\n" +
         '\n' +
@@ -17,7 +17,7 @@ export default {
         'Replacing a registration certificate rarely lasts longer than 30 days, so it’s worth checking your email inbox so you don’t miss the date you receive it\n'
     },
     {
-      title: 'What documents are required?',
+      title: 'What documents are required ?',
       content:
         'It is advisable to come to the inspector being ready, which means having all necessary documents in order. These include:\n' +
         '\n' +
@@ -32,7 +32,7 @@ export default {
         'If a third party is involved in the deregistration process, you will also need to provide an appropriate power of attorney and proof of payment for its production\n'
     },
     {
-      title: 'What else do you need to remember when deregistering a vehicle?',
+      title: 'What else do you need to remember when deregistering a vehicle ?',
       content:
         'First of all, you need to determine whether there is a reason to refuse to deregister your car. There are not many possible reasons, however, the inspector will refuse your application if the list of documents does not include:\n' +
         '- Technical passport. Without it, it is impossible to legally carry out any procedure related to the vehicle\n' +
@@ -63,7 +63,7 @@ export default {
           'To implement this simple plan, you need to go through an important stage - removing the car from the register, that means deleting its data from local registers in order to further re-register it in the country of residence for the purpose of further use or sale\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Deregister a car',
         onClick: () => {}
       }
     }

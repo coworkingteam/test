@@ -17,10 +17,6 @@ const DATA: IServiceData = {
         titleID: 'businessTokenization.serviceRegistration.leftSide.filingApplication.title',
         contentID: 'businessTokenization.serviceRegistration.leftSide.filingApplication.content'
       },
-      registration: {
-        titleID: 'businessTokenization.serviceRegistration.leftSide.registration.title',
-        contentID: 'businessTokenization.serviceRegistration.leftSide.registration.content'
-      },
       price: {
         titleID: 'businessTokenization.serviceRegistration.leftSide.price.title',
         contentsIDS: ['businessTokenization.serviceRegistration.leftSide.price.content']

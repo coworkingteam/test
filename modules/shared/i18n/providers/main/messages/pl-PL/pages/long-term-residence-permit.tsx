@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Złożenie wniosku na otrzymanie karty stałego pobytu',
     button: {
-      title: 'Получить карту',
+      title: 'Otrzymać kartę pobytu',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Na jakiej podstawie mogę uzyskać zezwolenie na pobyt w Polsce?',
+      title: 'Na jakiej podstawie mogę uzyskać zezwolenie na pobyt w Polsce ?',
       content:
         'Zezwolenie na pobyt w Polsce można uzyskać opierając się na kilka czynników, w zależności od celu pobytu w kraju, kiedy dokument potwierdzający ten cel będzie głównym dokumentem przy składaniu wniosku. Kartę możesz otrzymać z następujących powodów:\n' +
         '\n' +
@@ -23,7 +23,7 @@ export default {
         '- Odzyskiwanie rodziny. Nie jest to najczęstszy sposób na uzyskanie zezwolenia na pobyt, ale jeśli Twój rodzic, krewny lub dziecko jest obywatelem UE, to po przedstawieniu zaświadczenia potwierdzającego pokrewieństwo możesz uzyskać kartę na okres od 5 do 10 lat\n'
     },
     {
-      title: 'Jakie dokumenty i dane są potrzebne do złożenia wniosku?',
+      title: 'Jakie dokumenty i dane są potrzebne do złożenia wniosku ?',
       content:
         'Liczba i rodzaj niektórych dokumentów do uzyskania karty pobytu zależy od jej rodzaju (pobyt tymczasowy, służbowy, studencki, długoterminowy), ale generalnie lista jest taka sama dla każdego:\n' +
         '\n' +
@@ -38,7 +38,7 @@ export default {
         'Większość certyfikatów i dokumentów nie jest trudna do otrzymania, jednak nasi eksperci gwarantują wszelką możliwą pomoc w ich uzyskaniu i przetwarzaniu. Pełną listę dokumentów dla Twojej sprawy znajdziesz na naszej infolinii lub na oficjalnej stronie konsulatu.\n'
     },
     {
-      title: 'Na jak długo wydawana jest karta i od czego to zależy?',
+      title: 'Na jak długo wydawana jest karta i od czego to zależy ?',
       content:
         'Dla każdego powodu pobytu w Polsce są zalecane okresy na zezwolenie na pobyt, ale należy pamiętać, że ostateczna decyzja należy do konsula i zależy ona zawsze od konkretnego przypadku. Np. w przypadku uzyskania karty pobytu na czas studiów za rok przed ich ukończeniem, jest mało prawdopodobne, aby możliwe było jej uzyskanie na dłużej niż ten pozostały rok. Nie możesz mieć wpływu na tę decyzję, ale koniec terminu otrzymanej karty nie jest jeszcze sygnałem do przeprowadzki\n' +
         '\n' +
@@ -50,25 +50,12 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Примерные сроки:',
-        content:
-          '7-30 дней очередь на подачу заявления\n' +
-          '\n' +
-          '14 дней срок на подачу недостающих или\n' +
-          'дополнительных бумаг\n' +
-          '\n' +
-          '90 дней - средний срок для дела о выдаче карты\n' +
-          '\n' +
-          '14 дней на составление и отправку апелляции\n'
-      },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
+        title: 'Przybliżone terminy:',
+        content: '60-90 dni kolejka wirtualna\n' + 'Termin wyniesienia decyzji jest indywidualny\n'
       },
       price: {
-        title: 'Cтоимость:',
-        content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-        reMaking: 'За перевыпуск карты 50 зл'
+        title: 'Cena usługi:',
+        content: '50 zł za wydanie karty plastikowej'
       }
     },
     rightSide: {
@@ -80,7 +67,7 @@ export default {
           'Trudno nazwać ten proces trudnym, ale nie ma co mówić o jego trwałości i złożoności. Szczególnie trudno może się to wydać osobom nowo przybyłym, których niski poziom znajomości języka i niuansów biurokratycznych tylko utrudnia proces, dlatego najszybszy sposób na jego skrócenie to skorzystanie się z usług naszych ekspertów dla tego że ich doświadczenie i profesjonalizm pomogą bez zbędnych trudności uzyskać zezwolenie na pobyt!\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Otrzymać kartę pobytu',
         onClick: () => {}
       }
     }

@@ -17,16 +17,9 @@ const DATA: IServiceData = {
         titleID: 'residentCard.serviceRegistration.leftSide.filingApplication.title',
         contentID: 'residentCard.serviceRegistration.leftSide.filingApplication.content'
       },
-      registration: {
-        titleID: 'residentCard.serviceRegistration.leftSide.registration.title',
-        contentID: 'residentCard.serviceRegistration.leftSide.registration.content'
-      },
       price: {
         titleID: 'residentCard.serviceRegistration.leftSide.price.title',
-        contentsIDS: [
-          'residentCard.serviceRegistration.leftSide.price.content',
-          'residentCard.serviceRegistration.leftSide.price.reMaking'
-        ]
+        contentsIDS: ['residentCard.serviceRegistration.leftSide.price.content']
       }
     },
     rightSide: {

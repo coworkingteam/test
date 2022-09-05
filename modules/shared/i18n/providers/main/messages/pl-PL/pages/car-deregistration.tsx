@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Wyrejestrowanie samochodu w Polsce',
     button: {
-      title: 'Получить карту',
+      title: 'Wyrejestruj auto',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'Jak i gdzie można wyrejestrować samochód?',
+      title: 'Jak i gdzie można wyrejestrować samochód ?',
       content:
         'Przede wszystkim należy skontaktować się z Urzędem Miejskim w miejscu rejestracji samochodu, najlepiej mając już przy sobie wszystkie niezbędne dokumenty. Formularze, takie jak wnioski o wyrejestrowanie, można uzyskać lokalnie lub wstępnie pobrać i wydrukować. W zależności od miasta wniosek można złożyć online, lub po kolejce do okienka inspektora \n' +
         '\n' +
@@ -17,7 +17,7 @@ export default {
         'Wymiana dowodu rejestracyjnego rzadko trwa dłużej niż 30 dni, dlatego warto sprawdzać swoją skrzynkę e-mail, aby nie przegapić daty jego otrzymania\n'
     },
     {
-      title: 'Jakie dokumenty są do tego potrzebne?',
+      title: 'Jakie dokumenty są do tego potrzebne ?',
       content:
         'Na spotkanie z inspektorem warto przyjść w pełnej gotowości, co oznacza zebranie oraz prawidłowe uzupełnienie wszystkich niezbędnych dokumentów. Obejmują one:\n' +
         '\n' +
@@ -32,7 +32,7 @@ export default {
         'Jeśli w proces rejestracji zaangażowana jest osoba trzecia, konieczne będzie również przedstawienie odpowiedniego pełnomocnictwa i dowodu zapłaty za jego wystawienie\n'
     },
     {
-      title: 'O czym jeszcze należy pamiętać przy wyrejestrowaniu pojazdu?',
+      title: 'O czym jeszcze należy pamiętać przy wyrejestrowaniu pojazdu ?',
       content:
         'Przede wszystkim musisz ustalić, czy istnieje powód do odmowy wyrejestrowania Twojego samochodu. Powodów jest niewiele, jednak inspektor odmówi, jeśli na liście dokumentów nie znajdzie się:\n' +
         '- Paszport techniczny. Bez niego niemożliwe jest legalne przeprowadzenie jakiejkolwiek procedury związanej z pojazdem\n' +
@@ -63,7 +63,7 @@ export default {
           'Aby zrealizować ten prosty plan, trzeba przejść przez ważny etap – wykreślenie samochodu z ewidencji, czyli wyrejestrowanie go z lokalnych rejestrów dla dalniejszego zarejestrowania go w kraju zamieszkania w celu dalszego użytkowania lub sprzedaży\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Wyrejestruj auto',
         onClick: () => {}
       }
     }

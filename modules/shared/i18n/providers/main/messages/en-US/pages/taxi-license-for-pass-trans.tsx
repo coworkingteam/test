@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Taxi license for passenger transporting',
     button: {
-      title: 'Получить лицензию',
+      title: 'Get the license',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'What documents are needed to obtain a license?',
+      title: 'What documents are needed to obtain a license ?',
       content:
         'To obtain a license for passenger transportation you will need to submit a bundle of documents to the public transport department of the municipal government (Wydział Komunikacji i Transportu Starostwa Powiatowego). This bundle must include:\n' +
         '- The application form itself, including:\n' +
@@ -27,7 +27,7 @@ export default {
         '- Power of attorney for administrative activities (if the license is being issued to a third party) and confirmation of payment for its issuance\n'
     },
     {
-      title: 'How long is a license issued for and how much does it cost?',
+      title: 'How long is a license issued for and how much does it cost ?',
       content:
         'At the stage of filling out the application form, you can choose the term for granting a license - from 2 to 50 years. The amount of the fee and tax (10%) for each vehicle will also depend on this period:\n' +
         ' - PLN 320 - from 2 to 15 years + PLN 35.20 per car + license extract PLN 3.20\n' +
@@ -43,7 +43,7 @@ export default {
         'For changing a license, a fee of 10% of the license price is charged, and for issuing an extract from a license when changes are made to it, a fee of 5% is charged\n'
     },
     {
-      title: 'What can go wrong and how to prevent it?',
+      title: 'What can go wrong and how to prevent it ?',
       content:
         'Most of the difficulties arise at the stage of submitting a bundle of documents, since in case of errors, inconsistencies or the absence of any important paper, the institution gives only 7 days to resolve the problem, after which the application is no longer valid and the money will not be returned\n' +
         '- To avoid this, you need to check the mail in the first days after submitting the application and act promptly, or consult with our experts to avoid any inconsistencies\n' +
@@ -61,12 +61,8 @@ export default {
   serviceRegistration: {
     leftSide: {
       filingApplication: {
-        title: 'Applying:',
-        content: '1 working day'
-      },
-      registration: {
-        title: 'Регистрация:',
-        content: 'до 18 рабочих дней'
+        title: 'Approximate terms:',
+        content: 'Applying in 1 working day'
       },
       price: {
         title: 'Price:',
@@ -85,7 +81,7 @@ export default {
           'Unfortunately, obtaining a taxi license is a rather complicated and time-consuming process, due to the need to obtain dozens of documents, which is why we offer comprehensive support and assistance at all stages of the procedure\n'
       },
       button: {
-        title: 'Получить лицензию',
+        title: 'Get the license',
         onClick: () => {}
       }
     }

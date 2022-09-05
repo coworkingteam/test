@@ -1,25 +1,25 @@
 export default {
-  welcome: {
-    title: 'Uzyskanie i odnowienie okresu ważności paszport zagraniczny Ukrainy bez opuszczania Polski',
-    button: {
-      title: 'Złóż wniosek o zagraniczną',
-      onClick: () => {}
-    }
-  },
-
   tabs: [
     {
+      welcome: {
+        title: 'Uzyskanie i odnowienie okresu ważności paszport zagraniczny Ukrainy bez opuszczania Polski',
+        button: {
+          title: 'Otrzymać paszport',
+          onClick: () => {}
+        }
+      },
+
       title: 'Otrzymanie',
       serviceRegistrationFAQData: [
         {
-          title: 'Gdzie mogę otrzymać paszport i dlaczego jest potrzebny?',
+          title: 'Gdzie mogę otrzymać paszport i dlaczego jest potrzebny ?',
           content:
             'Uprawnionym do wydawania zagranicznych dokumentów w kraju mogą być wyłącznie konsulaty, a w celu uzyskania ukraińskiego paszportu należy skontaktować się z konsulatem ukraińskim w Warszawie, Krakowie, Lublinie lub Gdańsku. Aktualne informacje o kolejkach, godzinach otwarcia i godzinach odbioru można znaleźć na oficjalnych stronach internetowych tych konsulatów\n' +
             '\n' +
             'Paszport to nie tylko dokument, ale także dowód osobisty, który należy przedstawić w bankach, wydiałach rządowych, policji a także przy zatrudnieniu i wynajmie mieszkania, więc jego wygaśnięcie może powodować mnóstwo trudności\n'
         },
         {
-          title: 'Jak uzyskać ukraiński paszport w Polsce?',
+          title: 'Jak uzyskać ukraiński paszport w Polsce ?',
           content:
             'Zasadniczo procedura wygląda dokładnie tak samo jak w Ukrainie, minimalny pakiet dokumentów do ubiegania się o paszport obejmuje:\n' +
             '- paszport wewnętrzny Ukraiński (dowód osobisty)\n' +
@@ -33,7 +33,7 @@ export default {
             '- Brak wolnych stron na wizy i pieczątki\n'
         },
         {
-          title: 'Ile będzie kosztować wyrobienie paszportu?',
+          title: 'Ile będzie kosztować wyrobienie paszportu ?',
           content:
             'Jak wspomniano wcześniej, koszt procedury w Polsce jest znacznie wyższy niż w Ukrainie, dlatego należy być przygotowanym do następujących opłat konsularnych:\n' +
             '- 81 zł za złożenie wniosku do rozpatrzenia\n' +
@@ -47,11 +47,7 @@ export default {
         leftSide: {
           filingApplication: {
             title: 'Przybliżone terminy:',
-            content: '3-7 dni roboczych kolejka wirtualna\n' + '50-70 dni roboczych od zgłoszenia do odbioru\n'
-          },
-          registration: {
-            title: 'Процедура:',
-            content: 'От заявки до получения 50-70 рабочих дней'
+            content: '3-7 dni roboczych kolejka wirtualna\n' + '\n' + '50-70 dni roboczych od zgłoszenia do odbioru\n'
           },
           price: {
             title: 'Cena:',
@@ -68,13 +64,21 @@ export default {
               'Jak zapewne już wiesz, nawet jeśli masz zezwolenie na pobyt, okazanie paszportu jest obowiązkowe dla wielu instytucji, dlatego konsulaty ukraińskie świadczą usługę wydawania oraz przedłużania ważności paszportów biometrycznych. Koszt takiej procedury będzie wyższy, podobnie jak czas oczekiwania, jednak coraz więcej osób zwraca się w tym celu do konsulatów.\n'
           },
           button: {
-            title: 'Заменить права',
+            title: 'Otrzymać paszport',
             onClick: () => {}
           }
         }
       }
     },
     {
+      welcome: {
+        title: 'Uzyskanie i odnowienie okresu ważności paszport zagraniczny Ukrainy bez opuszczania Polski',
+        button: {
+          title: 'Przedłużyć paszport',
+          onClick: () => {}
+        }
+      },
+
       title: 'Przedłużenie',
 
       serviceRegistrationFAQData: [
@@ -114,17 +118,12 @@ export default {
       serviceRegistration: {
         leftSide: {
           filingApplication: {
-            title: 'Rejestracja zgłoszenia:',
+            title: 'Przybliżone terminy:',
             content: 'do 7 dni roboczych\n' + 'Gotowy dokument można otrzymać w dniu złożenia wniosku\n'
           },
-          registration: {
-            title: 'Регистрация:',
-            content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-          },
           price: {
-            title: 'Cтоимость:',
-            content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-            reMaking: 'За перевыпуск карты 50 зл'
+            title: 'Cena usługi:',
+            content: 'Zależy od konkretnego konsulatu'
           }
         },
         rightSide: {
@@ -136,7 +135,7 @@ export default {
               'Na szczęście dla tych, którzy zetknęli się z takim problemem, ukraiński paszport może zostać przedłużony bez opuszczania Unii Europejskiej. Proces ubiegania się o taką usługę jest prosty, ale warto pamiętać, ponieważ przedłużeniu podlegają tylko paszporty, które wygasają za co najmniej 3 miesiące.\n'
           },
           button: {
-            title: 'Заменить права',
+            title: 'Przedłużyć paszport',
             onClick: () => {}
           }
         }

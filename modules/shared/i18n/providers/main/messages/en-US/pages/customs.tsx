@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Customs clearance of a car in Poland',
     button: {
-      title: 'Получить карту',
+      title: 'Clear a vehicle',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'What is needed for clearance of a car in Poland?',
+      title: 'What is needed for clearance of a car in Poland ?',
       content:
         'First of all, you should pass a preliminary technical inspection, since when buying a car from another country (especially the USA), some of its specifications may not meet the requirements of Polish commissions. More detailed requirements can be found on the official website of the customs service or road administration\n' +
         '\n' +
@@ -19,7 +19,7 @@ export default {
         'In addition to the documents related to the car, yours should also be in order. It should be remembered that only a EU citizen or a foreigner who has all legal grounds for being in the country and crossing its borders can clear the car through customs\n'
     },
     {
-      title: 'How is the procedure and how long does it take?',
+      title: 'How is the procedure and how long does it take ?',
       content:
         'When the documents are in proper order, you should go to the border guard office (Urząd Celny) and pay all the appropriate excises and duties, with confirmation of which and the collected bundle of documents, you can go to the city municipal institution (Urząd Miejski)\n' +
         '\n' +
@@ -28,7 +28,7 @@ export default {
         'After all the forms are filled out, you should go to the inspector for an appointment (the recording method depends on the specific department) and providing all the necessary papers, if there will be no errors and inconsistencies, you will be given a temporary registration certificate, registration document, a set of stickers and number plates on the very same day. Within 30 days after submitting the application, you will be assigned a date for receiving a permanent registration certificate\n'
     },
     {
-      title: 'What taxes and fees does customs clearance include?',
+      title: 'What taxes and fees does customs clearance include ?',
       content:
         'For a comprehensive explanation of all taxes and types of duties for cargo machinery, industrial and specialized vehicles, you can contact the customs service, but for usual cars, the following excises and taxes apply:\n' +
         '\n' +
@@ -69,7 +69,7 @@ export default {
           'Issuing of documents for transporting a car to the former CIS countries takes a lot of time and consists of several stages, and one of them is its customs clearance. This process is not the easiest and not the fastest, but despite its complexity and cost, money saving options and a variety of choice fully justifies the effort\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Clear a vehicle',
         onClick: () => {}
       }
     }

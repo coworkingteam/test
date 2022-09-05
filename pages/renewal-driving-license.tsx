@@ -17,10 +17,6 @@ const DATA: IServiceData = {
         titleID: 'renewalDrivingLicense.serviceRegistration.leftSide.filingApplication.title',
         contentID: 'renewalDrivingLicense.serviceRegistration.leftSide.filingApplication.content'
       },
-      registration: {
-        titleID: 'renewalDrivingLicense.serviceRegistration.leftSide.registration.title',
-        contentID: 'renewalDrivingLicense.serviceRegistration.leftSide.registration.content'
-      },
       price: {
         titleID: 'renewalDrivingLicense.serviceRegistration.leftSide.price.title',
         contentsIDS: [

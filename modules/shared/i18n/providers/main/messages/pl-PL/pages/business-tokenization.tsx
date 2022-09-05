@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Tokenizacja (podłączenie kryptowalut) biznesu w Polsce',
     button: {
-      title: 'Получить карту',
+      title: 'Tokenizować biznes',
       onClick: () => {}
     }
   },
@@ -26,7 +26,7 @@ export default {
         '- Tokeny zwrotu aktywów, najważniejsze i funkcjonalne. Są cyfrowym odpowiednikiem aktywu firmy, zarówno fizycznego (towar), jak i warunkowego (odpowiednik zapłaty za godzinę pracy). Analityka ruchu tych tokenów właśnie pozwala na optymalizację sprzedaży lub oszczędzanie zasobów firmy\n'
     },
     {
-      title: 'Co musisz wiedzieć o opodatkowaniu tokenów w Polsce?',
+      title: 'Co musisz wiedzieć o opodatkowaniu tokenów w Polsce ?',
       content:
         'Przede wszystkim musisz zdecydować, czy tokenizować swój biznes w Polsce, czy w innym kraju, którego ustawodawstwo jest pod tym względem bardziej elastyczne?\n' +
         '- Odpowiedź na to pytanie jest banalnie prosta: jeśli firma była zarejestrowana w Polsce i większość pracowników to polscy podatnicy (a niekoniecznie Polacy), to lepiej tokenizować tutaj, wówczas europejskie prawo zapewnia do tego prawie wszystkie niezbędne warunki\n' +
@@ -43,10 +43,6 @@ export default {
         title: 'Przybliżone terminy:',
         content: '1-99 dni roboczych\n' + 'od zamówienia do uruchomienia\n'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
         title: 'Cena:',
         content:
@@ -62,7 +58,7 @@ export default {
           'Gwarantem zamiany tokenów na fundusze jest sama firma, więc ich wartość nie będzie zależeć od ruchów rynku światowego, a jedynie od wartości aktywów firmy. Niestety, często nawet odnoszący sukcesy przedsiębiorcy nie zawsze są w stanie poradzić sobie z wprowadzeniem kryptowalut do swojego biznesu samodzielnie, dlatego oferujemy szeroki wachlarz usług od podłączenia do pełnego wsparcia i doradztwa w zakresie optymalizacji\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Tokenizować biznes',
         onClick: () => {}
       }
     }

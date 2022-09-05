@@ -2,13 +2,13 @@ export default {
   welcome: {
     title: 'Assistance with speeding up the receiving of a residence permit',
     button: {
-      title: 'Получить карту',
+      title: 'Get your card faster',
       onClick: () => {}
     }
   },
   serviceRegistrationFAQData: [
     {
-      title: 'How is the process of obtaining a residence permit?',
+      title: 'How is the process of obtaining a residence permit ?',
       content:
         'The process of obtaining a permit consists of several stages:\n' +
         '- First of all, the submission a bundle of necessary documents along with a completed application form, depending on the type of card (work, student, family)\n' +
@@ -19,7 +19,7 @@ export default {
         '- For various reasons, sometimes the submission may be rejected, but a successful appeal will still allow you to get the document without starting the process from the very beginning\n'
     },
     {
-      title: 'Why do delays occur and how to avoid them?',
+      title: 'Why do delays occur and how to avoid them ?',
       content:
         'The first real obstacle is the waiting list, depending on the season the virtual queue can be filled up to two month ahead\n' +
         '- The possible solution is to register in the queue even before collecting all the documents. The waiting period is enough to get all the papers, and precious weeks will already be saved\n' +
@@ -32,7 +32,7 @@ export default {
         'The best thing you can do while waiting for your card is to check your mailbox, both physical and electronic, more often to respond as quickly as possible, and spare no effort to receive and send the necessary papers as soon as possible\n'
     },
     {
-      title: 'How can you speed up the processing of your case?',
+      title: 'How can you speed up the processing of your case ?',
       content:
         'In addition to the points listed above, there is always a chance that the reason for the delay does not depend on you, but there are several mechanisms for such case, and if you use them correctly, the case can be easily moved forward\n' +
         '\n' +
@@ -55,14 +55,9 @@ export default {
           '\n' +
           '14 days to prepare and send the appeal\n'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
-        title: 'Cтоимость:',
-        content: 'Сбор составляет 105 зл Для категорий: C1, C, D1, D, C1+E, C+E, D1+E, D+E',
-        reMaking: 'За перевыпуск карты 50 зл'
+        title: 'Estimated costs:',
+        content: '50 PLN for a plastic card manufacturing'
       }
     },
     rightSide: {
@@ -74,7 +69,7 @@ export default {
           'No matter at what stage your case is, our team of specialists will help you not only find and eliminate errors in order to speed up the decision, but also complete a competent and timely appeal in case of a refusal\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Get your card faster',
         onClick: () => {}
       }
     }

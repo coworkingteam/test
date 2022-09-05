@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Wpis do szkoły wyższej dla obcokrajowców',
     button: {
-      title: 'Получить карту',
+      title: 'Wpisać się na uczelnię',
       onClick: () => {}
     }
   },
@@ -59,7 +59,7 @@ export default {
       },
       price: {
         title: 'Cena:',
-        content: 'null'
+        content: '600-6000 zł za semestr\n' + '150-500 zł wpisowego\n' + '14-18 zł opłaty za legitymacje\n'
       }
     },
     rightSide: {
@@ -71,7 +71,7 @@ export default {
           'Skuteczność europejskiego szkolnictwa wyższego została potwierdzona wieloletnią praktyką poprzez zrewidowany system kształcenia, ogromny wybór specjalności oraz wykładowcy z dużym doświadczeniem w swojej branży. Ponadto status studenta otwiera również mnóstwo możliwości od zniżek na podróże i transport miejski po udział w programach międzynarodowych, a także zatrudnienie w znanych firmach w ramach praktyk\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Wpisać się na uczelnię',
         onClick: () => {}
       }
     }

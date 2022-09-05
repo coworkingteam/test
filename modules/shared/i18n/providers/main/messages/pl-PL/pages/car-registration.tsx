@@ -2,7 +2,7 @@ export default {
   welcome: {
     title: 'Rejestracja samochodu w Polsce',
     button: {
-      title: 'Получить карту',
+      title: 'Zarejestrować samochód',
       onClick: () => {}
     }
   },
@@ -43,7 +43,7 @@ export default {
         'W przypadku rejestracji pojazdu na osobę trzecią, za sporządzenie pełnomocnictwa urzędowego na samochód trzeba uiścić opłatę 17 zł\n'
     },
     {
-      title: 'O czym należy pamiętać przy rejestracji samochodu?',
+      title: 'O czym należy pamiętać przy rejestracji samochodu ?',
       content:
         'Aby nie wpaść w niezręczną sytuację podczas składania wniosku, musisz upewnić się, że wszystkie dokumenty są w porządku, a rejestrowany samochód spełnia wszystkie wymagania. Przede wszystkim upewnij się, że:\n' +
         '\n' +
@@ -59,12 +59,8 @@ export default {
         title: 'Przybliżone terminy:',
         content: 'Do 30 dni od złożenia wniosku do otrzymania'
       },
-      registration: {
-        title: 'Регистрация:',
-        content: 'От заявки до перевыпуска 30 до 50 рабочих дней'
-      },
       price: {
-        title: 'Koszt usługi:',
+        title: 'Cena usługi:',
         content:
           'Do 100 zł Do rejestracji na starych numerach\n' +
           'Do 200 zł Do rejestracji na nowych numerach\n' +
@@ -81,7 +77,7 @@ export default {
           'Drugim kuszącym czynnikiem przy zakupie samochodu w Europie jest jego cena, ponieważ zasada opodatkowania transportu jest tutaj bardzo odmienna od tej, do której jesteśmy przyzwyczajeni. Ostatnią przeszkodą przed staniem się szczęśliwym posiadaczem upragnionego Mercedesa jest jego rejestracja, dlatego nasz zespół z przyjemnością przejmie ten proces, abyś mógł jak najszybciej przejąć kierownicę.\n'
       },
       button: {
-        title: 'Заменить права',
+        title: 'Zarejestrować samochód',
         onClick: () => {}
       }
     }

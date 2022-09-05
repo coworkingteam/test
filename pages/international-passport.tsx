@@ -9,9 +9,9 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     data: {
       welcome: {
         img: '/static/images/international-passport.png',
-        titleID: 'internationalPassport.welcome.title',
+        titleID: 'internationalPassport.tabs.0.welcome.title',
         button: {
-          titleID: 'internationalPassport.welcome.button.title',
+          titleID: 'internationalPassport.tabs.0.welcome.button.title',
           onClick: () => {}
         }
       },
@@ -20,10 +20,6 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
           filingApplication: {
             titleID: 'internationalPassport.tabs.0.serviceRegistration.leftSide.filingApplication.title',
             contentID: 'internationalPassport.tabs.0.serviceRegistration.leftSide.filingApplication.content'
-          },
-          registration: {
-            titleID: 'internationalPassport.tabs.0.serviceRegistration.leftSide.registration.title',
-            contentID: 'internationalPassport.tabs.0.serviceRegistration.leftSide.registration.content'
           },
           price: {
             titleID: 'internationalPassport.tabs.0.serviceRegistration.leftSide.price.title',
@@ -57,9 +53,9 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     data: {
       welcome: {
         img: '/static/images/international-passport.png',
-        titleID: 'internationalPassport.welcome.title',
+        titleID: 'internationalPassport.tabs.1.welcome.title',
         button: {
-          titleID: 'internationalPassport.welcome.button.title',
+          titleID: 'internationalPassport.tabs.1.welcome.button.title',
           onClick: () => {}
         }
       },
@@ -69,16 +65,9 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
             titleID: 'internationalPassport.tabs.1.serviceRegistration.leftSide.filingApplication.title',
             contentID: 'internationalPassport.tabs.1.serviceRegistration.leftSide.filingApplication.content'
           },
-          registration: {
-            titleID: 'internationalPassport.tabs.1.serviceRegistration.leftSide.registration.title',
-            contentID: 'internationalPassport.tabs.1.serviceRegistration.leftSide.registration.content'
-          },
           price: {
             titleID: 'internationalPassport.tabs.1.serviceRegistration.leftSide.price.title',
-            contentsIDS: [
-              'internationalPassport.tabs.1.serviceRegistration.leftSide.price.content',
-              'internationalPassport.tabs.1.serviceRegistration.leftSide.price.reMaking'
-            ]
+            contentsIDS: ['internationalPassport.tabs.1.serviceRegistration.leftSide.price.content']
           }
         },
         rightSide: {
