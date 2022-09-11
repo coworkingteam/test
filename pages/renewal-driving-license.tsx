@@ -38,6 +38,7 @@ const DATA: IServiceData = {
   },
   serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
     id: `${index}`,
+    open: index === 0,
     title: `renewalDrivingLicense.serviceRegistrationFAQData.${index}.title`,
     content: `renewalDrivingLicense.serviceRegistrationFAQData.${index}.content`
   }))

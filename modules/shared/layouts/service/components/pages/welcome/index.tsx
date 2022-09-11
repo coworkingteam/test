@@ -2,7 +2,9 @@ import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
 // components
+import Modal from '@md-ui/modal/main';
 import { Button } from '@md-ui/buttons/main';
+import Form from '@md-modules/shared/layouts/service/components/pages/welcome/components/form';
 // views
 import {
   Image,
@@ -28,34 +30,44 @@ interface Props {
   data: WelcomeData;
 }
 
-const Welcome: React.FC<Props> = ({ themeColor, data }) => (
-  <Wrapper themeColor={themeColor}>
-    <InnerWrapper>
-      <LeftSide>
-        <Title>
-          <FormattedMessage id={data?.titleID} />
-        </Title>
+const Welcome: React.FC<Props> = ({ themeColor, data }) => {
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
-        <Button onClick={data?.button?.onClick}>
-          <FormattedMessage id={data?.button?.titleID} />
-        </Button>
-      </LeftSide>
+  const toggleModal = () => setModalIsOpen((prev) => !prev);
 
-      <Image src={data?.img} />
-    </InnerWrapper>
+  return (
+    <Wrapper themeColor={themeColor}>
+      <InnerWrapper>
+        <LeftSide>
+          <Title>
+            <FormattedMessage id={data?.titleID} />
+          </Title>
 
-    <StrafeButton
-      to='hero'
-      spy={true}
-      smooth={true}
-      offset={-100}
-      duration={500}
-      activeClass='active'
-      themeColor={themeColor}
-    >
-      <ArrowDown src='/static/icons/arrow-down.svg' />
-    </StrafeButton>
-  </Wrapper>
-);
+          <Button preset='large' onClick={toggleModal}>
+            <FormattedMessage id={data?.button?.titleID} />
+          </Button>
+        </LeftSide>
+
+        <Image src={data?.img} />
+      </InnerWrapper>
+
+      <StrafeButton
+        to='hero'
+        spy={true}
+        smooth={true}
+        offset={-100}
+        duration={500}
+        activeClass='active'
+        themeColor={themeColor}
+      >
+        <ArrowDown src='/static/icons/arrow-down.svg' />
+      </StrafeButton>
+
+      <Modal maxWidth={768} closeButton title={data.titleID} isOpen={modalIsOpen} toggleModal={toggleModal}>
+        <Form />
+      </Modal>
+    </Wrapper>
+  );
+};
 
 export default Welcome;

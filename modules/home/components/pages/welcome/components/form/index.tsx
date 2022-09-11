@@ -1,8 +1,7 @@
 import React from 'react';
 // components
 import { Button } from '@md-ui/buttons/main';
-import Phone from '@md-ui/inputs/phone-input';
-import { TextField } from '@md-modules/shared/components/form/text-field';
+import { TextField, Phone } from '@md-modules/shared/components/form';
 // views
 import {
   ButtonWrapper,
@@ -31,7 +30,7 @@ const Form = () => {
       </InputWrapper>
 
       <ButtonWrapper>
-        <Button>
+        <Button preset='large'>
           Получить консультацию <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
         </Button>
       </ButtonWrapper>

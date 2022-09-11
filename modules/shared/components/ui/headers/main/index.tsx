@@ -18,7 +18,7 @@ import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
 
 const BUTTON_STYLES = { mr: 26 };
-const MOBILE_MENU_DATA = menuItemsRelatedCar.concat(menuItemsRelatedHuman, menuItemsRelatedBusiness);
+const MOBILE_MENU_DATA = menuItemsRelatedHuman.concat(menuItemsRelatedCar, menuItemsRelatedBusiness);
 
 const Header = () => {
   const { push } = useRouter();
@@ -32,7 +32,7 @@ const Header = () => {
   const onChangeLocale = (value: Locales) => setLocale(value);
   const onClickNumber = () => push('tel:+47 728 000 702');
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY > 20) {
         setIsScroll(true);
@@ -40,6 +40,8 @@ const Header = () => {
         setIsScroll(false);
       }
     };
+
+    scrollHandler();
 
     window.addEventListener('scroll', scrollHandler);
 
@@ -63,7 +65,7 @@ const Header = () => {
           </RWrapper>
 
           <Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>
-            +47 728 000 702
+            +48 728 000 702
           </Button>
 
           <BurgerWrapper>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
-  padding: 42px 24px;
+  padding: 60px 14px 0 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,9 +14,8 @@ export const MenuWrapper = styled.div`
 `;
 
 export const MWrapper = styled.div`
-  text-align: center;
-  flex-direction: column;
-  ${({ theme }) => theme.templates.centerContent};
+  overflow-y: auto;
+  width: 100%;
 
   div {
     padding: 6px 10px;
@@ -24,6 +23,7 @@ export const MWrapper = styled.div`
 `;
 
 export const SWrapper = styled.div`
+  padding: 14px 0;
   flex-direction: column;
   ${({ theme }) => theme.templates.centerContent};
 `;

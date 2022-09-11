@@ -2,9 +2,9 @@ import * as React from 'react';
 // libs
 import { Control, Controller } from 'react-hook-form';
 // components
-import { TextFieldProps, TextField } from '@md-modules/shared/components/form';
+import { PhoneProps, Phone } from '@md-modules/shared/components/form';
 
-interface Props extends TextFieldProps {
+interface Props extends PhoneProps {
   name: string;
   control: Control<any>;
   formatter?: (value: string) => string;
@@ -13,14 +13,13 @@ interface Props extends TextFieldProps {
   defaultValue?: string | number;
 }
 
-const FormInput: React.FC<Props> = ({
+const FormPhoneInput: React.FC<Props> = ({
   control,
   handleOnBlur,
   handleOnChange,
   defaultValue,
   name,
   formatter,
-  side = 'right',
   ...rest
 }) => {
   const handleOnChangeText = (text: string, formEventHandler: (value: string) => void): void => {
@@ -41,12 +40,11 @@ const FormInput: React.FC<Props> = ({
       control={control}
       defaultValue={defaultValue || ''}
       render={({ field, fieldState: { error } }) => (
-        <TextField
-          side={side}
+        <Phone
           value={field.value}
           errorText={error?.message}
           onBlur={() => handleOnFieldBlur(field.onBlur)}
-          onChange={(e) => handleOnChangeText(e.target.value, field.onChange)}
+          onChange={(phone) => handleOnChangeText(phone, field.onChange)}
           {...rest}
         />
       )}
@@ -54,4 +52,4 @@ const FormInput: React.FC<Props> = ({
   );
 };
 
-export { FormInput };
+export { FormPhoneInput };

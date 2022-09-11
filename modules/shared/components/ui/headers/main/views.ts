@@ -23,6 +23,10 @@ export const IWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
 
+  button {
+    font-family: 'Arial', sans-serif !important;
+  }
+
   @media (max-width: 768px) {
     justify-content: space-between;
 

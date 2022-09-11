@@ -48,8 +48,7 @@ export default {
         content:
           '7-30 days waiting time to apply\n' +
           '\n' +
-          '14 days limit for filing missing or\n' +
-          'required documents\n' +
+          '14 days limit for filing missing or required documents\n' +
           '\n' +
           '90 days is the average waiting time for a permit issuance\n' +
           '\n' +

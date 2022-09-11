@@ -10,12 +10,13 @@ import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordion/compo
 
 interface Props {
   title: string;
+  open?: boolean;
   content: string;
   blackTheme?: boolean;
 }
 
-const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content }) => {
-  const [isActive, setIsActive] = React.useState(false);
+const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, open, content }) => {
+  const [isActive, setIsActive] = React.useState(!!open);
 
   const toggleAccordion = () => setIsActive((prevState) => !prevState);
 
@@ -34,7 +35,13 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, content }) 
 
   return (
     <Wrapper isActive={isActive} blackTheme={blackTheme}>
-      <Collapsible onOpening={toggleAccordion} onClosing={toggleAccordion} transitionTime={200} trigger={trigger}>
+      <Collapsible
+        open={open}
+        trigger={trigger}
+        transitionTime={200}
+        onOpening={toggleAccordion}
+        onClosing={toggleAccordion}
+      >
         <AContent>
           <FormattedMessage id={content} />
         </AContent>

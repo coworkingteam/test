@@ -31,4 +31,30 @@ export const GlobalStyles = createGlobalStyle`
       display: none;
     }
   }
+
+  .ReactModal__Content {
+    outline: none;
+    outline-offset: unset;
+  }
+
+  .ReactModal__Overlay {
+    opacity: 0;
+    z-index: 999;
+    transition: opacity 300ms ease-in-out;
+    backdrop-filter: blur(8px);
+    background: rgba(204, 204, 204, 0.7) !important;
+
+  }
+
+  .ReactModal__Overlay--after-open{
+    opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close{
+    opacity: 0;
+  }
+
+  .ReactModal__Content {
+    outline: 0;
+  }
 `;

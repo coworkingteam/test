@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: { type: string; titleID: string; data: IServiceData }[] = [
   {
-    type: 'RECEIPT',
+    type: 'SCHOOL',
     titleID: 'schoolAndKindergarten.tabs.0.title',
     data: {
       welcome: {
@@ -39,13 +39,14 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
+        open: index === 0,
         title: `schoolAndKindergarten.tabs.0.serviceRegistrationFAQData.${index}.title`,
         content: `schoolAndKindergarten.tabs.0.serviceRegistrationFAQData.${index}.content`
       }))
     }
   },
   {
-    type: 'EXTENSION',
+    type: 'KINDERGARTEN',
     titleID: 'schoolAndKindergarten.tabs.1.title',
     data: {
       welcome: {
@@ -80,6 +81,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
+        open: index === 0,
         title: `schoolAndKindergarten.tabs.1.serviceRegistrationFAQData.${index}.title`,
         content: `schoolAndKindergarten.tabs.1.serviceRegistrationFAQData.${index}.content`
       }))

@@ -1,4 +1,6 @@
 import * as React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // view components
 import { Footer } from '@md-ui/footer';
 import { Header } from '@md-ui/headers/main';
@@ -34,9 +36,10 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
   const hasTabs = type === 'WITH_TABS';
   const wrapperRef = React.useRef<HTMLDivElement>(null);
+  const { query } = useRouter();
 
   const [isScroll, setIsScroll] = React.useState(false);
-  const [activeDataType, setActiveDataType] = React.useState(hasTabs ? props.data[0]?.type : undefined);
+  const [activeDataType, setActiveDataType] = React.useState(hasTabs ? props.data?.[0]?.type : undefined);
 
   const activeData = React.useMemo(
     () => (hasTabs ? props.data?.find((i) => i.type === activeDataType)?.data : props.data),
@@ -55,6 +58,12 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   };
 
   React.useEffect(() => {
+    if (query.type) {
+      setActiveDataType(query.type as string);
+    }
+
+    scrollHandler();
+
     window.addEventListener('scroll', scrollHandler);
 
     return () => {

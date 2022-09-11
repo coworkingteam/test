@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: { type: string; titleID: string; data: IServiceData }[] = [
   {
-    type: 'RECEIPT',
+    type: 'OBTAINING',
     titleID: 'internationalPassport.tabs.0.title',
     data: {
       welcome: {
@@ -42,6 +42,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
+        open: index === 0,
         title: `internationalPassport.tabs.0.serviceRegistrationFAQData.${index}.title`,
         content: `internationalPassport.tabs.0.serviceRegistrationFAQData.${index}.content`
       }))
@@ -83,6 +84,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
+        open: index === 0,
         title: `internationalPassport.tabs.1.serviceRegistrationFAQData.${index}.title`,
         content: `internationalPassport.tabs.1.serviceRegistrationFAQData.${index}.content`
       }))

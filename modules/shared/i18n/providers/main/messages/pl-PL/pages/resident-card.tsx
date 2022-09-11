@@ -33,19 +33,13 @@ export default {
         '- Najlepszą rzeczą, jaką możesz zrobić podczas oczekiwania na swoją kartę, jest regularne sprawdzanie skrzynki pocztowej, zarówno fizycznej, jak i elektronicznej, aby odpowiedzieć tak szybko, jak to możliwe, i nie szczędząc wysiłku, aby jak najszybciej otrzymać i wysłać niezbędne dokumenty\n'
     },
     {
-      title: 'Jakie dokumenty i dane są potrzebne do złożenia wniosku ?',
+      title: 'Jak możesz przyspieszyć rozpatrzenie swojej sprawy ?',
       content:
-        'Liczba i rodzaj niektórych dokumentów do uzyskania karty pobytu zależy od jej rodzaju (pobyt tymczasowy, służbowy, studencki, długoterminowy), ale generalnie lista jest taka sama dla każdego:\n' +
+        'Poza punktami wymienionymi powyżej, zawsze jest szansa, że ​​przyczyna opóźnienia nie zależy od Ciebie, ale mechanizmów na rozwiązanie takiej sprawy jest kilka, a jeśli użyjesz ich poprawnie, sprawę można łatwo posunąć do przodu\n' +
         '\n' +
-        '- Poprawnie wypełniony formularz wniosku, inny dla każdego rodzaju karty\n' +
-        '- Oryginał i trzy pełne kopie paszportu międzynarodowego (lub paszportów, jeśli masz więcej niż jeden)\n' +
-        '- 5 wydrukowanych kolorowych zdjęć wykonanych zgodnie z aktualnymi wymaganiami konsulatu\n' +
-        '- Dokument lub pakiet dokumentów na podstawie których ubiegasz się o kartę (zaświadczenie o zatrudnieniu, studiach, kursach językowych itp.)\n' +
-        '- Oryginał i kopia polisy ubezpieczeniowej spełniającej aktualne wymagania dla rodzaju karty, którą chcesz otrzymać\n' +
-        '- Akt urodzenia przetłumaczony przez tłumacza przysięgłego\n' +
-        '- Dokument potwierdzający adres zamieszkania w Polsce\n' +
+        'Pierwszy z nich to tzw. „List przypominający” do konsulatu (ponaglenie). Przy prawidłowym napisaniu on zwróci uwagę konsula na Twoją sprawę i przyspieszy proces jej rozpatrzenia. Nie ma ogólnie przyjętej formy takiego listu, ale powinien on zawierać oświadczenie w łagodnej formie, że zatrzymanie rozpatrzenia uniemożliwia spotkanie z bliskimi, odbywanie podróży służbowych lub po prostu powoduje niedogodności. Taki list może i powinien być wysyłany co miesiąc po upływie terminu ważności, ale najczęściej odpowiedź i wynik da się otrzymać po dwóch pierwszych listach\n' +
         '\n' +
-        'Większość certyfikatów i dokumentów nie jest trudna do otrzymania, jednak nasi eksperci gwarantują wszelką możliwą pomoc w ich uzyskaniu i przetwarzaniu. Pełną listę dokumentów dla Twojej sprawy znajdziesz na naszej infolinii lub na oficjalnej stronie konsulatu.\n'
+        'Jeśli pisma nie pomagają, a nie masz czasu i środków na wniesienie sprawy do sądu, możesz umówić się na spotkanie z konsulem lub inspektorem, gdzie osobiście możesz sprawdzić, na jakim etapie jest sprawa i poznać przyczynę opóźnienia. Po takiej wizycie statystyczna większość cudzoziemców otrzymuje kartę w ciągu 20-30 dni\n'
     }
   ],
   serviceRegistration: {

@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  max-height: 300px;
+  height: 100%;
   flex-direction: column;
+  justify-content: space-between;
 
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(8px);
-  padding: 46px 38px 72px 38px;
+  padding: 46px 160px;
 
   border-radius: 15px;
 
@@ -17,7 +16,7 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 26px 38px 42px 38px;
+    padding: 38px;
   }
 `;
 
@@ -26,25 +25,13 @@ export const Icon = styled.img`
   margin-left: 14px;
 `;
 
-export const ButtonWrapper = styled.div`
-  position: absolute;
-  right: 50%;
-  width: max-content;
-  bottom: -24px;
-  transform: translatex(50%);
-`;
-
 export const InputWrapper = styled.div`
   display: grid;
   gap: 6px;
   grid-auto-flow: row dense;
   grid-template-columns: 0.4fr 1.6fr;
   align-items: center;
-  margin-bottom: 14px;
-
-  &:nth-child(3) {
-    margin: 0;
-  }
+  margin-bottom: 32px;
 
   @media screen and (max-width: 768px) {
     gap: 0;
@@ -58,9 +45,15 @@ export const Label = styled.p`
   text-align: left;
 
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
 
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 100%;
+
+  ${({ theme }) => theme.templates.centerContent}
 `;
