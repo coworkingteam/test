@@ -9,6 +9,7 @@ import carDeregistration from './pages/car-deregistration';
 import taxiLicense from './pages/taxi-license-for-pass-trans';
 import spanishResidentCard from './pages/spanish-resident-card';
 import businessTokenization from './pages/business-tokenization';
+import canadianResidentCard from './pages/canadian-resident-card';
 import internationalPassport from './pages/international-passport';
 import renewalDrivingLicense from './pages/renewal-driving-license';
 import admissionToUniversity from './pages/admission-to-university';
@@ -27,7 +28,9 @@ export default {
           ['Otrzymanie karty stałego pobytu', '/long-term-residence-permit'],
           ['Rekrutacja na studia w polsce', '/admission-to-university'],
           ['Zapis dziecka do szkoły', '/school-and-kindergarten?type=SCHOOL'],
-          ['Zapis dziecka do przedszkola', '/school-and-kindergarten?type=KINDERGARTEN']
+          ['Zapis dziecka do przedszkola', '/school-and-kindergarten?type=KINDERGARTEN'],
+          ['Otrzymanie wizy hiszpańskiej', '/spanish-resident-card'],
+          ['Otrzymanie wizy kanadyjskiej', '/canadian-resident-card']
         ],
         categories: {
           forBusiness: {
@@ -60,6 +63,7 @@ export default {
     businessTokenization,
     internationalPassport,
     renewalDrivingLicense,
+    canadianResidentCard,
     admissionToUniversity,
     schoolAndKindergarten,
     longTermResidencePermit

@@ -9,6 +9,7 @@ import carDeregistration from './pages/car-deregistration';
 import taxiLicense from './pages/taxi-license-for-pass-trans';
 import businessTokenization from './pages/business-tokenization';
 import spanishResidentCard from './pages/spanish-resident-card';
+import canadianResidentCard from './pages/canadian-resident-card';
 import internationalPassport from './pages/international-passport';
 import schoolAndKindergarten from './pages/school-and-kindergarten';
 import admissionToUniversity from './pages/admission-to-university';
@@ -27,7 +28,9 @@ export default {
           ['Польский вид на жительство', '/long-term-residence-permit'],
           ['Поступление в польский ВУЗ', '/admission-to-university'],
           ['Запись ребёнка в школу', '/school-and-kindergarten?type=SCHOOL'],
-          ['Запись ребёнка в детсад', '/school-and-kindergarten?type=KINDERGARTEN']
+          ['Запись ребёнка в детсад', '/school-and-kindergarten?type=KINDERGARTEN'],
+          ['Получение испанской визы', '/spanish-resident-card'],
+          ['Получение канадской визы', '/canadian-resident-card']
         ],
         categories: {
           forBusiness: {
@@ -58,6 +61,7 @@ export default {
     carDeregistration,
     spanishResidentCard,
     businessTokenization,
+    canadianResidentCard,
     renewalDrivingLicense,
     schoolAndKindergarten,
     internationalPassport,

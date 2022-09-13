@@ -1,7 +1,7 @@
 import React from 'react';
 // libs
 import Collapsible from 'react-collapsible';
-import { FormattedMessage } from 'react-intl';
+import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
 // components
 import Plus from 'public/static/icons/plus';
 import Minus from 'public/static/icons/minus';
@@ -43,7 +43,7 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, open, conte
         onClosing={toggleAccordion}
       >
         <AContent>
-          <FormattedMessage id={content} />
+          <FormattedHTMLMessage id={content} />
         </AContent>
       </Collapsible>
     </Wrapper>
