@@ -1,59 +1,77 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  border-radius: 20px;
-  padding: 32px 36px;
-  display: flex;
-  cursor: pointer;
+export const Wrapper = styled.div<{ whiteBG: boolean }>`
   width: 100%;
-  margin-bottom: 32px;
-  transition: all 0.2s linear;
+  height: 100%;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: all 0.2s ease;
 
-  background: ${({ theme }) => theme.colors.white};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  background: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
 
   &:hover {
-    opacity: 0.9;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02) perspective(1px);
   }
 
-  @media (max-width: 1200px) {
+  button {
+    margin: 0 56px 56px 56px;
+
+    svg {
+      width: 20px;
+      margin-left: 8px;
+
+      path {
+        fill: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
+      }
+    }
+
+    &:hover {
+      color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
+      background: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
+
+      svg {
+        path {
+          fill: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
     padding: 20px;
 
-    &:last-child {
-      margin-bottom: 32px;
+    ${({ theme }) => theme.templates.centerContent}
+
+    button {
+      margin: 0 10px 10px 10px;
     }
   }
 `;
 
-export const Icon = styled.img`
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin-right: 12px;
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  margin: 56px 0 56px 0;
 `;
 
-export const Title = styled.p`
-  margin: 0 0 26px;
+export const Title = styled.p<{ whiteBG: boolean }>`
   font-weight: 500;
-  font-size: 32px;
+  font-size: 38px;
+  margin: 56px 56px 0 56px;
+
+  color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 28px;
+    margin: 10px 10px 0 10px;
   }
 `;
 
-export const Description = styled.p`
-  margin: 0;
-  font-size: 16px;
-
-  color: ${({ theme }) => theme.colors.gray500};
-
-  @media (max-width: 768px) {
-    margin: 0;
-    font-size: 14px;
-  }
+export const Icon = styled.img`
+  margin-left: 8px;
+  width: 20px;
 `;

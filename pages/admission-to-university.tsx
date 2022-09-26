@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/resident-card.png',
+    img: '/static/images/univer.svg',
     titleID: 'admissionToUniversity.welcome.title',
     button: {
       titleID: 'admissionToUniversity.welcome.button.title',
@@ -41,6 +41,8 @@ const DATA: IServiceData = {
   }))
 };
 
-const AdmissionToUniversity = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.blue100} />;
+const AdmissionToUniversity = () => (
+  <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.yellow300} />
+);
 
 export default AdmissionToUniversity;

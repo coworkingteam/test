@@ -3,7 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 // components
 import { Button } from '@md-ui/buttons/main';
-import { MenuItem } from '@md-ui/menu-items/main';
+import { MenuItem } from '@md-ui/menu-item/main';
 // views
 import { MenuWrapper, MWrapper, SWrapper } from '@md-ui/headers/main/components/mobile-menu/views';
 

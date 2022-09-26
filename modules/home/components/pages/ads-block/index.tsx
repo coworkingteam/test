@@ -1,23 +1,22 @@
 import React from 'react';
 // components
 import ServiceSlider from '@md-modules/home/components/pages/ads-block/components/slider';
-import InstructionBlock from '@md-modules/home/components/pages/ads-block/components/intsruction-block';
 // constants
 import { DATA } from '@md-modules/home/components/pages/ads-block/constants';
 // views
-import { Wrapper } from '@md-modules/home/components/pages/ads-block/views';
+import { InnerWrapper, Title, Wrapper } from '@md-modules/home/components/pages/ads-block/views';
 
 const AdsBlock = () => {
   return (
     <Wrapper>
-      <InstructionBlock
-        header='ВИВА ЛЯ БАРСА'
-        title='Lorem ipsum dolor sit'
-        button={{ title: 'Подробнее', url: '/spanish-resident-card' }}
-        subTitle='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, similique?'
-      />
+      <InnerWrapper>
+        <Title>
+          Надёжная юридическая помощь в легализации и в других сложных проблемах на территории Польши! Среди наших услуг
+          ты точно найдёшь то, что ищешь.
+        </Title>
 
-      <ServiceSlider data={DATA} />
+        <ServiceSlider data={DATA} />
+      </InnerWrapper>
     </Wrapper>
   );
 };

@@ -18,6 +18,9 @@ import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
   [LOCALES.RUSSIAN]: {
+    footer: {
+      'услуга конкретная': 'услуга конкретная'
+    },
     menu: {
       services: {
         title: 'Услуги',

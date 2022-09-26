@@ -1,4 +1,6 @@
 import * as React from 'react';
+// libs
+import ScrollToTop from 'react-scroll-to-top';
 // hooks
 import { useRouter } from 'next/router';
 // view components
@@ -31,6 +33,8 @@ interface PropsWithTabs {
   themeColor?: string;
   data: { type: string; titleID: string; data: IServiceData }[];
 }
+
+const SCROLL_TO_TOP_BUTTON_STYLES = { borderRadius: '100%' };
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
@@ -108,6 +112,8 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
 
       <ShortDescription themeColor={themeColor} />
       <Footer />
+
+      <ScrollToTop smooth top={100} style={SCROLL_TO_TOP_BUTTON_STYLES} />
     </Wrapper>
   );
 };

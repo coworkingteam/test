@@ -19,7 +19,12 @@ const schema = yup.object().shape({
   phone: yup.string().required('Required')
 });
 
-const Form = () => {
+// types
+interface Props {
+  service: string;
+}
+
+const Form: React.FC<Props> = ({ service }) => {
   const { control, handleSubmit } = useForm<FormData>({
     resolver: yupResolver(schema)
   });
@@ -52,7 +57,7 @@ const Form = () => {
 
         <InputWrapper>
           <Label>Услуга</Label>
-          <p>Получение и продление срока действия загранпаспорта Украины без выезда из Польши</p>
+          <p>{service}</p>
         </InputWrapper>
       </form>
 

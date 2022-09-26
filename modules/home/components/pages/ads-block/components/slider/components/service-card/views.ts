@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  cursor: pointer;
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.templates.centerContent}
@@ -10,14 +9,13 @@ export const Wrapper = styled.div`
 `;
 
 export const InitialWrapper = styled.div`
-  margin: 0;
   display: flex;
+  width: 100%;
   max-width: 280px;
-  flex-direction: column;
-
-  @media (max-width: 768px) {
-    ${({ theme }) => theme.templates.centerContent}
-  }
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+  position: relative;
 `;
 
 export const Title = styled.p`
@@ -25,32 +23,22 @@ export const Title = styled.p`
   font-weight: 500;
   font-size: 20px;
   max-width: 216px;
+  padding: 14px;
 
-  @media (max-width: 768px) {
-    text-align: center;
-  }
+  color: ${({ theme }) => theme.colors.white};
+`;
+
+export const TitleWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.34);
 `;
 
 export const Image = styled.img`
   width: 280px;
-  height: 170px;
+  height: 270px;
   object-fit: cover;
-  margin-bottom: 14px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    ${({ theme }) => theme.templates.boxShadow}
-  }
-`;
-
-export const Description = styled.p`
-  font-size: 14px;
-  margin: 0;
-  opacity: 0.8;
-
-  color: ${({ theme }) => theme.colors.black600};
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
 `;

@@ -3,12 +3,11 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   min-height: 50vh;
   height: 100%;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
 
+  ${({ theme }) => theme.templates.centerContent};
   background-color: ${({ theme }) => theme.colors.black600};
 `;
 

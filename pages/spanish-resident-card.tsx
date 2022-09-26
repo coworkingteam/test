@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/resident-card.png',
+    img: '/static/images/spain.svg',
     titleID: 'spanishResidentCard.welcome.title',
     button: {
       titleID: 'spanishResidentCard.welcome.button.title',
@@ -41,6 +41,6 @@ const DATA: IServiceData = {
   }))
 };
 
-const ResidentCard = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.blue100} />;
+const ResidentCard = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.yellow300} />;
 
 export default ResidentCard;

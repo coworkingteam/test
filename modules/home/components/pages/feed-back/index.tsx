@@ -33,6 +33,7 @@ const FeedBack = () => {
           <Messenger src='/static/icons/viber.svg' alt='viber' />
           <Messenger src='/static/icons/telegram.svg' alt='telegram' />
           <Messenger src='/static/icons/whatsapp.svg' alt='whatsapp' />
+          <Messenger src='/static/icons/messenger.svg' alt='messenger' />
         </MessengersWrapper>
       </InnerWrapper>
     </Wrapper>

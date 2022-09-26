@@ -5,17 +5,17 @@ import 'slick-carousel/slick/slick-theme.css';
 // types
 import { Service } from '@md-modules/shared/types/service';
 // views
-import { Description, Image, InitialWrapper, Title, Wrapper } from './views';
+import { Image, Title, InitialWrapper, TitleWrapper, Wrapper } from './views';
 
-const ServiceCard: React.FC<Service> = ({ img, title, description }) => {
+const ServiceCard: React.FC<Service> = ({ img, title }) => {
   return (
     <Wrapper>
       <InitialWrapper>
         <Image src={img} alt={img} />
 
-        <Title>{title}</Title>
-
-        <Description>{description}</Description>
+        <TitleWrapper>
+          <Title>{title}</Title>
+        </TitleWrapper>
       </InitialWrapper>
     </Wrapper>
   );

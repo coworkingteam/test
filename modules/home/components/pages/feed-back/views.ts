@@ -1,26 +1,24 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  min-height: 50vh;
   width: 100%;
   height: 100%;
   display: flex;
 
-  background-color: ${({ theme }) => theme.colors.black800};
+  background-color: ${({ theme }) => theme.colors.black600};
 `;
 
 export const InnerWrapper = styled.div`
-  min-height: 50vh;
   height: 100%;
+  padding: 0 70px;
   margin: 150px auto;
   max-width: 1450px;
-  padding: 0 70px;
-
-  display: flex;
-  flex-direction: column;
   text-align: center;
 
   @media (max-width: 768px) {
     padding: 0 10px;
+    margin: 76px auto;
   }
 `;
 
@@ -35,10 +33,10 @@ export const Title = styled.p`
 `;
 
 export const SubTitle = styled.p`
-  font-size: 18px;
   width: 100%;
-  max-width: 1100px;
   opacity: 0.8;
+  font-size: 18px;
+  max-width: 1100px;
   margin: 30px auto auto auto;
 
   color: ${({ theme }) => theme.colors.white};
@@ -55,14 +53,11 @@ export const MessengersWrapper = styled.div`
 `;
 
 export const Messenger = styled.img`
-  max-width: 95px;
-  max-height: 95px;
-  display: block;
-  width: 100%;
-  height: 100%;
+  width: 95px;
+  height: 95px;
   cursor: pointer;
 
   &:first-child {
-    max-height: 105px;
+    height: 105px;
   }
 `;

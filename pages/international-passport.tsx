@@ -9,6 +9,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     data: {
       welcome: {
         img: '/static/images/international-passport.png',
+        tabTitleID: 'internationalPassport.tabs.0.title',
         titleID: 'internationalPassport.tabs.0.welcome.title',
         button: {
           titleID: 'internationalPassport.tabs.0.welcome.button.title',
@@ -54,6 +55,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     data: {
       welcome: {
         img: '/static/images/international-passport.png',
+        tabTitleID: 'internationalPassport.tabs.1.title',
         titleID: 'internationalPassport.tabs.1.welcome.title',
         button: {
           titleID: 'internationalPassport.tabs.1.welcome.button.title',

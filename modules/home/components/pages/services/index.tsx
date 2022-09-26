@@ -2,33 +2,39 @@ import React from 'react';
 // components
 import { Button } from '@md-ui/buttons/main';
 import ServiceCard from '@md-modules/home/components/pages/services/components/servece-card';
-// constants
-import { LEFT_SIDE_DATA, RIGHT_SIDE_DATA } from '@md-modules/home/components/pages/services/constants';
+import AdBlock from '@md-modules/home/components/pages/services/components/ad-block';
 // views
-import { Icon, InnerWrapper, LeftSide, RightSide, Wrapper } from '@md-modules/home/components/pages/services/views';
+import { ServicesWrapper, SubTitle, Title, Wrapper } from '@md-modules/home/components/pages/services/views';
 
-const Services = () => {
-  return (
-    <Wrapper>
-      <InnerWrapper>
-        <LeftSide>
-          {LEFT_SIDE_DATA.map((item) => (
-            <ServiceCard {...item} key={item.title} />
-          ))}
+const BUTTON_DATA = { title: 'Узнать больше', url: '/spanish-resident-card' };
 
-          <Button whiteBG>
-            <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' /> Проконсультироватся бесплатно
-          </Button>
-        </LeftSide>
+const Services = () => (
+  <Wrapper>
+    <Title>Легализуем пребывание и работу в стране</Title>
+    <SubTitle>Закрываем потребности как физических лиц, так и работодателей</SubTitle>
 
-        <RightSide>
-          {RIGHT_SIDE_DATA.map((item) => (
-            <ServiceCard {...item} key={item.title} />
-          ))}
-        </RightSide>
-      </InnerWrapper>
-    </Wrapper>
-  );
-};
+    <ServicesWrapper>
+      <ServiceCard whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp3 1.svg' />
+      <ServiceCard title='БИЗНЕСУ' />
+    </ServicesWrapper>
+
+    <AdBlock
+      button={BUTTON_DATA}
+      serviceName='карта TIE'
+      emojiIcon='/static/icons/plane.svg'
+      img='/static/images/spain 2.svg'
+      subName='Вид на жительство в Испании'
+      description='Вылеты в Барселону и Мадрид с гидом, питанием, проживанием, и полным сопровождением - от заполнения анкеты до открытия банковского счёта. Карта в руки уже за 6 недель, без нерешаемых вопросов и невыполнимых задач!'
+    />
+
+    <ServicesWrapper>
+      <ServiceCard whiteBG title='Транспорт' img='/static/images/car.svg' />
+      <ServiceCard whiteBG title='Документы гражданства внж' />
+    </ServicesWrapper>
+
+    <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы? </Title>
+    <Button>Cвязатся с нами</Button>
+  </Wrapper>
+);
 
 export default Services;

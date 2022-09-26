@@ -10,6 +10,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       welcome: {
         img: '/static/images/international-passport.png',
         titleID: 'schoolAndKindergarten.tabs.0.welcome.title',
+        tabTitleID: 'schoolAndKindergarten.tabs.0.title',
         button: {
           titleID: 'schoolAndKindergarten.tabs.0.welcome.button.title',
           onClick: () => {}
@@ -52,6 +53,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       welcome: {
         img: '/static/images/international-passport.png',
         titleID: 'schoolAndKindergarten.tabs.1.welcome.title',
+        tabTitleID: 'schoolAndKindergarten.tabs.1.title',
         button: {
           titleID: 'schoolAndKindergarten.tabs.1.welcome.button.title',
           onClick: () => {}

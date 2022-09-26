@@ -1,22 +1,26 @@
 import React from 'react';
 // types
 import { Service } from '@md-modules/shared/types/service';
+// components
+import { Button } from '@md-ui/buttons/main';
+import SendArrow from 'public/static/icons/send-arrow';
 // views
-import {
-  Title,
-  Wrapper,
-  Description,
-  Icon
-} from '@md-modules/home/components/pages/services/components/servece-card/views';
+import { Title, Wrapper, Image } from '@md-modules/home/components/pages/services/components/servece-card/views';
 
-const ServiceCard: React.FC<Service> = ({ img, title, description }) => (
-  <Wrapper>
-    <Icon src={img} />
+interface Props extends Service {
+  whiteBG?: boolean;
+}
 
-    <div>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-    </div>
+const ServiceCard: React.FC<Props> = ({ img, title, whiteBG = false }) => (
+  <Wrapper whiteBG={whiteBG}>
+    <Title whiteBG={whiteBG}>{title}</Title>
+
+    {img && <Image src={img} alt={title + img} />}
+
+    <Button whiteBG={whiteBG}>
+      Рассмотреть услуги
+      <SendArrow />
+    </Button>
   </Wrapper>
 );
 

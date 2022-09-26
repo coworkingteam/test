@@ -13,6 +13,7 @@ import {
   FormDescription,
   LeftSide
 } from '@md-modules/home/components/pages/welcome/views';
+
 const Welcome = () => (
   <Wrapper>
     <CanvasGradient />
@@ -22,7 +23,7 @@ const Welcome = () => (
         <Title>
           Помощь с документами в Польше <Icon src='/static/icons/middle-arrow.svg' alt='send-arrow' />
         </Title>
-        <SubTitle>Разрешение на работу → вид на жительство → срочные документы → бизнес → консалтинг</SubTitle>
+        <SubTitle>Разрешение на работу → вид на жительство → срочные документы → бизнес и токенизация</SubTitle>
       </LeftSide>
 
       <FormWrapper>

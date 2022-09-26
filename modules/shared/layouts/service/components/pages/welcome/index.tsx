@@ -1,6 +1,6 @@
 import React from 'react';
 // libs
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 // components
 import Modal from '@md-ui/modal/main';
 import { Button } from '@md-ui/buttons/main';
@@ -19,6 +19,7 @@ import {
 export interface WelcomeData {
   img?: string;
   titleID: string;
+  tabTitleID?: string;
   button: {
     titleID: string;
     onClick?: () => void;
@@ -31,9 +32,14 @@ interface Props {
 }
 
 const Welcome: React.FC<Props> = ({ themeColor, data }) => {
+  const intl = useIntl();
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
 
   const toggleModal = () => setModalIsOpen((prev) => !prev);
+
+  const serviceName = `${intl.formatMessage({ id: data.titleID })}${data.tabTitleID ? ':' : ''} ${
+    data.tabTitleID ? intl.formatMessage({ id: data.tabTitleID }) : ''
+  }`;
 
   return (
     <Wrapper themeColor={themeColor}>
@@ -51,20 +57,12 @@ const Welcome: React.FC<Props> = ({ themeColor, data }) => {
         <Image src={data?.img} />
       </InnerWrapper>
 
-      <StrafeButton
-        to='hero'
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-        activeClass='active'
-        themeColor={themeColor}
-      >
+      <StrafeButton to='hero' spy smooth offset={-100} duration={500} activeClass='active' themeColor={themeColor}>
         <ArrowDown src='/static/icons/arrow-down.svg' />
       </StrafeButton>
 
       <Modal maxWidth={768} closeButton title={data.titleID} isOpen={modalIsOpen} toggleModal={toggleModal}>
-        <Form />
+        <Form service={serviceName} />
       </Modal>
     </Wrapper>
   );

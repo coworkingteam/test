@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 // providers
 import { ThemeProvider } from 'styled-components';
 import LangProvider from '@md-modules/shared/i18n/providers/main';
@@ -11,18 +11,35 @@ import { AppProps } from 'next/app';
 // local
 import { theme } from '@md-styles/styled/theme';
 import { GlobalStyles } from '@md-styles/styled/global';
+// constants
+import { BLOCKED_PAGES_LIST } from '@md-modules/shared/constants/global';
 // global css
 import 'public/fonts/styles.css';
 import 'nprogress/nprogress.css';
 import 'normalize.css/normalize.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const { pathname } = useRouter();
   const [isPageLoading, setIsPageLoading] = React.useState(false);
 
-  // NProgress.configure({ showSpinner: false, speed: 500 });
-  Router.events.on('routeChangeError', () => setIsPageLoading(false));
-  Router.events.on('routeChangeStart', () => setIsPageLoading(true));
-  Router.events.on('routeChangeComplete', () => setIsPageLoading(false));
+  React.useEffect(() => {
+    if (BLOCKED_PAGES_LIST.some((pageURL) => pageURL === pathname)) {
+      void Router.push('/404');
+    }
+
+    Router.events.on('routeChangeError', () => setIsPageLoading(false));
+    Router.events.on('routeChangeStart', () => setIsPageLoading(true));
+    Router.events.on('routeChangeComplete', (url) => {
+      if (BLOCKED_PAGES_LIST.some((pageURL) => pageURL === url.split('?')[0])) {
+        Router.push('/404').then(() => setIsPageLoading(false));
+
+        return;
+      }
+
+      setIsPageLoading(false);
+    });
+  }, []);
+
   return (
     <>
       <Head>

@@ -25,6 +25,8 @@ const sliderSetting = {
       breakpoint: 1240,
       settings: {
         slidesToShow: 2,
+        centerMode: true,
+        centerPadding: '92px',
         slidesToScroll: 1,
         infinite: true,
         dots: true
@@ -34,7 +36,7 @@ const sliderSetting = {
       breakpoint: 768,
       settings: {
         centerMode: true,
-        centerPadding: '30px',
+        centerPadding: '46px',
         slidesToShow: 1,
         slidesToScroll: 1
       }

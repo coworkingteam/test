@@ -1,5 +1,4 @@
 export interface Service {
-  img: string;
+  img?: string;
   title: string;
-  description: string;
 }
