@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ErrorText = styled.div`
   bottom: -16px;
   font-size: 0.75rem;
-  margin-top: 4px;
+  margin-top: 2px;
   position: absolute;
   text-align: left;
 
@@ -12,7 +12,7 @@ const ErrorText = styled.div`
 `;
 
 interface Props {
-  errorText: string | undefined;
+  errorText?: string;
 }
 
 const ErrorMessage: React.FC<Props> = ({ errorText }) => {

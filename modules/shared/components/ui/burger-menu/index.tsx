@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Props as MenuProps, slide as Menu } from 'react-burger-menu';
 // static
-import Plus from '../../../../../public/static/icons/plus';
+import Plus from 'public/static/icons/plus';
 
 //  types
 type TMenuProps = Omit<MenuProps, 'right' | 'customBurgerIcon' | 'outerContainerId'>;
