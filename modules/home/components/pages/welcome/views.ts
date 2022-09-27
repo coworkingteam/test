@@ -2,11 +2,9 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100%;
-  display: flex;
-
   position: relative;
-  justify-content: center;
-  align-items: center;
+
+  ${({ theme }) => theme.templates.centerContent};
 `;
 
 export const InnerWrapper = styled.div`
@@ -15,6 +13,7 @@ export const InnerWrapper = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
+
   position: relative;
   text-align: center;
   display: flex;
@@ -23,11 +22,9 @@ export const InnerWrapper = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 1250px) {
-    overflow: visible;
-    padding: 80px 10px 48px 10px;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    padding: 80px 10px 48px 10px;
   }
 
   @media screen and (max-width: 768px) {
@@ -103,14 +100,4 @@ export const Icon = styled.img`
   @media screen and (max-width: 1250px) {
     display: none;
   }
-`;
-export const Button = styled.div`
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: aqua;
-`;
-export const StrafeButton = styled(Button)`
-  bottom: -40px;
 `;

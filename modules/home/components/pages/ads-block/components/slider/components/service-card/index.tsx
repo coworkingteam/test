@@ -7,18 +7,16 @@ import { Service } from '@md-modules/shared/types/service';
 // views
 import { Image, Title, InitialWrapper, TitleWrapper, Wrapper } from './views';
 
-const ServiceCard: React.FC<Service> = ({ img, title }) => {
-  return (
-    <Wrapper>
-      <InitialWrapper>
-        <Image src={img} alt={img} />
+const ServiceCard: React.FC<Service> = ({ img, title }) => (
+  <Wrapper>
+    <InitialWrapper>
+      <Image src={img} alt={img} />
 
-        <TitleWrapper>
-          <Title>{title}</Title>
-        </TitleWrapper>
-      </InitialWrapper>
-    </Wrapper>
-  );
-};
+      <TitleWrapper>
+        <Title>{title}</Title>
+      </TitleWrapper>
+    </InitialWrapper>
+  </Wrapper>
+);
 
 export default ServiceCard;

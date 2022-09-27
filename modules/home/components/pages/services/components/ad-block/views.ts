@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   position: relative;
   border-radius: 34px;
   text-align: left;
+  cursor: pointer;
 
   box-shadow: 0 0 22px rgba(33, 33, 33, 0.06);
 

@@ -1,5 +1,6 @@
 import { LOCALES } from '@md-modules/shared/i18n/providers/main/locales';
 // pages
+import menu from './menu/main';
 import code95 from './pages/code-95';
 import customs from './pages/customs';
 import residentCard from './pages/resident-card';
@@ -18,40 +19,7 @@ import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
   [LOCALES.POLISH]: {
-    menu: {
-      services: {
-        title: 'Usługi',
-        itemList: [
-          ['Ponaglenie karty pobytu', '/resident-card'],
-          ['Przedłużenie ważności paszportu', '/international-passport?type=EXTENSION'],
-          ['Otrzymanie paszportu zagranicznego', '/international-passport?type=OBTAINING'],
-          ['Otrzymanie karty stałego pobytu', '/long-term-residence-permit'],
-          ['Rekrutacja na studia w polsce', '/admission-to-university'],
-          ['Zapis dziecka do szkoły', '/school-and-kindergarten?type=SCHOOL'],
-          ['Zapis dziecka do przedszkola', '/school-and-kindergarten?type=KINDERGARTEN'],
-          ['Otrzymanie wizy hiszpańskiej', '/spanish-resident-card'],
-          ['Otrzymanie wizy kanadyjskiej', '/canadian-resident-card']
-        ],
-        categories: {
-          forBusiness: {
-            title: 'Dla biznesu',
-            itemList: [['Tokenizacja biznesu', '/business-tokenization']]
-          },
-          servicesForDrivers: {
-            title: 'Usługi samochodowe',
-            itemList: [
-              ['Wymiana prawa jazdy na polskie', '/renewal-driving-license'],
-              ['Ubezpieczenia samochodowe', '/car-insurance'],
-              ['Otrzymanie licencji taxi', '/taxi-license-for-pass-trans'],
-              ['Rejestracja samochodu', '/car-registration'],
-              ['Otrzymanie Kodu 95', '/code-95'],
-              ['Odprawa celna auta', '/customs'],
-              ['Wyrejestrowanie samochodu', '/car-deregistration']
-            ]
-          }
-        }
-      }
-    },
+    menu,
     code95,
     customs,
     taxiLicense,

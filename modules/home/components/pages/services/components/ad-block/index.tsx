@@ -34,16 +34,17 @@ const AdBlock: React.FC<Props> = ({ subName, serviceName, description, img, emoj
   const onClick = () => push(button.url);
 
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <LeftSideWrapper>
         <ServiceName>{serviceName}</ServiceName>
         <SubName>{subName}</SubName>
         <Description>{description}</Description>
 
-        <Button onClick={onClick}>
+        <Button>
           {button.title}
           <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
         </Button>
+
         <EmojiImage src={emojiIcon} alt={emojiIcon} />
       </LeftSideWrapper>
 

@@ -15,17 +15,17 @@ const Form = () => {
   return (
     <Wrapper>
       <InputWrapper>
-        <Label>Имя</Label>
+        <Label>Name</Label>
         <TextField placeholder='Andrei Mihalkov' whiteBG />
       </InputWrapper>
 
       <InputWrapper>
-        <Label>Емайл</Label>
+        <Label>Email</Label>
         <TextField placeholder='cobra_killer1995@gmail.com' whiteBG />
       </InputWrapper>
 
       <InputWrapper>
-        <Label>Телефон</Label>
+        <Label>Phone</Label>
         <Phone />
       </InputWrapper>
 

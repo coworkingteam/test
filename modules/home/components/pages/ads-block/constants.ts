@@ -18,7 +18,7 @@ export const DATA: Service[] = [
     title: 'Открытие фирменного счета'
   },
   {
-    img: '/static/images/company-account.jpg',
+    img: '/static/images/czasowego-pobytu.jpg',
     title: 'Открытие фирменного счета'
   }
 ];

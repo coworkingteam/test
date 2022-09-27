@@ -13,7 +13,13 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
   background: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
 
   &:hover {
-    transform: scale(1.02) perspective(1px);
+    img {
+      transform: scale(1.04) perspective(1px);
+    }
+  }
+
+  &:first-child {
+    margin-right: 28px;
   }
 
   button {
@@ -40,6 +46,12 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    &:first-child {
+      margin: 0 0 28px 0;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 20px;
 
@@ -56,6 +68,7 @@ export const Image = styled.img`
   height: 100%;
   max-height: 300px;
   margin: 56px 0 56px 0;
+  transition: all 250ms;
 `;
 
 export const Title = styled.p<{ whiteBG: boolean }>`
@@ -69,9 +82,4 @@ export const Title = styled.p<{ whiteBG: boolean }>`
     font-size: 28px;
     margin: 10px 10px 0 10px;
   }
-`;
-
-export const Icon = styled.img`
-  margin-left: 8px;
-  width: 20px;
 `;

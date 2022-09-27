@@ -51,7 +51,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
       <ThemeProvider theme={theme}>
         <LangProvider>
-          {/* TODO test version of loading  */}
           <ContentLoader isLoading={isPageLoading}>
             <Component {...pageProps} />
           </ContentLoader>

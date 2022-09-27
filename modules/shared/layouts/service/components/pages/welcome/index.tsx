@@ -54,7 +54,7 @@ const Welcome: React.FC<Props> = ({ themeColor, data }) => {
           </Button>
         </LeftSide>
 
-        <Image src={data?.img} />
+        <Image src={data?.img} alt={data?.img} />
       </InnerWrapper>
 
       <StrafeButton to='hero' spy smooth offset={-100} duration={500} activeClass='active' themeColor={themeColor}>

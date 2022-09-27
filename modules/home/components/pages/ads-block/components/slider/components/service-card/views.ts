@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
+  padding: 0 10px 0 10px;
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.templates.centerContent}
@@ -34,7 +35,12 @@ export const TitleWrapper = styled.div`
   display: flex;
   position: absolute;
   align-items: flex-end;
+  transition: all 450ms;
   background: rgba(0, 0, 0, 0.34);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.16);
+  }
 `;
 
 export const Image = styled.img`

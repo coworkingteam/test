@@ -15,7 +15,7 @@ const Services = () => (
 
     <ServicesWrapper>
       <ServiceCard whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp3 1.svg' />
-      <ServiceCard title='БИЗНЕСУ' />
+      <ServiceCard title='БИЗНЕСУ' img='/static/images/stamp3 1.svg' />
     </ServicesWrapper>
 
     <AdBlock
@@ -28,12 +28,12 @@ const Services = () => (
     />
 
     <ServicesWrapper>
-      <ServiceCard whiteBG title='Транспорт' img='/static/images/car.svg' />
-      <ServiceCard whiteBG title='Документы гражданства внж' />
+      <ServiceCard whiteBG title='Транспорт' img='/static/images/stamp3 1.svg' />
+      <ServiceCard whiteBG title='Документы гражданства внж' img='/static/images/stamp3 1.svg' />
     </ServicesWrapper>
 
     <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы? </Title>
-    <Button>Cвязатся с нами</Button>
+    <Button>Связатся с нами</Button>
   </Wrapper>
 );
 

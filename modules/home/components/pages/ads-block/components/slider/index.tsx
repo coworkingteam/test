@@ -11,7 +11,7 @@ import ServiceCard from '@md-modules/home/components/pages/ads-block/components/
 // views
 import { ArrowButtonsWrapper, SliderWrapper, Title } from './views';
 
-const sliderSetting = {
+const SLIDER_SETTINGS = {
   dots: true,
   infinite: true,
   speed: 500,
@@ -24,19 +24,15 @@ const sliderSetting = {
     {
       breakpoint: 1240,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         centerMode: true,
-        centerPadding: '92px',
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
     {
       breakpoint: 768,
       settings: {
         centerMode: true,
-        centerPadding: '46px',
         slidesToShow: 1,
         slidesToScroll: 1
       }
@@ -61,7 +57,7 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
         <ImageButton size='medium' onClick={nextSlide} image='/static/icons/right-button.svg' />
       </ArrowButtonsWrapper>
 
-      <Slider ref={sliderRef} {...sliderSetting}>
+      <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
         {data.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}

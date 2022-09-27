@@ -16,6 +16,7 @@ import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/comp
 // views
 import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper, Wrapper } from './views';
 
+// types
 export interface IServiceData {
   welcome: WelcomeData;
   serviceRegistrationFAQData: IAccordionItem[];
@@ -34,6 +35,7 @@ interface PropsWithTabs {
   data: { type: string; titleID: string; data: IServiceData }[];
 }
 
+// constants
 const SCROLL_TO_TOP_BUTTON_STYLES = { borderRadius: '100%' };
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {

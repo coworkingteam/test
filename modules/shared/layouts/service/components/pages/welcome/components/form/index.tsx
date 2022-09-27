@@ -41,22 +41,22 @@ const Form: React.FC<Props> = ({ service }) => {
     <Wrapper>
       <form>
         <InputWrapper>
-          <Label>Имя</Label>
+          <Label>Name</Label>
           <FormInput control={control} name='name' placeholder='Andrei Mihalkov' whiteBG />
         </InputWrapper>
 
         <InputWrapper>
-          <Label>Емайл</Label>
+          <Label>Email</Label>
           <FormInput control={control} name='email' placeholder='cobra_killer1995@gmail.com' whiteBG />
         </InputWrapper>
 
         <InputWrapper>
-          <Label>Телефон</Label>
+          <Label>Phone</Label>
           <FormPhoneInput name='phone' control={control} />
         </InputWrapper>
 
         <InputWrapper>
-          <Label>Услуга</Label>
+          <Label>Service</Label>
           <p>{service}</p>
         </InputWrapper>
       </form>
