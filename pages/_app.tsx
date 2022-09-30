@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Router, { useRouter } from 'next/router';
+// libs
+import { Toaster } from 'react-hot-toast';
 // providers
 import { ThemeProvider } from 'styled-components';
 import LangProvider from '@md-modules/shared/i18n/providers/main';
@@ -53,6 +55,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <LangProvider>
           <ContentLoader isLoading={isPageLoading}>
             <Component {...pageProps} />
+            <Toaster />
           </ContentLoader>
         </LangProvider>
       </ThemeProvider>

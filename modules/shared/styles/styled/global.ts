@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { colors } from '@md-styles/styled/theme';
+import { colors, templates } from '@md-styles/styled/theme';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -20,6 +20,17 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     
     color: ${colors.black600};
+  }
+
+  #nprogress {
+    position: absolute;
+    z-index: 999;
+
+    .bar {
+      height: 3px;
+      background: ${colors.black600};
+     ${templates.boxShadow}
+    }
   }
 
   .sidebar-tooltip {

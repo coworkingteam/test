@@ -15,14 +15,12 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const Accordion: React.FC<Props> = ({ data, blackTheme }) => {
-  return (
-    <Wrapper>
-      {data.map((item) => (
-        <AccordionItem {...item} key={item.id} blackTheme={blackTheme} />
-      ))}
-    </Wrapper>
-  );
-};
+const Accordion: React.FC<Props> = ({ data, blackTheme }) => (
+  <Wrapper>
+    {data.map((item) => (
+      <AccordionItem {...item} key={item.id} blackTheme={blackTheme} />
+    ))}
+  </Wrapper>
+);
 
 export default Accordion;

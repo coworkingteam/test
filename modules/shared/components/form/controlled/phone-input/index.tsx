@@ -6,7 +6,7 @@ import { PhoneProps, Phone } from '@md-modules/shared/components/form';
 
 interface Props extends PhoneProps {
   name: string;
-  control: Control<any>;
+  control: Control<any, any>;
   formatter?: (value: string) => string;
   handleOnBlur?: () => void;
   handleOnChange?: () => void;

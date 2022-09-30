@@ -11,15 +11,22 @@ import { Wrapper } from '@md-modules/shared/layouts/service/components/pages/ser
 
 interface Props {
   hasTabs: boolean;
+  toggleModal: () => void;
   serviceRegistrationFAQData: IAccordionItem[];
   serviceRegistrationData: ServiceRegistrationData;
 }
 
-const ServiceRegistration: React.FC<Props> = ({ serviceRegistrationData, hasTabs, serviceRegistrationFAQData }) => {
+const ServiceRegistration: React.FC<Props> = ({
+  serviceRegistrationData,
+  toggleModal,
+  hasTabs,
+  serviceRegistrationFAQData
+}) => {
   return (
     <Wrapper hasTabs={hasTabs}>
       <ServiceRegistrationCard
         linkID='hero'
+        toggleModal={toggleModal}
         leftSide={serviceRegistrationData.leftSide}
         rightSide={serviceRegistrationData.rightSide}
       />

@@ -22,6 +22,9 @@
       "@md-modules/*": [
         "./modules/*"
       ],
+      "@md-utils": [
+        "./modules/shared/utils"
+      ],
       "@md-styles/*": [
         "./modules/shared/styles/*"
       ],

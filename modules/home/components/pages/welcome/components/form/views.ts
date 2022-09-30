@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   max-height: 300px;
+  position: relative;
   flex-direction: column;
 
   background: rgba(255, 255, 255, 0.5);

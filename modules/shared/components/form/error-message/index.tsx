@@ -2,9 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const ErrorText = styled.div`
-  bottom: -16px;
+  bottom: -14px;
   font-size: 0.75rem;
-  margin-top: 2px;
   position: absolute;
   text-align: left;
 

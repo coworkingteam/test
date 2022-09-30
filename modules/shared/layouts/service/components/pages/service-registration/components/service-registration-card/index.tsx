@@ -43,9 +43,10 @@ export interface ServiceRegistrationData {
 
 interface Props extends ServiceRegistrationData {
   linkID?: string;
+  toggleModal: () => void;
 }
 
-const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID }) => {
+const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID, toggleModal }) => {
   return (
     <Wrapper id={linkID}>
       <RightSide>
@@ -98,7 +99,7 @@ const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID 
           </SubTitle>
         </InfoBlockWrapper>
 
-        <Button whiteBG onClick={rightSide.button.onClick}>
+        <Button whiteBG onClick={toggleModal}>
           <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
           <FormattedMessage id={rightSide.button.titleID} />
         </Button>

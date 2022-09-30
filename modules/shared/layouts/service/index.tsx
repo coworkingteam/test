@@ -15,6 +15,9 @@ import { IAccordionItem } from '@md-modules/shared/types/accordion';
 import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card';
 // views
 import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper, Wrapper } from './views';
+import Modal from '@md-ui/modal/main';
+import Form from '@md-modules/shared/layouts/service/components/form';
+import { useIntl } from 'react-intl';
 
 // types
 export interface IServiceData {
@@ -40,10 +43,12 @@ const SCROLL_TO_TOP_BUTTON_STYLES = { borderRadius: '100%' };
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
+  const intl = useIntl();
   const hasTabs = type === 'WITH_TABS';
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const { query } = useRouter();
 
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [isScroll, setIsScroll] = React.useState(false);
   const [activeDataType, setActiveDataType] = React.useState(hasTabs ? props.data?.[0]?.type : undefined);
 
@@ -51,6 +56,12 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
     () => (hasTabs ? props.data?.find((i) => i.type === activeDataType)?.data : props.data),
     [activeDataType, props.data]
   );
+
+  const serviceName = `${intl.formatMessage({ id: activeData?.welcome.titleID })}${
+    activeData?.welcome.tabTitleID ? ':' : ''
+  } ${activeData?.welcome.tabTitleID ? intl.formatMessage({ id: activeData.welcome.tabTitleID }) : ''}`;
+
+  const toggleModal = () => setModalIsOpen((prev) => !prev);
 
   const scrollHandler = () => {
     const scrollHeight = wrapperRef.current?.scrollHeight || 0;
@@ -85,7 +96,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
     <Wrapper>
       <Header />
       <div ref={wrapperRef}>
-        <Welcome data={activeData.welcome} themeColor={themeColor} />
+        <Welcome toggleModal={toggleModal} data={activeData.welcome} themeColor={themeColor} />
       </div>
 
       {hasTabs && (
@@ -108,14 +119,25 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
 
       <ServiceRegistration
         hasTabs={hasTabs}
+        toggleModal={toggleModal}
         serviceRegistrationData={activeData.serviceRegistrationData}
         serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
       />
 
-      <ShortDescription themeColor={themeColor} />
+      {/*<ShortDescription themeColor={themeColor} />*/}
       <Footer />
 
       <ScrollToTop smooth top={100} style={SCROLL_TO_TOP_BUTTON_STYLES} />
+
+      <Modal
+        maxWidth={768}
+        closeButton
+        title={activeData.welcome.titleID}
+        isOpen={modalIsOpen}
+        toggleModal={toggleModal}
+      >
+        <Form toggleModal={toggleModal} service={serviceName} />
+      </Modal>
     </Wrapper>
   );
 };

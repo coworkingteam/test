@@ -76,7 +76,6 @@ export const SubTitle = styled.p`
 `;
 
 export const FormWrapper = styled.div`
-  position: relative;
   display: flex;
   max-width: 418px;
   width: 100%;
