@@ -379,10 +379,10 @@
   resolved "https://registry.npmjs.org/@formatjs/macro/-/macro-0.2.6.tgz"
   integrity sha512-DfdnLJf8+PwLHzJECZ1Xfa8+sI9akQnUuLN2UdkaExTQmlY0Vs36rMzEP0JoVDBMk+KdQbJNt72rPeZkBNcKWg==
 
-"@hookform/resolvers@^2.9.7":
-  version "2.9.7"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.7.tgz#8b257ae67234ce0270e6b044c1a61fb98ec02b4b"
-  integrity sha512-BloehX3MOLwuFEwT4yZnmolPjVmqyn8VsSuodLfazbCIqxBHsQ4qUZsi+bvNNCduRli1AGWFrkDLGD5QoNzsoA==
+"@hookform/resolvers@^2.8.5":
+  version "2.9.8"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.9.8.tgz#9af51d15602f3c6e3249714712d8275564e65b72"
+  integrity sha512-iVVjH0USq+1TqDdGkWe2M1x7Wn5OFPgVRo7CbWFsXTqqXqCaZtZcnzJu+UhljCWbthFWxWGXKLGYUDPZ04oVvQ==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -2882,10 +2882,10 @@ react-gradient@^1.0.2:
   resolved "https://registry.npmjs.org/react-gradient/-/react-gradient-1.0.2.tgz"
   integrity sha512-0SWuauujHh0R0Q+AaogUm/t0pAblzJVW5BYoYbJ4Kh8rCEb4EomsEK8X2QiR1UXR7iOiiqRuJZixTrKeMaFuSQ==
 
-react-hook-form@^7.33.1:
-  version "7.33.1"
-  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.33.1.tgz"
-  integrity sha512-ydTfTxEJdvgjCZBj5DDXRc58oTEfnFupEwwTAQ9FSKzykEJkX+3CiAkGtAMiZG7IPWHuzgT6AOBfogiKhUvKgg==
+react-hook-form@^7.24.0:
+  version "7.36.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.36.1.tgz#82a311fe8cbe75e689fd4529f083b7c983da6520"
+  integrity sha512-EbYYkCG2p8ywe7ikOH2l02lAFMrrrslZi1I8fqd8ifDGNAkhomHZQzQsP6ksvzrWBKntRe8b5L5L7Zsd+Gm02Q==
 
 react-hot-toast@^2.4.0:
   version "2.4.0"
