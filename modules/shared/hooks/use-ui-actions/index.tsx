@@ -6,8 +6,6 @@ import styled from 'styled-components';
 import { ToastPosition } from 'react-hot-toast/src/core/types';
 // context
 import { toast } from 'react-hot-toast';
-// utils
-import * as U from '@md-utils';
 
 // types
 interface OpenSuccessToastParam {
@@ -67,7 +65,7 @@ const useUIActions = () => {
         break;
       case 'ERROR':
         if (typeof data.error !== 'string') {
-          toast.error(U.errors.handleGraphqlErrorMsg(data.error) || 'Oops... Something went wrong.', {
+          toast.error('Oops... Something went wrong.', {
             position: data.position || 'top-center'
           });
 

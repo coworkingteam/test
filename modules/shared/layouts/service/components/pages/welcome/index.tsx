@@ -1,10 +1,8 @@
 import React from 'react';
 // libs
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 // components
-import Modal from '@md-ui/modal/main';
 import { Button } from '@md-ui/buttons/main';
-import Form from '@md-modules/shared/layouts/service/components/form';
 // views
 import {
   Image,

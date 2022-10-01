@@ -2,22 +2,21 @@ import * as React from 'react';
 // libs
 import ScrollToTop from 'react-scroll-to-top';
 // hooks
+import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 // view components
 import { Footer } from '@md-ui/footer';
+import Modal from '@md-ui/modal/main';
 import { Header } from '@md-ui/headers/main';
+import Form from '@md-modules/shared/layouts/service/components/form';
 import ChildrenItem from '@md-modules/shared/layouts/service/components/tab-item';
 import Welcome, { WelcomeData } from '@md-modules/shared/layouts/service/components/pages/welcome';
 import ServiceRegistration from '@md-modules/shared/layouts/service/components/pages/service-registration';
-import ShortDescription from '@md-modules/shared/layouts/service/components/pages/short-description';
 // types
 import { IAccordionItem } from '@md-modules/shared/types/accordion';
 import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card';
 // views
 import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper, Wrapper } from './views';
-import Modal from '@md-ui/modal/main';
-import Form from '@md-modules/shared/layouts/service/components/form';
-import { useIntl } from 'react-intl';
 
 // types
 export interface IServiceData {
