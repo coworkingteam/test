@@ -28,6 +28,7 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
     svg {
       width: 20px;
       margin-left: 8px;
+      transition: all 0.2s ease;
 
       path {
         fill: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
@@ -64,11 +65,19 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
 `;
 
 export const Image = styled.img`
+  //height: 100%;
+  //width: 100%;
+
+  transition: all 250ms;
+`;
+
+export const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   max-height: 300px;
   margin: 56px 0 56px 0;
-  transition: all 250ms;
+
+  ${({ theme }) => theme.templates.centerContent};
 `;
 
 export const Title = styled.p<{ whiteBG: boolean }>`

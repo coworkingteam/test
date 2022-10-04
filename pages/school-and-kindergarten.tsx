@@ -8,7 +8,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'schoolAndKindergarten.tabs.0.title',
     data: {
       welcome: {
-        img: '/static/images/international-passport.png',
+        img: '/static/images/school.svg',
         titleID: 'schoolAndKindergarten.tabs.0.welcome.title',
         tabTitleID: 'schoolAndKindergarten.tabs.0.title',
         button: {
@@ -40,7 +40,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
-        open: index === 0,
+        // open: index === 0,
         title: `schoolAndKindergarten.tabs.0.serviceRegistrationFAQData.${index}.title`,
         content: `schoolAndKindergarten.tabs.0.serviceRegistrationFAQData.${index}.content`
       }))
@@ -51,7 +51,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'schoolAndKindergarten.tabs.1.title',
     data: {
       welcome: {
-        img: '/static/images/international-passport.png',
+        img: '/static/images/kindergarten.svg',
         titleID: 'schoolAndKindergarten.tabs.1.welcome.title',
         tabTitleID: 'schoolAndKindergarten.tabs.1.title',
         button: {
@@ -83,7 +83,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
-        open: index === 0,
+        // open: index === 0,
         title: `schoolAndKindergarten.tabs.1.serviceRegistrationFAQData.${index}.title`,
         content: `schoolAndKindergarten.tabs.1.serviceRegistrationFAQData.${index}.content`
       }))

@@ -4,14 +4,19 @@ import ReactTooltip from 'react-tooltip';
 // constants
 import { LOCALES, Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
-import { ChangeLanguageIcon, ToolTipItem, ToolTipWrapper } from '@md-ui/headers/main/components/lang-button/views';
+import {
+  ChangeLanguageIcon,
+  Image,
+  ToolTipItem,
+  ToolTipWrapper
+} from '@md-ui/headers/main/components/lang-button/views';
 
 // constants
-const OPTIONS: { label: string; value: Locales }[] = [
-  { label: 'RU', value: LOCALES.RUSSIAN },
-  { label: 'EN', value: LOCALES.ENGLISH },
-  { label: 'UA', value: LOCALES.UKRAINIAN },
-  { label: 'PL', value: LOCALES.POLISH }
+const OPTIONS: { label: string; image: string; value: Locales }[] = [
+  { label: 'RU', image: '/static/icons/russia.svg', value: LOCALES.RUSSIAN },
+  { label: 'EN', image: '/static/icons/uk.svg', value: LOCALES.ENGLISH },
+  { label: 'UA', image: '/static/icons/ukraine.svg', value: LOCALES.UKRAINIAN },
+  { label: 'PL', image: '/static/icons/poland.svg', value: LOCALES.POLISH }
 ];
 
 // types
@@ -21,6 +26,11 @@ interface Props {
 }
 
 const LangButton: React.FC<Props> = ({ onSelectLang, activeLang }) => {
+  const activeLangImage = React.useMemo(
+    () => OPTIONS.find((option) => option.value === activeLang)?.image,
+    [activeLang]
+  );
+
   const langList = React.useMemo(
     () =>
       OPTIONS.map((option) => {
@@ -29,6 +39,7 @@ const LangButton: React.FC<Props> = ({ onSelectLang, activeLang }) => {
         return (
           <ToolTipItem onClick={() => !isActive && onSelectLang(option.value)} isActive={isActive} key={option.value}>
             {option.label}
+            <Image src={option.image} alt={option.image} />
           </ToolTipItem>
         );
       }),
@@ -41,8 +52,8 @@ const LangButton: React.FC<Props> = ({ onSelectLang, activeLang }) => {
         data-tip
         data-for='languages'
         data-event='click'
-        src='/static/icons/change-language.svg'
         alt='change-language'
+        src={activeLangImage || '/static/icons/change-language.svg'}
       />
 
       <ReactTooltip

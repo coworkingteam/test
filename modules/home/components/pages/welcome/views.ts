@@ -8,11 +8,11 @@ export const Wrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
-  padding: 148px 70px 62px 100px;
   max-width: 1450px;
   min-height: 100vh;
   height: 100%;
   width: 100%;
+  padding: 148px 70px 62px 100px;
 
   position: relative;
   text-align: center;

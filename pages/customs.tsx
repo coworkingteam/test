@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/resident-card.png',
+    img: '/static/images/rastamojka.svg',
     titleID: 'customs.welcome.title',
     button: {
       titleID: 'customs.welcome.button.title',
@@ -35,7 +35,7 @@ const DATA: IServiceData = {
   },
   serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
     id: `${index}`,
-    open: index === 0,
+    // open: index === 0,
     title: `customs.serviceRegistrationFAQData.${index}.title`,
     content: `customs.serviceRegistrationFAQData.${index}.content`
   }))

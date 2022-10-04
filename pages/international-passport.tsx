@@ -8,7 +8,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'internationalPassport.tabs.0.title',
     data: {
       welcome: {
-        img: '/static/images/international-passport.png',
+        img: '/static/images/international-passport.svg',
         tabTitleID: 'internationalPassport.tabs.0.title',
         titleID: 'internationalPassport.tabs.0.welcome.title',
         button: {
@@ -43,7 +43,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
-        open: index === 0,
+        // open: index === 0,
         title: `internationalPassport.tabs.0.serviceRegistrationFAQData.${index}.title`,
         content: `internationalPassport.tabs.0.serviceRegistrationFAQData.${index}.content`
       }))
@@ -54,7 +54,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'internationalPassport.tabs.1.title',
     data: {
       welcome: {
-        img: '/static/images/international-passport.png',
+        img: '/static/images/international-passport.svg',
         tabTitleID: 'internationalPassport.tabs.1.title',
         titleID: 'internationalPassport.tabs.1.welcome.title',
         button: {
@@ -86,7 +86,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
       },
       serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
         id: `${index}`,
-        open: index === 0,
+        // open: index === 0,
         title: `internationalPassport.tabs.1.serviceRegistrationFAQData.${index}.title`,
         content: `internationalPassport.tabs.1.serviceRegistrationFAQData.${index}.content`
       }))

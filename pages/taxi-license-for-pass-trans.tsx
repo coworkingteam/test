@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/car-taxi-license-page.png',
+    img: '/static/images/car-taxi-license.svg',
     titleID: 'taxiLicense.welcome.title',
     button: {
       titleID: 'taxiLicense.welcome.button.title',
@@ -35,7 +35,7 @@ const DATA: IServiceData = {
   },
   serviceRegistrationFAQData: Array.from({ length: 3 }, (_, index) => ({
     id: `${index}`,
-    open: index === 0,
+    // open: index === 0,
     title: `taxiLicense.serviceRegistrationFAQData.${index}.title`,
     content: `taxiLicense.serviceRegistrationFAQData.${index}.content`
   }))

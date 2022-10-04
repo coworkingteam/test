@@ -14,6 +14,8 @@ export const ToolTipItem = styled.p<{ isActive: boolean }>`
   transition: background-color 0.2s linear;
   color: ${({ theme }) => theme.colors.white};
 
+  ${({ theme }) => theme.templates.centerContent}
+
   &:hover {
     color: ${({ theme }) => theme.colors.black600};
     background-color: ${({ theme }) => theme.colors.white};
@@ -25,6 +27,12 @@ export const ToolTipItem = styled.p<{ isActive: boolean }>`
       color: ${theme.colors.black600};
       background-color: ${theme.colors.white};
     `}
+`;
+
+export const Image = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
 `;
 
 export const ChangeLanguageIcon = styled.img`

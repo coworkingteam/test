@@ -1,13 +1,10 @@
 import * as React from 'react';
-// libs
-import ScrollToTop from 'react-scroll-to-top';
 // hooks
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 // view components
-import { Footer } from '@md-ui/footer';
 import Modal from '@md-ui/modal/main';
-import { Header } from '@md-ui/headers/main';
+import { MainLayout } from '@md-modules/shared/layouts/main';
 import Form from '@md-modules/shared/layouts/service/components/form';
 import ChildrenItem from '@md-modules/shared/layouts/service/components/tab-item';
 import Welcome, { WelcomeData } from '@md-modules/shared/layouts/service/components/pages/welcome';
@@ -16,7 +13,7 @@ import ServiceRegistration from '@md-modules/shared/layouts/service/components/p
 import { IAccordionItem } from '@md-modules/shared/types/accordion';
 import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card';
 // views
-import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper, Wrapper } from './views';
+import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper } from './views';
 
 // types
 export interface IServiceData {
@@ -36,9 +33,6 @@ interface PropsWithTabs {
   themeColor?: string;
   data: { type: string; titleID: string; data: IServiceData }[];
 }
-
-// constants
-const SCROLL_TO_TOP_BUTTON_STYLES = { borderRadius: '100%' };
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
@@ -92,41 +86,39 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   }
 
   return (
-    <Wrapper>
-      <Header />
-      <div ref={wrapperRef}>
-        <Welcome toggleModal={toggleModal} data={activeData.welcome} themeColor={themeColor} />
-      </div>
+    <>
+      <MainLayout>
+        <div ref={wrapperRef}>
+          <Welcome toggleModal={toggleModal} data={activeData.welcome} themeColor={themeColor} />
+        </div>
 
-      {hasTabs && (
-        <TabItemsContainer id='hero'>
-          <TabItemsWrapper isScroll={isScroll}>
-            <InnerTabItemsWrapper isScroll={isScroll}>
-              {props.data.map((tab) => (
-                <ChildrenItem
-                  key={tab.type}
-                  type={tab.type}
-                  titleID={tab.titleID}
-                  onClick={setActiveDataType}
-                  isActive={activeDataType === tab.type}
-                />
-              ))}
-            </InnerTabItemsWrapper>
-          </TabItemsWrapper>
-        </TabItemsContainer>
-      )}
+        {hasTabs && (
+          <TabItemsContainer id='hero'>
+            <TabItemsWrapper isScroll={isScroll}>
+              <InnerTabItemsWrapper isScroll={isScroll}>
+                {props.data.map((tab) => (
+                  <ChildrenItem
+                    key={tab.type}
+                    type={tab.type}
+                    titleID={tab.titleID}
+                    onClick={setActiveDataType}
+                    isActive={activeDataType === tab.type}
+                  />
+                ))}
+              </InnerTabItemsWrapper>
+            </TabItemsWrapper>
+          </TabItemsContainer>
+        )}
 
-      <ServiceRegistration
-        hasTabs={hasTabs}
-        toggleModal={toggleModal}
-        serviceRegistrationData={activeData.serviceRegistrationData}
-        serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
-      />
+        <ServiceRegistration
+          hasTabs={hasTabs}
+          toggleModal={toggleModal}
+          serviceRegistrationData={activeData.serviceRegistrationData}
+          serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
+        />
 
-      {/*<ShortDescription themeColor={themeColor} />*/}
-      <Footer />
-
-      <ScrollToTop smooth top={100} style={SCROLL_TO_TOP_BUTTON_STYLES} />
+        {/*<ShortDescription themeColor={themeColor} />*/}
+      </MainLayout>
 
       <Modal
         maxWidth={768}
@@ -137,7 +129,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
       >
         <Form toggleModal={toggleModal} service={serviceName} />
       </Modal>
-    </Wrapper>
+    </>
   );
 };
 
