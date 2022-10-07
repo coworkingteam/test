@@ -42,7 +42,7 @@ const DATA: IServiceData = {
 };
 
 const LongTermResidencePermit = () => (
-  <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.blue100} />
+  <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.purple100} />
 );
 
 export default LongTermResidencePermit;

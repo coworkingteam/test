@@ -12,13 +12,25 @@ import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
-import { menuItemsRelatedCar, menuItemsRelatedHuman, menuItemsRelatedBusiness, NAVBAR_CONFIG } from './constants';
+import {
+  menuItemsTransport,
+  menuItemsIndividual,
+  menuItemsPopular,
+  menuItemsAdmission,
+  menuItemsRelatedBusiness,
+  NAVBAR_CONFIG
+} from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
 
 const BUTTON_STYLES = { mr: 26 };
-const MOBILE_MENU_DATA = menuItemsRelatedHuman.concat(menuItemsRelatedCar, menuItemsRelatedBusiness);
+const MOBILE_MENU_DATA = menuItemsTransport.concat(
+  menuItemsIndividual,
+  menuItemsRelatedBusiness,
+  menuItemsPopular,
+  menuItemsAdmission
+);
 
 const Header = () => {
   const { push } = useRouter();

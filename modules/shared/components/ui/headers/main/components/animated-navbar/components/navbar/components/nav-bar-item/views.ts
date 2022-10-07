@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const DropdownSlot = styled.div<{ isScroll: boolean }>`
+export const DropdownSlot = styled.div`
   position: absolute;
   left: 50%;
-  margin-top: 8px;
   transform: translateX(-50%);
+  margin-top: 8px;
   perspective: 1500px;
 `;
 
@@ -20,8 +20,6 @@ export const NavbarItemTitle = styled.p<{ isScroll: boolean }>`
 `;
 
 export const NavbarItemEl = styled.li<{ isScroll: boolean }>`
-  position: relative;
-
   &:hover {
     > p {
       ${({ isScroll, theme }) =>

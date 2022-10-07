@@ -65,10 +65,12 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
 `;
 
 export const Image = styled.img`
-  //height: 100%;
-  //width: 100%;
-
   transition: all 250ms;
+
+  @media (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const ImageWrapper = styled.div`

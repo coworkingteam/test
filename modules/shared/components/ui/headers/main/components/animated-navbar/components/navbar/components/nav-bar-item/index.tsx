@@ -23,7 +23,7 @@ const NavbarItem: React.FC<Props> = ({ children, title, isScroll, index, onMouse
       <NavbarItemTitle isScroll={isScroll}>
         <FormattedMessage id={title} />
       </NavbarItemTitle>
-      <DropdownSlot isScroll={isScroll}>{children}</DropdownSlot>
+      <DropdownSlot>{children}</DropdownSlot>
     </NavbarItemEl>
   );
 };

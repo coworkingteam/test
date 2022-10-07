@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   justify-content: center;
 
   background: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 768px) {
+    min-height: unset;
+  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -19,7 +23,7 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
-    margin: 60px auto;
+    margin: 80px auto;
   }
 `;
 
@@ -31,6 +35,8 @@ export const Title = styled.p`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 26px;
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 0 62px 0;
   }
 `;

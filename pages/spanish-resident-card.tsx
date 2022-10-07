@@ -41,6 +41,6 @@ const DATA: IServiceData = {
   }))
 };
 
-const ResidentCard = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.yellow300} />;
+const ResidentCard = () => <ServiceLayout type='WITHOUT_TABS' data={DATA} themeColor={theme.colors.purple100} />;
 
 export default ResidentCard;

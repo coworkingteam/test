@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
-export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
+export const Title = styled.p`
+  margin: 0 0 18px 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+`;
+
+export const Icon = styled.img`
+  margin-left: 10px;
+  width: 20px;
+`;
+
+export const Heading = styled.p<{ noMarginBottom?: boolean }>`
+  margin: 0 0 14px 0;
+  font-weight: 500;
+  font-size: 28px;
+
+  text-decoration-line: underline;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 0;
 
   color: ${({ theme }) => theme.colors.black600};
-  margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
 `;
 
 export const LinkList = styled.div`
@@ -19,19 +32,25 @@ export const LinkList = styled.div`
 `;
 
 export const DropdownSection = styled.div`
-  padding: 20px;
+  padding: 22px 48px;
   position: relative;
   z-index: 1;
 `;
 
 export const DevelopersDropdownEl = styled.div`
   width: max-content;
+  display: flex;
 `;
 
 export const Flex = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
-  > div:first-of-type {
-    margin-right: 48px;
+  > div {
+    margin-right: 90px;
+  }
+
+  > div:last-child {
+    margin-right: 0;
   }
 `;

@@ -1,6 +1,6 @@
 export default {
   services: {
-    title: 'Usługi',
+    menuItemTitle: 'Usługi',
     itemList: [
       ['Ponaglenie karty pobytu', '/resident-card'],
       ['Przedłużenie ważności paszportu', '/international-passport?type=EXTENSION'],

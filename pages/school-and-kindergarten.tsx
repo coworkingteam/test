@@ -91,6 +91,6 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
   }
 ];
 
-const SchoolAndKindergarten = () => <ServiceLayout type='WITH_TABS' data={DATA} themeColor={theme.colors.blue100} />;
+const SchoolAndKindergarten = () => <ServiceLayout type='WITH_TABS' data={DATA} themeColor={theme.colors.yellow300} />;
 
 export default SchoolAndKindergarten;

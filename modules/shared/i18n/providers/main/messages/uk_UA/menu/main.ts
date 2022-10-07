@@ -1,6 +1,6 @@
 export default {
   services: {
-    title: 'Послуги',
+    menuItemTitle: 'Послуги',
     itemList: [
       ['Допомога з картою побуту', '/resident-card'],
       ['Продовження терміну дії паспорта', '/international-passport?type=EXTENSION'],

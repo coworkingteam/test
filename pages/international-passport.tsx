@@ -94,6 +94,6 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
   }
 ];
 
-const InternationalPassport = () => <ServiceLayout type='WITH_TABS' data={DATA} themeColor={theme.colors.blue100} />;
+const InternationalPassport = () => <ServiceLayout type='WITH_TABS' data={DATA} themeColor={theme.colors.purple100} />;
 
 export default InternationalPassport;

@@ -41,7 +41,7 @@ export const DropdownRoot = styled.div<{
 export const DropdownBackground = styled.div`
   transform-origin: 0 0;
   margin-top: 16px;
-  border-radius: 4px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
   will-change: transform;

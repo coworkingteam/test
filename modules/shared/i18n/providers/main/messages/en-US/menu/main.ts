@@ -1,6 +1,6 @@
 export default {
   services: {
-    title: 'Services',
+    menuItemTitle: 'Services',
     itemList: [
       ['Residence permit assistance', '/resident-card'],
       ['Passport expiration date extension', '/international-passport?type=EXTENSION'],

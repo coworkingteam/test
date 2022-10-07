@@ -76,7 +76,7 @@ export const Wrapper = styled.button<{
       background-color: ${theme.colors.white};
 
       &:hover {
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
       }
     `}
   ${({ disabled }) =>
