@@ -50,6 +50,8 @@ export const Icon = styled.img`
 
 export const PreviewIcon = styled.img`
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 export const RightSide = styled.div<{ colorBG: string }>`
