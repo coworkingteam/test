@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 
 export const Title = styled.p`
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 16px;
 `;
 
 export const Icon = styled.img`
-  margin-left: 10px;
-  width: 20px;
+  margin-left: 8px;
+  width: 16px;
 `;
 
 export const Heading = styled.p<{ noMarginBottom?: boolean }>`
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 22px;
 
   text-decoration-line: underline;
   text-transform: uppercase;
@@ -24,7 +23,7 @@ export const Heading = styled.p<{ noMarginBottom?: boolean }>`
 `;
 
 export const LinkList = styled.div`
-  margin: 16px 0;
+  margin: 12px 0;
 
   div {
     padding: 4px 0;
@@ -32,7 +31,7 @@ export const LinkList = styled.div`
 `;
 
 export const DropdownSection = styled.div`
-  padding: 22px 48px;
+  padding: 18px 38px;
   position: relative;
   z-index: 1;
 `;
@@ -47,7 +46,7 @@ export const Flex = styled.div`
   flex-wrap: wrap;
 
   > div {
-    margin-right: 90px;
+    margin-right: 72px;
   }
 
   > div:last-child {

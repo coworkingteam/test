@@ -4,6 +4,10 @@ export default {
 
     title: 'Не знаешь с чего начать? Начнис aksis',
     categories: {
+      residencePermit: {
+        title: 'ВНЖ услуги'
+      },
+
       individuals: {
         title: 'физ лицам',
         itemList: [
@@ -23,7 +27,7 @@ export default {
         ]
       },
       admission: {
-        title: 'Потсупление',
+        title: 'Поступление',
         itemList: [
           ['Поступление в польский ВУЗ', '/admission-to-university'],
           ['Запись ребёнка в школу', '/school-and-kindergarten?type=SCHOOL'],

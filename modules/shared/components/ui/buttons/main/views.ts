@@ -43,10 +43,6 @@ export const Wrapper = styled.button<{
         background: darken(${({ theme }) => theme.colors.red400}, 10%);
       `}
   }
-    
-    
-    
-  }
 
   &:active {
     opacity: 0.9;
@@ -103,6 +99,4 @@ export const LoaderWrapper = styled.div`
     height: 20px;
     width: 20px;
   }
-
-  margin-left: 8px;
 `;

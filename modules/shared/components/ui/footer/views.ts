@@ -23,21 +23,33 @@ export const ContentWrapper = styled.div`
 
 export const InnerWrapper = styled.div`
   width: 100%;
+  display: flex;
   justify-content: center;
-  display: grid;
-  gap: 36px 96px;
   padding: 76px 88px;
-  grid-template-columns: repeat(auto-fill, 200px);
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 76px 0;
+  }
+`;
+
+export const LinkList = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 0 32px 0 0;
+
   div {
-    padding: 0;
-    font-size: 20px;
+    padding: 0 0 10px 0;
+    font-size: 16px;
   }
 
+  border-right: 1px solid ${({ theme }) => theme.colors.white};
+
   @media (max-width: 768px) {
-    padding: 76px 0;
+    border-right: none;
+    padding: 0 0 32px;
 
     div {
       font-size: 16px;
@@ -46,16 +58,42 @@ export const InnerWrapper = styled.div`
   }
 `;
 
+export const LinkListWithoutBorder = styled(LinkList)`
+  border-right: none;
+`;
+
+export const MenuItemsWrapper = styled.div`
+  margin: 0 0 0 32px;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+`;
+
 export const FAQWrapper = styled.div`
   font-size: 16px !important;
-  opacity: 0.7;
-  padding: 20px 110px;
+  margin: 28px 0;
 
   color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 768px) {
-    padding: 20px 10px;
-    font-size: 14px;
+    font-size: 12px !important;
+    margin: 28px 10px;
+    text-align: center;
+  }
+`;
+
+export const Heading = styled.p`
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  font-size: 26px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+
+  color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 768px) {
     text-align: center;
   }
 `;

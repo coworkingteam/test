@@ -16,15 +16,21 @@ export const linkPresets = {
   menu: css<{ hoverBGColor?: string; hoverColor?: string; isActive: boolean }>`
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
-    font-size: 22px;
-    font-weight: 700;
+    padding: 14px 24px;
+    font-size: 26px;
     border-radius: 10px;
+    line-height: 36px;
     transition: all 250ms ease-in-out;
+    margin-bottom: 38px;
+    text-decoration: none !important;
+
+    background: ${({ theme }) => theme.colors.white};
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &:hover {
-      padding: 8px 20px;
-
       background: ${({ theme, hoverBGColor }) => hoverBGColor || theme.colors.black600};
       color: ${({ theme, hoverColor }) => hoverColor || theme.colors.white};
     }

@@ -1,6 +1,11 @@
 import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
+// components
+import { Link } from '@md-ui/link';
+import SendArrow from '../../../../../../../../../../../public/static/icons/send-arrow';
+// theme
+import { colors } from '@md-styles/styled/theme';
 // views
 import { DropdownSection, Heading, LinkList, Flex, DevelopersDropdownEl, Title, Icon } from '../views';
 // constants
@@ -11,9 +16,6 @@ import {
   menuItemsTransport,
   menuItemsRelatedBusiness
 } from '@md-ui/headers/main/constants';
-import { Link } from '@md-ui/link';
-import { colors } from '@md-styles/styled/theme';
-import SendArrow from '../../../../../../../../../../../public/static/icons/send-arrow';
 
 const ServicesMenu = () => (
   <DevelopersDropdownEl>

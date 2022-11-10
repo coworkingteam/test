@@ -38,10 +38,14 @@ interface FormData {
 const Form = () => {
   const { openToast, startProgress, doneProgress } = useUIActions();
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const { control, handleSubmit, reset } = useForm<FormData>({
     resolver: yupResolver(schema),
     defaultValues: { name: '', phone: '380', email: '' }
   });
+
+  const toggleIsLoading = () => setIsLoading((prev) => !prev);
 
   const handleFormSubmit = debounce(
     () =>
@@ -49,6 +53,7 @@ const Form = () => {
         const api = createAPI();
 
         startProgress();
+        toggleIsLoading();
 
         try {
           const getContactListResponse = await api.getContactList({ filter: { PHONE: data.phone } });
@@ -95,6 +100,7 @@ const Form = () => {
           console.log('[Error while submit form on Welcome page]: ', JSON.stringify(error));
         } finally {
           doneProgress();
+          toggleIsLoading();
         }
       })(),
     500
@@ -120,7 +126,7 @@ const Form = () => {
       </form>
 
       <ButtonWrapper>
-        <Button onClick={handleFormSubmit} preset='large'>
+        <Button isLoading={isLoading} onClick={handleFormSubmit} preset='large'>
           Получить консультацию <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
         </Button>
       </ButtonWrapper>

@@ -56,8 +56,13 @@ export const Messenger = styled.img`
   width: 95px;
   height: 95px;
   cursor: pointer;
+  transition: 250ms all ease;
 
   &:first-child {
     height: 105px;
+  }
+
+  &:hover {
+    transform: translate3d(0, -4px, 0);
   }
 `;

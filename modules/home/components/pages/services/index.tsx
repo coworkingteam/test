@@ -29,7 +29,12 @@ const Services = () => (
 
     <ServicesWrapper>
       <ServiceCard url='/menu?type=TRANSPORT' whiteBG title='Транспорт' img='/static/images/car-front.svg' />
-      <ServiceCard url='/menu' whiteBG title='Документы гражданства внж' img='/static/images/documents.png' />
+      <ServiceCard
+        url='/menu?type=RESIDENCE_PERMIT'
+        whiteBG
+        title='Документы гражданства внж'
+        img='/static/images/documents.png'
+      />
     </ServicesWrapper>
 
     <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы? </Title>

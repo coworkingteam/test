@@ -1,6 +1,7 @@
 import React from 'react';
 // libs
 import * as yup from 'yup';
+import { FormattedMessage } from 'react-intl';
 import { yupResolver } from '@hookform/resolvers/yup';
 // hooks
 import { useForm } from 'react-hook-form';
@@ -40,11 +41,16 @@ const Form: React.FC<Props> = ({ service, toggleModal }) => {
     defaultValues: { name: '', phone: '380', email: '' }
   });
 
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const toggleIsLoading = () => setIsLoading((prev) => !prev);
+
   const handleFormSubmit = debounce(
     () =>
       handleSubmit(async (data: FormData) => {
         const api = createAPI();
 
+        toggleIsLoading();
         startProgress();
 
         try {
@@ -92,6 +98,7 @@ const Form: React.FC<Props> = ({ service, toggleModal }) => {
 
           console.log('[Error while submit form on Service page]: ', JSON.stringify(error));
         } finally {
+          toggleIsLoading();
           doneProgress();
         }
       })(),
@@ -123,8 +130,8 @@ const Form: React.FC<Props> = ({ service, toggleModal }) => {
       </form>
 
       <ButtonWrapper>
-        <Button onClick={handleFormSubmit} preset='large' whiteBG>
-          Оформить <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
+        <Button isLoading={isLoading} onClick={handleFormSubmit} preset='large' whiteBG>
+          <FormattedMessage id='buttons.drawUp' /> <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
         </Button>
       </ButtonWrapper>
     </Wrapper>

@@ -1,20 +1,38 @@
 export const ACCORDION_DATA = [
   {
     id: '1',
-    title: 'Варианты оформления польского оформления',
+    title: 'В каких городах есть Ваши офисы?',
     content:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.'
+      'Пока для посетителей открыт только наш главный офис в Познани, но услуги оказываем также в городах ____________________ и _________. Наш оператор всегда может проконсультировать Вас на предмет доступности выбранной услуги в других городах'
   },
   {
     id: '2',
-    title: 'Перечень основных документов для оформления гражданства',
+    title: 'Какие платёжные системы Вы принимаете?',
     content:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.'
+      'Для максимального комфорта наших клиентов рассчитаться можно картой, наличными, криптовалютой, банковским переводом (включая BLIK) а также сервисами Google Pay, Apple Pay, PayPal'
   },
   {
     id: '3',
-    title: 'Варианты оформления польского оформления',
+    title: 'Какие гарантии Вы даёте?',
     content:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.'
+      'Прежде всего гарантию выполнения своих обязательств правильно и своевременно, а также открытого контакта с клиентом на всех этапах. В некоторых сферах окончательное решение выносим не мы, но наш опыт позволяет не допускать таких ситуаций'
+  },
+  {
+    id: '4',
+    title: 'Какие у Вас часы работы?',
+    content:
+      'Наш офис по адресу Poznań, ul.Limanowskiego 7 открыт для Вас c понедельника по пятницу с 9:00 до 18:00 и с 10:00 до 13:00 в субботу, где Вы можете обсудить интересующую Вас услугу в живом диалоге. Операторы же доступны ежедневно через любой из каналов связи, а личные консультанты клиентов на связи 24/7'
+  },
+  {
+    id: '5',
+    title: 'Можно ли будет получить возврат платежа или залога?',
+    content:
+      'Разумно предположить что рано или поздно случится ситуация в которой мы будем бессильны ввиду непредвиденных обстоятельств, поэтому предусмотрели специальную платёжную систему, которая поможет вернуть деньги при необходимости'
+  },
+  {
+    id: '6',
+    title: 'Сотрудничаете ли Вы с резидентами рф и Беларуси?',
+    content:
+      'Многонациональная команда aksis следит за геополитической ситуацией, и состоит из здравомыслящих и сознательных людей. Следственно, политические беженцы из Беларуси и Азии - наши друзья и желанные гости. Граждане россии, в свою очередь, могут воспользоваться услугами РКР, или адресовать свою жалобу непосредственно в канцелярию своего президента'
   }
 ];

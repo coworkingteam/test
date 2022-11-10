@@ -22,7 +22,7 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
     text-decoration: none;
     transition: all 0.2s ease;
 
-    color: ${({ theme, whiteColor }) => (whiteColor ? theme.colors.white : theme.colors.black600)};
+    color: ${({ theme, whiteColor }) => (whiteColor ? theme.colors.gray160 : theme.colors.black600)};
 
     ${({ isScroll, theme, isActive, whiteColor }) => {
       if (isActive) {
