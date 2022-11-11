@@ -8,7 +8,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'schoolAndKindergarten.tabs.0.title',
     data: {
       welcome: {
-        img: '/static/images/school.svg',
+        img: '/static/images/school.png',
         titleID: 'schoolAndKindergarten.tabs.0.welcome.title',
         tabTitleID: 'schoolAndKindergarten.tabs.0.title',
         button: {
@@ -51,7 +51,7 @@ const DATA: { type: string; titleID: string; data: IServiceData }[] = [
     titleID: 'schoolAndKindergarten.tabs.1.title',
     data: {
       welcome: {
-        img: '/static/images/kindergarten.svg',
+        img: '/static/images/kindergarten.png',
         titleID: 'schoolAndKindergarten.tabs.1.welcome.title',
         tabTitleID: 'schoolAndKindergarten.tabs.1.title',
         button: {

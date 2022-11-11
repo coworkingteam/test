@@ -14,7 +14,7 @@ const Services = () => (
     <SubTitle>Закрываем потребности как физических лиц, так и работодателей</SubTitle>
 
     <ServicesWrapper>
-      <ServiceCard url='/menu?type=INDIVIDUALS' whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp3 1.svg' />
+      <ServiceCard url='/menu?type=INDIVIDUALS' whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp.svg' />
       <ServiceCard url='/menu?type=FOR_BUSINESS' title='БИЗНЕСУ' img='/static/images/basket(dark).png' />
     </ServicesWrapper>
 

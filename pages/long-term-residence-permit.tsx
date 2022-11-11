@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/long-term-residence-permit.svg',
+    img: '/static/images/long-term-residence-permit.png',
     titleID: 'longTermResidencePermit.welcome.title',
     button: {
       titleID: 'longTermResidencePermit.welcome.button.title',

@@ -1,10 +1,10 @@
 import React from 'react';
-import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service';
 import { theme } from '@md-modules/shared/styles/styled/theme';
+import { IServiceData, ServiceLayout } from '@md-modules/shared/layouts/service';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/canada.svg',
+    img: '/static/images/canada.png',
     titleID: 'canadianResidentCard.welcome.title',
     button: {
       titleID: 'canadianResidentCard.welcome.button.title',

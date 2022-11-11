@@ -12,7 +12,7 @@ export const MENU_LISTS = [
     color: colors.yellow300,
     titleID: 'menu.services.categories.individuals.title',
     menuItems: menuItemsAdmission,
-    previewIcon: '/static/images/stamp3 1.svg'
+    previewIcon: '/static/images/stamp.svg'
   },
   {
     type: 'FOR_BUSINESS',
@@ -26,7 +26,7 @@ export const MENU_LISTS = [
     color: colors.green150,
     titleID: 'menu.services.categories.transport.title',
     menuItems: menuItemsTransport,
-    previewIcon: '/static/images/Perspective_View_2_home-qksis 3 2.svg'
+    previewIcon: '/static/images/car.png'
   },
   {
     type: 'RESIDENCE_PERMIT',
