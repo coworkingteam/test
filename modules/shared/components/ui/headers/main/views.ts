@@ -13,7 +13,7 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   padding: ${({ isScroll }) => (isScroll ? '0 70px' : '46px 70px')};
   background-color: ${({ isScroll }) => isScroll && 'rgba(255, 255, 255, 0.85)'};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     padding: ${({ isScroll }) => (isScroll ? '15px 15px' : '20px 15px')};
   }
 `;
@@ -27,7 +27,7 @@ export const IWrapper = styled.div`
     font-family: 'Arial', sans-serif !important;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     justify-content: space-between;
 
     button {
@@ -43,7 +43,7 @@ export const BurgerIcon = styled.img`
   margin-right: 16px;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: block;
   }
 `;
@@ -58,7 +58,7 @@ export const LWrapper = styled.div`
 
   ${({ theme }) => theme.templates.centerContent};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     img {
       height: 26px;
       width: 26px;
@@ -68,9 +68,10 @@ export const LWrapper = styled.div`
 
 export const RWrapper = styled.div`
   flex: 1;
+
   ${({ theme }) => theme.templates.centerContent};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;

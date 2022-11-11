@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/car-taxi-license.svg',
+    img: '/static/images/car-taxi-license.png',
     titleID: 'taxiLicense.welcome.title',
     button: {
       titleID: 'taxiLicense.welcome.button.title',

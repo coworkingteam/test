@@ -1,23 +1,48 @@
 export default {
   services: {
-    title: 'Services',
-    itemList: [
-      ['Residence permit assistance', '/resident-card'],
-      ['Passport expiration date extension', '/international-passport?type=EXTENSION'],
-      ['Obtaining ukrainian passport', '/international-passport?type=OBTAINING'],
-      ['Polish residence permit', '/long-term-residence-permit'],
-      ['Admission to polish high school', '/admission-to-university'],
-      ['Enrolling a child in school', '/school-and-kindergarten?type=SCHOOL'],
-      ['Enrolling a child in kindergarten', '/school-and-kindergarten?type=KINDERGARTEN'],
-      ['Obtaining a spanish visa', '/spanish-resident-card'],
-      ['Obtaining a canadian visa', '/canadian-resident-card']
-    ],
+    menuItemTitle: 'Services',
+
+    title: 'Не знаешь с чего начать? Начнис aksis',
     categories: {
+      residencePermit: {
+        title: 'Residence permit services'
+      },
+
+      individuals: {
+        title: 'Individuals',
+        itemList: [
+          ['Residence permit assistance', '/resident-card'],
+          ['Passport expiration date extension', '/international-passport?type=EXTENSION'],
+          ['Obtaining ukrainian passport', '/international-passport?type=OBTAINING'],
+          ['Polish residence permit', '/long-term-residence-permit'],
+          ['Obtaining a spanish visa', '/spanish-resident-card'],
+          ['Obtaining a canadian visa', '/canadian-resident-card']
+        ]
+      },
+      popular: {
+        title: 'Popular',
+        itemList: [
+          ['Obtaining a spanish visa', '/spanish-resident-card'],
+          ['Obtaining a canadian visa', '/canadian-resident-card']
+        ]
+      },
+      admission: {
+        title: 'Admission',
+        itemList: [
+          ['Admission to polish high school', '/admission-to-university'],
+          ['Enrolling a child in school', '/school-and-kindergarten?type=SCHOOL'],
+          ['Enrolling a child in kindergarten', '/school-and-kindergarten?type=KINDERGARTEN']
+        ]
+      },
       forBusiness: {
         title: 'For business',
-        itemList: [['Business tokenization', '/business-tokenization']]
+        itemList: [
+          ['Business tokenization', '/business-tokenization'],
+          ['IP opening - JDG', '/ip-opening-jdg'],
+          ['SP opening. ZO.O.', '/sp-opening-zoo']
+        ]
       },
-      servicesForDrivers: {
+      transport: {
         title: 'Services for drivers',
         itemList: [
           ['Driver license re-issuing', '/renewal-driving-license'],

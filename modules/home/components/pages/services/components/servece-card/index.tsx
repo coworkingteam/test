@@ -1,4 +1,6 @@
 import React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // types
 import { Service } from '@md-modules/shared/types/service';
 // components
@@ -14,23 +16,30 @@ import {
 
 interface Props extends Service {
   whiteBG?: boolean;
+  url: string;
 }
 
-const ServiceCard: React.FC<Props> = ({ img, title, whiteBG = false }) => (
-  <Wrapper whiteBG={whiteBG}>
-    <Title whiteBG={whiteBG}>{title}</Title>
+const ServiceCard: React.FC<Props> = ({ img, url, title, whiteBG = false }) => {
+  const { push } = useRouter();
 
-    {img && (
-      <ImageWrapper>
-        <Image src={img} alt={title + img} />
-      </ImageWrapper>
-    )}
+  const onClick = () => push(url);
 
-    <Button whiteBG={whiteBG}>
-      Рассмотреть услуги
-      <SendArrow />
-    </Button>
-  </Wrapper>
-);
+  return (
+    <Wrapper whiteBG={whiteBG}>
+      <Title whiteBG={whiteBG}>{title}</Title>
+
+      {img && (
+        <ImageWrapper>
+          <Image src={img} alt={title + img} />
+        </ImageWrapper>
+      )}
+
+      <Button onClick={onClick} whiteBG={whiteBG}>
+        Рассмотреть услуги
+        <SendArrow />
+      </Button>
+    </Wrapper>
+  );
+};
 
 export default ServiceCard;

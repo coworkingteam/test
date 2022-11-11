@@ -5,20 +5,31 @@ import { useRouter } from 'next/router';
 import { Logo } from '@md-ui/logos/main';
 import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
-import { MenuItem } from '@md-ui/menu-item/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
 import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
-import { menuItemsRelatedCar, menuItemsRelatedHuman, menuItemsRelatedBusiness, NAVBAR_CONFIG } from './constants';
+import {
+  menuItemsTransport,
+  menuItemsIndividual,
+  menuItemsPopular,
+  menuItemsAdmission,
+  menuItemsRelatedBusiness,
+  NAVBAR_CONFIG
+} from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
 
 const BUTTON_STYLES = { mr: 26 };
-const MOBILE_MENU_DATA = menuItemsRelatedHuman.concat(menuItemsRelatedCar, menuItemsRelatedBusiness);
+const MOBILE_MENU_DATA = menuItemsTransport.concat(
+  menuItemsIndividual,
+  menuItemsRelatedBusiness,
+  menuItemsPopular,
+  menuItemsAdmission
+);
 
 const Header = () => {
   const { push } = useRouter();
@@ -61,7 +72,7 @@ const Header = () => {
           <RWrapper>
             <AnimatedNavbar isScroll={isScroll} data={NAVBAR_CONFIG} duration={300} />
 
-            <MenuItem isScroll={isScroll} href='#' label='Вопросы и ответы' />
+            {/*<MenuItem isScroll={isScroll} href='#' label='Вопросы и ответы' />*/}
           </RWrapper>
 
           <Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>

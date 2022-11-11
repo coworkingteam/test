@@ -1,6 +1,7 @@
 import { LOCALES } from '@md-modules/shared/i18n/providers/main/locales';
 // pages
 import menu from './menu/main';
+import buttons from './ui/buttons';
 import code95 from './pages/code-95';
 import customs from './pages/customs';
 import residentCard from './pages/resident-card';
@@ -22,6 +23,7 @@ export default {
     menu,
     code95,
     customs,
+    buttons,
     taxiLicense,
     residentCard,
     carInsurance,

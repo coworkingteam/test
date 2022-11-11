@@ -2,66 +2,122 @@ import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
 // components
-import { MenuItem } from '@md-ui/menu-item/main';
+import { Link } from '@md-ui/link';
+import SendArrow from '../../../../../../../../../../../public/static/icons/send-arrow';
+// theme
+import { colors } from '@md-styles/styled/theme';
 // views
-import { DropdownSection, Heading, LinkList, Flex, DevelopersDropdownEl } from '../views';
+import { DropdownSection, Heading, LinkList, Flex, DevelopersDropdownEl, Title, Icon } from '../views';
 // constants
-import { menuItemsRelatedHuman, menuItemsRelatedCar, menuItemsRelatedBusiness } from '@md-ui/headers/main/constants';
+import {
+  menuItemsIndividual,
+  menuItemsPopular,
+  menuItemsAdmission,
+  menuItemsTransport,
+  menuItemsRelatedBusiness
+} from '@md-ui/headers/main/constants';
 
-const ServicesMenu = () => {
-  return (
-    <DevelopersDropdownEl>
-      <DropdownSection data-first-dropdown-section>
-        <Flex>
-          <div>
-            {!!menuItemsRelatedHuman.length && (
-              <>
-                <Heading>
-                  <FormattedMessage id='menu.services.title' />
-                </Heading>
+const ServicesMenu = () => (
+  <DevelopersDropdownEl>
+    <DropdownSection data-first-dropdown-section>
+      <Title>
+        <FormattedMessage id='menu.services.title' />
+        <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
+      </Title>
+      <Flex>
+        <div>
+          {!!menuItemsIndividual.length && (
+            <>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.individuals.title' />
+              </Heading>
 
-                <LinkList>
-                  {menuItemsRelatedHuman.map(({ l, h }) => (
-                    <MenuItem isScroll key={l} href={h} label={l} />
-                  ))}
-                </LinkList>
-              </>
-            )}
+              <LinkList>
+                {menuItemsIndividual.map(({ l, h }) => (
+                  <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
+                    <FormattedMessage id={l} />
+                    <SendArrow />
+                  </Link>
+                ))}
+              </LinkList>
+            </>
+          )}
 
-            {!!menuItemsRelatedBusiness.length && (
-              <>
-                <Heading>
-                  <FormattedMessage id='menu.services.categories.forBusiness.title' />
-                </Heading>
+          {!!menuItemsPopular.length && (
+            <>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.popular.title' />
+              </Heading>
 
-                <LinkList>
-                  {menuItemsRelatedBusiness.map(({ l, h }) => (
-                    <MenuItem isScroll key={l} href={h} label={l} />
-                  ))}
-                </LinkList>
-              </>
-            )}
-          </div>
+              <LinkList>
+                {menuItemsPopular.map(({ l, h }) => (
+                  <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
+                    <FormattedMessage id={l} />
+                    <SendArrow />
+                  </Link>
+                ))}
+              </LinkList>
+            </>
+          )}
+        </div>
 
-          <div>
-            {!!menuItemsRelatedCar.length && (
-              <>
-                <Heading>
-                  <FormattedMessage id='menu.services.categories.servicesForDrivers.title' />
-                </Heading>
+        <div>
+          {!!menuItemsAdmission.length && (
+            <>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.admission.title' />
+              </Heading>
 
-                <LinkList>
-                  {menuItemsRelatedCar.map(({ l, h }) => (
-                    <MenuItem isScroll key={l} href={h} label={l} />
-                  ))}
-                </LinkList>
-              </>
-            )}
-          </div>
-        </Flex>
-      </DropdownSection>
-    </DevelopersDropdownEl>
-  );
-};
+              <LinkList>
+                {menuItemsAdmission.map(({ l, h }) => (
+                  <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
+                    <FormattedMessage id={l} />
+                    <SendArrow />
+                  </Link>
+                ))}
+              </LinkList>
+            </>
+          )}
+
+          {!!menuItemsRelatedBusiness.length && (
+            <>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.forBusiness.title' />
+              </Heading>
+
+              <LinkList>
+                {menuItemsRelatedBusiness.map(({ l, h }) => (
+                  <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
+                    <FormattedMessage id={l} />
+                    <SendArrow />
+                  </Link>
+                ))}
+              </LinkList>
+            </>
+          )}
+        </div>
+
+        <div>
+          {!!menuItemsTransport.length && (
+            <>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.transport.title' />
+              </Heading>
+
+              <LinkList>
+                {menuItemsTransport.map(({ l, h }) => (
+                  <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
+                    <FormattedMessage id={l} />
+                    <SendArrow />
+                  </Link>
+                ))}
+              </LinkList>
+            </>
+          )}
+        </div>
+      </Flex>
+    </DropdownSection>
+  </DevelopersDropdownEl>
+);
 
 export default ServicesMenu;

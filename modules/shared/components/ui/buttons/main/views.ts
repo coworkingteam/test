@@ -43,10 +43,6 @@ export const Wrapper = styled.button<{
         background: darken(${({ theme }) => theme.colors.red400}, 10%);
       `}
   }
-    
-    
-    
-  }
 
   &:active {
     opacity: 0.9;
@@ -76,7 +72,7 @@ export const Wrapper = styled.button<{
       background-color: ${theme.colors.white};
 
       &:hover {
-        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
       }
     `}
   ${({ disabled }) =>
@@ -103,6 +99,4 @@ export const LoaderWrapper = styled.div`
     height: 20px;
     width: 20px;
   }
-
-  margin-left: 8px;
 `;

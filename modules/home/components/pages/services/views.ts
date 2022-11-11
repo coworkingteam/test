@@ -20,13 +20,12 @@ export const Wrapper = styled.div`
 export const ServicesWrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
   margin: 28px 0 28px 0;
   justify-content: center;
 
-  @media (max-width: 1200px) {
-    flex-direction: column;
-  }
+  display: grid;
+  grid-gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
 export const Title = styled.p`

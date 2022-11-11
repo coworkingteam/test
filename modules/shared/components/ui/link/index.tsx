@@ -1,4 +1,6 @@
 import * as React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // types
 import { LinkPresets } from '@md-ui/link/presets';
 // components
@@ -8,15 +10,22 @@ import { LinkButton } from '@md-ui/link/views';
 
 interface Props extends LinkProps {
   preset?: LinkPresets;
-  isActive?: boolean;
+  hoverColor?: string;
+  hoverBGColor?: string;
 }
 
-const Link: React.FC<Props> = ({ as, href, preset = 'default', isActive, children }) => (
-  <NextLink href={href} as={as} passHref>
-    <LinkButton isActive={isActive} preset={preset}>
-      {children}
-    </LinkButton>
-  </NextLink>
-);
+const Link: React.FC<Props> = ({ as, hoverColor, hoverBGColor, href, preset = 'default', children }) => {
+  const { asPath } = useRouter();
+
+  const isActive = typeof href === 'string' && asPath.includes(href);
+
+  return (
+    <NextLink href={href} as={as} passHref>
+      <LinkButton hoverColor={hoverColor} hoverBGColor={hoverBGColor} isActive={isActive} preset={preset}>
+        {children}
+      </LinkButton>
+    </NextLink>
+  );
+};
 
 export { Link };

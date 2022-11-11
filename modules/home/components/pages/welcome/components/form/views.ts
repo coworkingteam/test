@@ -18,7 +18,12 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 26px 38px 42px 38px;
+    padding: 16px 16px 46px 16px;
+
+    button {
+      height: unset;
+      font-size: 16px;
+    }
   }
 `;
 
@@ -28,10 +33,10 @@ export const Icon = styled.img`
 `;
 
 export const ButtonWrapper = styled.div`
-  position: absolute;
   right: 50%;
-  width: max-content;
   bottom: -24px;
+  position: absolute;
+  width: max-content;
   transform: translatex(50%);
 `;
 

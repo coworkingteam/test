@@ -4,7 +4,7 @@ import { theme } from '@md-modules/shared/styles/styled/theme';
 
 const DATA: IServiceData = {
   welcome: {
-    img: '/static/images/univer.svg',
+    img: '/static/images/univer.png',
     titleID: 'admissionToUniversity.welcome.title',
     button: {
       titleID: 'admissionToUniversity.welcome.button.title',

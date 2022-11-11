@@ -1,23 +1,48 @@
 export default {
   services: {
-    title: 'Послуги',
-    itemList: [
-      ['Допомога з картою побуту', '/resident-card'],
-      ['Продовження терміну дії паспорта', '/international-passport?type=EXTENSION'],
-      ['Отримання закордонного паспорта', '/international-passport?type=OBTAINING'],
-      ['Польська посвідка на проживання', '/long-term-residence-permit'],
-      ['Вступ до польського ВИШу', '/admission-to-university'],
-      ['Запис дитини до школи', '/school-and-kindergarten?type=SCHOOL'],
-      ['Запис дитини до дитсадка', '/school-and-kindergarten?type=KINDERGARTEN'],
-      ['Отримання іспанської візи', '/spanish-resident-card'],
-      ['Отримання канадської візи', '/canadian-resident-card']
-    ],
+    menuItemTitle: 'Послуги',
+
+    title: 'Не знаешь с чего начать? Начнис aksis',
     categories: {
+      residencePermit: {
+        title: 'ВНЖ послуги'
+      },
+
+      individuals: {
+        title: 'фіз особам',
+        itemList: [
+          ['Допомога з картою побуту', '/resident-card'],
+          ['Продовження терміну дії паспорта', '/international-passport?type=EXTENSION'],
+          ['Отримання закордонного паспорта', '/international-passport?type=OBTAINING'],
+          ['Польська посвідка на проживання', '/long-term-residence-permit'],
+          ['Отримання іспанської візи', '/spanish-resident-card'],
+          ['Отримання канадської візи', '/canadian-resident-card']
+        ]
+      },
+      popular: {
+        title: 'Популярне',
+        itemList: [
+          ['Отримання іспанської візи', '/spanish-resident-card'],
+          ['Отримання канадської візи', '/canadian-resident-card']
+        ]
+      },
+      admission: {
+        title: 'Вступ',
+        itemList: [
+          ['Вступ до польського ВИШу', '/admission-to-university'],
+          ['Запис дитини до школи', '/school-and-kindergarten?type=SCHOOL'],
+          ['Запис дитини до дитсадка', '/school-and-kindergarten?type=KINDERGARTEN']
+        ]
+      },
       forBusiness: {
         title: 'Для бізнесу',
-        itemList: [['Токенізація бізнесу', '/business-tokenization']]
+        itemList: [
+          ['Токенізація бізнесу', '/business-tokenization'],
+          ['Відкриття ІП – JDG', '/ip-opening-jdg'],
+          ['Відкриття SP. Z O. O.', '/sp-opening-zoo']
+        ]
       },
-      servicesForDrivers: {
+      transport: {
         title: 'Послуги для авто',
         itemList: [
           ['Заміна водійських прав на польські', '/renewal-driving-license'],

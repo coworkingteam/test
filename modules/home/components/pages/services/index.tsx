@@ -14,22 +14,27 @@ const Services = () => (
     <SubTitle>Закрываем потребности как физических лиц, так и работодателей</SubTitle>
 
     <ServicesWrapper>
-      <ServiceCard whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp3 1.svg' />
-      <ServiceCard title='БИЗНЕСУ' img='/static/images/basket(dark).png' />
+      <ServiceCard url='/menu?type=INDIVIDUALS' whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp.svg' />
+      <ServiceCard url='/menu?type=FOR_BUSINESS' title='БИЗНЕСУ' img='/static/images/basket(dark).png' />
     </ServicesWrapper>
 
     <AdBlock
       button={BUTTON_DATA}
       serviceName='карта TIE'
-      emojiIcon='/static/icons/plane.svg'
       img='/static/images/spain 2.svg'
+      emojiIcon='/static/icons/plane.svg'
       subName='Вид на жительство в Испании'
       description='Вылеты в Барселону и Мадрид с гидом, питанием, проживанием, и полным сопровождением - от заполнения анкеты до открытия банковского счёта. Карта в руки уже за 6 недель, без нерешаемых вопросов и невыполнимых задач!'
     />
 
     <ServicesWrapper>
-      <ServiceCard whiteBG title='Транспорт' img='/static/images/car-front.svg' />
-      <ServiceCard whiteBG title='Документы гражданства внж' img='/static/images/documents.png' />
+      <ServiceCard url='/menu?type=TRANSPORT' whiteBG title='Транспорт' img='/static/images/car-front.svg' />
+      <ServiceCard
+        url='/menu?type=RESIDENCE_PERMIT'
+        whiteBG
+        title='Документы гражданства внж'
+        img='/static/images/documents.png'
+      />
     </ServicesWrapper>
 
     <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы? </Title>

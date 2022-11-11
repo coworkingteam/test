@@ -13,22 +13,78 @@ export const linkPresets = {
       font-size: 18px;
     }
   `,
-  menu: css`
-    padding: 8px 0;
-    font-size: 22px;
-    font-weight: 700;
+  menu: css<{ hoverBGColor?: string; hoverColor?: string; isActive: boolean }>`
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 24px;
+    font-size: 26px;
     border-radius: 10px;
-    transition: all 250ms ease;
+    line-height: 36px;
+    transition: all 250ms ease-in-out;
+    margin-bottom: 38px;
+    text-decoration: none !important;
+
+    background: ${({ theme }) => theme.colors.white};
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background: ${({ theme, hoverBGColor }) => hoverBGColor || theme.colors.black600};
+      color: ${({ theme, hoverColor }) => hoverColor || theme.colors.white};
+    }
 
     @media (max-width: 768px) {
       font-size: 18px;
     }
+  `,
+  menuSmall: css<{ hoverBGColor?: string; hoverColor?: string; isActive: boolean }>`
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    margin: 4px 0;
+    transition: all 250ms ease;
+
+    svg {
+      width: 16px;
+      margin-left: 10px;
+      opacity: 0;
+    }
 
     &:hover {
-      padding: 8px 20px;
-      color: ${({ theme }) => theme.colors.white} !important;
-      background: ${({ theme }) => theme.colors.black600};
+      text-decoration: none !important;
+
+      background: ${({ theme, hoverBGColor }) => hoverBGColor || theme.colors.black600};
+      color: ${({ theme, hoverColor }) => hoverColor || theme.colors.white};
+
+      svg {
+        opacity: 1;
+
+        path {
+          fill: ${({ theme, hoverColor }) => hoverColor || theme.colors.white};
+        }
+      }
     }
+
+    ${({ isActive, hoverBGColor, hoverColor, theme }) =>
+      isActive &&
+      css`
+        text-decoration: none !important;
+
+        background: ${hoverBGColor || theme.colors.black600};
+        color: ${hoverColor || theme.colors.white};
+
+        svg {
+          opacity: 1;
+
+          path {
+            fill: ${hoverColor || theme.colors.white};
+          }
+        }
+      `}
   `,
   primary: css`
     font-size: 14px;

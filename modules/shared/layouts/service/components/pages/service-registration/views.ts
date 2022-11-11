@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div<{ hasTabs: boolean }>`
-  min-height: 100vh;
+  //min-height: 100vh;
   height: 100%;
   max-width: 1450px;
   display: flex;
   padding: 0 70px;
   flex-direction: column;
-  justify-content: center;
 
   margin: ${({ hasTabs }) => (hasTabs ? 0 : 120)}px auto 120px auto;
 
