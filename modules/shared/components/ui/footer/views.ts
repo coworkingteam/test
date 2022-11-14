@@ -72,15 +72,13 @@ export const MenuItemsWrapper = styled.div`
 `;
 
 export const FAQWrapper = styled.div`
-  font-size: 16px !important;
   margin: 28px 0;
 
   color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => theme.templates.dynamicFont({ minSize: 10, maxSize: 16, minViewport: 320, maxViewport: 1920 })};
 
   @media (max-width: 768px) {
-    font-size: 12px !important;
     margin: 28px 10px;
-    text-align: center;
   }
 `;
 

@@ -30,6 +30,17 @@ export const ContentWrapper = styled.div`
   }
 `;
 
+export const EmptyBlockWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const EmptyText = styled.p`
+  margin: 0 0 50px 0;
+  font-size: 24px;
+
+  color: ${({ theme }) => theme.colors.gray550};
+`;
+
 export const Title = styled.p`
   font-weight: 500;
   font-size: 38px;

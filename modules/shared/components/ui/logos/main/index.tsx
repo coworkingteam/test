@@ -13,7 +13,9 @@ const Logo = () => {
   const [lottie, setLottie] = React.useState<LottiePlayer | null>(null);
 
   React.useEffect(() => {
-    import('lottie-web').then((Lottie) => setLottie(Lottie.default));
+    import('lottie-web')
+      .then((Lottie) => setLottie(Lottie.default))
+      .catch((err) => console.log('[Error while load logo]: ', err));
   }, []);
 
   React.useEffect(() => {

@@ -21,6 +21,7 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
 export const IWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   margin: 0 auto;
 
   button {
@@ -36,17 +37,18 @@ export const IWrapper = styled.div`
   }
 `;
 
-export const BurgerIcon = styled.img`
-  width: 30px;
-  height: 30px;
-  display: none;
-  margin-right: 16px;
-  cursor: pointer;
-
-  @media (max-width: 1000px) {
-    display: block;
-  }
-`;
+// TODO
+// export const BurgerIcon = styled.img`
+//   width: 30px;
+//   height: 30px;
+//   display: none;
+//   margin-right: 16px;
+//   cursor: pointer;
+//
+//   @media (max-width: 1000px) {
+//     display: block;
+//   }
+// `;
 
 export const LWrapper = styled.div`
   cursor: pointer;

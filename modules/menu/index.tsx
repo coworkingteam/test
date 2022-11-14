@@ -8,7 +8,18 @@ import { Link } from '@md-ui/link';
 // theme
 import { colors } from '@md-styles/styled/theme';
 // views
-import { Title, Wrapper, Icon, InnerWrapper, RightSide, ContentWrapper, LeftSide, PreviewIcon } from './views';
+import {
+  Title,
+  Wrapper,
+  Icon,
+  InnerWrapper,
+  RightSide,
+  ContentWrapper,
+  LeftSide,
+  EmptyText,
+  PreviewIcon,
+  EmptyBlockWrapper
+} from './views';
 // constants
 import { MENU_LISTS } from '@md-modules/menu/constants';
 
@@ -26,13 +37,22 @@ const Menu = () => {
 
         <ContentWrapper>
           <LeftSide>
-            {data.menuItems.map(({ l, h }) => (
-              <Link key={l} hoverBGColor={data.color} hoverColor={colors.black600} preset='menu' href={h}>
-                <FormattedMessage id={l} />
+            {data.menuItems.length ? (
+              data.menuItems.map(({ l, h }) => (
+                <Link key={l} hoverBGColor={data.color} hoverColor={colors.black600} preset='menu' href={h}>
+                  <FormattedMessage id={l} />
 
-                <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
-              </Link>
-            ))}
+                  <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
+                </Link>
+              ))
+            ) : (
+              <EmptyBlockWrapper>
+                <EmptyText>These services are still under development. We will welcome you soon!</EmptyText>
+                <Link hoverBGColor={data.color} hoverColor={colors.black600} preset='default' href='/'>
+                  Back to home page
+                </Link>
+              </EmptyBlockWrapper>
+            )}
           </LeftSide>
 
           <RightSide colorBG={data.color}>
