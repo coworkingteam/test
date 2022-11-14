@@ -3,42 +3,37 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 // view components
 import { Logo } from '@md-ui/logos/main';
-import BurgerMenu from '@md-ui/burger-menu';
+// import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
-import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
+// import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
 import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
+import AnimateMobileNav from '@md-ui/headers/main/components/animated-mobile-navigation';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 // constants
 import {
   menuItemsTransport,
   menuItemsIndividual,
-  menuItemsPopular,
   menuItemsAdmission,
   menuItemsRelatedBusiness,
   NAVBAR_CONFIG
 } from './constants';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
-import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerIcon, BurgerWrapper } from './views';
+import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper } from './views';
 
 const BUTTON_STYLES = { mr: 26 };
-const MOBILE_MENU_DATA = menuItemsTransport.concat(
-  menuItemsIndividual,
-  menuItemsRelatedBusiness,
-  menuItemsPopular,
-  menuItemsAdmission
-);
+const MOBILE_MENU_DATA = menuItemsTransport.concat(menuItemsIndividual, menuItemsRelatedBusiness, menuItemsAdmission);
 
 const Header = () => {
   const { push } = useRouter();
   const { setLocale, locale } = React.useContext(LangAPIContext);
 
   const [isScroll, setIsScroll] = React.useState(false);
-  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = React.useState(false);
-
-  const toggleMainMenu = () => setIsOpenBurgerMenu((prevState) => !prevState);
+  // const [isOpenBurgerMenu, setIsOpenBurgerMenu] = React.useState(false);
+  //
+  // const toggleMainMenu = () => setIsOpenBurgerMenu((prevState) => !prevState);
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
   const onClickNumber = () => push('tel:+47 728 000 702');
@@ -80,16 +75,17 @@ const Header = () => {
           </Button>
 
           <BurgerWrapper>
-            <BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />
-
+            {/*<BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />*/}
             <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
+            {/* TODO test version */}
+            <AnimateMobileNav data={MOBILE_MENU_DATA} />
           </BurgerWrapper>
         </IWrapper>
       </Wrapper>
 
-      <BurgerMenu isRight isOpen={isOpenBurgerMenu} pageWrapId='mobile-main-menu' width={260} onClose={toggleMainMenu}>
-        <MobileMenu data={MOBILE_MENU_DATA} />
-      </BurgerMenu>
+      {/*<BurgerMenu isRight isOpen={isOpenBurgerMenu} pageWrapId='mobile-main-menu' width={260} onClose={toggleMainMenu}>*/}
+      {/*  <MobileMenu data={MOBILE_MENU_DATA} />*/}
+      {/*</BurgerMenu>*/}
     </>
   );
 };

@@ -35,7 +35,7 @@ export const Title = styled.p`
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 32px;
     margin: 0 0 62px 0;
   }

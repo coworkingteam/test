@@ -76,25 +76,15 @@ const Footer = () => (
       <FAQWrapper>© aksis 2022</FAQWrapper>
 
       <FAQWrapper>
-        If you would like to find out more about which Revolut entity you receive services from, or if you have any
-        other questions, please reach out to us via the in-app chat in the Revolut app. Revolut Ltd (No. 08804411) is
-        authorised by the Financial Conduct Authority under the Electronic Money Regulations 2011 (Firm Reference
-        900562). Registered address: 7 Westferry Circus, Canary Wharf, London, England, E14 4HD. Insurance
-        related-products are arranged by Revolut Travel Ltd which is authorised by the Financial Conduct Authority to
-        undertake insurance distribution activities (FCA No: 780586) and by Revolut Ltd, an Appointed Representative of
-        Revolut Travel Ltd in relation to insurance distribution activities. Trading and investment products are
-        provided by Revolut Trading Ltd (No. 832790) is wholly owned subsidiary of Revolut Ltd and is an appointed
-        representative of Resolution Compliance Ltd which is authorised and regulated by the Financial Conduct
-        Authority.
+        BAGHEERA (R&K GROUP) SP. Z O.O. to firma, której branża została w Polskiej Klasyfikacji Działalności (PKD)
+        sklasyfikowana jako: Działalność związana z wyszukiwaniem miejsc pracy i pozyskiwaniem pracowników. Powstała w
+        2021 roku. Forma prawna firmy BAGHEERA (R&K GROUP) SP. Z O.O. to Spółka z ograniczoną odpowiedzialnością. Firma
+        posiada numer NIP 7822895535, numer REGON 388431682 i KRS 0000889522, a jej siedziba mieści się pod adresem: Ul.
+        Stanisława Małachowskiego 8/PI, 61-129 w Poznaniu, województwo Wielkopolskie. Z firmą BAGHEERA (R&K GROUP) SP. Z
+        O.O. skontaktujesz się telefonicznie pod numerem +48 728 000 702. Odwiedź stronę internetową firmy BAGHEERA (R&K
+        GROUP) SP. Z O.O., lub wyślij wiadomość na adres e-mail{' '}
+        <a href='mailto:support@aksis.agency'>support@aksis.agency</a>
       </FAQWrapper>
-
-      <FAQWrapper>
-        Revolut's cryptocurrency service is not regulated by the FCA, other than for the purposes of money laundering.
-        Revolut Ltd has been temporarily registered with the FCA as a cryptoasset business, pending determination of its
-        application by the FCA.
-      </FAQWrapper>
-
-      <FAQWrapper>Revolut's commodities service is not regulated by the FCA.</FAQWrapper>
     </ContentWrapper>
   </Wrapper>
 );

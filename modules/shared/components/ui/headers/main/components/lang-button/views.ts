@@ -37,4 +37,6 @@ export const Image = styled.img`
 
 export const ChangeLanguageIcon = styled.img`
   cursor: pointer;
+  width: 36px;
+  height: 36px;
 `;

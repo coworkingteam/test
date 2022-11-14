@@ -1,0 +1,65 @@
+import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
+// components
+import { Logo } from '@md-ui/logos/main';
+// views
+import {
+  Background,
+  NavigationButton,
+  NavigationIcon,
+  NavigationLink,
+  NavigationListWrapper,
+  NavigationWrapper,
+  Wrapper,
+  LWrapper,
+  ItemListWrapper
+} from '@md-ui/headers/main/components/animated-mobile-navigation/views';
+
+interface Props {
+  data: { l: string; h: string }[];
+}
+
+const AnimateMobileNav: React.FC<Props> = ({ data }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  const toggleMenu = () => setIsOpen((prevState) => !prevState);
+
+  return (
+    <Wrapper>
+      <NavigationButton onClick={toggleMenu} isOpen={isOpen}>
+        <NavigationIcon isOpen={isOpen} />
+      </NavigationButton>
+
+      <Background isOpen={isOpen} />
+
+      <NavigationWrapper isOpen={isOpen}>
+        <NavigationListWrapper>
+          <LWrapper>
+            <Logo />
+          </LWrapper>
+
+          <ItemListWrapper>
+            {data.map(({ l, h }) => (
+              <NavigationLink isOpen={isOpen} key={l} href={h}>
+                <FormattedMessage id={l} />
+              </NavigationLink>
+            ))}
+          </ItemListWrapper>
+        </NavigationListWrapper>
+      </NavigationWrapper>
+    </Wrapper>
+  );
+};
+
+export default AnimateMobileNav;
