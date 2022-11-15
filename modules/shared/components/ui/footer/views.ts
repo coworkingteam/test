@@ -31,7 +31,7 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 76px 0;
+    padding: 40px 10px;
   }
 `;
 
@@ -40,19 +40,18 @@ export const LinkList = styled.div`
   height: 100%;
   padding: 0 32px 0 0;
 
+  border-right: 1px solid ${({ theme }) => theme.colors.white};
+
   div {
     padding: 0 0 10px 0;
-    font-size: 16px;
   }
-
-  border-right: 1px solid ${({ theme }) => theme.colors.white};
 
   @media (max-width: 768px) {
     border-right: none;
     padding: 0 0 32px;
 
     div {
-      font-size: 16px;
+      font-size: 12px;
       text-align: center;
     }
   }
@@ -73,12 +72,14 @@ export const MenuItemsWrapper = styled.div`
 
 export const FAQWrapper = styled.div`
   margin: 28px 0;
+  font-size: 16px;
 
   color: ${({ theme }) => theme.colors.white};
-  ${({ theme }) => theme.templates.dynamicFont({ minSize: 10, maxSize: 16, minViewport: 320, maxViewport: 1920 })};
 
   @media (max-width: 768px) {
     margin: 28px 10px;
+
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 8, maxSize: 12, minViewport: 320, maxViewport: 1920 })};
   }
 `;
 
@@ -92,6 +93,7 @@ export const Heading = styled.p`
   color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 768px) {
+    font-size: 20px;
     text-align: center;
   }
 `;

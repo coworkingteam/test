@@ -65,10 +65,10 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
 `;
 
 export const Image = styled.img`
-  transition: all 250ms;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: all 250ms;
 `;
 
 export const ImageWrapper = styled.div`

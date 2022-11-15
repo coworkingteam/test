@@ -22,7 +22,7 @@ export const RightSide = styled.div`
 
   @media (max-width: 768px) {
     margin: 0;
-    padding: 30px;
+    padding: 20px;
     border-radius: 30px 30px 0 0;
   }
 `;
@@ -35,7 +35,7 @@ export const LeftSide = styled.div`
   background-color: ${({ theme }) => theme.colors.black600};
 
   @media (max-width: 768px) {
-    padding: 30px;
+    padding: 20px;
     border-radius: 0 0 30px 30px;
     flex-direction: column;
 
@@ -59,6 +59,10 @@ export const SubTitle = styled.p<{ opacity?: number }>`
 
   opacity: ${({ opacity }) => opacity};
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const InfoBlockWrapper = styled.div`

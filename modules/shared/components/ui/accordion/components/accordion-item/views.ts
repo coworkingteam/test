@@ -40,7 +40,7 @@ export const ATitle = styled.p`
   font-size: 26px;
 
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 
