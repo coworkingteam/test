@@ -2,16 +2,15 @@ import React from 'react';
 // libs
 import Collapsible from 'react-collapsible';
 import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
+// types
+import { IAccordionItem } from '@md-modules/shared/types/accordion';
 // components
 import Plus from 'public/static/icons/plus';
 import Minus from 'public/static/icons/minus';
 // views
 import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordion/components/accordion-item/views';
 
-interface Props {
-  title: string | JSX.Element;
-  open?: boolean;
-  content: string | JSX.Element;
+interface Props extends IAccordionItem {
   blackTheme?: boolean;
 }
 
