@@ -12,21 +12,21 @@ export const ToolTipItem = styled.p<{ isActive: boolean }>`
   padding: 14px;
   cursor: pointer;
   transition: background-color 0.2s linear;
+
   color: ${({ theme }) => theme.colors.white};
-
   ${({ theme }) => theme.templates.centerContent}
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.black600};
-    background-color: ${({ theme }) => theme.colors.white};
-  }
 
   ${({ isActive, theme }) =>
     isActive &&
     css`
       color: ${theme.colors.black600};
-      background-color: ${theme.colors.white};
+      background-color: ${theme.colors.gray150};
     `}
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.black600};
+    background-color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const Image = styled.img`

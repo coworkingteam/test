@@ -9,9 +9,9 @@ import Minus from 'public/static/icons/minus';
 import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordion/components/accordion-item/views';
 
 interface Props {
-  title: string;
+  title: string | JSX.Element;
   open?: boolean;
-  content: string;
+  content: string | JSX.Element;
   blackTheme?: boolean;
 }
 

@@ -77,6 +77,7 @@ const Header = () => {
           <BurgerWrapper>
             {/*<BurgerIcon onClick={toggleMainMenu} src='/static/icons/menu.png' alt='burger' />*/}
             <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
+
             {/* TODO test version */}
             <AnimateMobileNav data={MOBILE_MENU_DATA} />
           </BurgerWrapper>
