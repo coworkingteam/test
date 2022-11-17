@@ -3,6 +3,7 @@ import { DefaultTheme, css } from 'styled-components';
 export const colors = {
   // purple
   purple100: '#D0C6FD',
+  purple600: '#665CAC',
   // blue
   blue100: '#93CBFF',
   blue400: '#0070f3',
@@ -14,10 +15,12 @@ export const colors = {
   gray100: '#F5F5F5',
   gray150: '#f2f2f2',
   gray160: '#F3F3F3',
+  gray170: '#E4E4E4',
   gray400: '#BEBEBE',
   gray500: '#6e6e6e',
   gray550: '#4d4d4d',
   gray560: '#2121214d',
+  gray580: '#2F2F2F',
   gray600: '#191e2d',
   // yellow
   yellow300: '#FFECB3',

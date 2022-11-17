@@ -12,8 +12,8 @@ const Home = () => {
       <Welcome />
       <AdsBlock />
       <Services />
-      <FeedBack />
       <AdditionalInfo />
+      <FeedBack />
     </>
   );
 };

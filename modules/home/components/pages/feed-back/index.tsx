@@ -2,10 +2,14 @@ import React from 'react';
 // libs
 // @ts-ignore
 import { Gradient } from 'react-gradient';
+// components
+import ViberIcon from '../../../../../public/static/icons/viber';
+import WhatsappIcon from '../../../../../public/static/icons/whatsapp';
+import TelegramIcon from '../../../../../public/static/icons/telegram';
+import IMessageIcon from '../../../../../public/static/icons/imessage';
 // views
 import {
   MessengersWrapper,
-  Messenger,
   SubTitle,
   Title,
   InnerWrapper,
@@ -13,15 +17,15 @@ import {
 } from '@md-modules/home/components/pages/feed-back/views';
 
 const TEXT_GRADIENT_COLORS = [
-  ['#A676E2', '#F37A76'],
-  ['#FFD080', '#6ca1bc']
+  ['#665BAC', '#21A2DD'],
+  ['#4BAF4F', '#43A0D7']
 ];
 
 const FeedBack = () => {
   return (
     <Wrapper>
       <InnerWrapper>
-        <Gradient gradients={TEXT_GRADIENT_COLORS} property='text'>
+        <Gradient angle='45deg' transitionType='sequential' gradients={TEXT_GRADIENT_COLORS} property='text'>
           <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы?</Title>
         </Gradient>
 
@@ -31,10 +35,13 @@ const FeedBack = () => {
         </SubTitle>
 
         <MessengersWrapper>
-          <Messenger src='/static/icons/viber.svg' alt='viber' />
-          <Messenger src='/static/icons/telegram.svg' alt='telegram' />
-          <Messenger src='/static/icons/whatsapp.svg' alt='whatsapp' />
-          <Messenger src='/static/icons/messenger.svg' alt='messenger' />
+          <ViberIcon />
+
+          <TelegramIcon />
+
+          <WhatsappIcon />
+
+          <IMessageIcon />
         </MessengersWrapper>
       </InnerWrapper>
     </Wrapper>

@@ -42,7 +42,7 @@ export const LeftSide = styled.div`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h1`
   font-weight: 500;
   font-size: 88px;
   margin: 0;
@@ -61,9 +61,10 @@ export const Title = styled.p`
   }
 `;
 
-export const SubTitle = styled.p`
+export const SubTitle = styled.h2`
   margin: 74px 0 0 0;
   font-size: 24px;
+  font-weight: 400;
 
   @media screen and (max-width: 1250px) {
     margin: 14px 0 0 0;

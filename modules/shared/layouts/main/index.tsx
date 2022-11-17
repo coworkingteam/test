@@ -15,7 +15,7 @@ const MainLayout: React.FC = ({ children }) => (
     {children}
     <Footer />
 
-    <ScrollToTop smooth top={100} style={SCROLL_TO_TOP_BUTTON_STYLES} />
+    <ScrollToTop width='24px' height='24px' smooth top={100} style={SCROLL_TO_TOP_BUTTON_STYLES} />
   </Wrapper>
 );
 

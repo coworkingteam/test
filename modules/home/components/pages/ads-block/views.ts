@@ -27,7 +27,7 @@ export const InnerWrapper = styled.div`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h2`
   font-size: 38px;
   font-weight: 500;
   line-height: 58px;

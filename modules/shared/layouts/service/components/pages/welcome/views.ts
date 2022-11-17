@@ -35,7 +35,7 @@ export const InnerWrapper = styled.div<{ themeColor?: string }>`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h1`
   font-weight: 500;
   margin: 0 0 56px 0;
   font-size: 52px;

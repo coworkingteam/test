@@ -25,10 +25,11 @@ export const ServicesWrapper = styled.div`
 
   display: grid;
   grid-gap: 28px;
+  grid-template-rows: minmax(400px, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
-export const Title = styled.p`
+export const Title = styled.h2`
   margin: 26px 0 26px 0;
   font-weight: 500;
   font-size: 62px;
@@ -39,9 +40,9 @@ export const Title = styled.p`
   }
 `;
 
-export const SubTitle = styled.p`
+export const SubTitle = styled.h3`
   margin: 0 0 64px 0;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 28px;
 
   @media (max-width: 768px) {

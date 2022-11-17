@@ -48,11 +48,10 @@ export const LinkList = styled.div`
 
   @media (max-width: 768px) {
     border-right: none;
-    padding: 0 0 32px;
+    padding: 0;
 
     div {
       font-size: 12px;
-      text-align: center;
     }
   }
 `;
@@ -67,6 +66,12 @@ export const MenuItemsWrapper = styled.div`
 
   @media (max-width: 768px) {
     margin: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 `;
 
@@ -79,21 +84,19 @@ export const FAQWrapper = styled.div`
   @media (max-width: 768px) {
     margin: 28px 10px;
 
-    ${({ theme }) => theme.templates.dynamicFont({ minSize: 8, maxSize: 12, minViewport: 320, maxViewport: 1920 })};
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 10, maxSize: 12, minViewport: 320, maxViewport: 1920 })};
   }
 `;
 
 export const Heading = styled.p`
   margin: 0 0 12px 0;
   font-weight: 500;
-  font-size: 26px;
-  text-decoration-line: underline;
-  text-transform: uppercase;
+  font-size: 16px;
+  text-transform: capitalize;
 
   color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 768px) {
-    font-size: 20px;
-    text-align: center;
+    font-size: 14px;
   }
 `;

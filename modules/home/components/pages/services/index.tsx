@@ -21,8 +21,8 @@ const Services = () => (
     <AdBlock
       button={BUTTON_DATA}
       serviceName='карта TIE'
-      img='/static/images/spain 2.svg'
-      emojiIcon='/static/icons/plane.svg'
+      img='/static/images/baggage.svg'
+      emojiIcon='/static/icons/spain-emblem.svg'
       subName='Вид на жительство в Испании'
       description='Вылеты в Барселону и Мадрид с гидом, питанием, проживанием, и полным сопровождением - от заполнения анкеты до открытия банковского счёта. Карта в руки уже за 6 недель, без нерешаемых вопросов и невыполнимых задач!'
     />
@@ -38,7 +38,7 @@ const Services = () => (
     </ServicesWrapper>
 
     <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы? </Title>
-    <Button>Связатся с нами</Button>
+    <Button preset='large'>Связатся с нами</Button>
   </Wrapper>
 );
 

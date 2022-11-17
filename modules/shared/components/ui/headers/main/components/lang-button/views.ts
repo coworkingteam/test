@@ -33,10 +33,16 @@ export const Image = styled.img`
   width: 24px;
   height: 24px;
   margin-left: 16px;
+  border-radius: 100%;
+
+  ${({ theme }) => theme.templates.boxShadow}
 `;
 
 export const ChangeLanguageIcon = styled.img`
   cursor: pointer;
   width: 36px;
   height: 36px;
+  border-radius: 100%;
+
+  ${({ theme }) => theme.templates.boxShadow}
 `;

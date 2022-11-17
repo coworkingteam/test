@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Aksis</title>
+        <title>aksis</title>
         <link rel='icon' href='/static/icons/logo.ico' />
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
         <meta charSet='utf-8' />

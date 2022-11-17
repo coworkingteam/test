@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 import { Button } from '@md-ui/buttons/main';
 // views
 import {
-  Wrapper,
+  InnerWrapper,
   SubName,
+  Wrapper,
   LeftSideWrapper,
   ServiceName,
   Image,
@@ -34,21 +35,22 @@ const AdBlock: React.FC<Props> = ({ subName, serviceName, description, img, emoj
   const onClick = () => push(button.url);
 
   return (
-    <Wrapper onClick={onClick}>
-      <LeftSideWrapper>
-        <ServiceName>{serviceName}</ServiceName>
-        <SubName>{subName}</SubName>
-        <Description>{description}</Description>
+    <Wrapper>
+      <InnerWrapper onClick={onClick}>
+        <LeftSideWrapper>
+          <ServiceName>{serviceName}</ServiceName>
+          <SubName>{subName}</SubName>
+          <Description>{description}</Description>
 
-        <Button>
-          {button.title}
-          <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
-        </Button>
+          <Button>
+            {button.title}
+            <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
+          </Button>
+        </LeftSideWrapper>
 
-        <EmojiImage src={emojiIcon} alt={emojiIcon} />
-      </LeftSideWrapper>
-
-      <Image src={img} alt={serviceName} />
+        <Image src={img} alt={serviceName} />
+      </InnerWrapper>
+      <EmojiImage src={emojiIcon} alt={emojiIcon} />
     </Wrapper>
   );
 };

@@ -1,6 +1,6 @@
 export interface IAccordionItem {
   id: string;
-  title: string;
+  title: string | JSX.Element;
   open?: boolean;
-  content: string;
+  content: string | JSX.Element;
 }

@@ -16,7 +16,7 @@ export const InnerWrapper = styled.div`
   max-width: 1450px;
   padding: 0 70px;
   width: 100%;
-  margin: 68px 0;
+  margin: 60px 0;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -24,5 +24,6 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
+    margin: 30px 0;
   }
 `;

@@ -12,13 +12,12 @@ export const Wrapper = styled.div`
 export const InnerWrapper = styled.div`
   height: 100%;
   padding: 0 70px;
-  margin: 150px auto;
+  margin: 60px auto;
   max-width: 1450px;
   text-align: center;
 
   @media (max-width: 768px) {
     padding: 0 10px;
-    margin: 76px auto;
   }
 `;
 
@@ -28,7 +27,7 @@ export const Title = styled.p`
   font-size: 64px;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 30px;
   }
 `;
 
@@ -50,19 +49,4 @@ export const MessengersWrapper = styled.div`
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(65px, 95px));
-`;
-
-export const Messenger = styled.img`
-  width: 95px;
-  height: 95px;
-  cursor: pointer;
-  transition: 250ms all ease;
-
-  &:first-child {
-    height: 105px;
-  }
-
-  &:hover {
-    transform: translate3d(0, -4px, 0);
-  }
 `;

@@ -25,7 +25,7 @@ const ServiceCard: React.FC<Props> = ({ img, url, title, whiteBG = false }) => {
   const onClick = () => push(url);
 
   return (
-    <Wrapper whiteBG={whiteBG}>
+    <Wrapper onClick={onClick} whiteBG={whiteBG}>
       <Title whiteBG={whiteBG}>{title}</Title>
 
       {img && (
@@ -34,7 +34,7 @@ const ServiceCard: React.FC<Props> = ({ img, url, title, whiteBG = false }) => {
         </ImageWrapper>
       )}
 
-      <Button onClick={onClick} whiteBG={whiteBG}>
+      <Button whiteBG={whiteBG}>
         Рассмотреть услуги
         <SendArrow />
       </Button>

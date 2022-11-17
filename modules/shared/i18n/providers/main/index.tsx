@@ -15,12 +15,12 @@ interface Context {
 }
 
 export const LangAPIContext = React.createContext<Context>({
-  locale: LOCALES.RUSSIAN,
+  locale: LOCALES.ENGLISH,
   setLocale: () => {}
 });
 
 const LangProvider: React.FC = ({ children }) => {
-  const [localeState, setLocaleState] = React.useState<Locales>(LOCALES.RUSSIAN);
+  const [localeState, setLocaleState] = React.useState<Locales>(LOCALES.ENGLISH);
 
   const setLocale = (value: Locales) => {
     saveString('locale', value);
@@ -32,9 +32,9 @@ const LangProvider: React.FC = ({ children }) => {
     const storageLocale = loadString('locale') as Locales;
 
     if (!storageLocale) {
-      saveString('locale', LOCALES.RUSSIAN);
+      saveString('locale', LOCALES.ENGLISH);
 
-      setLocaleState(LOCALES.RUSSIAN);
+      setLocaleState(LOCALES.ENGLISH);
 
       return;
     }

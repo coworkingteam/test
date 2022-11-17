@@ -6,9 +6,12 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   flex-direction: column;
   border-radius: 15px;
   transition: all 450ms;
+  margin: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.04) 0 2px 4px 0 inset;
 
   padding: ${({ isActive }) => (isActive ? '0 24px 32px 24px' : '0 24px 0 24px ')};
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
+  background-color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.gray170 : theme.colors.gray580)};
 
   svg {
     width: 26px;
@@ -34,7 +37,7 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
     `}
 `;
 
-export const ATitle = styled.p`
+export const ATitle = styled.h3`
   margin: 0;
   font-weight: 700;
   font-size: 26px;
@@ -47,11 +50,11 @@ export const ATitle = styled.p`
 export const ATitleWrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   display: flex;
   cursor: pointer;
+  align-items: center;
   transition: padding 450ms;
   justify-content: space-between;
 
   padding: ${({ isActive }) => (isActive ? '32px 0 0 0' : '32px 0')};
-  border-top: 3px solid ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 `;
 
 export const AContent = styled.p`

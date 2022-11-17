@@ -4,23 +4,14 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
   width: 100%;
   height: 100%;
   display: flex;
+  cursor: pointer;
   border-radius: 20px;
+  overflow: hidden;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  transition: all 0.2s ease;
 
   background: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
-
-  &:hover {
-    img {
-      transform: scale(1.04) perspective(1px);
-    }
-  }
-
-  &:first-child {
-    margin-right: 28px;
-  }
 
   button {
     margin: 0 56px 56px 56px;
@@ -28,14 +19,20 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
     svg {
       width: 20px;
       margin-left: 8px;
-      transition: all 0.2s ease;
 
       path {
+        transition: all 0.2s ease;
         fill: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
       }
     }
+  }
 
-    &:hover {
+  &:hover {
+    img {
+      transform: scale(1.08) perspective(1px);
+    }
+
+    button {
       color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.white : theme.colors.black600)};
       background: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};
 
@@ -45,6 +42,10 @@ export const Wrapper = styled.div<{ whiteBG: boolean }>`
         }
       }
     }
+  }
+
+  &:first-child {
+    margin-right: 28px;
   }
 
   @media screen and (max-width: 1200px) {
@@ -68,7 +69,7 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: all 250ms;
+  transition: transform 0.6s ease 0s;
 `;
 
 export const ImageWrapper = styled.div`

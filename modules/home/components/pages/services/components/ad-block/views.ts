@@ -1,14 +1,24 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: relative;
+`;
+
+export const InnerWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
   border-radius: 34px;
   text-align: left;
   cursor: pointer;
-
+  overflow: hidden;
   box-shadow: 0 0 22px rgba(33, 33, 33, 0.06);
+
+  &:hover {
+    img {
+      transform: scale(1.08) perspective(1px);
+    }
+  }
 
   background: ${({ theme }) => theme.colors.yellow600};
   ${({ theme }) => theme.templates.centerContent}
@@ -64,6 +74,10 @@ export const Description = styled.p`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+  max-height: 384px;
+  object-fit: contain;
+  margin: 36px 36px 36px 0;
+  transition: transform 0.6s ease 0s;
 
   @media screen and (max-width: 1200px) {
     display: none;
@@ -76,8 +90,11 @@ export const Icon = styled.img`
 
 export const EmojiImage = styled.img`
   position: absolute;
-  right: 70px;
-  top: -14px;
+  //right: 18px;
+  //top: -48px;
+
+  right: 30px;
+  top: -26px;
 
   @media (max-width: 768px) {
     right: 20px;
