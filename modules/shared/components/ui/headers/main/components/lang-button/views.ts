@@ -35,6 +35,7 @@ export const Image = styled.img`
   margin-left: 16px;
   border-radius: 100%;
 
+  border: 1px solid ${({ theme }) => theme.colors.black600};
   ${({ theme }) => theme.templates.boxShadow}
 `;
 
@@ -45,4 +46,5 @@ export const ChangeLanguageIcon = styled.img`
   border-radius: 100%;
 
   ${({ theme }) => theme.templates.boxShadow}
+  border: 1px solid ${({ theme }) => theme.colors.black600};
 `;

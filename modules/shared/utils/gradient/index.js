@@ -1,12 +1,3 @@
-/*
- *   Stripe WebGl Gradient Animation
- *   All Credits to Stripe.com
- *   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and
- *   commented out for now.
- *   https://kevinhufnagl.com
- */
-
-//Converting colors to proper format
 function normalizeColor(hexCode) {
   return [((hexCode >> 16) & 255) / 255, ((hexCode >> 8) & 255) / 255, (255 & hexCode) / 255];
 }
@@ -588,7 +579,7 @@ class Gradient {
       (this.conf = {
         presetName: '',
         wireframe: false,
-        density: [0.06, 0.16],
+        density: [0.06, 0.1],
         zoom: 1,
         rotation: 0,
         playing: true
@@ -767,7 +758,9 @@ class Gradient {
       this.init(), this.addIsLoadedClass();
     else {
       if (((this.cssVarRetries += 1), this.cssVarRetries > this.maxCssVarRetries)) {
-        return (this.sectionColors = [16711680, 16711680, 16711935, 65280, 255]), void this.init();
+        this.sectionColors = [16711680, 16711680, 16711935, 65280, 255];
+
+        return this.init();
       }
       requestAnimationFrame(() => this.waitForCssVars());
     }
@@ -794,19 +787,5 @@ class Gradient {
       .map(normalizeColor);
   }
 }
-
-/*
- *Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
- * Use Gradient.pause() and Gradient.play() for controls.
- *
- * Here are some default property values you can change anytime:
- * Amplitude:    Gradient.amp = 0
- * Colors:       Gradient.sectionColors (if you change colors, use normalizeColor(#hexValue)) before you assign it.
- *
- *
- * Useful functions
- * Gradient.toggleColor(index)
- * Gradient.updateFrequency(freq)
- */
 
 export { Gradient };

@@ -1,10 +1,10 @@
 import React from 'react';
 // libs
 import styled from 'styled-components';
+// theme
+import { colors } from '@md-styles/styled/theme';
 // utils
 import { Gradient } from '@md-utils/gradient';
-
-// const COLORS = ['#A676E2', '#F37A76', '#FFD080', '#9DD2EE'];
 
 export const Canvas = styled.canvas`
   height: 100%;
@@ -12,10 +12,10 @@ export const Canvas = styled.canvas`
   min-height: 100vh;
   position: absolute;
 
-  --gradient-color-1: #a676e2;
-  --gradient-color-2: #ffd080;
-  --gradient-color-3: #f37a76;
-  --gradient-color-4: #9dd2ee;
+  --gradient-color-1: ${colors.yellow300};
+  --gradient-color-2: ${colors.green150};
+  --gradient-color-3: ${colors.blue100};
+  --gradient-color-4: ${colors.purple100};
 `;
 
 const CanvasGradient = () => {

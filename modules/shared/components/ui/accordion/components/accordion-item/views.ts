@@ -17,6 +17,7 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
     width: 26px;
 
     line {
+      transition: all 450ms;
       stroke: ${({ blackTheme, theme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
     }
   }
