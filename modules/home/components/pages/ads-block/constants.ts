@@ -1,24 +1,35 @@
 import { Service } from '@md-modules/shared/types/service';
+import { colors } from '@md-styles/styled/theme';
 
 export const DATA: Service[] = [
   {
-    img: '/static/images/individual-entrepreneur.jpg',
-    title: 'Oткрытие\n индивидуального\n предпринимателя'
+    img: '/static/images/canada.png',
+    title: 'Виза CUAET',
+    bgColor: colors.purple100,
+    src: '/canadian-resident-card'
   },
   {
-    img: '/static/images/czasowego-pobytu.jpg',
-    title: 'Подача на карту czasowego pobytu'
+    img: '/static/images/spain.png',
+    title: 'Испанская карта TIE',
+    bgColor: colors.purple100,
+    src: '/spanish-resident-card'
   },
   {
-    img: '/static/images/license-replacement.jpg',
-    title: 'Замена водительских прав'
+    img: '/static/images/resident-card.png',
+    title: 'Карта побыту',
+    bgColor: colors.purple100,
+    src: '/resident-card'
   },
   {
-    img: '/static/images/company-account.jpg',
-    title: 'Открытие фирменного счета'
+    img: '/static/images/international-passport.png',
+    title: 'Загранпаспорт',
+    bgColor: colors.purple100,
+    src: '/international-passport?type=EXTENSION'
   },
   {
-    img: '/static/images/czasowego-pobytu.jpg',
-    title: 'Открытие фирменного счета'
+    img: '/static/images/renewal-driving-license.png',
+    title: 'Замена водительских прав',
+    bgColor: colors.green150,
+    src: '/renewal-driving-license'
   }
 ];

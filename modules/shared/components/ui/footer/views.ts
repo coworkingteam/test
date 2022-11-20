@@ -24,15 +24,42 @@ export const ContentWrapper = styled.div`
 export const InnerWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 76px 88px;
+  padding: 60px 0;
+  justify-content: space-between;
+  align-items: center;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
+
   @media (max-width: 768px) {
-    flex-direction: column;
     padding: 40px 10px;
   }
+`;
+
+export const LeftSide = styled.div`
+  height: 100%;
+  display: flex;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`;
+
+export const RightSide = styled.div`
+  @media (max-width: 1000px) {
+    margin-bottom: 40px;
+  }
+`;
+
+export const Logo = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+  max-height: 150px;
 `;
 
 export const LinkList = styled.div`
@@ -64,6 +91,10 @@ export const MenuItemsWrapper = styled.div`
   margin: 0 0 0 32px;
   height: 100%;
 
+  &:first-child {
+    margin: 0;
+  }
+
   @media (max-width: 768px) {
     margin: 0;
     padding: 16px 0;
@@ -75,11 +106,12 @@ export const MenuItemsWrapper = styled.div`
   }
 `;
 
-export const FAQWrapper = styled.div`
+export const FAQWrapper = styled.h5`
   margin: 28px 0;
   font-size: 16px;
+  font-weight: 400;
 
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.gray170};
 
   @media (max-width: 768px) {
     margin: 28px 10px;

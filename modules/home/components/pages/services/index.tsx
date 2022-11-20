@@ -14,8 +14,8 @@ const Services = () => (
     <SubTitle>Закрываем потребности как физических лиц, так и работодателей</SubTitle>
 
     <ServicesWrapper>
-      <ServiceCard url='/menu?type=INDIVIDUALS' whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp.svg' />
-      <ServiceCard url='/menu?type=FOR_BUSINESS' title='БИЗНЕСУ' img='/static/images/basket(dark).png' />
+      <ServiceCard src='/menu?type=INDIVIDUALS' whiteBG title='ФИЗ ЛИЦАМ' img='/static/images/stamp.svg' />
+      <ServiceCard src='/menu?type=FOR_BUSINESS' title='БИЗНЕСУ' img='/static/images/basket(dark).png' />
     </ServicesWrapper>
 
     <AdBlock
@@ -28,9 +28,9 @@ const Services = () => (
     />
 
     <ServicesWrapper>
-      <ServiceCard url='/menu?type=TRANSPORT' whiteBG title='Транспорт' img='/static/images/car-front.svg' />
+      <ServiceCard src='/menu?type=TRANSPORT' whiteBG title='Транспорт' img='/static/images/car-front.svg' />
       <ServiceCard
-        url='/menu?type=RESIDENCE_PERMIT'
+        src='/menu?type=RESIDENCE_PERMIT'
         whiteBG
         title='Документы гражданства внж'
         img='/static/images/documents.png'

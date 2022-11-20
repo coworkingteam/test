@@ -19,58 +19,67 @@ import {
   Heading,
   LinkList,
   MenuItemsWrapper,
-  LinkListWithoutBorder
+  LinkListWithoutBorder,
+  LeftSide,
+  Logo,
+  RightSide
 } from './views';
 
 const Footer = () => (
   <Wrapper>
     <ContentWrapper>
       <InnerWrapper>
-        {(menuItemsIndividual.length || menuItemsAdmission.length) && (
-          <MenuItemsWrapper>
-            <Heading>
-              <FormattedMessage id='menu.services.categories.individuals.title' />
-            </Heading>
+        <LeftSide>
+          {(menuItemsIndividual.length || menuItemsAdmission.length) && (
+            <MenuItemsWrapper>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.individuals.title' />
+              </Heading>
 
-            <LinkList>
-              {menuItemsIndividual.map(({ l, h }) => (
-                <MenuItem whiteColor key={h} href={h} label={l} />
-              ))}
+              <LinkList>
+                {menuItemsIndividual.map(({ l, h }) => (
+                  <MenuItem whiteColor key={h} href={h} label={l} />
+                ))}
 
-              {menuItemsAdmission.map(({ l, h }) => (
-                <MenuItem whiteColor key={h} href={h} label={l} />
-              ))}
-            </LinkList>
-          </MenuItemsWrapper>
-        )}
+                {menuItemsAdmission.map(({ l, h }) => (
+                  <MenuItem whiteColor key={h} href={h} label={l} />
+                ))}
+              </LinkList>
+            </MenuItemsWrapper>
+          )}
 
-        {!!menuItemsTransport.length && (
-          <MenuItemsWrapper>
-            <Heading>
-              <FormattedMessage id='menu.services.categories.transport.title' />
-            </Heading>
+          {!!menuItemsTransport.length && (
+            <MenuItemsWrapper>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.transport.title' />
+              </Heading>
 
-            <LinkList>
-              {menuItemsTransport.map(({ l, h }) => (
-                <MenuItem whiteColor key={h} href={h} label={l} />
-              ))}
-            </LinkList>
-          </MenuItemsWrapper>
-        )}
+              <LinkList>
+                {menuItemsTransport.map(({ l, h }) => (
+                  <MenuItem whiteColor key={h} href={h} label={l} />
+                ))}
+              </LinkList>
+            </MenuItemsWrapper>
+          )}
 
-        {!!menuItemsRelatedBusiness.length && (
-          <MenuItemsWrapper>
-            <Heading>
-              <FormattedMessage id='menu.services.categories.forBusiness.title' />
-            </Heading>
+          {!!menuItemsRelatedBusiness.length && (
+            <MenuItemsWrapper>
+              <Heading>
+                <FormattedMessage id='menu.services.categories.forBusiness.title' />
+              </Heading>
 
-            <LinkListWithoutBorder>
-              {menuItemsRelatedBusiness.map(({ l, h }) => (
-                <MenuItem whiteColor key={h} href={h} label={l} />
-              ))}
-            </LinkListWithoutBorder>
-          </MenuItemsWrapper>
-        )}
+              <LinkListWithoutBorder>
+                {menuItemsRelatedBusiness.map(({ l, h }) => (
+                  <MenuItem whiteColor key={h} href={h} label={l} />
+                ))}
+              </LinkListWithoutBorder>
+            </MenuItemsWrapper>
+          )}
+        </LeftSide>
+
+        <RightSide>
+          <Logo src='/static/icons/big-static-logo.svg' alt='logo' />
+        </RightSide>
       </InnerWrapper>
 
       <FAQWrapper>© aksis 2022</FAQWrapper>

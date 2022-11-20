@@ -16,13 +16,12 @@ import {
 
 interface Props extends Service {
   whiteBG?: boolean;
-  url: string;
 }
 
-const ServiceCard: React.FC<Props> = ({ img, url, title, whiteBG = false }) => {
+const ServiceCard: React.FC<Props> = ({ img, src, title, whiteBG = false }) => {
   const { push } = useRouter();
 
-  const onClick = () => push(url);
+  const onClick = () => push(src);
 
   return (
     <Wrapper onClick={onClick} whiteBG={whiteBG}>

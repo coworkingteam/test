@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const InitialWrapper = styled.div`
+export const InitialWrapper = styled.div<{ bgColor?: string }>`
   display: flex;
   width: 100%;
   max-width: 280px;
@@ -17,6 +17,8 @@ export const InitialWrapper = styled.div`
   border-radius: 18px;
   cursor: pointer;
   position: relative;
+
+  background-color: ${({ bgColor, theme }) => bgColor || theme.colors.yellow300};
 `;
 
 export const Title = styled.p`
@@ -36,15 +38,16 @@ export const TitleWrapper = styled.div`
   position: absolute;
   align-items: flex-end;
   transition: all 450ms;
-  background: rgba(0, 0, 0, 0.34);
+  background: rgba(0, 0, 0, 0.22);
 
   &:hover {
-    background: rgba(0, 0, 0, 0.16);
+    background: rgba(0, 0, 0, 0.06);
   }
 `;
 
 export const Image = styled.img`
   width: 280px;
   height: 270px;
-  object-fit: cover;
+  padding: 10px;
+  object-fit: contain;
 `;
