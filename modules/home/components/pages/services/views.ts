@@ -26,6 +26,10 @@ export const ServicesWrapper = styled.div`
   grid-gap: 28px;
   grid-template-rows: minmax(300px, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 `;
 
 export const Title = styled.h2`

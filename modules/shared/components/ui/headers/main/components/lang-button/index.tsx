@@ -15,7 +15,7 @@ import {
 const OPTIONS: { label: string; image: string; value: Locales }[] = [
   { label: 'EN', image: '/static/icons/uk.svg', value: LOCALES.ENGLISH },
   { label: 'UA', image: '/static/icons/ukraine.svg', value: LOCALES.UKRAINIAN },
-  { label: 'PL', image: '/static/icons/poland.svg', value: LOCALES.POLISH },
+  // { label: 'PL', image: '/static/icons/poland.svg', value: LOCALES.POLISH },
   { label: 'RU', image: '/static/icons/russia.svg', value: LOCALES.RUSSIAN }
 ];
 

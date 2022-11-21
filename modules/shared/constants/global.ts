@@ -11,5 +11,6 @@ export const BLOCKED_PAGES_LIST = [
   // '/car-deregistration',
   // '/admission-to-university',
   // '/ip-opening-jdg',
-  // '/sp-opening-zoo'
+  // '/sp-opening-zoo',
+  // '/blog'
 ];

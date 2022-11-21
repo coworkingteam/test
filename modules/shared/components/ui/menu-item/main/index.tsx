@@ -39,7 +39,8 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
         }
 
         return css`
-          color: ${theme.colors.white};
+          text-decoration: underline;
+          color: ${theme.colors.black600};
         `;
       }
     }}

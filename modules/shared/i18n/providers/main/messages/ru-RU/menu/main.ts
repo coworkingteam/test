@@ -1,4 +1,7 @@
 export default {
+  questionsAndAnswers: {
+    title: 'Вопросы и ответы'
+  },
   services: {
     menuItemTitle: 'Услуги',
 

@@ -1,6 +1,7 @@
 import React from 'react';
 // libs
 import * as yup from 'yup';
+import { FormattedMessage } from 'react-intl';
 import { yupResolver } from '@hookform/resolvers/yup';
 // hooks
 import { useForm } from 'react-hook-form';
@@ -127,7 +128,8 @@ const Form = () => {
 
       <ButtonWrapper>
         <Button isLoading={isLoading} onClick={handleFormSubmit} preset='large'>
-          Получить консультацию <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
+          <FormattedMessage id='home.welcome.button.title' />{' '}
+          <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
         </Button>
       </ButtonWrapper>
     </Wrapper>

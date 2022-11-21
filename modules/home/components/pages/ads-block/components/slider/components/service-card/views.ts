@@ -37,8 +37,8 @@ export const TitleWrapper = styled.div`
   display: flex;
   position: absolute;
   align-items: flex-end;
-  transition: all 450ms;
   background: rgba(0, 0, 0, 0.22);
+  transition: all 0.6s ease 0s;
 
   &:hover {
     background: rgba(0, 0, 0, 0.06);

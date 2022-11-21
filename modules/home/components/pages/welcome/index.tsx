@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // components
 import CanvasGradient from '@md-ui/canvas-gradient';
 import Form from '@md-modules/home/components/pages/welcome/components/form';
@@ -21,9 +23,11 @@ const Welcome = () => (
     <InnerWrapper>
       <LeftSide>
         <Title>
-          Помощь с документами в Польше <Icon src='/static/icons/middle-arrow.svg' alt='send-arrow' />
+          <FormattedMessage id='home.welcome.title' /> <Icon src='/static/icons/middle-arrow.svg' alt='send-arrow' />
         </Title>
-        <SubTitle>Разрешение на работу → вид на жительство → срочные документы → бизнес и токенизация</SubTitle>
+        <SubTitle>
+          <FormattedMessage id='home.welcome.subTitle' />
+        </SubTitle>
       </LeftSide>
 
       <FormWrapper>

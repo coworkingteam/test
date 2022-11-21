@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Logo } from '@md-ui/logos/main';
 // import BurgerMenu from '@md-ui/burger-menu';
 import { Button } from '@md-ui/buttons/main';
+import { MenuItem } from '@md-ui/menu-item/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 // import MobileMenu from '@md-ui/headers/main/components/mobile-menu';
 import AnimatedNavbar from '@md-ui/headers/main/components/animated-navbar';
@@ -66,8 +67,7 @@ const Header = () => {
 
           <RWrapper>
             <AnimatedNavbar isScroll={isScroll} data={NAVBAR_CONFIG} duration={300} />
-
-            {/*<MenuItem isScroll={isScroll} href='#' label='Вопросы и ответы' />*/}
+            <MenuItem isScroll={isScroll} href='/blog' label='menu.questionsAndAnswers.title' />
           </RWrapper>
 
           <Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>

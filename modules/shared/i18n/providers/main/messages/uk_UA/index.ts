@@ -1,6 +1,7 @@
 import { LOCALES } from '@md-modules/shared/i18n/providers/main/locales';
 // pages
 import menu from './menu/main';
+import home from './pages/home';
 import buttons from './ui/buttons';
 import code95 from './pages/code-95';
 import customs from './pages/customs';
@@ -21,6 +22,7 @@ import longTermResidencePermit from './pages/long-term-residence-permit';
 export default {
   [LOCALES.UKRAINIAN]: {
     menu,
+    home,
     code95,
     customs,
     buttons,
