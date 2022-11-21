@@ -44,6 +44,6 @@ jobs:
 
             cat .env.local
 
-            npm ci
-            npm run build
-            npm run start:prod
+            yarn
+            yarn build
+            yarn start:prod
