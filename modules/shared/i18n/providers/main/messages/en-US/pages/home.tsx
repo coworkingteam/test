@@ -3,7 +3,7 @@ export default {
     title: 'Help with documents in the Poland',
     subTitle: 'Work permit → residence permit → urgent documents → business and tokenization',
     button: {
-      title: 'Get consultation'
+      title: 'Free consultation'
     }
   },
   adsBlock: {

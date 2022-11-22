@@ -7,7 +7,7 @@ import { SubTitle, Title, Wrapper } from '@md-modules/blog/components/card/views
 const Card = () => {
   const { push } = useRouter();
 
-  const onClick = () => push('/blog');
+  const onClick = () => push('/blog/1');
 
   return (
     <Wrapper>
