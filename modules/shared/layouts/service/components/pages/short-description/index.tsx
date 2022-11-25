@@ -1,13 +1,9 @@
 import React from 'react';
 // components
-import { Button } from '@md-ui/buttons/main';
+import Card from '@md-modules/shared/layouts/service/components/pages/short-description/components/card';
+import SliderComponent from '@md-modules/shared/layouts/service/components/pages/short-description/components/slider';
 // views
-import {
-  InnerWrapper,
-  SubTitle,
-  Title,
-  Wrapper
-} from '@md-modules/shared/layouts/service/components/pages/short-description/views';
+import { InnerWrapper, Wrapper } from '@md-modules/shared/layouts/service/components/pages/short-description/views';
 
 interface Props {
   themeColor?: string;
@@ -17,12 +13,10 @@ const ShortDescription: React.FC<Props> = ({ themeColor }) => {
   return (
     <Wrapper themeColor={themeColor}>
       <InnerWrapper>
-        <Title>Открытие фирмы</Title>
-        <SubTitle>Краткое описание</SubTitle>
-
-        <div>
-          <Button>Узнать больше</Button>
-        </div>
+        <SliderComponent>
+          <Card title='Получение испанской визы' button={{ src: '/' }} subTitle='карты TIE' />
+          <Card title='Получение канадской визы' button={{ src: '/' }} subTitle='виза по программе CUAET' />
+        </SliderComponent>
       </InnerWrapper>
     </Wrapper>
   );

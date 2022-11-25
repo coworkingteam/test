@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
 // components
@@ -38,12 +40,18 @@ const AdBlock: React.FC<Props> = ({ subName, serviceName, description, img, emoj
     <Wrapper>
       <InnerWrapper onClick={onClick}>
         <LeftSideWrapper>
-          <ServiceName>{serviceName}</ServiceName>
-          <SubName>{subName}</SubName>
-          <Description>{description}</Description>
+          <ServiceName>
+            <FormattedMessage id={serviceName} />
+          </ServiceName>
+          <SubName>
+            <FormattedMessage id={subName} />
+          </SubName>
+          <Description>
+            <FormattedMessage id={description} />
+          </Description>
 
           <Button>
-            {button.title}
+            <FormattedMessage id={button.title} />
             <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
           </Button>
         </LeftSideWrapper>

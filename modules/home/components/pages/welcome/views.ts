@@ -44,7 +44,7 @@ export const LeftSide = styled.div`
 
 export const Title = styled.h1`
   font-weight: 500;
-  font-size: 88px;
+  font-size: 86px;
   margin: 0;
 
   @media screen and (max-width: 1250px) {

@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
 // types
@@ -25,7 +27,9 @@ const ServiceCard: React.FC<Props> = ({ img, src, title, whiteBG = false }) => {
 
   return (
     <Wrapper onClick={onClick} whiteBG={whiteBG}>
-      <Title whiteBG={whiteBG}>{title}</Title>
+      <Title whiteBG={whiteBG}>
+        <FormattedMessage id={title} />
+      </Title>
 
       {img && (
         <ImageWrapper>
@@ -34,7 +38,7 @@ const ServiceCard: React.FC<Props> = ({ img, src, title, whiteBG = false }) => {
       )}
 
       <Button whiteBG={whiteBG}>
-        Рассмотреть услуги
+        <FormattedMessage id='home.services.serviceCards.buttonTitle' />
         <SendArrow />
       </Button>
     </Wrapper>

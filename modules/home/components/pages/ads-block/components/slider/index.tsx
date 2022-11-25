@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // types
 import Slider from 'react-slick';
 // hooks
@@ -10,7 +12,6 @@ import ImageButton from '@md-ui/buttons/image-button';
 import ServiceCard from '@md-modules/home/components/pages/ads-block/components/slider/components/service-card';
 // views
 import { ArrowButtonsWrapper, SliderWrapper, Title } from './views';
-import { FormattedMessage } from 'react-intl';
 
 const SLIDER_SETTINGS = {
   dots: true,

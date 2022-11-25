@@ -19,7 +19,7 @@ export const ModalComponent = styled(ReactModal)<Props>`
 
   max-width: ${({ maxWidth }) => maxWidth || 1050}px;
   max-height: ${({ maxHeight }) => maxHeight || 700}px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
 
   @media (max-width: 768px) {

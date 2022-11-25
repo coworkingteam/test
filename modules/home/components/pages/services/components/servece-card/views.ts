@@ -84,6 +84,7 @@ export const ImageWrapper = styled.div`
 export const Title = styled.p<{ whiteBG: boolean }>`
   font-weight: 500;
   font-size: 38px;
+  text-transform: uppercase;
   margin: 56px 56px 0 56px;
 
   color: ${({ theme, whiteBG }) => (whiteBG ? theme.colors.black600 : theme.colors.white)};

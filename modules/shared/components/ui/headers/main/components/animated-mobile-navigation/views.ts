@@ -59,7 +59,6 @@ export const NavigationListWrapper = styled.div`
 
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   width: 100%;
   list-style: none;
   flex-direction: column;
@@ -71,8 +70,21 @@ export const ItemListWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   flex-direction: column;
+  display: flex;
+`;
 
-  ${({ theme }) => theme.templates.centerContent};
+export const Title = styled.p`
+  margin: 20px 0;
+  width: max-content;
+  font-weight: 500;
+  font-size: 12px;
+
+  color: ${({ theme }) => theme.colors.gray400};
+`;
+
+export const Icon = styled.img`
+  margin-left: 8px;
+  width: 16px;
 `;
 
 export const NavigationButton = styled.div<{ isOpen: boolean }>`
@@ -144,22 +156,12 @@ export const NavigationLink = styled.a<{ isOpen: boolean }>`
   display: inline-block;
   padding: 10px 0;
   width: max-content;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #f4f4f4;
   text-decoration: none;
   transition: all 0.2s;
 
   ${({ theme }) => theme.templates.dynamicFont({ minSize: 12, maxSize: 20, maxViewport: 1000, minViewport: 380 })};
-`;
-
-export const Title = styled.p`
-  font-size: 32px;
-  width: 100%;
-
-  text-align: center;
-
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.black600};
 `;
 
 export const LWrapper = styled.div`

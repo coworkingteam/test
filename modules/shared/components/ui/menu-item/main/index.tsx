@@ -38,6 +38,12 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
           `;
         }
 
+        if (whiteColor) {
+          return css`
+            color: ${theme.colors.white};
+          `;
+        }
+
         return css`
           text-decoration: underline;
           color: ${theme.colors.black600};
@@ -45,18 +51,29 @@ const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: b
       }
     }}
 
-    ${({ isScroll, theme, whiteColor }) =>
-      isScroll && !whiteColor
-        ? css`
-            &:hover {
-              text-decoration: underline;
-            }
-          `
-        : css`
-            &:hover {
-              color: ${theme.colors.white};
-            }
-          `}
+    ${({ isScroll, theme, whiteColor }) => {
+      if (isScroll && !whiteColor) {
+        return css`
+          &:hover {
+            text-decoration: underline;
+          }
+        `;
+      }
+
+      if (whiteColor) {
+        return css`
+          &:hover {
+            text-decoration: underline;
+          }
+        `;
+      }
+
+      return css`
+        &:hover {
+          color: ${theme.colors.white};
+        }
+      `;
+    }}
   }
 `;
 

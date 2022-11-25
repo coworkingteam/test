@@ -13,7 +13,9 @@ import {
   NavigationWrapper,
   Wrapper,
   LWrapper,
-  ItemListWrapper
+  ItemListWrapper,
+  Icon,
+  Title
 } from '@md-ui/headers/main/components/animated-mobile-navigation/views';
 
 interface Props {
@@ -48,6 +50,11 @@ const AnimateMobileNav: React.FC<Props> = ({ data }) => {
           <LWrapper>
             <Logo />
           </LWrapper>
+
+          <Title>
+            <FormattedMessage id='menu.services.title' />
+            <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
+          </Title>
 
           <ItemListWrapper>
             {data.map(({ l, h }) => (

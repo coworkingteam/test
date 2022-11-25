@@ -8,6 +8,7 @@ import { MainLayout } from '@md-modules/shared/layouts/main';
 import Form from '@md-modules/shared/layouts/service/components/form';
 import ChildrenItem from '@md-modules/shared/layouts/service/components/tab-item';
 import Welcome, { WelcomeData } from '@md-modules/shared/layouts/service/components/pages/welcome';
+import ShortDescription from '@md-modules/shared/layouts/service/components/pages/short-description';
 import ServiceRegistration from '@md-modules/shared/layouts/service/components/pages/service-registration';
 // types
 import { IAccordionItem } from '@md-modules/shared/types/accordion';
@@ -117,16 +118,10 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
           serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
         />
 
-        {/*<ShortDescription themeColor={themeColor} />*/}
+        <ShortDescription themeColor={themeColor} />
       </MainLayout>
 
-      <Modal
-        maxWidth={768}
-        closeButton
-        title={activeData.welcome.titleID}
-        isOpen={modalIsOpen}
-        toggleModal={toggleModal}
-      >
+      <Modal maxWidth={824} isOpen={modalIsOpen} toggleModal={toggleModal} title={activeData.welcome.titleID}>
         <Form toggleModal={toggleModal} service={serviceName} />
       </Modal>
     </>

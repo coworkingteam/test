@@ -1,5 +1,6 @@
 import React from 'react';
 // libs
+import { FormattedMessage } from 'react-intl';
 // @ts-ignore
 import { Gradient } from 'react-gradient';
 // components
@@ -26,12 +27,13 @@ const FeedBack = () => {
     <Wrapper>
       <InnerWrapper>
         <Gradient angle='45deg' transitionType='sequential' gradients={TEXT_GRADIENT_COLORS} property='text'>
-          <Title>Не можете найти нужную вам услугу, или остались дополнительные вопросы?</Title>
+          <Title>
+            <FormattedMessage id='home.feedback.title' />
+          </Title>
         </Gradient>
 
         <SubTitle>
-          Для этого мы здесь, нет услуги с которой мы не могли бы справится, все заказы бывают индивидуальные, но мы
-          всегда готовы вас выслушать и максимально качественно подойти к насущному вопросу, общение с живими людьми
+          <FormattedMessage id='home.feedback.subTitle' />
         </SubTitle>
 
         <MessengersWrapper>

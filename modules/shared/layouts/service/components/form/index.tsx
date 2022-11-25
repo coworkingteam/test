@@ -110,12 +110,12 @@ const Form: React.FC<Props> = ({ service, toggleModal }) => {
       <form>
         <InputWrapper>
           <Label>Name</Label>
-          <FormInput control={control} name='name' placeholder='Andrei Mihalkov' whiteBG />
+          <FormInput control={control} name='name' placeholder='My name is...' whiteBG />
         </InputWrapper>
 
         <InputWrapper>
           <Label>Email</Label>
-          <FormInput control={control} name='email' placeholder='cobra_killer1995@gmail.com' whiteBG />
+          <FormInput control={control} name='email' placeholder='My e-mail is...' whiteBG />
         </InputWrapper>
 
         <InputWrapper>

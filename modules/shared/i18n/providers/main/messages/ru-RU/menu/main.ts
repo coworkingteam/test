@@ -5,7 +5,7 @@ export default {
   services: {
     menuItemTitle: 'Услуги',
 
-    title: 'Не знаешь с чего начать? Начнис aksis',
+    title: 'Не знаешь с чего начать? Начни с aksis',
     categories: {
       residencePermit: {
         title: 'ВНЖ услуги'
