@@ -14,7 +14,7 @@ export default ArticlePage;
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { id: '1' } }],
+    paths: [{ params: { id: 'canadian-visa' } }, { params: { id: 'spanish-visa' } }],
     fallback: false
   };
 }

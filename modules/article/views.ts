@@ -23,8 +23,23 @@ export const InnerWrapper = styled.div`
   ${({ theme }) => theme.templates.centerContent};
 
   @media (max-width: 768px) {
-    padding: 0 10px;
+    padding: 0 20px;
     margin: 80px auto;
+  }
+`;
+
+export const LinkLi = styled.li`
+  margin-bottom: 12px;
+
+  a {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.12px;
+    line-height: 28px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -36,11 +51,10 @@ export const TitleWrapper = styled.div`
   justify-content: center;
 `;
 
-export const Title = styled.h1<{ highliteTitleColor?: string }>`
+export const HeadTitle = styled.h1<{ highliteTitleColor?: string }>`
   font-weight: 500;
   margin: 40px 0;
-  font-size: 30px;
-  text-align: left;
+  font-size: 2.6rem;
   padding: 10px;
   border-radius: 6px;
 
@@ -48,11 +62,20 @@ export const Title = styled.h1<{ highliteTitleColor?: string }>`
 
   @media (max-width: 1250px) {
     font-size: 42px;
-    text-align: center;
   }
 
   @media (max-width: 768px) {
     font-size: 32px;
+  }
+`;
+
+export const ContentTitle = styled.h4`
+  font-weight: 700;
+  margin: 60px 0 20px 0;
+  font-size: 34px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
   }
 `;
 
