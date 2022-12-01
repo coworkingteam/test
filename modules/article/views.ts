@@ -28,6 +28,10 @@ export const InnerWrapper = styled.div`
   }
 `;
 
+export const ContentWrapper = styled.div`
+  max-width: 760px;
+`;
+
 export const LinkLi = styled.li`
   margin-bottom: 12px;
 
@@ -41,6 +45,11 @@ export const LinkLi = styled.li`
       font-size: 16px;
     }
   }
+`;
+
+export const LinkUl = styled.ul`
+  width: 100%;
+  margin: 68px 0 68px 0;
 `;
 
 export const TitleWrapper = styled.div`
@@ -69,7 +78,7 @@ export const HeadTitle = styled.h1<{ highliteTitleColor?: string }>`
   }
 `;
 
-export const ContentTitle = styled.h4`
+export const ContentTitle = styled.h3`
   font-weight: 700;
   margin: 60px 0 20px 0;
   font-size: 34px;

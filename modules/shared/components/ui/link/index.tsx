@@ -15,12 +15,12 @@ interface Props extends LinkProps {
 }
 
 const Link: React.FC<Props> = ({ as, hoverColor, hoverBGColor, href, preset = 'default', children }) => {
-  const { asPath } = useRouter();
+  const { asPath, locale } = useRouter();
 
   const isActive = typeof href === 'string' && asPath.includes(href);
 
   return (
-    <NextLink href={href} as={as} passHref>
+    <NextLink locale={locale} href={href} as={as} passHref>
       <LinkButton hoverColor={hoverColor} hoverBGColor={hoverBGColor} isActive={isActive} preset={preset}>
         {children}
       </LinkButton>

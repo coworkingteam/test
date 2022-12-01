@@ -1,8 +1,8 @@
 import React from 'react';
+// hooks
+import { useRouter } from 'next/router';
 // libs
 import { IntlProvider } from 'react-intl';
-// managers
-import { loadString, saveString } from '@md-modules/shared/managers/storage';
 // constants
 import messages from './messages';
 import { LOCALES, Locales } from '@md-modules/shared/i18n/providers/main/locales';
@@ -20,27 +20,14 @@ export const LangAPIContext = React.createContext<Context>({
 });
 
 const LangProvider: React.FC = ({ children }) => {
-  const [localeState, setLocaleState] = React.useState<Locales>(LOCALES.ENGLISH);
+  const { push, route, asPath, locale } = useRouter();
+  const [localeState, setLocaleState] = React.useState<Locales>(locale as Locales);
 
   const setLocale = (value: Locales) => {
-    saveString('locale', value);
-
     setLocaleState(value);
+
+    void push(route, asPath, { locale: value });
   };
-
-  React.useEffect(() => {
-    const storageLocale = loadString('locale') as Locales;
-
-    if (!storageLocale) {
-      saveString('locale', LOCALES.ENGLISH);
-
-      setLocaleState(LOCALES.ENGLISH);
-
-      return;
-    }
-
-    setLocaleState(storageLocale);
-  }, []);
 
   return (
     <IntlProvider textComponent={React.Fragment} messages={flatten(messages[localeState])} locale={localeState}>

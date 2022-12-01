@@ -21,7 +21,7 @@ export const InitialWrapper = styled.div<{ bgColor?: string }>`
   background-color: ${({ bgColor, theme }) => bgColor || theme.colors.yellow300};
 `;
 
-export const Title = styled.p`
+export const Title = styled.h3`
   margin: 0 0 14px 0;
   font-weight: 500;
   font-size: 20px;

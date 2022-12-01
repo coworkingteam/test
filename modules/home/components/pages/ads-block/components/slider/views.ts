@@ -5,7 +5,7 @@ export const SliderWrapper = styled.div`
   position: relative;
 `;
 
-export const Title = styled.p`
+export const Title = styled.h2`
   font-weight: 500;
   font-size: 52px;
   margin: 0 0 50px 0;

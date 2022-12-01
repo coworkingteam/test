@@ -10,7 +10,7 @@ export interface Article {
   queryId: string;
   title: string;
   highliteTitleColor?: string;
-  img?: string;
+  img: string;
   content: Block[];
 }
 

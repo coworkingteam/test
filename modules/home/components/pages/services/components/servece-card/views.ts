@@ -81,7 +81,7 @@ export const ImageWrapper = styled.div`
   ${({ theme }) => theme.templates.centerContent};
 `;
 
-export const Title = styled.p<{ whiteBG: boolean }>`
+export const Title = styled.h2<{ whiteBG: boolean }>`
   font-weight: 500;
   font-size: 38px;
   text-transform: uppercase;

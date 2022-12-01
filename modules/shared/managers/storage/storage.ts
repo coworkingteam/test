@@ -4,7 +4,11 @@
  * @param key The key to fetch.
  */
 export function loadString(key: string): string | null {
-  return localStorage.getItem(key);
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem(key);
+  }
+
+  return null;
 }
 
 /**

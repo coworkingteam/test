@@ -19,15 +19,16 @@ export const Item = styled.p<{ isActive?: boolean }>`
 
   text-decoration-line: ${({ isActive }) => isActive && 'underline'};
   color: ${({ isActive, theme }) => (isActive ? theme.colors.black600 : theme.colors.gray560)};
-  // ${({ theme }) => theme.templates.dynamicFont({ minSize: 20, maxSize: 28, maxViewport: 2000, minViewport: 320 })};
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
-const ChildrenItem: React.FC<Props> = ({ type, isActive = false, titleID, onClick }) => {
-  return (
-    <Item onClick={() => onClick(type)} isActive={isActive}>
-      <FormattedMessage id={titleID} />
-    </Item>
-  );
-};
+const ChildrenItem: React.FC<Props> = ({ type, isActive = false, titleID, onClick }) => (
+  <Item onClick={() => onClick(type)} isActive={isActive}>
+    <FormattedMessage id={titleID} />
+  </Item>
+);
 
 export default ChildrenItem;

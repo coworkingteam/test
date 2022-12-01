@@ -12,12 +12,12 @@ export const InnerWrapper = styled.div`
   height: 100%;
   width: 100%;
   padding: 0 70px;
-  margin: 150px auto;
+  margin: 200px auto;
   max-width: 1450px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     padding: 0 10px;
-    margin: 76px auto;
+    margin: 150px auto;
   }
 `;
 
@@ -41,7 +41,7 @@ export const EmptyText = styled.p`
   color: ${({ theme }) => theme.colors.gray550};
 `;
 
-export const Title = styled.p`
+export const Title = styled.h1`
   font-weight: 500;
   font-size: 38px;
   margin: 0 0 20px 0;

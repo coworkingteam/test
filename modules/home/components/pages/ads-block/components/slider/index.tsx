@@ -52,9 +52,12 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
 
   return (
     <SliderWrapper>
-      <Title>
-        <FormattedMessage id='home.adsBlock.title' />
-      </Title>
+      {/*TODO fix it / use it*/}
+      <a style={{ textDecoration: 'none', color: '#212121' }} href='/menu?type=POPULAR'>
+        <Title>
+          <FormattedMessage id='home.adsBlock.title' /> →
+        </Title>
+      </a>
 
       <ArrowButtonsWrapper>
         <ImageButton size='medium' onClick={prevSlide} image='/static/icons/left-button.svg' />

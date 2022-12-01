@@ -34,3 +34,6 @@ yarn-error.log*
 .vercel
 
 .idea
+robots.txt
+sitemap.xml
+sitemap-0.xml

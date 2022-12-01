@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Router, { useRouter } from 'next/router';
 // libs
+import { NextSeo } from 'next-seo';
 import { Toaster } from 'react-hot-toast';
 // providers
 import { ThemeProvider } from 'styled-components';
@@ -21,7 +22,7 @@ import 'nprogress/nprogress.css';
 import 'normalize.css/normalize.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
   const [isPageLoading, setIsPageLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -45,11 +46,41 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>aksis</title>
         <link rel='icon' href='/static/icons/logo.ico' />
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
         <meta charSet='utf-8' />
       </Head>
+
+      <NextSeo
+        canonical='https://aksis.agency/'
+        openGraph={{
+          siteName: 'aksis',
+          url: `https://aksis.agency/${locale}${pathname}`
+          // images: [
+          //   {
+          //     url: 'https://www.example.ie/og-image-01.jpg',
+          //     width: 800,
+          //     height: 600,
+          //     alt: 'Og Image Alt',
+          //     type: 'image/jpeg'
+          //   },
+          //   {
+          //     url: 'https://www.example.ie/og-image-02.jpg',
+          //     width: 900,
+          //     height: 800,
+          //     alt: 'Og Image Alt Second',
+          //     type: 'image/jpeg'
+          //   },
+          //   { url: 'https://www.example.ie/og-image-03.jpg' },
+          //   { url: 'https://www.example.ie/og-image-04.jpg' }
+          // ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image'
+        }}
+      />
 
       <ThemeProvider theme={theme}>
         <LangProvider>

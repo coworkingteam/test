@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 export const Wrapper = styled.div<{ themeColor?: string }>`
-  padding: 148px 0 80px 0;
+  padding: 200px 0 80px 0;
   min-height: 50vh;
   height: 100%;
   display: flex;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div<{ themeColor?: string }>`
 
   background-color: ${({ theme, themeColor }) => themeColor || theme.colors.green100};
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 768px) {
     padding: 80px 10px 80px 10px;
   }
 `;

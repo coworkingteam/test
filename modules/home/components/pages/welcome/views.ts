@@ -61,7 +61,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const SubTitle = styled.h2`
+export const SubTitle = styled.p`
   margin: 74px 0 0 0;
   font-size: 24px;
   font-weight: 400;

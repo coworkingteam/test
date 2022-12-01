@@ -37,19 +37,6 @@ export const IWrapper = styled.div`
   }
 `;
 
-// TODO
-// export const BurgerIcon = styled.img`
-//   width: 30px;
-//   height: 30px;
-//   display: none;
-//   margin-right: 16px;
-//   cursor: pointer;
-//
-//   @media (max-width: 1000px) {
-//     display: block;
-//   }
-// `;
-
 export const LWrapper = styled.div`
   cursor: pointer;
 

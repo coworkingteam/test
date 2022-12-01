@@ -34,5 +34,33 @@ export const MENU_LISTS = [
     titleID: 'menu.services.categories.residencePermit.title',
     menuItems: menuItemsIndividual,
     previewIcon: '/static/images/documents.png'
+  },
+  {
+    type: 'POPULAR',
+    color: '#fac32a',
+    titleID: 'home.adsBlock.title',
+    menuItems: [
+      {
+        l: 'home.adsBlock.servicesTitles.canadianVisa',
+        h: '/canadian-resident-card'
+      },
+      {
+        l: 'home.adsBlock.servicesTitles.spanishVisa',
+        h: '/spanish-resident-card'
+      },
+      {
+        l: 'home.adsBlock.servicesTitles.residenceCard',
+        h: '/resident-card'
+      },
+      {
+        l: 'home.adsBlock.servicesTitles.passport',
+        h: '/international-passport?type=EXTENSION'
+      },
+      {
+        l: 'home.adsBlock.servicesTitles.replacementDriverLicense',
+        h: '/renewal-driving-license'
+      }
+    ],
+    previewIcon: '/static/images/basket(dark).png'
   }
 ];

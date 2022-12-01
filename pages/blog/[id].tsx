@@ -1,6 +1,7 @@
 import React from 'react';
 import Article from '@md-modules/article';
 import { MainLayout } from '@md-modules/shared/layouts/main';
+import { GetStaticPaths } from 'next';
 
 const ArticlePage = () => {
   return (
@@ -12,12 +13,12 @@ const ArticlePage = () => {
 
 export default ArticlePage;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [{ params: { id: 'canadian-visa' } }, { params: { id: 'spanish-visa' } }],
-    fallback: false
+    fallback: true
   };
-}
+};
 
 export async function getStaticProps() {
   return {

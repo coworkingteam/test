@@ -2,7 +2,8 @@ import * as React from 'react';
 // hooks
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
-// view components
+// components
+import { NextSeo } from 'next-seo';
 import Modal from '@md-ui/modal/main';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 import Form from '@md-modules/shared/layouts/service/components/form';
@@ -37,10 +38,11 @@ interface PropsWithTabs {
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
+
+  const { query } = useRouter();
   const intl = useIntl();
   const hasTabs = type === 'WITH_TABS';
   const wrapperRef = React.useRef<HTMLDivElement>(null);
-  const { query } = useRouter();
 
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [isScroll, setIsScroll] = React.useState(false);
@@ -88,6 +90,14 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
 
   return (
     <>
+      <NextSeo
+        title={intl.formatMessage({ id: activeData.welcome.titleID })} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        description='This example uses more of the available config options.'
+        openGraph={{
+          title: intl.formatMessage({ id: activeData.welcome.titleID })
+        }}
+      />
+
       <MainLayout>
         <div ref={wrapperRef}>
           <Welcome toggleModal={toggleModal} data={activeData.welcome} themeColor={themeColor} />
@@ -121,7 +131,13 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
         <ShortDescription themeColor={themeColor} />
       </MainLayout>
 
-      <Modal maxWidth={824} isOpen={modalIsOpen} toggleModal={toggleModal} title={activeData.welcome.titleID}>
+      <Modal
+        closeButton
+        maxWidth={824}
+        isOpen={modalIsOpen}
+        toggleModal={toggleModal}
+        title={activeData.welcome.titleID}
+      >
         <Form toggleModal={toggleModal} service={serviceName} />
       </Modal>
     </>

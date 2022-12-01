@@ -5,10 +5,12 @@ import { useRouter } from 'next/router';
 import { BackButtonWrapper, BackIcon, BackTitle } from '@md-ui/buttons/back-button/views';
 
 const BackButton = () => {
-  const { back } = useRouter();
+  const { push } = useRouter();
+
+  const onClick = () => push('/blog');
 
   return (
-    <BackButtonWrapper onClick={back}>
+    <BackButtonWrapper onClick={onClick}>
       <BackIcon src='/static/icons/left-arrow.svg' alt='left-arrow' />
 
       <BackTitle>Back</BackTitle>
