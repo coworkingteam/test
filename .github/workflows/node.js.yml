@@ -40,6 +40,7 @@ jobs:
             touch .env.local
 
             echo NEXT_PUBLIC_API_URL=/api >> .env.local
+            echo SITE_URL=https://aksis.agency/ >> .env.local
             echo NEXT_LOCAL_API_URL=https://doxdox.bitrix24.eu/rest/8/mkzqll4xdor1oxz0/ >> .env.local
 
             cat .env.local
