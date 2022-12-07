@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/spanish-resident-card',
   welcome: {
     title: 'Obtaining a Spanish residence permit (TIE card) for Ukrainians',
     button: {

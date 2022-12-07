@@ -10,4 +10,9 @@ const HomePage = () => {
   );
 };
 
+// export async function getServerSideProps() {
+//   return {
+//     props: {}
+//   };
+// }
 export default HomePage;

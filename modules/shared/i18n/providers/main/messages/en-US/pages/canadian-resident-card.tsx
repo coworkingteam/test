@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/canadian-resident-card',
   welcome: {
     title: 'Canadian visa via CUAET program',
     button: {

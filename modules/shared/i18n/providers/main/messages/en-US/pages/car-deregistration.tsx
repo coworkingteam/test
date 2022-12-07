@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/car-deregistration',
   welcome: {
     title: 'Car deregistration in Poland',
     button: {

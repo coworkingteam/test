@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/long-term-residence-permit',
   welcome: {
     title: 'Оформление долгосрочного вида на жительство в Польше',
     button: {

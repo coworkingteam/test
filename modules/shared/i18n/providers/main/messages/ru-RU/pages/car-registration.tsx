@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/car-registration',
   welcome: {
     title: 'Регистрация авто в Польше',
     button: {

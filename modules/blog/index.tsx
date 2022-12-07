@@ -21,7 +21,7 @@ const Blog = () => {
 
       <Wrapper>
         <InnerWrapper>
-          <h1>Blog</h1>
+          <h1>База знаний</h1>
 
           {ARTICLES.map((item) => (
             <Card

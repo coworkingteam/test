@@ -6,6 +6,8 @@ import { Wrapper, Heading, LinkList } from '@md-ui/headers/main/components/anima
 
 interface Props {
   title: string;
+  className: string;
+  onMouseMove: () => void;
 }
 
 const SubItemVariants = {
@@ -19,8 +21,8 @@ const SubItemVariants = {
   }
 };
 
-const SubItem: React.FC<Props> = ({ title, children }) => (
-  <Wrapper className='my-2 group cursor-pointer min-w-max' layout variants={SubItemVariants}>
+const SubItem: React.FC<Props> = ({ title, children, onMouseMove, className }) => (
+  <Wrapper onMouseMove={onMouseMove} className={className} layout variants={SubItemVariants}>
     <Heading>
       <FormattedMessage id={title} />
     </Heading>

@@ -10,6 +10,7 @@ import {
 
 interface Props {
   text: string;
+  activeColor?: string;
   isScroll: boolean;
 }
 
@@ -32,13 +33,13 @@ const MenuItemVariants = {
   }
 };
 
-const MenuItem: React.FC<Props> = ({ text, isScroll, children }) => (
+const MenuItem: React.FC<Props> = ({ text, isScroll, activeColor, children }) => (
   <Wrapper initial='rest' whileHover='hover' animate='rest'>
     <NavbarItemTitle isScroll={isScroll}>
       <FormattedMessage id={text} />
     </NavbarItemTitle>
 
-    <DropdownBackground isScroll={isScroll} variants={MenuItemVariants}>
+    <DropdownBackground activeColor={activeColor} isScroll={isScroll} variants={MenuItemVariants}>
       {children}
     </DropdownBackground>
   </Wrapper>

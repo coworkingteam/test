@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/business-tokenization',
   welcome: {
     title: 'Токенизация (подключение криптовалют) бизнеса в Польше',
     button: {

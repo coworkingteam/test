@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/renewal-driving-license',
   welcome: {
     title: 'Переоформление водительских прав на польские',
     button: {

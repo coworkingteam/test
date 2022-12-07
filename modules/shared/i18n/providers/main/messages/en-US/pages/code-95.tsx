@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/code-95',
   welcome: {
     title: 'Certificate of qualification (Code 95) for taxi drivers',
     button: {

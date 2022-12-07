@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/spanish-resident-card',
   welcome: {
     title: 'Отримання іспанської посвідки на побут (карти TIE) для українців',
     button: {

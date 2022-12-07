@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/',
   welcome: {
     title: 'Help with documents in Poland',
     subTitle: 'Work permit → residence permit → urgent documents → business and tokenization',

@@ -34,6 +34,7 @@ export const Image = styled.img`
   height: 24px;
   margin-left: 16px;
   border-radius: 100%;
+  object-fit: cover;
 
   border: 1px solid ${({ theme }) => theme.colors.black600};
   ${({ theme }) => theme.templates.boxShadow}
@@ -44,6 +45,7 @@ export const ChangeLanguageIcon = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 100%;
+  object-fit: cover;
 
   ${({ theme }) => theme.templates.boxShadow}
   border: 1px solid ${({ theme }) => theme.colors.black600};

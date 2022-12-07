@@ -37,7 +37,7 @@ export const MENU_LISTS = [
   },
   {
     type: 'POPULAR',
-    color: '#fac32a',
+    color: colors.gray170,
     titleID: 'home.adsBlock.title',
     menuItems: [
       {

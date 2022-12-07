@@ -46,13 +46,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        <title>aksis</title>
         <link rel='icon' href='/static/icons/logo.ico' />
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
         <meta charSet='utf-8' />
       </Head>
 
       <NextSeo
-        canonical='https://aksis.agency/'
+        canonical={process.env.SITE_URL || 'http://localhost:3000'}
+        languageAlternates={[
+          {
+            href: `${process.env.SITE_URL || 'http://localhost:3000'}/uk-ua/`,
+            hrefLang: 'uk-ua'
+          },
+          {
+            href: `${process.env.SITE_URL || 'http://localhost:3000'}/ru/`,
+            hrefLang: 'ru'
+          }
+        ]}
         openGraph={{
           siteName: 'aksis',
           url: `https://aksis.agency/${locale}${pathname}`

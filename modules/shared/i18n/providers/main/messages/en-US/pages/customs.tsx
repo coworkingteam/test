@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/customs',
   welcome: {
     title: 'Customs clearance of a car in Poland',
     button: {

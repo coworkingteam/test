@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/admission-to-university',
   welcome: {
     title: 'Вступ до Польського вузу',
     button: {

@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/code-95',
   welcome: {
     title: 'Сертифікат кваліфікації (Код 95) для водіїв',
     button: {

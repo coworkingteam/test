@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/school-and-kindergarten',
   tabs: [
     {
       welcome: {

@@ -69,7 +69,7 @@ const Header = () => {
         </BurgerWrapper>
       </IWrapper>
 
-      <Breadcrumb showBreadcrumb={showBreadcrumb} />
+      <Breadcrumb isScroll={isScroll} showBreadcrumb={showBreadcrumb} />
     </Wrapper>
   );
 };

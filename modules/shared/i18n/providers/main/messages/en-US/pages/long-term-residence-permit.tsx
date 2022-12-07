@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/long-term-residence-permit',
   welcome: {
     title: 'Acquiring a long-term residence permit in Poland',
     button: {

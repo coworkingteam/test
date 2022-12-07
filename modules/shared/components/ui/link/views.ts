@@ -7,6 +7,7 @@ export const LinkButton = styled.a<{
   hoverColor?: string;
   hoverBGColor?: string;
 }>`
+  height: max-content;
   cursor: pointer;
   color: ${({ theme, isActive }) => (isActive ? theme.colors.black : theme.colors.black600)};
 

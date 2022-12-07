@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/car-deregistration',
   welcome: {
     title: 'Снятие авто с учёта в Польше',
     button: {

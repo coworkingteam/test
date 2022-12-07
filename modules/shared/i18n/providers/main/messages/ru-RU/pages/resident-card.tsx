@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/resident-card',
   welcome: {
     title: 'Поможем оформить заявление и ускорим получение вида на жительство',
     button: {

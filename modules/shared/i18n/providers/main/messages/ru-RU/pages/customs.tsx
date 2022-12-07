@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/customs',
   welcome: {
     title: 'Растаможка авто в Польше',
     button: {

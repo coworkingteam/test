@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+// TODO fix it
+
 export const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -17,30 +19,21 @@ export const NavbarItemTitle = styled.p<{ isScroll: boolean }>`
   padding: ${({ isScroll }) => (isScroll ? '30px 34px' : '14px 34px')};
 `;
 
-export const DropdownBackground = styled(motion.div)<{ isScroll: boolean }>`
+export const DropdownBackground = styled(motion.div)<{ isScroll: boolean; activeColor?: string }>`
   display: flex;
   flex-wrap: wrap;
   transform-origin: 50% 0;
   border-radius: 16px;
-  overflow: hidden;
-  width: max-content;
+  overflow: auto;
+  transition: background-color 0.4s ease 0s, top 0.4s ease 0s;
+
+  width: 808px;
+  height: 404px;
+
   z-index: 1000;
   position: absolute;
-  padding: 18px 38px;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 30px 0;
 
   top: ${({ isScroll }) => (isScroll ? 78 : 46)}px;
-  background: ${({ theme }) => theme.colors.white};
-
-  > div {
-    margin-right: 72px;
-  }
-
-  > div:last-child {
-    margin-right: 0;
-  }
-
-  @media (max-width: 1100px) {
-    width: 100%;
-  }
+  background-color: ${({ theme, activeColor }) => activeColor || theme.colors.gray170};
 `;

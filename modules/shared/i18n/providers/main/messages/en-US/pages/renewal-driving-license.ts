@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/renewal-driving-license',
   welcome: {
     title: 'Driver license reissuing according to European standards',
     button: {

@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/customs',
   welcome: {
     title: 'Розмитнення авто в Польщі',
     button: {

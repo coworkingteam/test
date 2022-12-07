@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/car-insurance',
   welcome: {
     title: 'Car insurance in Poland',
     button: {

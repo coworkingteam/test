@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/resident-card',
   welcome: {
     title: 'Допоможемо прискорити отримання карти побуту',
     button: {

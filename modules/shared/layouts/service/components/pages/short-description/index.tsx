@@ -9,17 +9,15 @@ interface Props {
   themeColor?: string;
 }
 
-const ShortDescription: React.FC<Props> = ({ themeColor }) => {
-  return (
-    <Wrapper themeColor={themeColor}>
-      <InnerWrapper>
-        <SliderComponent>
-          <Card title='Получение испанской визы' button={{ src: '/' }} subTitle='карты TIE' />
-          <Card title='Получение канадской визы' button={{ src: '/' }} subTitle='виза по программе CUAET' />
-        </SliderComponent>
-      </InnerWrapper>
-    </Wrapper>
-  );
-};
+const ShortDescription: React.FC<Props> = ({ themeColor }) => (
+  <Wrapper themeColor={themeColor}>
+    <InnerWrapper>
+      <SliderComponent>
+        <Card title='Получение испанской визы' button={{ src: '/' }} subTitle='карты TIE' />
+        <Card title='Получение канадской визы' button={{ src: '/' }} subTitle='виза по программе CUAET' />
+      </SliderComponent>
+    </InnerWrapper>
+  </Wrapper>
+);
 
 export default ShortDescription;

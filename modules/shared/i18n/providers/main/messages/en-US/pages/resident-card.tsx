@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/resident-card',
   welcome: {
     title: 'Assistance with speeding up the receiving of a residence permit',
     button: {

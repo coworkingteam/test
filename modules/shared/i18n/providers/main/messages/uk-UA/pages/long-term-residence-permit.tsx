@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/long-term-residence-permit',
   welcome: {
     title: 'Оформлення посвідки на проживання в Польщі',
     button: {

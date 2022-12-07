@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/spanish-resident-card',
   welcome: {
     title: 'Получение испанского ВНЖ (карты TIE) для украинцев',
     button: {

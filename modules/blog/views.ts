@@ -17,7 +17,7 @@ export const InnerWrapper = styled.div`
   padding: 0 70px;
   width: 100%;
   max-width: 1450px;
-  margin: 150px auto;
+  margin: 200px auto;
   display: grid;
   gap: 30px 20px;
   justify-content: center;
@@ -25,6 +25,5 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
-    margin: 80px auto;
   }
 `;

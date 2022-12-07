@@ -57,6 +57,7 @@ export const LWrapper = styled.div`
 
 export const RWrapper = styled.div`
   flex: 1;
+  position: relative;
 
   ${({ theme }) => theme.templates.centerContent};
 

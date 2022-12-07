@@ -1,8 +1,8 @@
-export type Locales = 'en-us' | 'ru-ru' | 'uk-ua' | 'pl-pl';
+export type Locales = 'en' | 'ru' | 'uk-ua' | 'pl-pl';
 
 export enum LOCALES {
-  ENGLISH = 'en-us',
-  RUSSIAN = 'ru-ru',
+  ENGLISH = 'en',
+  RUSSIAN = 'ru',
   UKRAINIAN = 'uk-ua',
   POLISH = 'pl-pl'
 }

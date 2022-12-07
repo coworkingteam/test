@@ -1,7 +1,7 @@
 module.exports = {
   i18n: {
-    locales: ['en-us', 'ru-ru', 'uk-ua'],
-    defaultLocale: 'en-us'
+    locales: ['en', 'ru', 'uk-ua'],
+    defaultLocale: 'en'
   },
   async rewrites() {
     return [

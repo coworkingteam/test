@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/taxi-license-for-pass-trans',
   welcome: {
     title: 'Taxi license for passenger transporting',
     button: {

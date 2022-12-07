@@ -1,4 +1,5 @@
 export default {
+  baseURL: '/international-passport',
   tabs: [
     {
       welcome: {
