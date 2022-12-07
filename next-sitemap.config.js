@@ -1,16 +1,23 @@
 /** @type {import('next-sitemap').IConfig} */
 
+const SITE_URL = process.env.SITE_URL || 'http://localhost:3000';
+
 module.exports = {
   generateRobotsTxt: true,
-  siteUrl: process.env.SITE_URL || 'http://localhost:3000',
+  generateIndexSitemap: false,
+  siteUrl: SITE_URL,
   alternateRefs: [
     {
-      href: `${process.env.SITE_URL || 'http://localhost:3000'}/uk-ua/`,
-      hreflang: 'uk-ua'
+      href: SITE_URL,
+      hreflang: 'en'
     },
     {
-      href: `${process.env.SITE_URL || 'http://localhost:3000'}/ru/`,
+      href: `${SITE_URL}/ru`,
       hreflang: 'ru'
+    },
+    {
+      href: `${SITE_URL}/uk-ua`,
+      hreflang: 'uk-ua'
     }
   ]
 };
