@@ -2,6 +2,7 @@ import { LOCALES } from '@md-modules/shared/i18n/providers/main/locales';
 // pages
 import menu from './menu/main';
 import home from './pages/home';
+import blog from './pages/blog';
 import buttons from './ui/buttons';
 import footer from './footer/main';
 import code95 from './pages/code-95';
@@ -23,6 +24,7 @@ import longTermResidencePermit from './pages/long-term-residence-permit';
 export default {
   [LOCALES.RUSSIAN]: {
     home,
+    blog,
     menu,
     code95,
     footer,

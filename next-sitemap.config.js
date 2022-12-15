@@ -14,10 +14,6 @@ module.exports = {
     {
       href: `${SITE_URL}/ru`,
       hreflang: 'ru'
-    },
-    {
-      href: `${SITE_URL}/uk-ua`,
-      hreflang: 'uk-ua'
     }
   ]
 };

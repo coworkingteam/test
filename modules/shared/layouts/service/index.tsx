@@ -1,6 +1,5 @@
 import * as React from 'react';
 // hooks
-import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 // components
 import { NextSeo } from 'next-seo';
@@ -8,39 +7,31 @@ import Modal from '@md-ui/modal/main';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 import Form from '@md-modules/shared/layouts/service/components/form';
 import ChildrenItem from '@md-modules/shared/layouts/service/components/tab-item';
-import Welcome, { WelcomeData } from '@md-modules/shared/layouts/service/components/pages/welcome';
+import Welcome from '@md-modules/shared/layouts/service/components/pages/welcome';
 import ShortDescription from '@md-modules/shared/layouts/service/components/pages/short-description';
 import ServiceRegistration from '@md-modules/shared/layouts/service/components/pages/service-registration';
 // types
-import { IAccordionItem } from '@md-modules/shared/types/accordion';
-import { ServiceRegistrationData } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card';
+import { IServiceFields } from '@md-types/generated/contentful';
 // views
 import { TabItemsWrapper, TabItemsContainer, InnerTabItemsWrapper } from './views';
 
 // types
-export interface IServiceData {
-  welcome: WelcomeData;
-  serviceRegistrationFAQData: IAccordionItem[];
-  serviceRegistrationData: ServiceRegistrationData;
-}
-
-interface PropsWithoutTabs {
+export interface PropsWithoutTabs {
   type: 'WITHOUT_TABS';
   themeColor?: string;
-  data: IServiceData;
+  data: IServiceFields;
 }
 
-interface PropsWithTabs {
+export interface PropsWithTabs {
   type: 'WITH_TABS';
   themeColor?: string;
-  data: { type: string; titleID: string; data: IServiceData }[];
+  data: { type: string; title: string; data: IServiceFields }[];
 }
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   const { type, themeColor } = props;
 
-  const { query } = useRouter();
-  const intl = useIntl();
+  const { query, asPath, replace, locale, pathname } = useRouter();
   const hasTabs = type === 'WITH_TABS';
   const wrapperRef = React.useRef<HTMLDivElement>(null);
 
@@ -52,12 +43,18 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
     () => (hasTabs ? props.data?.find((i) => i.type === activeDataType)?.data : props.data),
     [activeDataType, props.data]
   );
-
-  const serviceName = `${intl.formatMessage({ id: activeData?.welcome.titleID })}${
-    activeData?.welcome.tabTitleID ? ':' : ''
-  } ${activeData?.welcome.tabTitleID ? intl.formatMessage({ id: activeData.welcome.tabTitleID }) : ''}`;
+  const serviceName = `${activeData?.title}${activeData?.type ? ':' : ''} ${activeData?.type ? activeData?.type : ''}`;
 
   const toggleModal = () => setModalIsOpen((prev) => !prev);
+  const handleChangeDataType = (type: string) => {
+    setActiveDataType(type);
+
+    void replace({ href: pathname, query: { type: type } }, asPath.split('?')[0] + `?type=${type}`, {
+      scroll: false,
+      shallow: true,
+      locale
+    });
+  };
 
   const scrollHandler = () => {
     const scrollHeight = wrapperRef.current?.scrollHeight || 0;
@@ -72,7 +69,19 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
 
   React.useEffect(() => {
     if (query.type) {
-      setActiveDataType(query.type as string);
+      if (hasTabs && props.data.some((item) => item.type === query.type)) {
+        setActiveDataType(query.type as string);
+      } else {
+        void replace(
+          { href: pathname, query: { type: activeDataType } },
+          asPath.split('?')[0] + `?type=${activeDataType}`,
+          {
+            scroll: false,
+            shallow: true,
+            locale
+          }
+        );
+      }
     }
 
     scrollHandler();
@@ -91,16 +100,27 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   return (
     <>
       <NextSeo
-        title={intl.formatMessage({ id: activeData.welcome.titleID })} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        title={activeData.title} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
         description='This example uses more of the available config options.'
         openGraph={{
-          title: intl.formatMessage({ id: activeData.welcome.titleID })
+          title: activeData.title
         }}
       />
 
       <MainLayout>
         <div ref={wrapperRef}>
-          <Welcome toggleModal={toggleModal} data={activeData.welcome} themeColor={themeColor} />
+          <Welcome
+            toggleModal={toggleModal}
+            data={{
+              titleID: activeData.title,
+              img: {
+                url: `https:${activeData.serviceImage.fields.file.url}`,
+                alt: activeData.serviceImage.fields.title
+              },
+              button: { titleID: activeData.titleButtonText }
+            }}
+            themeColor={themeColor}
+          />
         </div>
 
         {hasTabs && (
@@ -111,8 +131,8 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
                   <ChildrenItem
                     key={tab.type}
                     type={tab.type}
-                    titleID={tab.titleID}
-                    onClick={setActiveDataType}
+                    title={tab.title}
+                    onClick={handleChangeDataType}
                     isActive={activeDataType === tab.type}
                   />
                 ))}
@@ -124,20 +144,33 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
         <ServiceRegistration
           hasTabs={hasTabs}
           toggleModal={toggleModal}
-          serviceRegistrationData={activeData.serviceRegistrationData}
-          serviceRegistrationFAQData={activeData.serviceRegistrationFAQData}
+          serviceRegistrationData={{
+            rightSide: {
+              title: activeData.titleCardRightSide,
+              content: activeData.descriptionCardRightSide,
+              button: { title: activeData.buttonTextCardRightSide }
+            },
+            leftSide: { content: activeData.contentCardLeftSide }
+          }}
+          serviceRegistrationFAQData={[
+            { id: activeData.faq1Title, title: activeData.faq1Title, content: activeData.faq1Content },
+            {
+              id: activeData.faq2Title,
+              title: activeData.faq2Title,
+              content: activeData.faq2Content
+            },
+            {
+              id: activeData.faq3Title,
+              title: activeData.faq3Title,
+              content: activeData.faq3Content
+            }
+          ]}
         />
 
         <ShortDescription themeColor={themeColor} />
       </MainLayout>
 
-      <Modal
-        closeButton
-        maxWidth={824}
-        isOpen={modalIsOpen}
-        toggleModal={toggleModal}
-        title={activeData.welcome.titleID}
-      >
+      <Modal closeButton maxWidth={824} isOpen={modalIsOpen} toggleModal={toggleModal} title={activeData.title}>
         <Form toggleModal={toggleModal} service={serviceName} />
       </Modal>
     </>

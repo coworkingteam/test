@@ -8,7 +8,7 @@ export default {
     title: 'Не знаешь с чего начать? Начни с aksis',
     categories: {
       residencePermit: {
-        title: 'Residence permit services'
+        title: 'Residence permit'
       },
 
       individuals: {

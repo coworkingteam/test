@@ -83,10 +83,6 @@ export const LinkList = styled.div`
   }
 `;
 
-export const LinkListWithoutBorder = styled(LinkList)`
-  border-right: none;
-`;
-
 export const MenuItemsWrapper = styled.div`
   margin: 0 0 0 32px;
   height: 100%;

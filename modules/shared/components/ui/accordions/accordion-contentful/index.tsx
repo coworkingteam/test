@@ -2,12 +2,12 @@ import React from 'react';
 // libs
 import styled from 'styled-components';
 // types
-import { IAccordionItem } from '@md-modules/shared/types/accordion';
+import { IContentfulAccordionItem } from '@md-types/accordion';
 // components
-import AccordionItem from '@md-ui/accordion/components/accordion-item';
+import AccordionItem from '@md-ui/accordions/accordion-contentful/components/accordion-item';
 
 interface Props {
-  data: IAccordionItem[];
+  data: IContentfulAccordionItem[];
   blackTheme?: boolean;
 }
 

@@ -5,12 +5,17 @@ import { FormattedMessage } from 'react-intl';
 import { Button } from '@md-ui/buttons/main';
 import AdBlock from '@md-modules/home/components/pages/services/components/ad-block';
 import ServiceCard from '@md-modules/home/components/pages/services/components/servece-card';
+// constants
+import { IAdsBlock } from '@md-types/generated/contentful';
 // views
 import { ServicesWrapper, SubTitle, Title, Wrapper } from '@md-modules/home/components/pages/services/views';
 
-const BUTTON_DATA = { title: 'home.services.ads.button', url: '/spanish-resident-card' };
+// types
+interface Props {
+  data: IAdsBlock;
+}
 
-const Services = () => (
+const Services: React.FC<Props> = ({ data }) => (
   <Wrapper>
     <Title>
       <FormattedMessage id='home.services.title' />
@@ -34,12 +39,12 @@ const Services = () => (
     </ServicesWrapper>
 
     <AdBlock
-      button={BUTTON_DATA}
-      serviceName='home.services.ads.title'
-      img='/static/images/baggage.svg'
-      emojiIcon='/static/icons/spain-emblem.svg'
-      subName='home.services.ads.subName'
-      description='home.services.ads.description'
+      button={{ url: data.fields.slug, title: data.fields.actionButtonText }}
+      serviceName={data.fields.title}
+      img={`https:${data.fields.image.fields.file.url}`}
+      emojiIcon={`https:${data.fields.icon?.fields.file.url}`}
+      subName={data.fields.subTitle}
+      description={data.fields.content}
     />
 
     <ServicesWrapper>

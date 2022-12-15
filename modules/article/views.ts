@@ -88,6 +88,12 @@ export const ContentTitle = styled.h3`
   }
 `;
 
+export const Anchor = styled.span`
+  height: 0;
+  margin-top: -150px;
+  position: absolute;
+`;
+
 export const SubTitle = styled.p<{ opacity?: number }>`
   font-size: 20px;
   margin: 0 0 20px 0;

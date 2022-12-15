@@ -42,6 +42,9 @@
       ],
       "@md-utils/*": [
         "./modules/shared/utils/*"
+      ],
+      "@md-types/*": [
+        "./modules/shared/types/*"
       ]
     },
     "incremental": true
