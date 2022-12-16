@@ -100,7 +100,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   return (
     <>
       <NextSeo
-        title={activeData.title} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        title={activeData.title}
         description='This example uses more of the available config options.'
         openGraph={{
           title: activeData.title
