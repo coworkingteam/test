@@ -1,16 +1,17 @@
 import React from 'react';
 // libs
 import Collapsible from 'react-collapsible';
-import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
 // types
-import { IAccordionItem } from '@md-modules/shared/types/accordion';
+import { IContentfulAccordionItem } from '@md-types/accordion';
+// utils
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 // components
 import Plus from 'public/static/icons/plus';
 import Minus from 'public/static/icons/minus';
 // views
-import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordion/components/accordion-item/views';
+import { AContent, ATitle, ATitleWrapper, Wrapper } from '@md-ui/accordions/accordion/components/accordion-item/views';
 
-interface Props extends IAccordionItem {
+interface Props extends IContentfulAccordionItem {
   blackTheme?: boolean;
 }
 
@@ -22,15 +23,17 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, open, conte
   const trigger = React.useMemo(
     () => (
       <ATitleWrapper isActive={isActive} blackTheme={blackTheme}>
-        <ATitle>
-          <FormattedMessage id={title} />
-        </ATitle>
+        <ATitle>{title}</ATitle>
 
         <ATitle>{isActive ? <Minus /> : <Plus />}</ATitle>
       </ATitleWrapper>
     ),
     [isActive, blackTheme, title]
   );
+
+  if (!content || !title) {
+    return null;
+  }
 
   return (
     <Wrapper isActive={isActive} blackTheme={blackTheme}>
@@ -41,9 +44,7 @@ const AccordionItem: React.FC<Props> = ({ title, blackTheme = false, open, conte
         onOpening={toggleAccordion}
         onClosing={toggleAccordion}
       >
-        <AContent>
-          <FormattedHTMLMessage id={content} />
-        </AContent>
+        <AContent>{documentToReactComponents(content)}</AContent>
       </Collapsible>
     </Wrapper>
   );

@@ -1,111 +1,67 @@
 import React from 'react';
-// libs
-import { FormattedMessage } from 'react-intl';
 // components
 import { Button } from '@md-ui/buttons/main';
+// types
+import { BLOCKS, Document, MARKS } from '@contentful/rich-text-types';
 // views
 import {
   Icon,
   InfoBlockWrapper,
-  LeftSide,
   RightSide,
+  LeftSide,
   SubTitle,
   Title,
   Wrapper
 } from '@md-modules/shared/layouts/service/components/pages/service-registration/components/service-registration-card/views';
+// utils
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export interface ServiceRegistrationData {
   leftSide: {
-    filingApplication?: {
-      titleID: string;
-      contentID: string;
-    };
-    registration?: {
-      titleID: string;
-      contentID: string;
-    };
-    price?: {
-      titleID: string;
-      contentsIDS: string[];
-    };
+    content: Document;
   };
   rightSide: {
-    description: {
-      titleID: string;
-      contentID: string;
-    };
+    title: string;
+    content: Document;
+
     button: {
-      titleID: string;
+      title: string;
       onClick?: () => void;
     };
   };
 }
 
 interface Props extends ServiceRegistrationData {
-  linkID?: string;
+  link?: string;
   toggleModal: () => void;
 }
 
-const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, linkID, toggleModal }) => {
-  return (
-    <Wrapper id={linkID}>
-      <RightSide>
-        {leftSide.filingApplication?.titleID && (
-          <InfoBlockWrapper>
-            <Title>
-              <FormattedMessage id={leftSide.filingApplication.titleID} />
-            </Title>
+const ServiceRegistrationCard: React.FC<Props> = ({ leftSide, rightSide, link, toggleModal }) => (
+  <Wrapper id={link}>
+    <LeftSide>
+      {documentToReactComponents(leftSide.content, {
+        renderMark: {
+          [MARKS.BOLD]: (text) => <Title>{text}</Title>
+        },
+        renderNode: {
+          [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>
+        }
+      })}
+    </LeftSide>
 
-            <SubTitle>
-              <FormattedMessage id={leftSide.filingApplication.contentID} />
-            </SubTitle>
-          </InfoBlockWrapper>
-        )}
+    <RightSide>
+      <InfoBlockWrapper>
+        <Title>{rightSide.title}</Title>
 
-        {leftSide.registration?.titleID && (
-          <InfoBlockWrapper>
-            <Title>
-              <FormattedMessage id={leftSide.registration.titleID} />
-            </Title>
+        <SubTitle opacity={0.8}>{documentToReactComponents(rightSide.content)}</SubTitle>
+      </InfoBlockWrapper>
 
-            <SubTitle>
-              <FormattedMessage id={leftSide.registration.contentID} />
-            </SubTitle>
-          </InfoBlockWrapper>
-        )}
-
-        {leftSide.price?.titleID && (
-          <InfoBlockWrapper>
-            <Title>
-              <FormattedMessage id={leftSide.price.titleID} />
-            </Title>
-
-            {leftSide.price.contentsIDS.map((priceID, index) => (
-              <SubTitle key={index}>
-                <FormattedMessage id={priceID} />
-              </SubTitle>
-            ))}
-          </InfoBlockWrapper>
-        )}
-      </RightSide>
-      <LeftSide>
-        <InfoBlockWrapper>
-          <Title>
-            <FormattedMessage id={rightSide.description.titleID} />
-          </Title>
-
-          <SubTitle opacity={0.8}>
-            <FormattedMessage id={rightSide.description.contentID} />
-          </SubTitle>
-        </InfoBlockWrapper>
-
-        <Button whiteBG onClick={toggleModal}>
-          <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
-          <FormattedMessage id={rightSide.button.titleID} />
-        </Button>
-      </LeftSide>
-    </Wrapper>
-  );
-};
+      <Button whiteBG onClick={toggleModal}>
+        <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
+        {rightSide.button.title}
+      </Button>
+    </RightSide>
+  </Wrapper>
+);
 
 export default ServiceRegistrationCard;

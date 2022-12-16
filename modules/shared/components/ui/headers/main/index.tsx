@@ -11,6 +11,7 @@ import Breadcrumb from '@md-ui/headers/main/components/bread-crumb';
 import AnimateMobileNav from '@md-ui/headers/main/components/animated-mobile-navigation';
 // context
 import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
+import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // constants
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 import { menuItemsTransport, menuItemsIndividual, menuItemsAdmission, menuItemsRelatedBusiness } from './constants';
@@ -21,6 +22,8 @@ const BUTTON_STYLES = { mr: 26 };
 const MOBILE_MENU_DATA = menuItemsTransport.concat(menuItemsIndividual, menuItemsRelatedBusiness, menuItemsAdmission);
 
 const Header = () => {
+  const { menuItems } = React.useContext(MenuAPIContext);
+
   const { push } = useRouter();
   const { setLocale, locale } = React.useContext(LangAPIContext);
 
@@ -54,7 +57,7 @@ const Header = () => {
         </LWrapper>
 
         <RWrapper>
-          <AnimatedMenu isScroll={isScroll} />
+          <AnimatedMenu menuData={menuItems} isScroll={isScroll} />
           <MenuItem isScroll={isScroll} href='/blog' label='menu.questionsAndAnswers.title' />
         </RWrapper>
 

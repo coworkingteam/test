@@ -1,6 +1,4 @@
 import React from 'react';
-// libs
-import { FormattedMessage } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
 // components
@@ -18,12 +16,15 @@ import {
   Icon
 } from '@md-modules/home/components/pages/services/components/ad-block/views';
 
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Document } from '@contentful/rich-text-types';
+
 // types
 interface Props {
   emojiIcon: string;
   serviceName: string;
-  subName: string;
-  description: string;
+  subName?: string;
+  description: Document;
   img: string;
   button: {
     title: string;
@@ -40,18 +41,12 @@ const AdBlock: React.FC<Props> = ({ subName, serviceName, description, img, emoj
     <Wrapper>
       <InnerWrapper onClick={onClick}>
         <LeftSideWrapper>
-          <ServiceName>
-            <FormattedMessage id={serviceName} />
-          </ServiceName>
-          <SubName>
-            <FormattedMessage id={subName} />
-          </SubName>
-          <Description>
-            <FormattedMessage id={description} />
-          </Description>
+          <ServiceName>{serviceName}</ServiceName>
+          <SubName>{subName}</SubName>
+          <Description>{documentToReactComponents(description)}</Description>
 
           <Button>
-            <FormattedMessage id={button.title} />
+            {button.title}
             <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
           </Button>
         </LeftSideWrapper>

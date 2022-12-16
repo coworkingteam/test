@@ -1,11 +1,10 @@
 import React from 'react';
 // libs
 import styled from 'styled-components';
-import { FormattedMessage } from 'react-intl';
 
 interface Props {
   type: string;
-  titleID: string;
+  title: string;
   isActive?: boolean;
   onClick: (type: string) => void;
 }
@@ -25,9 +24,9 @@ export const Item = styled.p<{ isActive?: boolean }>`
   }
 `;
 
-const ChildrenItem: React.FC<Props> = ({ type, isActive = false, titleID, onClick }) => (
+const ChildrenItem: React.FC<Props> = ({ type, isActive = false, title, onClick }) => (
   <Item onClick={() => onClick(type)} isActive={isActive}>
-    <FormattedMessage id={titleID} />
+    {title}
   </Item>
 );
 

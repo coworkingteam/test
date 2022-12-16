@@ -1,6 +1,6 @@
 import React from 'react';
 // components
-import Accordion from '@md-ui/accordion';
+import Accordion from '@md-ui/accordions/accordion';
 // views
 import { Wrapper, InnerWrapper } from '@md-modules/home/components/pages/additional-info/views';
 

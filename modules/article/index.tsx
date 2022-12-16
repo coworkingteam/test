@@ -1,44 +1,52 @@
 import React from 'react';
-// libs
-import { FormattedHTMLMessage, FormattedMessage, useIntl } from 'react-intl';
-// hooks
-import { useRouter } from 'next/router';
 // components
 import { Link } from '@md-ui/link';
 import { NextSeo } from 'next-seo';
+// types
+import { BLOCKS } from '@contentful/rich-text-types';
+import { Text } from '@contentful/rich-text-types/dist/types/types';
 // constants
-import { ARTICLES } from '@md-modules/article/constants';
+import { IArticleFields } from '@md-types/generated/contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 // views
 import {
-  InnerWrapper,
-  SubTitle,
-  Wrapper,
-  Image,
-  HeadTitle,
-  TitleWrapper,
-  LinkLi,
+  Anchor,
   ContentTitle,
   ContentWrapper,
-  LinkUl
+  HeadTitle,
+  Image,
+  InnerWrapper,
+  LinkLi,
+  LinkUl,
+  SubTitle,
+  TitleWrapper,
+  Wrapper
 } from '@md-modules/article/views';
+// utils
+// @ts-ignore
+import translate from 'translit-ru-ua';
 
-const Article = () => {
-  const { query } = useRouter();
-  const intl = useIntl();
+// types
+interface Props {
+  article: IArticleFields;
+}
 
-  const articleData = ARTICLES.find((item) => item.queryId === query.id);
-
-  if (!articleData) {
-    return null;
-  }
+const Article: React.FC<Props> = ({ article }) => {
+  const h3List = article.content.content.reduce(
+    (previousValue, currentValue) =>
+      currentValue.nodeType === BLOCKS.HEADING_3
+        ? [...previousValue, ...(currentValue.content as Array<Text>)]
+        : previousValue,
+    [] as Array<Text>
+  );
 
   return (
     <>
       <NextSeo
-        title={`${intl.formatMessage({ id: articleData?.title })} | aksis`} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        title={`${article.title} | aksis`}
         description='This example uses more of the available config options.'
         openGraph={{
-          title: intl.formatMessage({ id: articleData?.title }),
+          title: article.title,
           description: 'Description of open graph article',
           url: 'https://www.example.com/articles/article-title',
           type: 'article',
@@ -53,8 +61,8 @@ const Article = () => {
             {
               width: 550,
               height: 400,
-              url: articleData.img,
-              alt: intl.formatMessage({ id: articleData?.title })
+              url: `https:${article.image?.fields.file.url}`,
+              alt: article.title
             }
           ]
         }}
@@ -63,37 +71,44 @@ const Article = () => {
       <Wrapper>
         <InnerWrapper>
           <TitleWrapper>
-            <HeadTitle highliteTitleColor={articleData?.highliteTitleColor}>
-              <FormattedMessage id={articleData?.title} />
-            </HeadTitle>
+            <HeadTitle>{article.title}</HeadTitle>
           </TitleWrapper>
-          <Image src={articleData?.img} alt={intl.formatMessage({ id: articleData?.title })} />
-
-          <p>test mode</p>
+          <Image src={`https:${article.image?.fields.file.url}`} alt={article.title} />
 
           <ContentWrapper>
-            {(articleData?.content.length || 0) > 1 && (
+            {h3List?.length > 1 && (
               <LinkUl>
-                {articleData?.content.map((item) => (
-                  <LinkLi key={`li ${item.title}`}>
-                    <Link preset='primary' href={`#${item.title}`}>
-                      <FormattedMessage id={item.title} />
+                {h3List?.map((item) => (
+                  <LinkLi key={`li ${item.value}`}>
+                    <Link
+                      preset='primary'
+                      href={translate(`#${item.value.split(' ').join('-').replace('?', '').trim()}`)}
+                    >
+                      {item.value}
                     </Link>
                   </LinkLi>
                 ))}
               </LinkUl>
             )}
 
-            {articleData?.content.map((item) => (
-              <div id={item.title} key={item.title}>
-                <ContentTitle>
-                  <FormattedMessage id={item.title} />
-                </ContentTitle>
-                <SubTitle>
-                  <FormattedHTMLMessage id={item.description} />
-                </SubTitle>
-              </div>
-            ))}
+            {documentToReactComponents(article.content, {
+              renderNode: {
+                [BLOCKS.HEADING_3]: (node, children) => {
+                  if (node.nodeType === BLOCKS.HEADING_3 && node.content[0].nodeType === 'text') {
+                    return (
+                      <>
+                        <Anchor id={translate(node.content[0].value.split(' ').join('-').replace('?', '').trim())}>
+                          &nbsp;
+                        </Anchor>
+
+                        <ContentTitle>{children}</ContentTitle>
+                      </>
+                    );
+                  }
+                },
+                [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>
+              }
+            })}
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>

@@ -6,63 +6,26 @@ import { Link } from '@md-ui/link';
 import MenuItem from '@md-ui/headers/main/components/animated-menu/components/menu-item';
 import SubItem from '@md-ui/headers/main/components/animated-menu/components/sub-item';
 import SendArrow from '../../../../../../../../public/static/icons/send-arrow';
-// constants
-import {
-  menuItemsAdmission,
-  menuItemsIndividual,
-  menuItemsPopular,
-  menuItemsRelatedBusiness,
-  menuItemsTransport
-} from '@md-ui/headers/main/constants';
 // theme
 import { colors } from '@md-styles/styled/theme';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { IMenuItem } from '@md-modules/shared/providers/menu-provider';
+
 interface Props {
   isScroll: boolean;
+
+  menuData: IMenuItem[];
 }
 
-const AnimatedMenu: React.FC<Props> = ({ isScroll }) => {
-  // TODO fix it
-
-  const tabs = [
-    {
-      label: 'menu.services.categories.popular.title',
-      data: menuItemsPopular
-    },
-    {
-      label: 'menu.services.categories.individuals.title',
-      data: menuItemsIndividual,
-      bgColor: colors.purple100
-    },
-    {
-      label: 'menu.services.categories.admission.title',
-      data: menuItemsAdmission,
-      bgColor: colors.yellow300
-    },
-    {
-      label: 'menu.services.categories.forBusiness.title',
-      data: menuItemsRelatedBusiness,
-      bgColor: colors.blue100
-    },
-    {
-      label: 'menu.services.categories.transport.title',
-      data: menuItemsTransport,
-      bgColor: colors.green150
-    }
-  ];
-
-  const [selectedTab, setSelectedTab] = React.useState<{
-    label: string;
-    bgColor?: string;
-    data: { l: string; h: string }[];
-  }>(tabs[0]);
+const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
+  const [selectedTab, setSelectedTab] = React.useState<IMenuItem>(menuData[0]);
 
   return (
-    <MenuItem activeColor={selectedTab.bgColor} isScroll={isScroll} text='menu.services.menuItemTitle'>
+    <MenuItem activeColor={selectedTab?.bgColor} isScroll={isScroll} text='menu.services.menuItemTitle'>
       <nav style={{ padding: '28px 0 28px 28px' }}>
-        {tabs.map((item) => (
+        {menuData.map((item) => (
           <div key={item.label} style={{ position: 'relative', width: '100%' }}>
             <SubItem
               className={item === selectedTab ? 'selected' : ''}

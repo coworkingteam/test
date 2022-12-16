@@ -1,4 +1,5 @@
 import home from '@md-modules/shared/i18n/providers/main/messages/en-US/pages/home';
+import blog from '@md-modules/shared/i18n/providers/main/messages/en-US/pages/blog';
 import code95 from '@md-modules/shared/i18n/providers/main/messages/en-US/pages/code-95';
 import customs from '@md-modules/shared/i18n/providers/main/messages/en-US/pages/customs';
 import carInsurance from '@md-modules/shared/i18n/providers/main/messages/en-US/pages/car-insurance';
@@ -17,6 +18,7 @@ import longTermResidencePermit from '@md-modules/shared/i18n/providers/main/mess
 
 export default {
   home,
+  blog,
   code95,
   customs,
   taxiLicense,

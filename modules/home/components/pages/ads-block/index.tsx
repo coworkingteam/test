@@ -4,13 +4,13 @@ import ServiceSlider from '@md-modules/home/components/pages/ads-block/component
 // constants
 import { DATA } from '@md-modules/home/components/pages/ads-block/constants';
 // views
-import { InnerWrapper, Wrapper, Title } from '@md-modules/home/components/pages/ads-block/views';
+import { InnerWrapper, Wrapper } from '@md-modules/home/components/pages/ads-block/views';
 
 const AdsBlock = () => {
   return (
     <Wrapper>
       <InnerWrapper>
-        <Title>Надёжная юридическая помощь в легализации и в других сложных проблемах на территории Польши!</Title>
+        {/*<Title>Надёжная юридическая помощь в легализации и в других сложных проблемах на территории Польши!</Title>*/}
 
         <ServiceSlider data={DATA} />
       </InnerWrapper>

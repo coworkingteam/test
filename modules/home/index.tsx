@@ -3,6 +3,8 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 // hooks
 import { useIntl } from 'react-intl';
+// types
+import { IAdsBlock } from '@md-types/generated/contentful';
 // pages
 import Welcome from '@md-modules/home/components/pages/welcome';
 import AdsBlock from '@md-modules/home/components/pages/ads-block';
@@ -10,7 +12,11 @@ import Services from '@md-modules/home/components/pages/services';
 import FeedBack from '@md-modules/home/components/pages/feed-back';
 import AdditionalInfo from '@md-modules/home/components/pages/additional-info';
 
-const Home = () => {
+interface Props {
+  adData: IAdsBlock;
+}
+
+const Home: React.FC<Props> = ({ adData }) => {
   const intl = useIntl();
 
   return (
@@ -26,7 +32,7 @@ const Home = () => {
 
       <Welcome />
       <AdsBlock />
-      <Services />
+      <Services adData={adData} />
       <AdditionalInfo />
       <FeedBack />
     </>

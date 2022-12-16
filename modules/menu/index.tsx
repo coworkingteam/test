@@ -1,8 +1,6 @@
 import * as React from 'react';
 // libs
 import { FormattedMessage, useIntl } from 'react-intl';
-// hooks
-import { useRouter } from 'next/router';
 // components
 import { NextSeo } from 'next-seo';
 import { Link } from '@md-ui/link';
@@ -22,13 +20,14 @@ import {
   EmptyBlockWrapper
 } from './views';
 // constants
-import { MENU_LISTS } from '@md-modules/menu/constants';
+import { IMenuItems } from '@md-modules/menu/constants';
 
-const Menu = () => {
+interface Props {
+  data: IMenuItems;
+}
+
+const Menu: React.FC<Props> = ({ data }) => {
   const intl = useIntl();
-  const { query } = useRouter();
-
-  const data = MENU_LISTS.find((item) => query?.type === item.type) || MENU_LISTS[0];
 
   return (
     <>
@@ -50,8 +49,14 @@ const Menu = () => {
             <LeftSide>
               {data.menuItems.length ? (
                 data.menuItems.map(({ l, h }) => (
-                  <Link key={l} hoverBGColor={data.color} hoverColor={colors.black600} preset='menu' href={h}>
-                    <FormattedMessage id={l} />
+                  <Link
+                    key={l}
+                    hoverBGColor={data.color}
+                    hoverColor={colors.black600}
+                    preset='menu'
+                    href={'/menu/' + h}
+                  >
+                    {l}
 
                     <Icon src='/static/icons/send-arrow-black.svg' alt='send-arrow' />
                   </Link>

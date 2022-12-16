@@ -2,15 +2,18 @@ import * as React from 'react';
 import Router, { useRouter } from 'next/router';
 // libs
 import { NextSeo } from 'next-seo';
+import { createClient } from 'contentful';
 import { Toaster } from 'react-hot-toast';
 // providers
 import { ThemeProvider } from 'styled-components';
 import LangProvider from '@md-modules/shared/i18n/providers/main';
+import MenuProvider from '@md-modules/shared/providers/menu-provider';
 // components
 import Head from 'next/head';
 import { ContentLoader } from '@md-ui/loaders/content-loader';
 // types
-import { AppProps } from 'next/app';
+import { AppProps as NextAppProps, AppContext } from 'next/app';
+import { IService, IServiceFields } from '@md-types/generated/contentful';
 // local
 import { theme } from '@md-styles/styled/theme';
 import { GlobalStyles } from '@md-styles/styled/global';
@@ -21,9 +24,16 @@ import 'public/fonts/styles.css';
 import 'nprogress/nprogress.css';
 import 'normalize.css/normalize.css';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+// types
+type AppProps<P = any> = {
+  menuItems: P;
+} & NextAppProps;
+
+const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
   const { pathname, locale } = useRouter();
   const [isPageLoading, setIsPageLoading] = React.useState(false);
+
+  const baseURL = process.env.SITE_URL || 'http://localhost:3000';
 
   React.useEffect(() => {
     if (BLOCKED_PAGES_LIST.some((pageURL) => pageURL === pathname)) {
@@ -53,38 +63,20 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       <NextSeo
-        canonical={process.env.SITE_URL || 'http://localhost:3000'}
+        canonical={baseURL}
         languageAlternates={[
           {
-            href: `${process.env.SITE_URL || 'http://localhost:3000'}/uk-ua/`,
-            hrefLang: 'uk-ua'
+            href: `${baseURL}/`,
+            hrefLang: 'en-US'
           },
           {
-            href: `${process.env.SITE_URL || 'http://localhost:3000'}/ru/`,
+            href: `${baseURL}/ru/`,
             hrefLang: 'ru'
           }
         ]}
         openGraph={{
           siteName: 'aksis',
           url: `https://aksis.agency/${locale}${pathname}`
-          // images: [
-          //   {
-          //     url: 'https://www.example.ie/og-image-01.jpg',
-          //     width: 800,
-          //     height: 600,
-          //     alt: 'Og Image Alt',
-          //     type: 'image/jpeg'
-          //   },
-          //   {
-          //     url: 'https://www.example.ie/og-image-02.jpg',
-          //     width: 900,
-          //     height: 800,
-          //     alt: 'Og Image Alt Second',
-          //     type: 'image/jpeg'
-          //   },
-          //   { url: 'https://www.example.ie/og-image-03.jpg' },
-          //   { url: 'https://www.example.ie/og-image-04.jpg' }
-          // ],
         }}
         twitter={{
           handle: '@handle',
@@ -95,15 +87,42 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
       <ThemeProvider theme={theme}>
         <LangProvider>
-          <ContentLoader isLoading={isPageLoading}>
-            <Component {...pageProps} />
-            <Toaster />
-          </ContentLoader>
+          <MenuProvider menuItems={menuItems}>
+            <ContentLoader isLoading={isPageLoading}>
+              <Component {...pageProps} />
+              <Toaster />
+            </ContentLoader>
+          </MenuProvider>
         </LangProvider>
       </ThemeProvider>
       <GlobalStyles />
     </>
   );
+};
+
+MyApp.getInitialProps = async ({ ctx: { locale } }: AppContext) => {
+  try {
+    const contentfulClient = createClient({
+      space: process.env.CONTENTFUL_SPACE_ID || '',
+      accessToken: process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN || ''
+    });
+
+    const data = await contentfulClient.getEntries<IServiceFields>({
+      content_type: 'service',
+      select: 'fields.menuTitle,fields.slug,fields.serviceType,fields.type,fields.isPopularService',
+      locale
+    });
+
+    return { menuItems: data.items };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: {
+        retrieved: true
+      }
+    };
+  }
 };
 
 export default MyApp;

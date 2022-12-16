@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const RightSide = styled.div`
+export const LeftSide = styled.div`
   border-radius: 30px 0 0 30px;
   flex: 1;
   padding: 60px;
@@ -28,7 +28,7 @@ export const RightSide = styled.div`
   }
 `;
 
-export const LeftSide = styled.div`
+export const RightSide = styled.div`
   border-radius: 0 30px 30px 0;
   flex: 2;
   padding: 60px;
