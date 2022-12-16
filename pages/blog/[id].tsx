@@ -3,9 +3,9 @@ import Article from '@md-modules/article';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import contentfulClient from '@md-modules/shared/services/contentful';
-import { IArticleFields, IServiceFields } from '@md-types/generated/contentful';
+import { IArticle, IArticleFields } from '@md-types/generated/contentful';
 
-const ArticlePage = ({ article }: { article: IArticleFields }) => {
+const ArticlePage = ({ article }: { article: IArticle }) => {
   if (!article) {
     return null;
   }
@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   try {
     const slug = params?.id;
 
-    const data = await contentfulClient.getEntries<IServiceFields>({
+    const data = await contentfulClient.getEntries<IArticle>({
       content_type: 'article',
       'fields.slug': slug,
       locale
@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
     return {
       props: {
-        article: article.fields
+        article
       }
     };
   } catch (error) {
