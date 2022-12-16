@@ -37,18 +37,17 @@ jobs:
 
             rm -r .next
             rm .env.local
-            rm .env
-            touch .env
+            touch .env.local
 
-            echo NEXT_PUBLIC_API_URL=/api >> .env
-            echo SITE_URL=https://aksis.agency/ >> .env
-            echo NEXT_LOCAL_API_URL=https://doxdox.bitrix24.eu/rest/8/mkzqll4xdor1oxz0/ >> .env
+            echo NEXT_PUBLIC_API_URL=/api >> .env.local
+            echo SITE_URL=https://aksis.agency/ >> .env.local
+            echo NEXT_LOCAL_API_URL=https://doxdox.bitrix24.eu/rest/8/mkzqll4xdor1oxz0/ >> .env.local
 
-            echo CONTENTFUL_DELIVERY_API_ACCESS_TOKEN=p02vL-APevX_2yqlge0FcUuNP8zCVFXNyq_zTm8ilfM >> .env
-            echo CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN=CFPAT-6BuVSQDbBvF0Xx78SuY0j1RP61fA2k54_GpcmIxNSXo >> .env
-            echo CONTENTFUL_SPACE_ID=o5pzd75oy6c1 >> .env
+            echo CONTENTFUL_DELIVERY_API_ACCESS_TOKEN=p02vL-APevX_2yqlge0FcUuNP8zCVFXNyq_zTm8ilfM >> .env.local
+            echo CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN=CFPAT-6BuVSQDbBvF0Xx78SuY0j1RP61fA2k54_GpcmIxNSXo >> .env.local
+            echo CONTENTFUL_SPACE_ID=o5pzd75oy6c1 >> .env.local
 
-            cat .env
+            cat .env.local
 
             yarn
             yarn build
