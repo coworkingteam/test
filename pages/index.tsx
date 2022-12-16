@@ -7,7 +7,7 @@ import { IAdsBlock, IServiceFields } from '@md-types/generated/contentful';
 
 const HomePage = ({ ads }: { ads: IAdsBlock }) => (
   <MainLayout>
-    <Home data={ads} />
+    <Home adData={ads} />
   </MainLayout>
 );
 

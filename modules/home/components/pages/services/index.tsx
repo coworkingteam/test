@@ -12,10 +12,10 @@ import { ServicesWrapper, SubTitle, Title, Wrapper } from '@md-modules/home/comp
 
 // types
 interface Props {
-  data: IAdsBlock;
+  adData: IAdsBlock;
 }
 
-const Services: React.FC<Props> = ({ data }) => (
+const Services: React.FC<Props> = ({ adData }) => (
   <Wrapper>
     <Title>
       <FormattedMessage id='home.services.title' />
@@ -39,12 +39,12 @@ const Services: React.FC<Props> = ({ data }) => (
     </ServicesWrapper>
 
     <AdBlock
-      button={{ url: data.fields.slug, title: data.fields.actionButtonText }}
-      serviceName={data.fields.title}
-      img={`https:${data.fields.image.fields.file.url}`}
-      emojiIcon={`https:${data.fields.icon?.fields.file.url}`}
-      subName={data.fields.subTitle}
-      description={data.fields.content}
+      button={{ url: adData.fields.slug, title: adData.fields.actionButtonText }}
+      serviceName={adData.fields.title}
+      img={`https:${adData.fields.image.fields.file.url}`}
+      emojiIcon={`https:${adData.fields.icon?.fields.file.url}`}
+      subName={adData.fields.subTitle}
+      description={adData.fields.content}
     />
 
     <ServicesWrapper>

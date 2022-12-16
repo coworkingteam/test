@@ -13,10 +13,10 @@ import FeedBack from '@md-modules/home/components/pages/feed-back';
 import AdditionalInfo from '@md-modules/home/components/pages/additional-info';
 
 interface Props {
-  data: IAdsBlock;
+  adData: IAdsBlock;
 }
 
-const Home: React.FC<Props> = ({ data }) => {
+const Home: React.FC<Props> = ({ adData }) => {
   const intl = useIntl();
 
   return (
@@ -32,7 +32,7 @@ const Home: React.FC<Props> = ({ data }) => {
 
       <Welcome />
       <AdsBlock />
-      <Services data={data} />
+      <Services adData={adData} />
       <AdditionalInfo />
       <FeedBack />
     </>
