@@ -23,7 +23,7 @@ interface Context {
 }
 
 interface ContextProps {
-  menuItems: IService[];
+  menuItems?: IService[];
 }
 
 export const MenuAPIContext = React.createContext<Context>({
@@ -32,14 +32,14 @@ export const MenuAPIContext = React.createContext<Context>({
 
 const MenuProvider: React.FC<ContextProps> = ({ children, menuItems }) => {
   const items = Object.entries({
-    ...(menuItems.some((item) => item.fields.isPopularService) && {
-      POPULAR: menuItems.filter((item) => item.fields.isPopularService)
+    ...(menuItems?.some((item) => item.fields.isPopularService) && {
+      POPULAR: menuItems?.filter((item) => item.fields.isPopularService)
     }),
     ..._.groupBy(menuItems, (item) => item.fields.serviceType)
-  }).map((item) => ({
+  })?.map((item) => ({
     type: item[0] as ServicesTypes,
     ...getServiceUIKit(item[0] as ServicesTypes),
-    data: item[1].map((item) => ({
+    data: item[1]?.map((item) => ({
       h: `/menu/${item.fields.slug}${item.fields.type ? `?type=${translate(item.fields.type)}` : ''}`,
       l: item.fields.menuTitle
     }))
