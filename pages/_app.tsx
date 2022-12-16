@@ -24,7 +24,6 @@ import 'public/fonts/styles.css';
 import 'nprogress/nprogress.css';
 import 'normalize.css/normalize.css';
 
-// types
 type AppProps<P = any> = {
   menuItems: P;
 } & NextAppProps;
