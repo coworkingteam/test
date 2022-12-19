@@ -17,8 +17,6 @@ import { IService, IServiceFields } from '@md-types/generated/contentful';
 // local
 import { theme } from '@md-styles/styled/theme';
 import { GlobalStyles } from '@md-styles/styled/global';
-// constants
-import { BLOCKED_PAGES_LIST } from '@md-modules/shared/constants/global';
 // global css
 import 'public/fonts/styles.css';
 import 'nprogress/nprogress.css';
@@ -35,21 +33,9 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
   const baseURL = process.env.SITE_URL || 'http://localhost:3000';
 
   React.useEffect(() => {
-    if (BLOCKED_PAGES_LIST.some((pageURL) => pageURL === pathname)) {
-      void Router.push('/404');
-    }
-
     Router.events.on('routeChangeError', () => setIsPageLoading(false));
     Router.events.on('routeChangeStart', () => setIsPageLoading(true));
-    Router.events.on('routeChangeComplete', (url) => {
-      if (BLOCKED_PAGES_LIST.some((pageURL) => pageURL === url.split('?')[0])) {
-        Router.push('/404').then(() => setIsPageLoading(false));
-
-        return;
-      }
-
-      setIsPageLoading(false);
-    });
+    Router.events.on('routeChangeComplete', () => setIsPageLoading(false));
   }, []);
 
   return (

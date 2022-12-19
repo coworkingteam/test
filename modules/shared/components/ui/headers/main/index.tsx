@@ -14,12 +14,12 @@ import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
 import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // constants
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
-import { menuItemsTransport, menuItemsIndividual, menuItemsAdmission, menuItemsRelatedBusiness } from './constants';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper } from './views';
+// utils
+import { flatten } from 'lodash';
 
 const BUTTON_STYLES = { mr: 26 };
-const MOBILE_MENU_DATA = menuItemsTransport.concat(menuItemsIndividual, menuItemsRelatedBusiness, menuItemsAdmission);
 
 const Header = () => {
   const { menuItems } = React.useContext(MenuAPIContext);
@@ -29,6 +29,8 @@ const Header = () => {
 
   const [isScroll, setIsScroll] = React.useState(false);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(true);
+
+  const mobileMenuData = flatten(menuItems.map((item) => item.data));
 
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
@@ -68,7 +70,7 @@ const Header = () => {
         <BurgerWrapper>
           <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
 
-          <AnimateMobileNav data={MOBILE_MENU_DATA} />
+          <AnimateMobileNav data={mobileMenuData} />
         </BurgerWrapper>
       </IWrapper>
 
