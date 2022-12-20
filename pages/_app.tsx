@@ -98,13 +98,14 @@ MyApp.getInitialProps = async ({ ctx: { locale } }: AppContext) => {
       locale
     });
 
-    return { menuItems: data.items };
+    return { menuItems: data.items, revalidate: 20 };
   } catch (error) {
     console.log(error);
 
     return {
       props: {
-        retrieved: true
+        retrieved: true,
+        revalidate: 20
       }
     };
   }

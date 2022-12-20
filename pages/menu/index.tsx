@@ -39,7 +39,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
             h: item.fields.slug + (item.fields.type ? `?type=${translate(item.fields.type)}` : ''),
             l: item.fields.menuTitle
           }))
-        })
+        }),
+        revalidate: 20
       }
     };
   } catch (error) {
@@ -47,7 +48,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
 
     return {
       props: {
-        retrieved: true
+        retrieved: true,
+        revalidate: 20
       }
     };
   }

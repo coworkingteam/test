@@ -43,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: data.items.map((item) => ({ params: { id: item.fields.slug } })),
-    fallback: true
+    fallback: false
   };
 };
 
@@ -63,14 +63,16 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       return {
         redirect: {
           destination: '/404',
-          permanent: false
+          permanent: false,
+          revalidate: 20
         }
       };
     }
 
     return {
       props: {
-        service: service
+        service: service,
+        revalidate: 20
       }
     };
   } catch (error) {
@@ -78,7 +80,8 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
     return {
       props: {
-        retrieved: true
+        retrieved: true,
+        revalidate: 20
       }
     };
   }

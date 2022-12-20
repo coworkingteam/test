@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Blog from '@md-modules/blog';
 import { MainLayout } from '@md-modules/shared/layouts/main';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import contentfulClient from '@md-modules/shared/services/contentful';
 import { IArticle, IServiceFields } from '@md-types/generated/contentful';
 
@@ -11,7 +11,7 @@ const BlogPage = ({ data }: { data: IArticle[] }) => (
   </MainLayout>
 );
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   try {
     const data = await contentfulClient.getEntries<IServiceFields>({
       content_type: 'article',
@@ -21,7 +21,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
     return {
       props: {
-        data: data.items
+        data: data.items,
+        revalidate: 20
       }
     };
   } catch (error) {
@@ -29,7 +30,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
     return {
       props: {
-        retrieved: true
+        retrieved: true,
+        revalidate: 20
       }
     };
   }
