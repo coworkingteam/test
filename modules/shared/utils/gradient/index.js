@@ -727,7 +727,7 @@ class Gradient {
       (this.mesh = new this.minigl.Mesh(this.geometry, this.material));
   }
   shouldSkipFrame(e) {
-    return !!window.document.hidden || !this.conf.playing || parseInt(e, 10) % 2 == 0 || void 0;
+    return !!window.document.hidden || !this.conf.playing || parseInt(e, 10) % 2 === 0 || void 0;
   }
   updateFrequency(e) {
     (this.freqX += e), (this.freqY += e);
