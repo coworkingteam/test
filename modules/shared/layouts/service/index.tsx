@@ -163,6 +163,11 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
               id: activeData.faq3Title,
               title: activeData.faq3Title,
               content: activeData.faq3Content
+            },
+            {
+              id: activeData.faq4Title,
+              title: activeData.faq4Title,
+              content: activeData.faq4Content
             }
           ]}
         />

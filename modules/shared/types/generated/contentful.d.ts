@@ -84,11 +84,11 @@ export interface IServiceFields {
   /** service type */
   serviceType: 'FOR_BUSINESS' | 'INDIVIDUALS' | 'RESIDENCE_PERMIT' | 'TRANSPORT';
 
-  /** menu title */
-  menuTitle: string;
-
   /** title */
   title: string;
+
+  /** menu title */
+  menuTitle: string;
 
   /** Title Button TEXT */
   titleButtonText: string;
@@ -108,9 +108,6 @@ export interface IServiceFields {
   /** Button TEXT (Card Right Side) */
   buttonTextCardRightSide: string;
 
-  /** slug */
-  slug: string;
-
   /** FAQ 1 Title */
   faq1Title: string;
 
@@ -128,6 +125,15 @@ export interface IServiceFields {
 
   /** FAQ 3 Content */
   faq3Content?: Document | undefined;
+
+  /** FAQ 4 Title */
+  faq4Title?: string | undefined;
+
+  /** FAQ 4 Content */
+  faq4Content?: Document | undefined;
+
+  /** slug */
+  slug: string;
 }
 
 export interface IService extends Entry<IServiceFields> {
