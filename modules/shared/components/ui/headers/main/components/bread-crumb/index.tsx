@@ -3,11 +3,11 @@ import React from 'react';
 import { useRouter } from 'next/router';
 // components
 import { BreadcrumbJsonLd } from 'next-seo';
-// constants
-import { PAGES_NAMES } from '@md-modules/shared/i18n/pages-names';
-import { LOCALES, Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { BreadcrumbName, BackIcon, Wrapper } from '@md-ui/headers/main/components/bread-crumb/views';
+import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
+// utils
+import { flatten } from 'lodash';
 
 interface Props {
   showBreadcrumb: boolean;
@@ -16,23 +16,35 @@ interface Props {
 
 const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
   // TODO FIX IT
+  const { menuItems } = React.useContext(MenuAPIContext);
 
   const { push, pathname, query, locale } = useRouter();
-
-  const routersList = pathname.split('/').filter((item) => item.length);
-
-  const itemListElements = routersList.map((item, index) => ({
-    position: index + 2,
-
-    name: PAGES_NAMES[(locale as Locales) || LOCALES.ENGLISH]?.find((item) => item.url === pathname)?.name || '',
-    item: `${process.env.SITE_URL || 'http://localhost:3000'}/${item.replace('[id]', query.id as string)}`
-  }));
-
-  const onClickHome = () => push('/');
 
   if (pathname === '/') {
     return null;
   }
+
+  const routersList = pathname.split('/').filter((item) => item.length);
+  const id = query.id as string;
+
+  const itemListElements = routersList.map((item, index) => ({
+    position: index + 2,
+    name: item.replace('[id]', id).split('-').join(' '),
+    item: `${process.env.SITE_URL || 'http://localhost:3000'}/${locale}/${
+      routersList[index - 1] ? routersList[index - 1] + '/' : ''
+    }${
+      item === 'menu' && index + 1 < routersList.length
+        ? item.replace('[id]', id) +
+          `?type=${
+            flatten(menuItems.map((item) => item.data.map((data) => ({ ...data, type: item.type })))).find((menuItem) =>
+              menuItem.h.includes(routersList[1]?.replace('[id]', id))
+            )?.type
+          }`
+        : item.replace('[id]', id)
+    }`
+  }));
+
+  const onClickHome = () => push('/');
 
   return (
     <>
@@ -54,23 +66,18 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
           home
         </BreadcrumbName>
 
-        {routersList.map((item, index) => {
+        {itemListElements.map((item, index) => {
           const isLastChild = index + 1 === routersList.length;
-          const url =
-            PAGES_NAMES[(locale as Locales) || LOCALES.ENGLISH]?.find((item) => item.url === pathname)?.name ||
-            item
-              .replace('[id]', query.id as string)
-              .split('-')
-              .join(' ');
+          const url = new URL(item.item).pathname + new URL(item.item).search || '';
 
           return (
             <BreadcrumbName
               isScroll={isScroll}
-              key={item}
+              key={item.name}
               isLastChild={isLastChild}
-              onClick={() => !isLastChild && push(`/${item}`)}
+              onClick={() => !isLastChild && push(`/${url}`)}
             >
-              /{url}
+              /{item.name}
             </BreadcrumbName>
           );
         })}

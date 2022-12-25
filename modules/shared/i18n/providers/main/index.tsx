@@ -20,13 +20,13 @@ export const LangAPIContext = React.createContext<Context>({
 });
 
 const LangProvider: React.FC = ({ children }) => {
-  const { push, route, asPath, locale } = useRouter();
+  const { push, asPath, locale } = useRouter();
   const [localeState, setLocaleState] = React.useState<Locales>(locale as Locales);
 
   const setLocale = (value: Locales) => {
     setLocaleState(value);
 
-    void push(route, asPath, { locale: value });
+    void push(asPath, asPath, { locale: value });
   };
 
   return (

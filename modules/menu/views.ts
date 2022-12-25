@@ -92,6 +92,10 @@ export const LeftSide = styled.div`
   margin-right: 60px;
   overflow-y: auto;
 
+  a {
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 20, maxSize: 26, maxViewport: 2000, minViewport: 320 })};
+  }
+
   @media (max-width: 1000px) {
     overflow: unset;
     max-height: unset;
