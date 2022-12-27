@@ -104,6 +104,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
         description={activeData.seoDescription}
         openGraph={{
           title: activeData.title,
+          description: activeData.seoDescription,
           images: [
             {
               width: 550,

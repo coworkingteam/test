@@ -43,10 +43,10 @@ const Article: React.FC<Props> = ({ article }) => {
   return (
     <>
       <NextSeo
-        title={`${article.fields.title} | aksis`}
-        description='This example uses more of the available config options.'
+        title={`${article.fields.seoTitle || article.fields.title} | aksis`}
+        description={article.fields.seoDescription}
         openGraph={{
-          title: article.fields.seoTitle || article.fields.title,
+          title: article.fields.title,
           description: article.fields.seoDescription,
           type: 'article',
           article: {
