@@ -100,10 +100,18 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
   return (
     <>
       <NextSeo
-        title={activeData.title}
-        description='This example uses more of the available config options.'
+        title={activeData.seoTitle || activeData.title}
+        description={activeData.seoDescription}
         openGraph={{
-          title: activeData.title
+          title: activeData.title,
+          images: [
+            {
+              width: 550,
+              height: 400,
+              url: `https:${activeData.serviceImage.fields.file.url}`,
+              alt: activeData.serviceImage.fields.title
+            }
+          ]
         }}
       />
 

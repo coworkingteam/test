@@ -22,7 +22,7 @@ const Home: React.FC<Props> = ({ adData }) => {
   return (
     <>
       <NextSeo
-        title={`${intl.formatMessage({ id: 'home.welcome.title' })} | aksis`} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        title={`${intl.formatMessage({ id: 'home.welcome.title' })} | aksis`}
         description='This example uses more of the available config options.'
         openGraph={{
           title: `${intl.formatMessage({ id: 'home.welcome.title' })} | aksis`,

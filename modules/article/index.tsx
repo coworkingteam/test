@@ -46,9 +46,8 @@ const Article: React.FC<Props> = ({ article }) => {
         title={`${article.fields.title} | aksis`}
         description='This example uses more of the available config options.'
         openGraph={{
-          title: article.fields.title,
-          description: 'Description of open graph article',
-          url: 'https://www.example.com/articles/article-title',
+          title: article.fields.seoTitle || article.fields.title,
+          description: article.fields.seoDescription,
           type: 'article',
           article: {
             publishedTime: article.sys.createdAt,

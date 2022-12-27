@@ -44,6 +44,12 @@ export interface IAdsBlock extends Entry<IAdsBlockFields> {
 }
 
 export interface IArticleFields {
+  /** SEO title */
+  seoTitle?: string | undefined;
+
+  /** SEO description */
+  seoDescription?: string | undefined;
+
   /** title */
   title: string;
 
@@ -75,6 +81,12 @@ export interface IArticle extends Entry<IArticleFields> {
 }
 
 export interface IServiceFields {
+  /** SEO title */
+  seoTitle?: string | undefined;
+
+  /** SEO description */
+  seoDescription?: string | undefined;
+
   /** Is popular service ? */
   isPopularService: boolean;
 

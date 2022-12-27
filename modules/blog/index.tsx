@@ -20,7 +20,7 @@ const Blog: React.FC<Props> = ({ data }) => {
   return (
     <>
       <NextSeo
-        title={`${intl.formatMessage({ id: 'blog.title' })} | aksis`} // > 70/80 char // ukr --> Помощь с документами в Польше + для беженцов
+        title={`${intl.formatMessage({ id: 'blog.title' })} | aksis`}
         description='This example uses more of the available config options.'
         openGraph={{
           title: `${intl.formatMessage({ id: 'blog.title' })} | aksis`,

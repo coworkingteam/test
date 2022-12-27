@@ -26,7 +26,6 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
 
   const routersList = pathname.split('/').filter((item) => item.length);
   const id = query.id as string;
-
   const itemListElements = routersList.map((item, index) => ({
     position: index + 2,
     name: item.replace('[id]', id).split('-').join(' '),
