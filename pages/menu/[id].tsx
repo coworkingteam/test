@@ -63,26 +63,26 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       return {
         redirect: {
           destination: '/404',
-          permanent: false,
-          revalidate: 20
-        }
+          permanent: false
+        },
+        revalidate: 20
       };
     }
 
     return {
       props: {
-        service: service,
-        revalidate: 20
-      }
+        service: service
+      },
+      revalidate: 20
     };
   } catch (error) {
     console.log(error);
 
     return {
       props: {
-        retrieved: true,
-        revalidate: 20
-      }
+        retrieved: true
+      },
+      revalidate: 20
     };
   }
 };

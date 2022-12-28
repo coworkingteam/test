@@ -40,30 +40,54 @@ const Article: React.FC<Props> = ({ article }) => {
     [] as Array<Text>
   );
 
+  const content = React.useMemo(
+    () =>
+      documentToReactComponents(article.fields.content, {
+        renderNode: {
+          [BLOCKS.HEADING_3]: (node, children) => {
+            if (node.nodeType === BLOCKS.HEADING_3 && node.content[0].nodeType === 'text') {
+              return (
+                <>
+                  <Anchor id={translate(node.content[0].value.split(' ').join('-').replace('?', '').trim())}>
+                    &nbsp;
+                  </Anchor>
+
+                  <ContentTitle>{children}</ContentTitle>
+                </>
+              );
+            }
+          },
+          [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>
+        }
+      }),
+    [article]
+  );
+  const openGraph = {
+    title: article.fields.title,
+    description: article.fields.seoDescription,
+    type: 'article',
+    article: {
+      publishedTime: article.sys.createdAt,
+      modifiedTime: article.sys.updatedAt,
+      section: 'Section II',
+      tags: ['Tag A', 'Tag B', 'Tag C']
+    },
+    images: [
+      {
+        width: 550,
+        height: 400,
+        url: `https:${article.fields.image?.fields.file.url}`,
+        alt: article.fields.title
+      }
+    ]
+  };
+
   return (
     <>
       <NextSeo
-        title={`${article.fields.seoTitle || article.fields.title} | aksis`}
+        openGraph={openGraph}
         description={article.fields.seoDescription}
-        openGraph={{
-          title: article.fields.title,
-          description: article.fields.seoDescription,
-          type: 'article',
-          article: {
-            publishedTime: article.sys.createdAt,
-            modifiedTime: article.sys.updatedAt,
-            section: 'Section II',
-            tags: ['Tag A', 'Tag B', 'Tag C']
-          },
-          images: [
-            {
-              width: 550,
-              height: 400,
-              url: `https:${article.fields.image?.fields.file.url}`,
-              alt: article.fields.title
-            }
-          ]
-        }}
+        title={`${article.fields.seoTitle || article.fields.title} | aksis`}
       />
 
       <Wrapper>
@@ -89,24 +113,7 @@ const Article: React.FC<Props> = ({ article }) => {
               </LinkUl>
             )}
 
-            {documentToReactComponents(article.fields.content, {
-              renderNode: {
-                [BLOCKS.HEADING_3]: (node, children) => {
-                  if (node.nodeType === BLOCKS.HEADING_3 && node.content[0].nodeType === 'text') {
-                    return (
-                      <>
-                        <Anchor id={translate(node.content[0].value.split(' ').join('-').replace('?', '').trim())}>
-                          &nbsp;
-                        </Anchor>
-
-                        <ContentTitle>{children}</ContentTitle>
-                      </>
-                    );
-                  }
-                },
-                [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>
-              }
-            })}
+            {content}
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>
