@@ -17,8 +17,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
     locale
   });
 
-  console.log('[data]: ', data);
-
   const [ads] = data.items;
 
   return {
