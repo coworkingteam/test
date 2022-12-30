@@ -13,7 +13,7 @@ interface AddDealParams {
 }
 
 interface GetContactsParams {
-  filter?: { PHONE?: string };
+  filter?: { PHONE?: string; EMAIL?: string };
   select?: string[];
 }
 

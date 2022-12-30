@@ -57,7 +57,7 @@ const Form = () => {
         toggleIsLoading();
 
         try {
-          const getContactListResponse = await api.getContactList({ filter: { PHONE: data.phone } });
+          const getContactListResponse = await api.getContactList({ filter: { EMAIL: data.email } });
 
           if (getContactListResponse.data.result.length) {
             const addDealResponse = await api.addDeal({
