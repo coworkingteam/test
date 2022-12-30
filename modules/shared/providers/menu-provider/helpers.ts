@@ -1,5 +1,5 @@
 import { colors } from '@md-styles/styled/theme';
-import { ServicesTypes } from '@md-modules/shared/providers/menu-provider/index';
+import { ServicesTypes } from '@md-modules/menu/constants';
 
 export const getServiceUIKit = (type: ServicesTypes) => {
   switch (type) {
