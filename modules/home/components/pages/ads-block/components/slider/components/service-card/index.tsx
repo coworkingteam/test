@@ -1,6 +1,4 @@
 import React from 'react';
-// libs
-import { FormattedMessage } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
 // css
@@ -19,12 +17,10 @@ const ServiceCard: React.FC<Service> = ({ img, title, bgColor, src }) => {
   return (
     <Wrapper>
       <InitialWrapper onClick={onClick} bgColor={bgColor}>
-        <Image src={img} alt={img} />
+        <Image src={img} alt={title} />
 
         <TitleWrapper>
-          <Title>
-            <FormattedMessage id={title} />
-          </Title>
+          <Title>{title}</Title>
         </TitleWrapper>
       </InitialWrapper>
     </Wrapper>

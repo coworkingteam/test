@@ -49,6 +49,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
 
       <NextSeo
         canonical={baseURL}
+        defaultTitle='aksis'
         languageAlternates={[
           {
             href: `${baseURL}/`,
@@ -94,7 +95,7 @@ MyApp.getInitialProps = async ({ ctx: { locale } }: AppContext) => {
 
     const data = await contentfulClient.getEntries<IServiceFields>({
       content_type: 'service',
-      select: 'fields.menuTitle,fields.slug,fields.serviceType,fields.type,fields.isPopularService',
+      select: 'fields.menuTitle,fields.slug,fields.serviceType,fields.type,fields.isPopularService,fields.serviceImage',
       locale
     });
 

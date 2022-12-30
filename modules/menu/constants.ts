@@ -5,17 +5,17 @@ interface IMenuItem {
   l: string;
 }
 
-export type MenuTypes = 'INDIVIDUALS' | 'FOR_BUSINESS' | 'TRANSPORT' | 'RESIDENCE_PERMIT' | 'POPULAR';
+export type ServicesTypes = 'INDIVIDUALS' | 'FOR_BUSINESS' | 'TRANSPORT' | 'RESIDENCE_PERMIT' | 'POPULAR';
 
 export interface IMenuItems {
-  type: MenuTypes;
+  type: ServicesTypes;
   color: string;
   titleID: string;
   menuItems: IMenuItem[];
   previewIcon: string;
 }
 
-export const getMenuUIData = ({ type, menuItems }: { type: MenuTypes; menuItems: IMenuItem[] }) => {
+export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuItems: IMenuItem[] }) => {
   switch (type) {
     case 'TRANSPORT':
       return {

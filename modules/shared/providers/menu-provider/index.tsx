@@ -1,5 +1,7 @@
 import React from 'react';
 // types
+import { Asset } from 'contentful';
+import { ServicesTypes } from '@md-modules/menu/constants';
 import { IService } from '@md-types/generated/contentful';
 import { getServiceUIKit } from '@md-modules/shared/providers/menu-provider/helpers';
 // utils
@@ -7,14 +9,14 @@ import _ from 'lodash';
 // @ts-ignore
 import translate from 'translit-ru-ua';
 
-export type ServicesTypes = 'POPULAR' | 'INDIVIDUALS' | 'RESIDENCE_PERMIT' | 'FOR_BUSINESS' | 'TRANSPORT';
-
 export interface IMenuItem {
   type: ServicesTypes;
   label: string;
   data: {
     l: string;
     h: string;
+    serviceImage: Asset;
+    serviceType: ServicesTypes;
   }[];
   bgColor?: string;
 }
@@ -41,7 +43,9 @@ const MenuProvider: React.FC<ContextProps> = ({ children, menuItems }) => {
     ...getServiceUIKit(item[0] as ServicesTypes),
     data: item[1]?.map((item) => ({
       h: `/menu/${item.fields.slug}${item.fields.type ? `?type=${translate(item.fields.type)}` : ''}`,
-      l: item.fields.menuTitle
+      l: item.fields.menuTitle,
+      serviceType: item.fields.serviceType,
+      serviceImage: item.fields.serviceImage
     }))
   }));
 

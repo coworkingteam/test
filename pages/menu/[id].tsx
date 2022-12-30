@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IService, IServiceFields } from '@md-types/generated/contentful';
 import contentfulClient from '@md-modules/shared/services/contentful';
-import { ServicesTypes } from '@md-modules/shared/providers/menu-provider';
+import { ServicesTypes } from '@md-modules/menu/constants';
 import { ServiceLayout } from '@md-modules/shared/layouts/service';
 import { getServiceUIKit } from '@md-modules/shared/providers/menu-provider/helpers';
 // utils
