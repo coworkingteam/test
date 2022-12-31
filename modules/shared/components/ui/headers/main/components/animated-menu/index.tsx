@@ -1,6 +1,7 @@
 import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
+import { motion, AnimatePresence } from 'framer-motion';
 // components
 import { Link } from '@md-ui/link';
 import MenuItem from '@md-ui/headers/main/components/animated-menu/components/menu-item';
@@ -8,10 +9,10 @@ import SubItem from '@md-ui/headers/main/components/animated-menu/components/sub
 import SendArrow from '../../../../../../../../public/static/icons/send-arrow';
 // theme
 import { colors } from '@md-styles/styled/theme';
-
-import { motion, AnimatePresence } from 'framer-motion';
-
+// types
 import { IMenuItem } from '@md-modules/shared/providers/menu-provider';
+// views
+import { MotionUnderline, NavWrapper } from '@md-ui/headers/main/components/animated-menu/view';
 
 interface Props {
   isScroll: boolean;
@@ -24,7 +25,7 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
 
   return (
     <MenuItem activeColor={selectedTab?.bgColor} isScroll={isScroll} text='menu.services.menuItemTitle'>
-      <nav style={{ padding: '28px 0 28px 28px' }}>
+      <NavWrapper>
         {menuData.map((item) => (
           <div key={item.label} style={{ position: 'relative', width: '100%' }}>
             <SubItem
@@ -33,24 +34,11 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
               onMouseMove={() => setSelectedTab(item)}
             />
 
-            {item.label === selectedTab.label ? (
-              <motion.div
-                layoutId='underline'
-                style={{
-                  position: 'absolute',
-                  background: '#f1f1f1',
-                  width: '100%',
-                  borderBottomLeftRadius: 10,
-                  borderTopLeftRadius: 10,
-                  height: '100%',
-                  top: '0',
-                  bottom: '0'
-                }}
-              />
-            ) : null}
+            {item.label === selectedTab.label ? <MotionUnderline layoutId='underline' /> : null}
           </div>
         ))}
-      </nav>
+      </NavWrapper>
+
       <main style={{ flex: 1, background: '#f1f1f1', padding: '28px 28px 28px 10px' }}>
         <AnimatePresence exitBeforeEnter>
           <motion.div
