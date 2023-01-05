@@ -20,10 +20,10 @@ const Blog: React.FC<Props> = ({ data }) => {
   return (
     <>
       <NextSeo
-        title={`${intl.formatMessage({ id: 'blog.title' })} | aksis`}
-        description='This example uses more of the available config options.'
+        title={intl.formatMessage({ id: 'blog.seoTitle' })}
+        description={intl.formatMessage({ id: 'blog.seoDescription' })}
         openGraph={{
-          title: `${intl.formatMessage({ id: 'blog.title' })} | aksis`,
+          title: intl.formatMessage({ id: 'blog.seoDescription' }),
           description: 'Open Graph Description'
         }}
       />

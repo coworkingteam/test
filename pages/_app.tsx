@@ -62,7 +62,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
         ]}
         openGraph={{
           siteName: 'aksis',
-          url: `https://aksis.agency/${locale}${pathname}`
+          url: `${baseURL}${locale}${pathname}`
         }}
         twitter={{
           handle: '@handle',

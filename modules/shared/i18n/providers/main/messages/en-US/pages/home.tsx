@@ -1,5 +1,8 @@
 export default {
   baseURL: '/',
+  seoTitle: 'Documents legalization services in Poland and EU - aksis',
+  seoDescription:
+    'Legalization services in Poland and the EU. Residence cards (Residence permits), Acceleration of document processing, Car services, Work permits, Issuance of invitations to Poland, Powers of Attorney',
   welcome: {
     title: 'Help with documents in Poland',
     subTitle: 'Work permit → residence permit → urgent documents → business and tokenization',

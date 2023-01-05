@@ -22,10 +22,10 @@ const Home: React.FC<Props> = ({ adData }) => {
   return (
     <>
       <NextSeo
-        title={`${intl.formatMessage({ id: 'home.welcome.title' })} | aksis`}
-        description='This example uses more of the available config options.'
+        title={intl.formatMessage({ id: 'home.seoTitle' })}
+        description={intl.formatMessage({ id: 'home.seoDescription' })}
         openGraph={{
-          title: `${intl.formatMessage({ id: 'home.welcome.title' })} | aksis`,
+          title: intl.formatMessage({ id: 'home.seoTitle' }),
           description: 'Open Graph Description'
         }}
       />
