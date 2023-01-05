@@ -22,6 +22,9 @@ import 'public/fonts/styles.css';
 import 'nprogress/nprogress.css';
 import 'normalize.css/normalize.css';
 
+// @ts-ignore
+import TagManager from 'react-gtm-module';
+
 type AppProps<P = any> = {
   menuItems: P;
 } & NextAppProps;
@@ -33,6 +36,8 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
   const baseURL = process.env.SITE_URL || 'http://localhost:3000';
 
   React.useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-NHSK3VS' });
+
     Router.events.on('routeChangeError', () => setIsPageLoading(false));
     Router.events.on('routeChangeStart', () => setIsPageLoading(true));
     Router.events.on('routeChangeComplete', () => setIsPageLoading(false));
