@@ -114,6 +114,10 @@ const Article: React.FC<Props> = ({ article }) => {
             )}
 
             {content}
+
+            <Link preset='large' href='#'>
+              Discuss On Twitter
+            </Link>
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>

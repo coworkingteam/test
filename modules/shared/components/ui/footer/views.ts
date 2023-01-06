@@ -25,13 +25,11 @@ export const InnerWrapper = styled.div`
   width: 100%;
   display: flex;
   padding: 60px 0;
-  justify-content: space-between;
-  align-items: center;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
   @media (max-width: 1000px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   @media (max-width: 768px) {
@@ -40,8 +38,18 @@ export const InnerWrapper = styled.div`
 `;
 
 export const LeftSide = styled.div`
+  @media (max-width: 1000px) {
+    margin-bottom: 40px;
+  }
+`;
+
+export const RightSide = styled.div`
   height: 100%;
-  display: flex;
+  width: 100%;
+
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 
   @media (max-width: 768px) {
     width: 100%;
@@ -49,25 +57,27 @@ export const LeftSide = styled.div`
   }
 `;
 
-export const RightSide = styled.div`
-  @media (max-width: 1000px) {
-    margin-bottom: 40px;
+export const TextLogo = styled.img`
+  margin-right: 40px;
+
+  @media (max-width: 768px) {
+    margin: 0;
   }
 `;
 
-export const Logo = styled.img`
-  width: 100%;
-  height: 100%;
-  max-width: 150px;
-  max-height: 150px;
+export const SocialNetworkIcon = styled.img`
+  cursor: pointer;
+  margin-right: 14px;
+`;
+
+export const SocialNetworksWrapper = styled.div`
+  margin-top: 18px;
 `;
 
 export const LinkList = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 0 32px 0 0;
 
-  border-right: 1px solid ${({ theme }) => theme.colors.white};
+  padding: 0 32px 0 0;
 
   div {
     padding: 0 0 10px 0;
@@ -84,8 +94,9 @@ export const LinkList = styled.div`
 `;
 
 export const MenuItemsWrapper = styled.div`
-  margin: 0 0 0 32px;
-  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 
   &:first-child {
     margin: 0;
@@ -104,10 +115,14 @@ export const MenuItemsWrapper = styled.div`
 
 export const FAQWrapper = styled.h5`
   margin: 28px 0;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
 
-  color: ${({ theme }) => theme.colors.gray170};
+  color: ${({ theme }) => theme.colors.gray400};
+
+  a {
+    color: ${({ theme }) => theme.colors.white};
+  }
 
   @media (max-width: 768px) {
     margin: 28px 10px;
@@ -119,7 +134,7 @@ export const FAQWrapper = styled.h5`
 export const Heading = styled.p`
   margin: 0 0 12px 0;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: capitalize;
 
   color: ${({ theme }) => theme.colors.white};

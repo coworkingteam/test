@@ -16,7 +16,7 @@ interface Props {
 
 const MenuI = styled.div<{ isScroll?: boolean; whiteColor?: boolean; isActive: boolean }>`
   padding: 0 34px;
-  font-size: 16px;
+  font-size: 14px;
 
   a {
     text-decoration: none;

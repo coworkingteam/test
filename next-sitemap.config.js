@@ -8,10 +8,6 @@ module.exports = {
   siteUrl: SITE_URL,
   alternateRefs: [
     {
-      href: SITE_URL,
-      hreflang: 'en'
-    },
-    {
       href: `${SITE_URL}/ru`,
       hreflang: 'ru'
     }

@@ -8,6 +8,7 @@ export const linkPresets = {
   large: css`
     font-size: 22px;
     font-weight: 700;
+    text-decoration: underline;
 
     @media (max-width: 768px) {
       font-size: 18px;

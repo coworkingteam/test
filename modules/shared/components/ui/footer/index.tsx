@@ -1,6 +1,8 @@
 import * as React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
+// hooks
+import { useRouter } from 'next/router';
 // providers
 import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // components
@@ -15,11 +17,14 @@ import {
   LinkList,
   MenuItemsWrapper,
   LeftSide,
-  Logo,
-  RightSide
+  TextLogo,
+  RightSide,
+  SocialNetworkIcon,
+  SocialNetworksWrapper
 } from './views';
 
 const Footer = () => {
+  const { push } = useRouter();
   const { menuItems } = React.useContext(MenuAPIContext);
 
   const filteredMenuItems = menuItems.filter((item) => item.type !== 'POPULAR');
@@ -29,7 +34,11 @@ const Footer = () => {
       <ContentWrapper>
         <InnerWrapper>
           <LeftSide>
-            {filteredMenuItems.map((item) => (
+            <TextLogo src='/static/icons/logo-text.svg' alt='logo-text' />
+          </LeftSide>
+
+          <RightSide>
+            {filteredMenuItems.map((item, index) => (
               <MenuItemsWrapper key={item.type}>
                 <Heading>
                   <FormattedMessage id={item.label} />
@@ -40,12 +49,38 @@ const Footer = () => {
                     <MenuItem whiteColor key={item.h} href={item.h} label={item.l} />
                   ))}
                 </LinkList>
+
+                {filteredMenuItems.length === index + 1 && (
+                  <SocialNetworksWrapper>
+                    <SocialNetworkIcon
+                      alt='instagram'
+                      src='/static/icons/instagram (8) 1.svg'
+                      onClick={() => push('https://www.instagram.com/aksis.agency/')}
+                    />
+                    <SocialNetworkIcon
+                      alt='facebook'
+                      src='/static/icons/facebook-logo 1.svg'
+                      onClick={() => push('https://www.facebook.com/aksis.agency')}
+                    />
+                    <SocialNetworkIcon
+                      alt='twitter'
+                      src='/static/icons/twitter (1) 1.svg'
+                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                    />
+                    <SocialNetworkIcon
+                      alt='tik-tok'
+                      src='/static/icons/tik-tok (5) 1.svg'
+                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                    />
+                    <SocialNetworkIcon
+                      alt='linkedin'
+                      src='/static/icons/linkedin (5) 1.svg'
+                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                    />
+                  </SocialNetworksWrapper>
+                )}
               </MenuItemsWrapper>
             ))}
-          </LeftSide>
-
-          <RightSide>
-            <Logo src='/static/icons/big-static-logo.svg' alt='logo' />
           </RightSide>
         </InnerWrapper>
 
