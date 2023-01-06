@@ -67,7 +67,13 @@ export const TextLogo = styled.img`
 
 export const SocialNetworkIcon = styled.img`
   cursor: pointer;
+  opacity: 0.8;
   margin-right: 14px;
+  transition: opacity 450ms ease;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const SocialNetworksWrapper = styled.div`

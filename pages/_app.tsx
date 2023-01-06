@@ -50,6 +50,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
         <link rel='icon' href='/static/icons/logo.ico' />
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
         <meta charSet='utf-8' />
+        <meta name='facebook-domain-verification' content='nodgdfaqj127w85k0zgmlinsqt0vr3' />
       </Head>
 
       <NextSeo
