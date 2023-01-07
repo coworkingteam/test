@@ -5,9 +5,6 @@ import { useRouter } from 'next/router';
 import { BreadcrumbJsonLd } from 'next-seo';
 // views
 import { BreadcrumbName, BackIcon, Wrapper } from '@md-ui/headers/main/components/bread-crumb/views';
-import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
-// utils
-import { flatten } from 'lodash';
 
 interface Props {
   showBreadcrumb: boolean;
@@ -15,32 +12,25 @@ interface Props {
 }
 
 const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
-  // TODO FIX IT
-  const { menuItems } = React.useContext(MenuAPIContext);
-
   const { push, pathname, query, locale } = useRouter();
 
   if (pathname === '/') {
     return null;
   }
 
-  const routersList = pathname.split('/').filter((item) => item.length);
-  const id = query.id as string;
+  const routersList = pathname
+    .split('/')
+    .filter((item) => item.length && item !== '[...slug]')
+    .concat(query.slug || []);
   const itemListElements = routersList.map((item, index) => ({
     position: index + 2,
-    name: item.replace('[id]', id).split('-').join(' '),
+    name: item
+      .replace('[id]', query.id as string)
+      .split('-')
+      .join(' '),
     item: `${process.env.SITE_URL || 'http://localhost:3000'}/${locale}/${
       routersList[index - 1] ? routersList[index - 1] + '/' : ''
-    }${
-      item === 'menu' && index + 1 < routersList.length
-        ? item.replace('[id]', id) +
-          `?type=${
-            flatten(menuItems.map((item) => item.data.map((data) => ({ ...data, type: item.type })))).find((menuItem) =>
-              menuItem.h.includes(routersList[1]?.replace('[id]', id))
-            )?.type
-          }`
-        : item.replace('[id]', id)
-    }`
+    }${item.replace('[id]', query.id as string)}`
   }));
 
   const onClickHome = () => push('/');
@@ -76,7 +66,7 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
               isLastChild={isLastChild}
               onClick={() => !isLastChild && push(`/${url}`)}
             >
-              /{item.name}
+              /{item.name.replace('_', ' ').toLowerCase()}
             </BreadcrumbName>
           );
         })}

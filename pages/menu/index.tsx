@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 import contentfulClient from '@md-modules/shared/services/contentful';
 import { IServiceFields } from '@md-types/generated/contentful';
-import { getMenuUIData, IMenuItems, ServicesTypes } from '@md-modules/menu/constants';
+import { getMenuUIData, IMenuItems } from '@md-modules/menu/constants';
 // utils
 // @ts-ignore
 import translate from 'translit-ru-ua';
@@ -21,22 +21,22 @@ const MenuPage = ({ data }: { data: IMenuItems }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   try {
     const data = await contentfulClient.getEntries<IServiceFields>({
       content_type: 'service',
-      select: 'fields.menuTitle,fields.slug,fields.type,fields.isPopularService',
-      ...(query.type !== 'POPULAR' && { 'fields.serviceType': (query.type as ServicesTypes) || 'INDIVIDUALS' }),
-      ...(query.type === 'POPULAR' && { 'fields.isPopularService': true }),
+      select: 'fields.menuTitle,fields.slug,fields.type,fields.isPopularService,fields.serviceType',
       locale
     });
 
     return {
       props: {
         data: getMenuUIData({
-          type: (query.type as ServicesTypes) || 'INDIVIDUALS',
+          type: 'ROOT',
           menuItems: data.items.map((item) => ({
-            h: item.fields.slug + (item.fields.type ? `?type=${translate(item.fields.type)}` : ''),
+            h: `${item.fields.serviceType}/${
+              item.fields.slug + (item.fields.type ? `?type=${translate(item.fields.type)}` : '')
+            }`,
             l: item.fields.menuTitle
           }))
         }),

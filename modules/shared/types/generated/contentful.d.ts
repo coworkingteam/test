@@ -81,14 +81,14 @@ export interface IArticle extends Entry<IArticleFields> {
 }
 
 export interface IServiceFields {
+  /** Is popular service ? */
+  isPopularService: boolean;
+
   /** SEO title */
   seoTitle?: string | undefined;
 
   /** SEO description */
   seoDescription?: string | undefined;
-
-  /** Is popular service ? */
-  isPopularService: boolean;
 
   /** type */
   type?: string | undefined;

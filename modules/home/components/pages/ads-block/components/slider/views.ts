@@ -5,14 +5,26 @@ export const SliderWrapper = styled.div`
   position: relative;
 `;
 
-export const Title = styled.h2`
-  font-weight: 500;
-  font-size: 52px;
+export const Link = styled.a`
+  text-decoration: none;
   margin: 0 0 50px 0;
-  max-width: 154px;
+  color: #212121;
+  display: block;
+  width: max-content;
 
   @media (max-width: 768px) {
-    margin: 0 0 10px 0;
+    margin: 0 0 26px 0;
+  }
+`;
+
+export const Title = styled.h2`
+  margin: 0;
+  font-weight: 500;
+  font-size: 52px;
+  max-width: 300px;
+  width: max-content;
+
+  @media (max-width: 768px) {
     font-size: 32px;
     max-width: none;
     text-align: center;

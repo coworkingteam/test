@@ -72,7 +72,7 @@ const Menu: React.FC<Props> = ({ data }) => {
             </LeftSide>
 
             <RightSide colorBG={data.color}>
-              <PreviewIcon src={data.previewIcon} alt='send-arrow' />
+              <PreviewIcon src={data.previewIcon} alt='preview-icon' />
             </RightSide>
           </ContentWrapper>
         </InnerWrapper>

@@ -7,6 +7,10 @@ export default {
 
     title: 'Не знаешь с чего начать? Начни с aksis',
     categories: {
+      root: {
+        title: 'Menu'
+      },
+
       residencePermit: {
         title: 'Residence permit'
       },

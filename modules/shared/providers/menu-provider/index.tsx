@@ -42,7 +42,9 @@ const MenuProvider: React.FC<ContextProps> = ({ children, menuItems }) => {
     type: item[0] as ServicesTypes,
     ...getServiceUIKit(item[0] as ServicesTypes),
     data: item[1]?.map((item) => ({
-      h: `/menu/${item.fields.slug}${item.fields.type ? `?type=${translate(item.fields.type)}` : ''}`,
+      h: `/menu/${item.fields.serviceType}/${item.fields.slug}${
+        item.fields.type ? `?type=${translate(item.fields.type)}` : ''
+      }`,
       l: item.fields.menuTitle,
       serviceType: item.fields.serviceType,
       serviceImage: item.fields.serviceImage

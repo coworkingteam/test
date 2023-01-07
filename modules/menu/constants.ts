@@ -5,7 +5,7 @@ interface IMenuItem {
   l: string;
 }
 
-export type ServicesTypes = 'INDIVIDUALS' | 'FOR_BUSINESS' | 'TRANSPORT' | 'RESIDENCE_PERMIT' | 'POPULAR';
+export type ServicesTypes = 'ROOT' | 'INDIVIDUALS' | 'FOR_BUSINESS' | 'TRANSPORT' | 'RESIDENCE_PERMIT' | 'POPULAR';
 
 export interface IMenuItems {
   type: ServicesTypes;
@@ -17,6 +17,14 @@ export interface IMenuItems {
 
 export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuItems: IMenuItem[] }) => {
   switch (type) {
+    case 'ROOT':
+      return {
+        type: 'ROOT',
+        color: colors.gray170,
+        menuItems: menuItems,
+        titleID: 'menu.services.categories.root.title',
+        previewIcon: '/static/icons/logo.svg'
+      };
     case 'TRANSPORT':
       return {
         type: 'TRANSPORT',

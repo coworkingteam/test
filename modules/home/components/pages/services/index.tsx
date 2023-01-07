@@ -26,13 +26,13 @@ const Services: React.FC<Props> = ({ adData }) => (
 
     <ServicesWrapper>
       <ServiceCard
-        src='/menu?type=INDIVIDUALS'
+        src='/menu/INDIVIDUALS'
         whiteBG
         title='home.services.serviceCards.individuals'
         img='/static/images/stamp.svg'
       />
       <ServiceCard
-        src='/menu?type=FOR_BUSINESS'
+        src='/menu/FOR_BUSINESS'
         title='home.services.serviceCards.forBusiness'
         img='/static/images/basket(dark).png'
       />
@@ -49,13 +49,13 @@ const Services: React.FC<Props> = ({ adData }) => (
 
     <ServicesWrapper>
       <ServiceCard
-        src='/menu?type=TRANSPORT'
+        src='/menu/TRANSPORT'
         whiteBG
         title='home.services.serviceCards.transport'
         img='/static/images/car-front.png'
       />
       <ServiceCard
-        src='/menu?type=RESIDENCE_PERMIT'
+        src='/menu/RESIDENCE_PERMIT'
         whiteBG
         title='home.services.serviceCards.residencePermitsDocuments'
         img='/static/images/documents.png'

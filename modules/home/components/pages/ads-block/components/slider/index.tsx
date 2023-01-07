@@ -11,7 +11,7 @@ import { Service } from '@md-modules/shared/types/service';
 import ImageButton from '@md-ui/buttons/image-button';
 import ServiceCard from '@md-modules/home/components/pages/ads-block/components/slider/components/service-card';
 // views
-import { ArrowButtonsWrapper, SliderWrapper, Title } from './views';
+import { ArrowButtonsWrapper, SliderWrapper, Title, Link } from './views';
 
 const SLIDER_SETTINGS = {
   dots: true,
@@ -52,12 +52,11 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
 
   return (
     <SliderWrapper>
-      {/*TODO fix it / use it*/}
-      <a style={{ textDecoration: 'none', color: '#212121' }} href='/menu?type=POPULAR'>
+      <Link href='/menu/POPULAR'>
         <Title>
           <FormattedMessage id='home.adsBlock.title' /> →
         </Title>
-      </a>
+      </Link>
 
       <ArrowButtonsWrapper>
         <ImageButton size='medium' onClick={prevSlide} image='/static/icons/left-button.svg' />
