@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 // view components
 import { Logo } from '@md-ui/logos/main';
-import { Button } from '@md-ui/buttons/main';
+// import { Button } from '@md-ui/buttons/main';
 import { MenuItem } from '@md-ui/menu-item/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 import AnimatedMenu from '@md-ui/headers/main/components/animated-menu';
@@ -19,7 +19,7 @@ import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper } from './views';
 // utils
 import { flatten } from 'lodash';
 
-const BUTTON_STYLES = { mr: 26 };
+// const BUTTON_STYLES = { mr: 26 };
 
 const Header = () => {
   const { menuItems } = React.useContext(MenuAPIContext);
@@ -34,7 +34,7 @@ const Header = () => {
 
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
-  const onClickNumber = () => push('tel:+47 728 000 702');
+  // const onClickNumber = () => push('tel:+47 728 000 702');
 
   React.useLayoutEffect(() => {
     const scrollHandler = () => {
@@ -63,9 +63,9 @@ const Header = () => {
           <MenuItem isScroll={isScroll} href='/blog' label='menu.questionsAndAnswers.title' />
         </RWrapper>
 
-        <Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>
-          +48 728 000 702
-        </Button>
+        {/*<Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>*/}
+        {/*  +48 728 000 702*/}
+        {/*</Button>*/}
 
         <BurgerWrapper>
           <LangButton activeLang={locale} onSelectLang={onChangeLocale} />

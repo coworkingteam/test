@@ -65,17 +65,17 @@ const Footer = () => {
                     <SocialNetworkIcon
                       alt='twitter'
                       src='/static/icons/twitter (1) 1.svg'
-                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                      onClick={() => push('https://twitter.com/aksisagency')}
                     />
                     <SocialNetworkIcon
                       alt='tik-tok'
                       src='/static/icons/tik-tok (5) 1.svg'
-                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                      onClick={() => push('https://www.tiktok.com/@aksis.agency')}
                     />
                     <SocialNetworkIcon
                       alt='linkedin'
                       src='/static/icons/linkedin (5) 1.svg'
-                      onClick={() => push('https://www.linkedin.com/groups/9264321/')}
+                      onClick={() => push('https://www.linkedin.com/company/aksis-agency-consulting-tax-audit/')}
                     />
                   </SocialNetworksWrapper>
                 )}

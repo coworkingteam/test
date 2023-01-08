@@ -65,27 +65,23 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
         locale
       }))
     )
-    .flat()
     .concat(
-      data.items
-        .map((item) =>
-          (locales as string[]).map((locale) => ({
-            params: {
-              slug: [item.fields.serviceType, item.fields.slug]
-            },
-            locale
-          }))
-        )
-        .flat(),
-      (locales as string[])
-        .map((locale) => ({
+      data.items.map((item) =>
+        (locales as string[]).map((locale) => ({
           params: {
-            slug: ['POPULAR']
+            slug: [item.fields.serviceType, item.fields.slug]
           },
           locale
         }))
-        .flat()
-    );
+      ),
+      (locales as string[]).map((locale) => ({
+        params: {
+          slug: ['POPULAR']
+        },
+        locale
+      }))
+    )
+    .flat();
 
   return {
     paths,
