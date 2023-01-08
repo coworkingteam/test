@@ -13,7 +13,6 @@ const MenuPage = ({ data }: { data: IMenuItems }) => {
   if (!data) {
     return null;
   }
-
   return (
     <MainLayout>
       <Menu data={data} />
