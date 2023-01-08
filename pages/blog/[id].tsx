@@ -17,15 +17,17 @@ const ArticlePage = ({ article }: { article: IArticle }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const data = await contentfulClient.getEntries<IArticleFields>({
     content_type: 'article',
     select: 'fields.slug'
   });
 
   return {
-    paths: data.items.map((item) => ({ params: { id: item.fields.slug } })),
-    fallback: true
+    paths: data.items
+      .map((item) => (locales as string[]).map((locale) => ({ params: { id: item.fields.slug }, locale })))
+      .flat(),
+    fallback: false
   };
 };
 

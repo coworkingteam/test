@@ -111,6 +111,16 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
       locale
     });
 
+    if (!data) {
+      return {
+        redirect: {
+          destination: '/404',
+          permanent: false
+        },
+        revalidate: 20
+      };
+    }
+
     return {
       props: {
         data: isMenuPage
