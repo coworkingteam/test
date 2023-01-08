@@ -81,6 +81,7 @@ export const RightSide = styled.div<{ colorBG: string }>`
     margin-bottom: 32px;
     height: 100%;
     width: unset;
+    padding: 30px;
     max-height: 576px;
   }
 `;

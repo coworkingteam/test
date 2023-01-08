@@ -3,9 +3,6 @@ module.exports = {
     locales: ['en-US', 'ru'],
     defaultLocale: 'en-US'
   },
-  experimental: {
-    optionalCatchAll: true
-  },
   async rewrites() {
     return [
       {

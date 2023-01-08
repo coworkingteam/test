@@ -40,6 +40,10 @@ export const LeftSide = styled.div`
     text-align: center;
     max-width: unset;
   }
+
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
 `;
 
 export const Title = styled.h1`
@@ -54,9 +58,7 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 768px) {
     font-size: 30px;
-
-    ${({ theme }) => theme.templates.dynamicFont({ minSize: 30, maxSize: 66, maxViewport: 768, minViewport: 375 })};
-
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 50, maxSize: 66, maxViewport: 768, minViewport: 375 })};
     margin: 0;
   }
 `;

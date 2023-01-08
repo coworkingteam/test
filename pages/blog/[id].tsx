@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     paths: data.items
       .map((item) => (locales as string[]).map((locale) => ({ params: { id: item.fields.slug }, locale })))
       .flat(),
-    fallback: false
+    fallback: true
   };
 };
 

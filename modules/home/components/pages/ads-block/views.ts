@@ -31,7 +31,6 @@ export const Title = styled.h2`
   font-weight: 500;
   line-height: 58px;
   margin: 0 0 132px 0;
-  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 24px;

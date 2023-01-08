@@ -18,6 +18,7 @@ export const InnerWrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
+    text-align: left;
   }
 `;
 
@@ -27,7 +28,7 @@ export const Title = styled.p`
   font-size: 64px;
 
   @media (max-width: 768px) {
-    font-size: 30px;
+    font-size: 40px;
   }
 `;
 
@@ -39,6 +40,10 @@ export const SubTitle = styled.p`
   margin: 30px auto auto auto;
 
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const MessengersWrapper = styled.div`
