@@ -36,6 +36,7 @@ jobs:
             cd aksis
 
             rm -r .next
+            rm -r out
             rm .env.local
             touch .env.local
 
