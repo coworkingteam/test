@@ -52,27 +52,39 @@ const ServicePage = (
   }
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const data = await contentfulClient.getEntries<IServiceFields>({
     content_type: 'service',
     select: 'fields.slug,fields.serviceType'
   });
 
-  const paths: { params: { slug: string[] } }[] = data.items
-    .map((item) => ({
-      params: { slug: [item.fields.serviceType as string] }
-    }))
+  const paths = data.items
+    .map((item) =>
+      (locales as string[]).map((locale) => ({
+        params: { slug: [item.fields.serviceType as string] },
+        locale
+      }))
+    )
+    .flat()
     .concat(
-      data.items.map((item) => ({
-        params: {
-          slug: [item.fields.serviceType, item.fields.slug]
-        }
-      })),
-      {
-        params: {
-          slug: ['POPULAR']
-        }
-      }
+      data.items
+        .map((item) =>
+          (locales as string[]).map((locale) => ({
+            params: {
+              slug: [item.fields.serviceType, item.fields.slug]
+            },
+            locale
+          }))
+        )
+        .flat(),
+      (locales as string[])
+        .map((locale) => ({
+          params: {
+            slug: ['POPULAR']
+          },
+          locale
+        }))
+        .flat()
     );
 
   return {
