@@ -19,7 +19,8 @@ import schoolAndKindergarten from './pages/school-and-kindergarten';
 import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
-  [LOCALES.POLISH]: {
+  // TODO FIX POLISH
+  [LOCALES.RUSSIAN]: {
     menu,
     code95,
     customs,

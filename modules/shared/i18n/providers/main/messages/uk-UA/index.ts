@@ -20,7 +20,8 @@ import admissionToUniversity from './pages/admission-to-university';
 import longTermResidencePermit from './pages/long-term-residence-permit';
 
 export default {
-  [LOCALES.UKRAINIAN]: {
+  // TODO FIX POLISH
+  [LOCALES.RUSSIAN]: {
     menu,
     home,
     code95,
