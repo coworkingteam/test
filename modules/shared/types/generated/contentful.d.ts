@@ -144,6 +144,9 @@ export interface IServiceFields {
   /** FAQ 4 Content */
   faq4Content?: Document | undefined;
 
+  /** Additional services */
+  additionalServices?: Record<string, any> | undefined;
+
   /** slug */
   slug: string;
 }

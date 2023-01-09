@@ -54,4 +54,9 @@ export const MessengersWrapper = styled.div`
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(65px, 95px));
+
+  svg {
+    max-width: 80px;
+    max-height: 80px;
+  }
 `;

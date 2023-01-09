@@ -11,7 +11,7 @@ import {
 
 interface Props {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   button: {
     title?: string;
     src: string;
@@ -24,14 +24,12 @@ const Card: React.FC<Props> = ({ title, subTitle, button }) => {
   const onClick = () => push(button.src);
 
   return (
-    <div>
+    <>
       <Title>{title}</Title>
-      <SubTitle>{subTitle}</SubTitle>
+      {subTitle && <SubTitle>{subTitle}</SubTitle>}
 
-      <div>
-        <Button onClick={onClick}>{button.title || 'Узнать больше'}</Button>
-      </div>
-    </div>
+      <Button onClick={onClick}>{button.title || 'Узнать больше'}</Button>
+    </>
   );
 };
 

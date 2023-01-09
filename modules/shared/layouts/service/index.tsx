@@ -8,7 +8,9 @@ import { MainLayout } from '@md-modules/shared/layouts/main';
 import Form from '@md-modules/shared/layouts/service/components/form';
 import ChildrenItem from '@md-modules/shared/layouts/service/components/tab-item';
 import Welcome from '@md-modules/shared/layouts/service/components/pages/welcome';
-import ShortDescription from '@md-modules/shared/layouts/service/components/pages/short-description';
+import ShortDescription, {
+  AdditionalServiceDataI
+} from '@md-modules/shared/layouts/service/components/pages/short-description';
 import ServiceRegistration from '@md-modules/shared/layouts/service/components/pages/service-registration';
 // types
 import { IServiceFields } from '@md-types/generated/contentful';
@@ -181,7 +183,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
           ]}
         />
 
-        <ShortDescription themeColor={themeColor} />
+        <ShortDescription themeColor={themeColor} data={activeData.additionalServices as AdditionalServiceDataI[]} />
       </MainLayout>
 
       <Modal closeButton maxWidth={824} isOpen={modalIsOpen} toggleModal={toggleModal} title={activeData.title}>

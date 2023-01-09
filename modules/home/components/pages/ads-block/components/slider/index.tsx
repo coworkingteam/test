@@ -1,6 +1,8 @@
 import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
+// hooks
+import { useRouter } from 'next/router';
 // types
 import Slider from 'react-slick';
 // hooks
@@ -47,12 +49,13 @@ interface Props {
 }
 
 const ServiceSlider: React.FC<Props> = ({ data }) => {
+  const { locale } = useRouter();
   const sliderRef = React.useRef(null);
   const { prevSlide, nextSlide } = useSlider(sliderRef);
 
   return (
     <SliderWrapper>
-      <Link href='/menu/POPULAR'>
+      <Link href={`${locale}/menu/POPULAR`}>
         <Title>
           <FormattedMessage id='home.adsBlock.title' /> →
         </Title>
