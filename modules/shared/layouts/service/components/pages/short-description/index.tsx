@@ -11,6 +11,7 @@ export interface AdditionalServiceDataI {
   subTitle?: string;
   button: {
     src: string;
+    title: string;
   };
 }
 [];
@@ -31,7 +32,12 @@ const ShortDescription: React.FC<Props> = ({ themeColor, data }) => {
       <InnerWrapper>
         <SliderComponent>
           {data.map((item) => (
-            <Card key={item.id} title={item.title} button={{ src: item.button.src }} subTitle={item.subTitle} />
+            <Card
+              key={item.id}
+              title={item.title}
+              subTitle={item.subTitle}
+              button={{ src: item.button.src, title: item.button.title }}
+            />
           ))}
         </SliderComponent>
       </InnerWrapper>
