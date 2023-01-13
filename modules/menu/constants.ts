@@ -37,7 +37,7 @@ export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuIt
       return {
         type: 'POPULAR',
         // TODO fix color
-        color: '#ffb36d',
+        color: '#F1A3A3',
         titleID: 'home.adsBlock.title',
         menuItems: menuItems,
         previewIcon: '/static/icons/pie-chart.png'

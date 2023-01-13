@@ -22,7 +22,7 @@ export const linkPresets = {
     border-radius: 10px;
     line-height: 36px;
     transition: all 250ms ease-in-out;
-    margin-bottom: 38px;
+    margin-bottom: 20px;
     text-decoration: none !important;
 
     background: ${({ theme }) => theme.colors.white};

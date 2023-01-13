@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div<{ showBreadcrumb: boolean }>`
-  height: 64px;
+  height: 40px;
   display: flex;
-  //margin: 30px 0;
   margin: 0;
   overflow: hidden;
-  padding: 16px 0;
+  padding: 8px 0 14px 0;
   align-items: center;
   opacity: 1;
   transition: all 0.4s ease 0s;
@@ -16,13 +15,12 @@ export const Wrapper = styled.div<{ showBreadcrumb: boolean }>`
     css`
       height: 0;
       opacity: 0;
-      //margin: 0;
       padding: 0;
     `};
 
   @media screen and (max-width: 768px) {
     padding: 16px 0 0 0;
-    height: 60px;
+    height: 32px;
 
     ${({ showBreadcrumb }) =>
       !showBreadcrumb &&
@@ -42,11 +40,11 @@ export const BreadcrumbName = styled.p<{ isLastChild?: boolean; isScroll: boolea
 
   ${({ theme }) => theme.templates.ellipsis}
   cursor: ${({ isLastChild }) => !isLastChild && 'pointer'};
-  font-size: ${({ isScroll }) => (isScroll ? '20' : '24')}px;
+  font-size: ${({ isScroll }) => (isScroll ? '14' : '16')}px;
   color: ${({ theme, isLastChild }) => (isLastChild ? theme.colors.black600 : theme.colors.gray560)};
 
   @media screen and (max-width: 768px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
