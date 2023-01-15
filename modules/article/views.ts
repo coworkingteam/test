@@ -121,3 +121,96 @@ export const Image = styled.img`
     max-height: unset;
   }
 `;
+
+export const ShareButtonContainer = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 240px;
+  height: 34px;
+  border-radius: 80px;
+`;
+
+export const ButtonWrapper = styled.div`
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  width: 240px;
+  height: 46px;
+  border-radius: 80px;
+  padding: 0 18px;
+  will-change: transform;
+  transition: all 0.2s ease-in-out;
+
+  background: ${({ theme }) => theme.colors.gray170};
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover span {
+    transition-delay: 0.24s;
+    transform: translateX(-280px);
+  }
+
+  &:hover div {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  span {
+    position: absolute;
+    z-index: 99;
+    width: 240px;
+    border-radius: 80px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 2px;
+    padding: 0 18px;
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.black600};
+  }
+`;
+
+export const IconWrapper = styled.div`
+  opacity: 0;
+  height: 32px;
+  color: #1f1e1e;
+  will-change: transform;
+  transform: scale(0.1);
+  transition: all 0.3s ease;
+
+  button {
+    height: 32px;
+  }
+
+  &:nth-child(1) {
+    transition-delay: 1s;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 0.8s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  &:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+`;

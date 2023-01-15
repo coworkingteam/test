@@ -1,23 +1,40 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TwitterIcon,
+  TwitterShareButton
+} from 'react-share';
 // components
 import { Link } from '@md-ui/link';
 import { NextSeo } from 'next-seo';
 // types
 import { BLOCKS } from '@contentful/rich-text-types';
 import { Text } from '@contentful/rich-text-types/dist/types/types';
+// hooks
+import { useRouter } from 'next/router';
 // constants
 import { IArticle } from '@md-types/generated/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 // views
 import {
   Anchor,
+  ButtonWrapper,
   ContentTitle,
   ContentWrapper,
   HeadTitle,
+  IconWrapper,
   Image,
   InnerWrapper,
   LinkLi,
   LinkUl,
+  ShareButtonContainer,
   SubTitle,
   TitleWrapper,
   Wrapper
@@ -32,6 +49,8 @@ interface Props {
 }
 
 const Article: React.FC<Props> = ({ article }) => {
+  const { asPath } = useRouter();
+
   const h3List = article.fields.content.content.reduce(
     (previousValue, currentValue) =>
       currentValue.nodeType === BLOCKS.HEADING_3
@@ -39,6 +58,8 @@ const Article: React.FC<Props> = ({ article }) => {
         : previousValue,
     [] as Array<Text>
   );
+
+  const url = 'https://aksis.agency' + asPath;
 
   const content = React.useMemo(
     () =>
@@ -112,12 +133,40 @@ const Article: React.FC<Props> = ({ article }) => {
                 ))}
               </LinkUl>
             )}
-
             {content}
 
-            <Link preset='large' href='#'>
-              Discuss On Twitter
-            </Link>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <ButtonWrapper>
+                <span>
+                  <FormattedMessage id='blog.share' />
+                </span>
+                <ShareButtonContainer>
+                  <IconWrapper>
+                    <FacebookShareButton url={url} quote={article.fields.title}>
+                      <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                  </IconWrapper>
+
+                  <IconWrapper>
+                    <TwitterShareButton url={url} title={article.fields.title}>
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                  </IconWrapper>
+
+                  <IconWrapper>
+                    <TelegramShareButton url={url} title={article.fields.title}>
+                      <TelegramIcon size={32} round />
+                    </TelegramShareButton>
+                  </IconWrapper>
+
+                  <IconWrapper>
+                    <LinkedinShareButton url={url} title={article.fields.title}>
+                      <LinkedinIcon size={32} round />
+                    </LinkedinShareButton>
+                  </IconWrapper>
+                </ShareButtonContainer>
+              </ButtonWrapper>
+            </div>
           </ContentWrapper>
         </InnerWrapper>
       </Wrapper>

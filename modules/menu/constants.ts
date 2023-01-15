@@ -23,7 +23,7 @@ export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuIt
         color: colors.green110,
         menuItems: menuItems,
         titleID: 'menu.services.categories.root.title',
-        previewIcon: '/static/icons/logo.svg'
+        previewIcon: '/static/images/logo-with-docs.png'
       };
     case 'TRANSPORT':
       return {
@@ -40,7 +40,7 @@ export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuIt
         color: '#F1A3A3',
         titleID: 'home.adsBlock.title',
         menuItems: menuItems,
-        previewIcon: '/static/icons/pie-chart.png'
+        previewIcon: '/static/images/docs.svg'
       };
     case 'INDIVIDUALS':
       return {
