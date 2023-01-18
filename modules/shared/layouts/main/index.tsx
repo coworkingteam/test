@@ -9,9 +9,13 @@ import { Wrapper } from './views';
 
 const SCROLL_TO_TOP_BUTTON_STYLES = { borderRadius: '100%' };
 
-const MainLayout: React.FC = ({ children }) => (
+interface Props {
+  breadcrumbSlug?: string;
+}
+
+const MainLayout: React.FC<Props> = ({ children, breadcrumbSlug }) => (
   <Wrapper>
-    <Header />
+    <Header breadcrumbSlug={breadcrumbSlug} />
     {children}
     <Footer />
 

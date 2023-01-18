@@ -21,8 +21,7 @@ export const getServiceUIKit = (type: ServicesTypes) => {
     case 'POPULAR':
       return {
         label: 'menu.services.categories.popular.title',
-        // TODO fix color
-        bgColor: '#F1A3A3'
+        bgColor: colors.purple90
       };
     case 'TRANSPORT':
       return {

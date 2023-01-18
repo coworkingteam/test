@@ -21,7 +21,11 @@ import { flatten } from 'lodash';
 
 // const BUTTON_STYLES = { mr: 26 };
 
-const Header = () => {
+interface Props {
+  breadcrumbSlug?: string;
+}
+
+const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
   const { menuItems } = React.useContext(MenuAPIContext);
 
   const { push } = useRouter();
@@ -74,7 +78,7 @@ const Header = () => {
         </BurgerWrapper>
       </IWrapper>
 
-      <Breadcrumb isScroll={isScroll} showBreadcrumb={showBreadcrumb} />
+      <Breadcrumb breadcrumbSlug={breadcrumbSlug} isScroll={isScroll} showBreadcrumb={showBreadcrumb} />
     </Wrapper>
   );
 };

@@ -20,7 +20,7 @@ export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuIt
     case 'ROOT':
       return {
         type: 'ROOT',
-        color: colors.green110,
+        color: colors.red300,
         menuItems: menuItems,
         titleID: 'menu.services.categories.root.title',
         previewIcon: '/static/images/logo-with-docs.png'
@@ -36,8 +36,7 @@ export const getMenuUIData = ({ type, menuItems }: { type: ServicesTypes; menuIt
     case 'POPULAR':
       return {
         type: 'POPULAR',
-        // TODO fix color
-        color: '#F1A3A3',
+        color: colors.purple90,
         titleID: 'home.adsBlock.title',
         menuItems: menuItems,
         previewIcon: '/static/images/docs.svg'

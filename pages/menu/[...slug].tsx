@@ -34,6 +34,7 @@ const ServicePage = (
       const props = Array.isArray(data.data)
         ? {
             type: 'WITH_TABS' as const,
+            breadcrumbSlug: data.data[0].fields.title,
             data: data.data.map((item) => ({
               data: item.fields,
               type: translate(item.fields.type) || '',
@@ -44,6 +45,7 @@ const ServicePage = (
         : {
             type: 'WITHOUT_TABS' as const,
             data: data.data.fields,
+            breadcrumbSlug: data.data.fields.title,
             themeColor: getServiceUIKit(data.data.fields.serviceType as ServicesTypes).bgColor
           };
 

@@ -4,6 +4,7 @@ import menu from './menu/main';
 import home from './pages/home';
 import blog from './pages/blog';
 import buttons from './ui/buttons';
+import breadcrumb from './ui/breadcrumb';
 // import code95 from './pages/code-95';
 // import customs from './pages/customs';
 // import residentCard from './pages/resident-card';
@@ -25,6 +26,7 @@ export default {
     home,
     blog,
     menu,
-    buttons
+    buttons,
+    breadcrumb
   }
 };

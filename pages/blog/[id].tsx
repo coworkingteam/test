@@ -11,7 +11,7 @@ const ArticlePage = ({ article }: { article: IArticle }) => {
   }
 
   return (
-    <MainLayout>
+    <MainLayout breadcrumbSlug={article.fields.title}>
       <Article article={article} />
     </MainLayout>
   );

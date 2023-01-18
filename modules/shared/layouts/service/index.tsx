@@ -22,16 +22,18 @@ export interface PropsWithoutTabs {
   type: 'WITHOUT_TABS';
   themeColor?: string;
   data: IServiceFields;
+  breadcrumbSlug?: string;
 }
 
 export interface PropsWithTabs {
   type: 'WITH_TABS';
   themeColor?: string;
+  breadcrumbSlug?: string;
   data: { type: string; title: string; data: IServiceFields }[];
 }
 
 const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
-  const { type, themeColor } = props;
+  const { type, themeColor, breadcrumbSlug } = props;
 
   const { query, asPath, replace, locale, pathname } = useRouter();
   const hasTabs = type === 'WITH_TABS';
@@ -118,7 +120,7 @@ const ServiceLayout: React.FC<PropsWithoutTabs | PropsWithTabs> = (props) => {
         }}
       />
 
-      <MainLayout>
+      <MainLayout breadcrumbSlug={breadcrumbSlug}>
         <div ref={wrapperRef}>
           <Welcome
             toggleModal={toggleModal}

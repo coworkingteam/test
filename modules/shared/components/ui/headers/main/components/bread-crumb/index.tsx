@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { FormattedMessage, useIntl } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
 // components
@@ -6,13 +8,19 @@ import { BreadcrumbJsonLd } from 'next-seo';
 // views
 import { BreadcrumbName, BackIcon, Wrapper } from '@md-ui/headers/main/components/bread-crumb/views';
 
+// types
 interface Props {
-  showBreadcrumb: boolean;
   isScroll: boolean;
+  showBreadcrumb: boolean;
+  breadcrumbSlug?: string;
 }
 
-const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
+// constants
+const STATIC_VALUES = ['blog', 'menu', 'home', 'FOR_BUSINESS', 'INDIVIDUALS', 'RESIDENCE_PERMIT', 'TRANSPORT'];
+
+const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll = false }) => {
   const { push, pathname, query, locale } = useRouter();
+  const { formatMessage } = useIntl();
 
   if (pathname === '/') {
     return null;
@@ -24,10 +32,13 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
     .concat(query.slug || []);
   const itemListElements = routersList.map((item, index) => ({
     position: index + 2,
-    name: item
-      .replace('[id]', query.id as string)
-      .split('-')
-      .join(' '),
+    name: STATIC_VALUES.includes(item)
+      ? formatMessage({ id: `breadcrumb.${item}` })
+      : breadcrumbSlug ||
+        item
+          .replace('[id]', query.id as string)
+          .split('-')
+          .join(' '),
     item: `${process.env.SITE_URL || 'http://localhost:3000'}/${locale}/${
       routersList[index - 1] ? routersList[index - 1] + '/' : ''
     }${item.replace('[id]', query.id as string)}`
@@ -41,8 +52,7 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
         itemListElements={[
           {
             position: 1,
-
-            name: 'Home',
+            name: formatMessage({ id: 'breadcrumb.home' }),
             item: `${process.env.SITE_URL || 'http://localhost:3000'}/`
           },
           ...itemListElements
@@ -52,7 +62,7 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, isScroll = false }) => {
       <Wrapper showBreadcrumb={showBreadcrumb}>
         <BackIcon onClick={onClickHome} src='/static/icons/left-arrow.svg' alt='left-arrow' />
         <BreadcrumbName isScroll={isScroll} onClick={onClickHome}>
-          home
+          <FormattedMessage id='breadcrumb.home' />
         </BreadcrumbName>
 
         {itemListElements.map((item, index) => {

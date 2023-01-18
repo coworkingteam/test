@@ -3,6 +3,8 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 // hooks
 import { useRouter } from 'next/router';
+// components
+// import { Button } from '@md-ui/buttons/main';
 // views
 import { SubTitle, Title, Wrapper } from '@md-modules/blog/components/card/views';
 
@@ -32,9 +34,14 @@ const Card: React.FC<Props> = ({ title, img, description, queryId }) => {
 
       {/*TODO test logo*/}
       {img && (
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+        </* div style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }} */>
+          {/*<Button>*/}
+          {/*  Click <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />*/}
+          {/*</Button>*/}
+
           <img width={80} style={{ objectFit: 'contain' }} src={img} alt={img} />
-        </div>
+          {/*</div>*/}
+        </>
       )}
     </Wrapper>
   );

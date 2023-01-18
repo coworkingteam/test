@@ -2,6 +2,7 @@ import { DefaultTheme, css } from 'styled-components';
 
 export const colors = {
   // purple
+  purple90: '#C6D2FD',
   purple100: '#D0C6FD',
   purple600: '#665CAC',
   // blue
@@ -28,6 +29,7 @@ export const colors = {
   yellow400: '#FFD080',
   yellow600: '#FFDA44',
   // red
+  red300: '#F1A3A3',
   red400: '#F37A76',
   // other
   black600: '#212121',

@@ -13,7 +13,7 @@ export const Canvas = styled.canvas`
   position: absolute;
 
   --gradient-color-1: ${colors.yellow300};
-  //--gradient-color-2: ${colors.green150};
+  //--gradient-color-2: ${colors.red300};
   --gradient-color-3: ${colors.blue100};
   --gradient-color-4: ${colors.purple100};
 `;

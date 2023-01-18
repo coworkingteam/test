@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
+export const Icon = styled.img`
+  width: 20px;
+  margin-left: 14px;
+`;
+
 export const Title = styled.h1`
   font-size: 38px;
   font-weight: 500;
