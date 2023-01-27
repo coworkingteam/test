@@ -11,10 +11,5 @@ module.exports = {
       href: `${SITE_URL}/ru`,
       hreflang: 'ru'
     }
-  ],
-
-  reactStrictMode: true,
-  env: {
-    SITE_URL: 'https://aksis.agency/'
-  }
+  ]
 };

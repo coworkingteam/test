@@ -35,6 +35,8 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
 
   const baseURL = process.env.SITE_URL || 'http://localhost:3000';
 
+  console.log('baseURL', baseURL);
+
   React.useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-NHSK3VS' });
 

@@ -10,5 +10,9 @@ module.exports = {
         destination: process.env.NEXT_LOCAL_API_URL + '/:path*'
       }
     ];
+  },
+  reactStrictMode: true,
+  env: {
+    SITE_URL: process.env.SITE_URL
   }
 };
