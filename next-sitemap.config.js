@@ -11,5 +11,10 @@ module.exports = {
       href: `${SITE_URL}/ru`,
       hreflang: 'ru'
     }
-  ]
+  ],
+
+  reactStrictMode: true,
+  env: {
+    SITE_URL: process.env.SITE_URL
+  }
 };
