@@ -15,6 +15,6 @@ module.exports = {
 
   reactStrictMode: true,
   env: {
-    SITE_URL: process.env.SITE_URL
+    SITE_URL: 'https://aksis.agency/'
   }
 };
