@@ -50,6 +50,12 @@ export interface IArticleFields {
   /** SEO description */
   seoDescription?: string | undefined;
 
+  /** service type */
+  serviceType: 'FOR_BUSINESS' | 'TRANSPORT' | 'INDIVIDUALS' | 'RESIDENCE_PERMIT';
+
+  /** short description */
+  shortDescription: string;
+
   /** title */
   title: string;
 

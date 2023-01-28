@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Blog from '@md-modules/blog';
-import { MainLayout } from '@md-modules/shared/layouts/main';
 import { GetServerSideProps } from 'next';
+import { IArticle, IArticleFields } from '@md-types/generated/contentful';
+import { MainLayout } from '@md-modules/shared/layouts/main';
 import contentfulClient from '@md-modules/shared/services/contentful';
-import { IArticle } from '@md-types/generated/contentful';
 
 const BlogPage = ({ data, totalItems }: { data: IArticle[]; totalItems: number }) => (
   <MainLayout>
@@ -13,12 +13,12 @@ const BlogPage = ({ data, totalItems }: { data: IArticle[]; totalItems: number }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   try {
-    const data = await contentfulClient.getEntries<IArticle>({
+    const data = await contentfulClient.getEntries<IArticleFields>({
       content_type: 'article',
-      select: 'fields.title,fields.slug,fields.image',
-      locale
-      // skip: 0,
-      // limit: 8
+      select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription',
+      locale,
+      skip: 0,
+      limit: 8
     });
 
     return {

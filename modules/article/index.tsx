@@ -2,13 +2,10 @@ import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
 import {
-  FacebookIcon,
   FacebookShareButton,
-  LinkedinIcon,
   LinkedinShareButton,
   TelegramIcon,
   TelegramShareButton,
-  TwitterIcon,
   TwitterShareButton
 } from 'react-share';
 // components
@@ -25,16 +22,16 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // views
 import {
   Anchor,
-  ButtonWrapper,
+  Asset,
   ContentTitle,
   ContentWrapper,
   HeadTitle,
-  IconWrapper,
-  Image,
   InnerWrapper,
   LinkLi,
   LinkUl,
-  ShareButtonContainer,
+  ShareIcon,
+  ShareTitle,
+  ShareWrapper,
   SubTitle,
   TitleWrapper,
   Wrapper
@@ -78,7 +75,10 @@ const Article: React.FC<Props> = ({ article }) => {
               );
             }
           },
-          [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>
+          [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>,
+          [BLOCKS.EMBEDDED_ASSET]: (node) => (
+            <Asset alt={node?.data?.target?.fields} src={`https:${node.data.target.fields.file.url}`} />
+          )
         }
       }),
     [article]
@@ -116,7 +116,6 @@ const Article: React.FC<Props> = ({ article }) => {
           <TitleWrapper>
             <HeadTitle>{article.fields.title}</HeadTitle>
           </TitleWrapper>
-          <Image src={`https:${article.fields.image?.fields.file.url}`} alt={article.fields.title} />
 
           <ContentWrapper>
             {h3List?.length > 1 && (
@@ -134,41 +133,30 @@ const Article: React.FC<Props> = ({ article }) => {
               </LinkUl>
             )}
             {content}
-
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <ButtonWrapper>
-                <span>
-                  <FormattedMessage id='blog.share' />
-                </span>
-                <ShareButtonContainer>
-                  <IconWrapper>
-                    <FacebookShareButton url={url} quote={article.fields.title}>
-                      <FacebookIcon size={32} round />
-                    </FacebookShareButton>
-                  </IconWrapper>
-
-                  <IconWrapper>
-                    <TwitterShareButton url={url} title={article.fields.title}>
-                      <TwitterIcon size={32} round />
-                    </TwitterShareButton>
-                  </IconWrapper>
-
-                  <IconWrapper>
-                    <TelegramShareButton url={url} title={article.fields.title}>
-                      <TelegramIcon size={32} round />
-                    </TelegramShareButton>
-                  </IconWrapper>
-
-                  <IconWrapper>
-                    <LinkedinShareButton url={url} title={article.fields.title}>
-                      <LinkedinIcon size={32} round />
-                    </LinkedinShareButton>
-                  </IconWrapper>
-                </ShareButtonContainer>
-              </ButtonWrapper>
-            </div>
           </ContentWrapper>
         </InnerWrapper>
+
+        <ShareWrapper>
+          <ShareTitle>
+            <FormattedMessage id='blog.share' />:
+          </ShareTitle>
+
+          <TwitterShareButton url={url} title={article.fields.title}>
+            <ShareIcon src='/static/icons/twitter-original 1.svg' />
+          </TwitterShareButton>
+
+          <FacebookShareButton url={url} quote={article.fields.title}>
+            <ShareIcon src='/static/icons/facebook-option 1.svg' />
+          </FacebookShareButton>
+
+          <LinkedinShareButton url={url} title={article.fields.title}>
+            <ShareIcon src='/static/icons/linkedin-option 1.svg' />
+          </LinkedinShareButton>
+
+          <TelegramShareButton url={url} title={article.fields.title}>
+            <TelegramIcon size={32} round />
+          </TelegramShareButton>
+        </ShareWrapper>
       </Wrapper>
     </>
   );

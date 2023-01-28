@@ -5,5 +5,7 @@ export default {
   FOR_BUSINESS: 'Бизнусу',
   INDIVIDUALS: 'Физ Лицам',
   RESIDENCE_PERMIT: 'Документы Гражданства ВНЖ',
-  TRANSPORT: 'Транспорт'
+  TRANSPORT: 'Транспорт',
+  POPULAR: 'Популярные',
+  ALL: 'Все'
 };

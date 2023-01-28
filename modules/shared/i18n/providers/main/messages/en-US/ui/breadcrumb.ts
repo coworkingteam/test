@@ -5,5 +5,7 @@ export default {
   FOR_BUSINESS: 'For Business',
   INDIVIDUALS: 'Individuals',
   RESIDENCE_PERMIT: 'Residence Permit',
-  TRANSPORT: 'Transport'
+  TRANSPORT: 'Transport',
+  POPULAR: 'Popular',
+  ALL: 'All'
 };

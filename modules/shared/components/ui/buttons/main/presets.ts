@@ -12,6 +12,14 @@ export const buttonPresets = {
   link: css`
     background: none;
     text-decoration: underline;
+  `,
+  primary: css`
+    width: 100%;
+    background-color: unset;
+    border-radius: 15px;
+    color: ${({ theme }) => theme.colors.black600};
+
+    border: 2px ${({ theme }) => theme.colors.black600} solid;
   `
 };
 

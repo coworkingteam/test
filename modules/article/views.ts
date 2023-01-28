@@ -16,8 +16,8 @@ export const Wrapper = styled.div`
 export const InnerWrapper = styled.div`
   padding: 0 70px;
   width: 100%;
-  max-width: 1200px;
-  margin: 150px auto;
+  max-width: 956px;
+  margin: 150px auto auto auto;
   flex-direction: column;
 
   ${({ theme }) => theme.templates.centerContent};
@@ -49,7 +49,7 @@ export const LinkLi = styled.li`
 
 export const LinkUl = styled.ul`
   width: 100%;
-  margin: 68px 0 68px 0;
+  margin: 0 0 32px 0;
 `;
 
 export const TitleWrapper = styled.div`
@@ -62,8 +62,8 @@ export const TitleWrapper = styled.div`
 
 export const HeadTitle = styled.h1<{ highliteTitleColor?: string }>`
   font-weight: 500;
-  margin: 40px 0;
-  font-size: 2.6rem;
+  margin: 32px 0;
+  font-size: 34px;
   padding: 10px;
   border-radius: 6px;
 
@@ -122,95 +122,29 @@ export const Image = styled.img`
   }
 `;
 
-export const ShareButtonContainer = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 240px;
-  height: 34px;
-  border-radius: 80px;
+export const ShareWrapper = styled.div`
+  margin: 150px 0;
+  padding: 28px;
+
+  ${({ theme }) => theme.templates.centerContent}
+  background: ${({ theme }) => theme.colors.white};
 `;
 
-export const ButtonWrapper = styled.div`
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  cursor: pointer;
-  width: 240px;
-  height: 46px;
-  border-radius: 80px;
-  padding: 0 18px;
-  will-change: transform;
-  transition: all 0.2s ease-in-out;
+export const Asset = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 
-  background: ${({ theme }) => theme.colors.gray170};
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  &:hover span {
-    transition-delay: 0.24s;
-    transform: translateX(-280px);
-  }
-
-  &:hover div {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  span {
-    position: absolute;
-    z-index: 99;
-    width: 240px;
-    border-radius: 80px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 70px;
-    letter-spacing: 2px;
-    padding: 0 18px;
-    -webkit-transition: all 1.2s ease;
-    transition: all 1.2s ease;
-
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.black600};
-  }
+  ${({ theme }) => theme.templates.centerContent}
 `;
 
-export const IconWrapper = styled.div`
-  opacity: 0;
-  height: 32px;
-  color: #1f1e1e;
-  will-change: transform;
-  transform: scale(0.1);
-  transition: all 0.3s ease;
+export const ShareTitle = styled.p`
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 24px 0 0;
+`;
 
-  button {
-    height: 32px;
-  }
-
-  &:nth-child(1) {
-    transition-delay: 1s;
-  }
-
-  &:nth-child(2) {
-    transition-delay: 0.8s;
-  }
-
-  &:nth-child(3) {
-    transition-delay: 0.6s;
-  }
-
-  &:nth-child(4) {
-    transition-delay: 0.4s;
-  }
+export const ShareIcon = styled.img`
+  margin-right: 24px;
+  max-height: 34px;
 `;
