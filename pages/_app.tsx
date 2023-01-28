@@ -33,9 +33,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
   const { pathname, locale } = useRouter();
   const [isPageLoading, setIsPageLoading] = React.useState(false);
 
-  const baseURL = process.env.SITE_URL || 'http://localhost:3000';
-
-  console.log('baseURL', baseURL);
+  const baseURL = process.env.SITE_URL + '/' || 'http://localhost:3000';
 
   React.useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-NHSK3VS' });
@@ -60,22 +58,31 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
         defaultTitle='aksis'
         languageAlternates={[
           {
-            href: `${baseURL}/`,
+            href: `${baseURL}`,
             hrefLang: 'en-US'
           },
           {
-            href: `${baseURL}/ru/`,
+            href: `${baseURL}ru/`,
             hrefLang: 'ru'
           }
         ]}
         openGraph={{
+          url: `${baseURL}${locale}${pathname}`,
+          title: 'aksis',
           siteName: 'aksis',
-          url: `${baseURL}/${locale}${pathname}`
+          images: [
+            {
+              url: '/static/images/og-image.png',
+              width: 1200,
+              height: 460,
+              alt: 'aksis'
+            }
+          ]
         }}
         twitter={{
-          handle: '@handle',
-          site: '@site',
-          cardType: 'summary_large_image'
+          handle: '@aksisagency',
+          site: 'aksis.agency',
+          cardType: 'summary'
         }}
       />
 
