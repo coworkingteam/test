@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  onClick?: () => void;
+}
+
 export const Wrapper = styled.svg`
   cursor: pointer;
   width: 95px;
@@ -25,8 +29,15 @@ export const Wrapper = styled.svg`
   }
 `;
 
-const ViberIcon = () => (
-  <Wrapper width='95' height='105' viewBox='0 0 95 105' fill='none' xmlns='http://www.w3.org/2000/svg'>
+const ViberIcon: React.FC<Props> = ({ onClick }) => (
+  <Wrapper
+    onClick={onClick}
+    width='95'
+    height='105'
+    viewBox='0 0 95 105'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_2782_2845)'>
       <rect x='9' y='10' width='78' height='69' rx='17' fill='white' />
       <path

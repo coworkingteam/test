@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  onClick?: () => void;
+}
+
 export const Wrapper = styled.svg`
   cursor: pointer;
   width: 95px;
@@ -27,8 +31,15 @@ export const Wrapper = styled.svg`
   }
 `;
 
-const TelegramIcon = () => (
-  <Wrapper width='107' height='107' viewBox='0 0 107 107' fill='none' xmlns='http://www.w3.org/2000/svg'>
+const TelegramIcon: React.FC<Props> = ({ onClick }) => (
+  <Wrapper
+    onClick={onClick}
+    width='107'
+    height='107'
+    viewBox='0 0 107 107'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_2805_256)'>
       <path
         d='M53.5 107C83.0472 107 107 83.0472 107 53.5C107 23.9528 83.0472 0 53.5 0C23.9528 0 0 23.9528 0 53.5C0 83.0472 23.9528 107 53.5 107Z'

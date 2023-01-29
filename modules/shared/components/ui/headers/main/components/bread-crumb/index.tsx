@@ -16,7 +16,16 @@ interface Props {
 }
 
 // constants
-const STATIC_VALUES = ['blog', 'menu', 'home', 'FOR_BUSINESS', 'INDIVIDUALS', 'RESIDENCE_PERMIT', 'TRANSPORT'];
+const STATIC_VALUES = [
+  'blog',
+  'menu',
+  'home',
+  'FOR_BUSINESS',
+  'INDIVIDUALS',
+  'RESIDENCE_PERMIT',
+  'TRANSPORT',
+  'POPULAR'
+];
 
 const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll = false }) => {
   const { push, pathname, query, locale } = useRouter();

@@ -1,5 +1,6 @@
 import React from 'react';
 // libs
+import { Link } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 // components
 import { Button } from '@md-ui/buttons/main';
@@ -65,9 +66,12 @@ const Services: React.FC<Props> = ({ adData }) => (
     <Title>
       <FormattedMessage id='home.services.additionalInfo.title' />
     </Title>
-    <Button preset='large'>
-      <FormattedMessage id='home.services.additionalInfo.buttonTitle' />
-    </Button>
+
+    <Link to='feed-back' spy smooth offset={-200} duration={500} activeClass='active'>
+      <Button preset='large'>
+        <FormattedMessage id='home.services.additionalInfo.buttonTitle' />
+      </Button>
+    </Link>
   </Wrapper>
 );
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  onClick?: () => void;
+}
+
 export const Wrapper = styled.svg`
   cursor: pointer;
   width: 95px;
@@ -23,8 +27,15 @@ export const Wrapper = styled.svg`
   }
 `;
 
-const WhatsappIcon = () => (
-  <Wrapper width='102' height='102' viewBox='0 0 102 102' fill='none' xmlns='http://www.w3.org/2000/svg'>
+const WhatsappIcon: React.FC<Props> = ({ onClick }) => (
+  <Wrapper
+    onClick={onClick}
+    width='102'
+    height='102'
+    viewBox='0 0 102 102'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
     <g clipPath='url(#clip0_2805_238)'>
       <path
         d='M51.0127 0H50.9873C22.8671 0 0 22.8735 0 51C0 62.1562 3.5955 72.4965 9.70912 80.8924L3.35325 99.8389L22.9564 93.5723C31.0208 98.9145 40.6406 102 51.0127 102C79.1329 102 102 79.1201 102 51C102 22.8799 79.1329 0 51.0127 0Z'
