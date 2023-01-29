@@ -57,7 +57,7 @@ const AnimateMobileNav: React.FC<Props> = ({ data }) => {
           </Title>
 
           <ItemListWrapper>
-            {data.map(({ l, h }) => (
+            {[{ h: '/blog', l: 'menu.questionsAndAnswers.title' }, ...data].map(({ l, h }) => (
               <NavigationLink isOpen={isOpen} key={l} href={h}>
                 <FormattedMessage id={l} />
               </NavigationLink>
