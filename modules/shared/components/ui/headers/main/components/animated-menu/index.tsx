@@ -1,7 +1,7 @@
 import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 // components
 import { Link } from '@md-ui/link';
 import MenuItem from '@md-ui/headers/main/components/animated-menu/components/menu-item';
@@ -21,101 +21,62 @@ interface Props {
 }
 
 const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
-  const [selectedTab, setSelectedTab] = React.useState<IMenuItem>(menuData[0]);
+  const [selectedTab, setSelectedTab] = React.useState<{ index: number; selectedTab: IMenuItem }>({
+    index: 0,
+    selectedTab: menuData[0]
+  });
+
+  const controls = useAnimation();
+
+  React.useEffect(() => {
+    controls.start((i) =>
+      i === selectedTab.index ? { y: 0, opacity: 1, height: 'max-content' } : { y: -10, opacity: 0, height: 0 }
+    );
+  }, [selectedTab.index]);
 
   return (
-    <MenuItem activeColor={selectedTab?.bgColor} isScroll={isScroll} text='menu.services.menuItemTitle'>
+    <MenuItem activeColor={selectedTab?.selectedTab.bgColor} isScroll={isScroll} text='menu.services.menuItemTitle'>
       <NavWrapper>
-        {menuData.map((item) => (
+        {menuData.map((item, index) => (
           <div key={item.label} style={{ position: 'relative', width: '100%' }}>
             <SubItem
-              className={item === selectedTab ? 'selected' : ''}
+              className={item === selectedTab?.selectedTab ? 'selected' : ''}
               title={item.label}
-              onMouseMove={() => setSelectedTab(item)}
+              onMouseMove={() => setSelectedTab({ selectedTab: item, index })}
             />
 
-            {item.label === selectedTab.label ? <MotionUnderline layoutId='underline' /> : null}
+            {item.label === selectedTab.selectedTab.label ? <MotionUnderline layoutId='underline' /> : null}
           </div>
         ))}
       </NavWrapper>
 
       <main style={{ flex: 1, background: '#f1f1f1', padding: '28px 28px 28px 10px' }}>
-        <AnimatePresence exitBeforeEnter>
-          <motion.div
-            key={selectedTab ? selectedTab.label : 'empty'}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            style={{
-              display: 'grid',
-              gap: '0 10px',
-              justifyContent: 'center',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 260px))',
-              width: '100%'
-            }}
-          >
-            {selectedTab &&
-              selectedTab.data?.map(({ l, h }) => (
+        <AnimatePresence key={selectedTab ? selectedTab.selectedTab.label : 'empty'}>
+          {menuData.map((item, index) => (
+            <motion.div
+              key={selectedTab ? selectedTab.selectedTab.label : 'empty'}
+              animate={controls}
+              custom={index}
+              exit={{ y: -10, opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                display: 'grid',
+                gap: '0 10px',
+                justifyContent: 'center',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 260px))',
+                width: '100%'
+              }}
+            >
+              {item.data?.map(({ l, h }) => (
                 <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>
                   <FormattedMessage id={l} />
                   <SendArrow />
                 </Link>
               ))}
-          </motion.div>
+            </motion.div>
+          ))}
         </AnimatePresence>
       </main>
-
-      {/*<div>*/}
-      {/*  <SubItem title='menu.services.categories.individuals.title'>*/}
-      {/*    {menuItemsIndividual.map(({ l, h }) => (*/}
-      {/*      <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>*/}
-      {/*        <FormattedMessage id={l} />*/}
-      {/*        <SendArrow />*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </SubItem>*/}
-
-      {/*  <SubItem title='menu.services.categories.popular.title'>*/}
-      {/*    {menuItemsPopular.map(({ l, h }) => (*/}
-      {/*      <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>*/}
-      {/*        <FormattedMessage id={l} />*/}
-      {/*        <SendArrow />*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </SubItem>*/}
-      {/*</div>*/}
-
-      {/*<div>*/}
-      {/*  <SubItem title='menu.services.categories.admission.title'>*/}
-      {/*    {menuItemsAdmission.map(({ l, h }) => (*/}
-      {/*      <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>*/}
-      {/*        <FormattedMessage id={l} />*/}
-      {/*        <SendArrow />*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </SubItem>*/}
-
-      {/*  <SubItem title='menu.services.categories.forBusiness.title'>*/}
-      {/*    {menuItemsRelatedBusiness.map(({ l, h }) => (*/}
-      {/*      <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>*/}
-      {/*        <FormattedMessage id={l} />*/}
-      {/*        <SendArrow />*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </SubItem>*/}
-      {/*</div>*/}
-
-      {/*<div>*/}
-      {/*  <SubItem title='menu.services.categories.transport.title'>*/}
-      {/*    {menuItemsTransport.map(({ l, h }) => (*/}
-      {/*      <Link hoverColor={colors.white} hoverBGColor={colors.black600} preset='menuSmall' key={l} href={h}>*/}
-      {/*        <FormattedMessage id={l} />*/}
-      {/*        <SendArrow />*/}
-      {/*      </Link>*/}
-      {/*    ))}*/}
-      {/*  </SubItem>*/}
-      {/*</div>*/}
     </MenuItem>
   );
 };

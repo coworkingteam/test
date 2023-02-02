@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from '@md-ui/link';
 
 export const Wrapper = styled.div`
   display: none;
@@ -152,7 +153,7 @@ export const NavigationIcon = styled.span<{ isOpen: boolean }>`
     `};
 `;
 
-export const NavigationLink = styled.a<{ isOpen: boolean }>`
+export const NavigationLink = styled(Link)<{ isOpen: boolean }>`
   display: inline-block;
   padding: 10px 0;
   width: max-content;
