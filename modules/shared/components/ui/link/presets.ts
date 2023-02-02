@@ -92,6 +92,17 @@ export const linkPresets = {
     font-weight: 500;
     text-decoration-line: underline;
     color: ${({ theme }) => theme.colors.blue400} !important;
+  `,
+  mobileMenu: css`
+    display: inline-block;
+    padding: 10px 0;
+    width: max-content;
+    text-transform: capitalize;
+    color: #f4f4f4;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 12, maxSize: 20, maxViewport: 1000, minViewport: 380 })};
   `
 };
 
