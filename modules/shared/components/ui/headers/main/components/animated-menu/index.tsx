@@ -30,7 +30,9 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
 
   React.useEffect(() => {
     controls.start((i) =>
-      i === selectedTab.index ? { y: 0, opacity: 1, height: 'max-content' } : { y: -10, opacity: 0, height: 0 }
+      i === selectedTab.index
+        ? { y: 0, opacity: 1, height: 'max-content', overflow: 'visible' }
+        : { y: -10, opacity: 0, height: 0, overflow: 'hidden' }
     );
   }, [selectedTab.index]);
 
@@ -57,7 +59,7 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
               key={selectedTab ? selectedTab.selectedTab.label : 'empty'}
               animate={controls}
               custom={index}
-              exit={{ y: -10, opacity: 0, height: 0 }}
+              exit={{ y: -10, opacity: 0, height: 0, overflow: 'hidden' }}
               transition={{ duration: 0.2 }}
               style={{
                 display: 'grid',
