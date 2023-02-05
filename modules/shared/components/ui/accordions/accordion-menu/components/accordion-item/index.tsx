@@ -3,7 +3,7 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import { FormattedMessage } from 'react-intl';
 // types
-import { IMenuAccordionItem } from '@md-ui/accordions/accordion-menu';
+import { IMenuAccordionItem } from '@md-types/accordion';
 // components
 import Arrow from 'public/static/icons/bottom-arrow';
 // views

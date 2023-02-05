@@ -1,15 +1,10 @@
 import React from 'react';
 // libs
 import styled from 'styled-components';
+// types
+import { IMenuAccordionItem } from '@md-types/accordion';
 // components
 import MenuAccordionItem from '@md-ui/accordions/accordion-menu/components/accordion-item';
-
-export interface IMenuAccordionItem {
-  id: string;
-  title: string;
-  open?: boolean;
-  content: { l: string; h: string }[];
-}
 
 interface Props {
   isOpen?: boolean;

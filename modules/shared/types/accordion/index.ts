@@ -7,6 +7,13 @@ export interface IAccordionItem {
   content: string;
 }
 
+export interface IMenuAccordionItem {
+  id: string;
+  title: string;
+  open?: boolean;
+  content: { l: string; h: string }[];
+}
+
 export interface IContentfulAccordionItem {
   id?: string;
   title?: string;
