@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from '@md-ui/link';
 
 export const Wrapper = styled.div`
   display: none;
@@ -151,18 +150,6 @@ export const NavigationIcon = styled.span<{ isOpen: boolean }>`
         transform: rotate(-135deg);
       }
     `};
-`;
-
-export const NavigationLink = styled(Link)<{ isOpen: boolean }>`
-  display: inline-block;
-  padding: 10px 0;
-  width: max-content;
-  text-transform: capitalize;
-  color: #f4f4f4;
-  text-decoration: none;
-  transition: all 0.2s;
-
-  ${({ theme }) => theme.templates.dynamicFont({ minSize: 12, maxSize: 20, maxViewport: 1000, minViewport: 380 })};
 `;
 
 export const LWrapper = styled.div`

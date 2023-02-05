@@ -3,12 +3,13 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 // components
 import { Logo } from '@md-ui/logos/main';
+import AccordionMenu from '@md-ui/accordions/accordion-menu';
+import { IMenuItem } from '@md-modules/shared/providers/menu-provider';
 // views
 import {
   Background,
   NavigationButton,
   NavigationIcon,
-  NavigationLink,
   NavigationListWrapper,
   NavigationWrapper,
   Wrapper,
@@ -17,12 +18,13 @@ import {
   Icon,
   Title
 } from '@md-ui/headers/main/components/animated-mobile-navigation/views';
+import { NavigationLink } from '@md-ui/accordions/accordion-menu/components/accordion-item/views';
 
 interface Props {
-  data: { l: string; h: string }[];
+  menuData: IMenuItem[];
 }
 
-const AnimateMobileNav: React.FC<Props> = ({ data }) => {
+const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -57,11 +59,14 @@ const AnimateMobileNav: React.FC<Props> = ({ data }) => {
           </Title>
 
           <ItemListWrapper>
-            {[{ h: '/blog', l: 'menu.questionsAndAnswers.title' }, ...data].map(({ l, h }) => (
-              <NavigationLink preset='mobileMenu' isOpen={isOpen} key={l} href={h}>
-                <FormattedMessage id={l} />
-              </NavigationLink>
-            ))}
+            <NavigationLink preset='mobileMenu' isOpen={isOpen} key='/blog' href='/blog'>
+              <FormattedMessage id='menu.questionsAndAnswers.title' />
+            </NavigationLink>
+
+            <AccordionMenu
+              isOpen={isOpen}
+              data={menuData.map((item) => ({ title: item.label, id: item.label, content: item.data }))}
+            />
           </ItemListWrapper>
         </NavigationListWrapper>
       </NavigationWrapper>

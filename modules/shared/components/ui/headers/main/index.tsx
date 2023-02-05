@@ -16,8 +16,6 @@ import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
 import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper } from './views';
-// utils
-import { flatten } from 'lodash';
 
 // const BUTTON_STYLES = { mr: 26 };
 
@@ -33,8 +31,6 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
 
   const [isScroll, setIsScroll] = React.useState(false);
   const [showBreadcrumb, setShowBreadcrumb] = React.useState(true);
-
-  const mobileMenuData = flatten(menuItems.map((item) => item.data));
 
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
@@ -74,7 +70,7 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
         <BurgerWrapper>
           <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
 
-          <AnimateMobileNav data={mobileMenuData} />
+          <AnimateMobileNav menuData={menuItems} />
         </BurgerWrapper>
       </IWrapper>
 
