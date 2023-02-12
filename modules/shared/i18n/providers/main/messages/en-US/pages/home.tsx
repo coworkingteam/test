@@ -4,7 +4,7 @@ export default {
   seoDescription:
     'Legalization services in Poland and the EU. Residence cards (Residence permits), Acceleration of document processing, Car services, Work permits, Issuance of invitations to Poland, Powers of Attorney',
   welcome: {
-    title: 'Help with documents in Poland',
+    title: 'Help with documents in Poland and EU',
     subTitle: 'Work permit → residence permit → urgent documents → business and tokenization',
     button: {
       title: 'Free consultation'

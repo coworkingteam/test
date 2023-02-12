@@ -4,6 +4,8 @@ export const Wrapper = styled.div`
   min-height: 50vh;
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 3;
   flex-direction: column;
 
   ${({ theme }) => theme.templates.centerContent}
@@ -21,10 +23,18 @@ export const ContentWrapper = styled.div`
   }
 `;
 
+export const ScrollToTopWrapper = styled.div`
+  margin: 36px auto;
+  padding: 0 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const InnerWrapper = styled.div`
   width: 100%;
   display: flex;
-  padding: 60px 0;
+  padding: 0 0 60px 0;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
@@ -33,7 +43,7 @@ export const InnerWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 40px 10px;
+    padding: 0 10px 40px 10px;
   }
 `;
 
@@ -78,6 +88,13 @@ export const SocialNetworkIcon = styled.img`
 
 export const SocialNetworksWrapper = styled.div`
   margin-top: 18px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 `;
 
 export const LinkList = styled.div`

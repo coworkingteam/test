@@ -29,11 +29,13 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
   const controls = useAnimation();
 
   React.useEffect(() => {
-    controls.start((i) =>
-      i === selectedTab.index
-        ? { y: 0, opacity: 1, height: 'max-content', overflow: 'visible' }
-        : { y: -10, opacity: 0, height: 0, overflow: 'hidden' }
-    );
+    void controls.set((i) => {
+      if (i === selectedTab.index) {
+        return { y: 0, opacity: 1, overflow: 'visible', height: 'max-content', transition: { duration: 0.2 } };
+      }
+
+      return { y: -10, opacity: 0, overflow: 'hidden', height: 0, transition: { duration: 0.2 } };
+    });
   }, [selectedTab.index]);
 
   return (
@@ -52,18 +54,26 @@ const AnimatedMenu: React.FC<Props> = ({ isScroll, menuData }) => {
         ))}
       </NavWrapper>
 
-      <main style={{ flex: 1, background: '#f1f1f1', padding: '28px 28px 28px 10px' }}>
+      <main
+        style={{
+          flex: 1,
+          position: 'relative',
+          overflow: 'hidden',
+          background: '#f1f1f1',
+          padding: '28px 28px 28px 10px'
+        }}
+      >
         <AnimatePresence key={selectedTab ? selectedTab.selectedTab.label : 'empty'}>
           {menuData.map((item, index) => (
             <motion.div
               key={selectedTab ? selectedTab.selectedTab.label : 'empty'}
               animate={controls}
               custom={index}
-              exit={{ y: -10, opacity: 0, height: 0, overflow: 'hidden' }}
               transition={{ duration: 0.2 }}
               style={{
                 display: 'grid',
                 gap: '0 10px',
+                position: 'absolute',
                 justifyContent: 'center',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 260px))',
                 width: '100%'

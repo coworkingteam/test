@@ -44,7 +44,7 @@ export const BreadcrumbName = styled.p<{ isLastChild?: boolean; isScroll: boolea
   color: ${({ theme, isLastChild }) => (isLastChild ? theme.colors.black600 : theme.colors.gray560)};
 
   @media screen and (max-width: 768px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 

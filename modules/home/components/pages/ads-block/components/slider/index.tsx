@@ -10,7 +10,8 @@ import { useSlider } from '@md-modules/shared/hooks/slider';
 // types
 import { Service } from '@md-modules/shared/types/service';
 // components
-import ImageButton from '@md-ui/buttons/image-button';
+import LeftButton from '../../../../../../../public/static/icons/left-bottom';
+import RightButton from '../../../../../../../public/static/icons/right-bottom';
 import ServiceCard from '@md-modules/home/components/pages/ads-block/components/slider/components/service-card';
 // views
 import { ArrowButtonsWrapper, SliderWrapper, Title, Link } from './views';
@@ -62,8 +63,8 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
       </Link>
 
       <ArrowButtonsWrapper>
-        <ImageButton size='medium' onClick={prevSlide} image='/static/icons/left-button.svg' />
-        <ImageButton size='medium' onClick={nextSlide} image='/static/icons/right-button.svg' />
+        <LeftButton onClick={prevSlide} />
+        <RightButton onClick={nextSlide} />
       </ArrowButtonsWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>

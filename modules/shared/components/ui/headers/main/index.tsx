@@ -3,7 +3,6 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 // view components
 import { Logo } from '@md-ui/logos/main';
-// import { Button } from '@md-ui/buttons/main';
 import { MenuItem } from '@md-ui/menu-item/main';
 import LangButton from '@md-ui/headers/main/components/lang-button';
 import AnimatedMenu from '@md-ui/headers/main/components/animated-menu';
@@ -15,9 +14,7 @@ import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // constants
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
-import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper } from './views';
-
-// const BUTTON_STYLES = { mr: 26 };
+import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper, ContactsButton } from './views';
 
 interface Props {
   breadcrumbSlug?: string;
@@ -34,7 +31,7 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
 
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
-  // const onClickNumber = () => push('tel:+47 728 000 702');
+  const onClickNumber = () => push('tel:+48 500 958 374');
 
   React.useLayoutEffect(() => {
     const scrollHandler = () => {
@@ -63,9 +60,10 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
           <MenuItem isScroll={isScroll} href='/blog' label='menu.questionsAndAnswers.title' />
         </RWrapper>
 
-        {/*<Button onClick={onClickNumber} buttonStyle={BUTTON_STYLES}>*/}
-        {/*  +48 728 000 702*/}
-        {/*</Button>*/}
+        <ContactsButton onClick={onClickNumber}>
+          <p>+48 500 958 374</p>
+          <p>Бесплатно по Польше</p>
+        </ContactsButton>
 
         <BurgerWrapper>
           <LangButton activeLang={locale} onSelectLang={onChangeLocale} />

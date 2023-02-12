@@ -95,10 +95,11 @@ export const Anchor = styled.span`
 `;
 
 export const SubTitle = styled.p<{ opacity?: number }>`
-  font-size: 20px;
   margin: 0 0 20px 0;
   white-space: pre-wrap;
-  line-height: 36px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
 
   opacity: ${({ opacity }) => opacity};
   color: ${({ theme }) => theme.colors.gray550};

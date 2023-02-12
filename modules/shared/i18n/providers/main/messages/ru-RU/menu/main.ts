@@ -16,7 +16,7 @@ export default {
       },
 
       individuals: {
-        title: 'физ лицам',
+        title: 'Физ Лицам',
         itemList: [
           ['Помощь с картой побыту', '/resident-card'],
           ['Продление загранпаспорта', '/international-passport?type=EXTENSION'],

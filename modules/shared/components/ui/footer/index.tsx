@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // components
 import { MenuItem } from '@md-ui/menu-item/main';
+import ScrollToTopButton from '@md-ui/buttons/scroll-to-top';
 // views
 import {
   Wrapper,
@@ -20,7 +21,8 @@ import {
   TextLogo,
   RightSide,
   SocialNetworkIcon,
-  SocialNetworksWrapper
+  SocialNetworksWrapper,
+  ScrollToTopWrapper
 } from './views';
 
 const Footer = () => {
@@ -32,6 +34,10 @@ const Footer = () => {
   return (
     <Wrapper>
       <ContentWrapper>
+        <ScrollToTopWrapper>
+          <ScrollToTopButton isScrolling={false} />
+        </ScrollToTopWrapper>
+
         <InnerWrapper>
           <LeftSide>
             <TextLogo src='/static/icons/logo-text.svg' alt='logo-text' />
@@ -54,27 +60,27 @@ const Footer = () => {
                   <SocialNetworksWrapper>
                     <SocialNetworkIcon
                       alt='instagram'
-                      src='/static/icons/instagram (8) 1.svg'
+                      src='/static/icons/instagram.svg'
                       onClick={() => push('https://www.instagram.com/aksis.agency/')}
                     />
                     <SocialNetworkIcon
                       alt='facebook'
-                      src='/static/icons/facebook-logo 1.svg'
+                      src='/static/icons/facebook.svg'
                       onClick={() => push('https://m.me/aksis.agency?ref=w18286973')}
                     />
                     <SocialNetworkIcon
                       alt='twitter'
-                      src='/static/icons/twitter (1) 1.svg'
+                      src='/static/icons/twitter.svg'
                       onClick={() => push('https://twitter.com/aksisagency')}
                     />
                     <SocialNetworkIcon
                       alt='tik-tok'
-                      src='/static/icons/tik-tok (5) 1.svg'
+                      src='/static/icons/tik-tok.svg'
                       onClick={() => push('https://www.tiktok.com/@aksis.agency')}
                     />
                     <SocialNetworkIcon
                       alt='linkedin'
-                      src='/static/icons/linkedin (5) 1.svg'
+                      src='/static/icons/linkedin.svg'
                       onClick={() => push('https://www.linkedin.com/company/aksis-agency-consulting-tax-audit/')}
                     />
                   </SocialNetworksWrapper>
@@ -84,7 +90,7 @@ const Footer = () => {
           </RightSide>
         </InnerWrapper>
 
-        <FAQWrapper>© aksis 2022</FAQWrapper>
+        <FAQWrapper>© aksis 2023</FAQWrapper>
 
         <FAQWrapper>
           BAGHEERA (R&K GROUP) SP. Z O.O. to firma, której branża została w Polskiej Klasyfikacji Działalności (PKD)

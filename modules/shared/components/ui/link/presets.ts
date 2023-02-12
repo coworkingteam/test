@@ -97,7 +97,6 @@ export const linkPresets = {
     display: inline-block;
     padding: 10px 0;
     width: max-content;
-    text-transform: capitalize;
     color: #f4f4f4;
     text-decoration: none;
     transition: all 0.2s;

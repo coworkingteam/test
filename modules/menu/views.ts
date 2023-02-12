@@ -72,9 +72,8 @@ export const RightSide = styled.div<{ colorBG: string }>`
   max-width: 700px;
   height: 576px;
 
-  ${({ theme }) => theme.templates.centerContent};
-
   background: ${({ colorBG }) => colorBG};
+  ${({ theme }) => theme.templates.centerContent};
   ${({ theme }) => theme.templates.centerContent};
 
   @media (max-width: 1000px) {

@@ -1,14 +1,13 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from '@md-ui/link';
 
 export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  margin: 20px 0;
   border-radius: 8px;
   transition: all 450ms;
-  margin: 20px 0;
-  box-shadow: rgba(0, 0, 0, 0.04) 0 2px 4px 0 inset;
+  flex-direction: column;
 
   padding: ${({ isActive }) => (isActive ? '0 12px 12px 12px' : '0 12px 0 12px ')};
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
@@ -18,24 +17,9 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
 
     path {
       transition: all 450ms;
-      stroke: ${({ blackTheme, theme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
+      fill: ${({ blackTheme, theme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
     }
   }
-
-  ${({ isActive, blackTheme, theme }) =>
-    !isActive &&
-    css`
-      &:hover {
-        color: ${blackTheme ? theme.colors.white : theme.colors.black600};
-        background-color: ${blackTheme ? theme.colors.black600 : theme.colors.white};
-
-        svg {
-          path {
-            stroke: ${blackTheme ? theme.colors.white : theme.colors.black600};
-          }
-        }
-      }
-    `}
 `;
 
 export const ATitle = styled.h3`
@@ -58,23 +42,17 @@ export const ATitleWrapper = styled.div<{ blackTheme: boolean; isActive: boolean
   padding: ${({ isActive }) => (isActive ? '12px 0 0 0' : '12px 0')};
 `;
 
-export const AContent = styled.p`
-  font-size: 16px;
-  line-height: 180%;
+export const AContent = styled.div`
   margin: 16px 0 0 0;
   max-width: 1100px;
-  white-space: pre-wrap;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
+  display: flex;
+  flex-direction: column;
 `;
 
 export const NavigationLink = styled(Link)<{ isOpen: boolean }>`
   display: inline-block;
   padding: 10px 0;
   width: max-content;
-  text-transform: capitalize;
   color: #f4f4f4;
   text-decoration: none;
   transition: all 0.2s;

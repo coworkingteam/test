@@ -18,6 +18,28 @@ export const Wrapper = styled.div<{ isScroll: boolean }>`
   }
 `;
 
+export const ContactsButton = styled.div`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+  margin-right: 16px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
+
+  color: ${({ theme }) => theme.colors.black600};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 export const IWrapper = styled.div`
   display: flex;
   align-items: center;

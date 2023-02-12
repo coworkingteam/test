@@ -9,8 +9,8 @@ export const LinkButton = styled.a<{
 }>`
   height: max-content;
   cursor: pointer;
-  color: ${({ theme, isActive }) => (isActive ? theme.colors.black : theme.colors.black600)};
 
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.black : theme.colors.black600)};
   text-decoration: ${({ isActive }) => (isActive ? 'underline' : 'inherit')};
 
   &:hover {
