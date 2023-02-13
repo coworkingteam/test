@@ -116,9 +116,24 @@ export const LinkList = styled.div`
   }
 `;
 
+export const DesktopFooterMenuWrapper = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const MobileFooterMenuWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
 export const MenuItemsWrapper = styled.div`
   display: flex;
   width: 100%;
+
   flex-direction: column;
 
   &:first-child {
@@ -127,8 +142,7 @@ export const MenuItemsWrapper = styled.div`
 
   @media (max-width: 768px) {
     margin: 0;
-    padding: 16px 0;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+    padding: 0;
 
     &:last-child {
       border-bottom: none;

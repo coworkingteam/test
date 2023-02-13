@@ -9,7 +9,6 @@ export const Wrapper = styled.div<{ blackTheme: boolean; isActive: boolean }>`
   transition: all 450ms;
   flex-direction: column;
 
-  padding: ${({ isActive }) => (isActive ? '0 12px 12px 12px' : '0 12px 0 12px ')};
   color: ${({ theme, blackTheme }) => (blackTheme ? theme.colors.black600 : theme.colors.white)};
 
   svg {

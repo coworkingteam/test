@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // components
 import { MenuItem } from '@md-ui/menu-item/main';
+import AccordionMenu from '@md-ui/accordions/accordion-menu';
 import ScrollToTopButton from '@md-ui/buttons/scroll-to-top';
 // views
 import {
@@ -22,7 +23,9 @@ import {
   RightSide,
   SocialNetworkIcon,
   SocialNetworksWrapper,
-  ScrollToTopWrapper
+  ScrollToTopWrapper,
+  DesktopFooterMenuWrapper,
+  MobileFooterMenuWrapper
 } from './views';
 
 const Footer = () => {
@@ -44,17 +47,25 @@ const Footer = () => {
           </LeftSide>
 
           <RightSide>
+            <MobileFooterMenuWrapper>
+              <AccordionMenu
+                data={filteredMenuItems.map((item) => ({ title: item.label, id: item.label, content: item.data }))}
+              />
+            </MobileFooterMenuWrapper>
+
             {filteredMenuItems.map((item, index) => (
               <MenuItemsWrapper key={item.type}>
-                <Heading>
-                  <FormattedMessage id={item.label} />
-                </Heading>
+                <DesktopFooterMenuWrapper>
+                  <Heading>
+                    <FormattedMessage id={item.label} />
+                  </Heading>
 
-                <LinkList>
-                  {item.data.map((item) => (
-                    <MenuItem whiteColor key={item.h} href={item.h} label={item.l} />
-                  ))}
-                </LinkList>
+                  <LinkList>
+                    {item.data.map((item) => (
+                      <MenuItem whiteColor key={item.h} href={item.h} label={item.l} />
+                    ))}
+                  </LinkList>
+                </DesktopFooterMenuWrapper>
 
                 {filteredMenuItems.length === index + 1 && (
                   <SocialNetworksWrapper>
