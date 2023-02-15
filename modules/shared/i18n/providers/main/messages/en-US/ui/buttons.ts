@@ -1,3 +1,4 @@
 export default {
-  scrollToTop: 'Top'
+  scrollToTop: 'Top',
+  drawUp: 'Submit'
 };

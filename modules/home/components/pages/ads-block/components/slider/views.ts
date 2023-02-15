@@ -7,7 +7,6 @@ export const SliderWrapper = styled.div`
 
 export const Link = styled.a`
   text-decoration: none;
-  margin: 0 0 50px 0;
   color: #212121;
   display: block;
   width: max-content;
@@ -17,12 +16,22 @@ export const Link = styled.a`
   }
 `;
 
+export const HeaderWrapper = styled.div`
+  margin: 0 0 56px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    margin: 0 0 26px 0;
+  }
+`;
+
 export const Title = styled.h2`
   margin: 0;
   font-weight: 500;
-  font-size: 52px;
-  max-width: 300px;
-  width: max-content;
+  font-size: 64px;
 
   @media (max-width: 768px) {
     font-size: 32px;
@@ -34,9 +43,6 @@ export const Title = styled.h2`
 export const ArrowButtonsWrapper = styled.div`
   max-width: 95px;
   display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
 
   @media screen and (max-width: 1200px) {
     display: none;

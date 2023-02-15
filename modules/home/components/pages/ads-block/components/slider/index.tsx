@@ -14,7 +14,7 @@ import LeftButton from '../../../../../../../public/static/icons/left-bottom';
 import RightButton from '../../../../../../../public/static/icons/right-bottom';
 import ServiceCard from '@md-modules/home/components/pages/ads-block/components/slider/components/service-card';
 // views
-import { ArrowButtonsWrapper, SliderWrapper, Title, Link } from './views';
+import { ArrowButtonsWrapper, SliderWrapper, Title, Link, HeaderWrapper } from './views';
 
 const SLIDER_SETTINGS = {
   dots: true,
@@ -56,16 +56,18 @@ const ServiceSlider: React.FC<Props> = ({ data }) => {
 
   return (
     <SliderWrapper>
-      <Link href={`${locale}/menu/POPULAR`}>
-        <Title>
-          <FormattedMessage id='home.adsBlock.title' /> →
-        </Title>
-      </Link>
+      <HeaderWrapper>
+        <Link href={`${locale}/menu/POPULAR`}>
+          <Title>
+            <FormattedMessage id='home.adsBlock.title' />
+          </Title>
+        </Link>
 
-      <ArrowButtonsWrapper>
-        <LeftButton onClick={prevSlide} />
-        <RightButton onClick={nextSlide} />
-      </ArrowButtonsWrapper>
+        <ArrowButtonsWrapper>
+          <LeftButton onClick={prevSlide} />
+          <RightButton onClick={nextSlide} />
+        </ArrowButtonsWrapper>
+      </HeaderWrapper>
 
       <Slider ref={sliderRef} {...SLIDER_SETTINGS}>
         {data.map((service, index) => (

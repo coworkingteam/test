@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div<{ showBreadcrumb: boolean }>`
-  height: 40px;
+export const Wrapper = styled.div<{ showBreadcrumb: boolean; isScroll: boolean }>`
   display: flex;
   margin: 0;
   overflow: hidden;
-  padding: 8px 0 14px 0;
   align-items: center;
   opacity: 1;
   transition: all 0.4s ease 0s;
+
+  height: ${({ isScroll }) => (isScroll ? '40px' : '60px')};
+  padding: ${({ isScroll }) => (isScroll ? '8px 0 14px 0' : '30px 0 14px 0')};
 
   ${({ showBreadcrumb }) =>
     !showBreadcrumb &&
@@ -40,7 +41,7 @@ export const BreadcrumbName = styled.p<{ isLastChild?: boolean; isScroll: boolea
 
   ${({ theme }) => theme.templates.ellipsis}
   cursor: ${({ isLastChild }) => !isLastChild && 'pointer'};
-  font-size: ${({ isScroll }) => (isScroll ? '14' : '16')}px;
+  font-size: 14px;
   color: ${({ theme, isLastChild }) => (isLastChild ? theme.colors.black600 : theme.colors.gray560)};
 
   @media screen and (max-width: 768px) {
@@ -49,8 +50,8 @@ export const BreadcrumbName = styled.p<{ isLastChild?: boolean; isScroll: boolea
 `;
 
 export const BackIcon = styled.img`
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   cursor: pointer;
   margin-right: 8px;
 

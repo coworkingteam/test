@@ -7,8 +7,7 @@ interface Props {
 
 const Wrapper = styled.svg`
   width: 40px;
-  height: 14px;
-  margin: 80px 0px 0px;
+  margin: 0 44px 0 0;
   cursor: pointer;
 
   path {

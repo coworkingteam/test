@@ -62,7 +62,8 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
 
         const data = await contentfulClient.getEntries<IArticleFields>({
           content_type: 'article',
-          select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription',
+          select:
+            'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription,fields.cardColorCode',
           locale,
           ...(activeFilter !== 'ALL' && { 'fields.serviceType': activeFilter }),
           skip: 8 * page,
@@ -92,7 +93,7 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
 
       const data = await contentfulClient.getEntries<IArticleFields>({
         content_type: 'article',
-        select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription',
+        select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription,fields.cardColorCode',
         locale,
         ...(activeFilter !== 'ALL' && { 'fields.serviceType': activeFilter }),
         skip: 0,
@@ -157,9 +158,10 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
                   key={item.fields.slug}
                   title={item.fields.title}
                   queryId={item.fields.slug}
+                  cardColorCode={item.fields.cardColorCode}
                   description={item.fields.shortDescription}
                   img={`https:${item.fields.image?.fields.file.url}`}
-                  cardColor={getServiceUIKit(item.fields.serviceType).bgColor}
+                  cardColorOnHover={getServiceUIKit(item.fields.serviceType).bgColor}
                 />
               ))}
             </CardWrapper>

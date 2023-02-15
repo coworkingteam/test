@@ -15,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   try {
     const data = await contentfulClient.getEntries<IArticleFields>({
       content_type: 'article',
-      select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription',
+      select: 'fields.title,fields.slug,fields.image,fields.serviceType,fields.shortDescription,fields.cardColorCode',
       locale,
       skip: 0,
       limit: 8

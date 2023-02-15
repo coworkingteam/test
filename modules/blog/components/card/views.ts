@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ cardColor: string }>`
+export const Wrapper = styled.div<{ cardColorOnHover: string; cardColorCode: string }>`
   width: 100%;
   padding: 32px;
   max-width: 726px;
@@ -9,8 +9,21 @@ export const Wrapper = styled.div<{ cardColor: string }>`
   border-radius: 15px;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.2s ease;
 
-  background-color: ${({ theme, cardColor }) => cardColor || theme.colors.white};
+  background-color: ${({ theme, cardColorCode }) => cardColorCode || theme.colors.white};
+
+  img {
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    background-color: ${({ theme, cardColorOnHover }) => cardColorOnHover || theme.colors.white};
+
+    img {
+      transform: scale(1.08) perspective(1px);
+    }
+  }
 `;
 
 export const FooterWrapper = styled.div`
@@ -61,12 +74,12 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
-  margin: 10px 0;
+  line-height: 140%;
+  margin: 12px 0;
   max-width: 340px;
   white-space: pre-wrap;
-  line-height: 36px;
 
   color: ${({ theme }) => theme.colors.gray540};
 

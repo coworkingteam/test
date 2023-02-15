@@ -68,7 +68,7 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll 
         ]}
       />
 
-      <Wrapper showBreadcrumb={showBreadcrumb}>
+      <Wrapper isScroll={isScroll} showBreadcrumb={showBreadcrumb}>
         <BackIcon onClick={onClickHome} src='/static/icons/left-arrow.svg' alt='left-arrow' />
         <BreadcrumbName isScroll={isScroll} onClick={onClickHome}>
           <FormattedMessage id='breadcrumb.home' />

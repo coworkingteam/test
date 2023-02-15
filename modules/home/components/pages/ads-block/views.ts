@@ -18,7 +18,7 @@ export const InnerWrapper = styled.div`
   padding: 0 70px;
   width: 100%;
   max-width: 1450px;
-  margin: 150px auto;
+  margin: 100px auto;
 
   @media (max-width: 768px) {
     padding: 0 10px;

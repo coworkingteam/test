@@ -13,16 +13,17 @@ interface Props {
   description?: string;
   img?: string;
   queryId: string;
-  cardColor: string;
+  cardColorCode: string;
+  cardColorOnHover: string;
 }
 
-const Card: React.FC<Props> = ({ title, img, description, cardColor, queryId }) => {
+const Card: React.FC<Props> = ({ title, img, description, cardColorCode, cardColorOnHover, queryId }) => {
   const { push } = useRouter();
 
   const onClick = () => push(`/blog/${queryId}`);
 
   return (
-    <Wrapper cardColor={cardColor}>
+    <Wrapper cardColorCode={cardColorCode} cardColorOnHover={cardColorOnHover}>
       <div>
         <Title>{<FormattedMessage id={title} />}</Title>
 

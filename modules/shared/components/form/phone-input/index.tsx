@@ -19,7 +19,7 @@ const Phone: React.FC<PhoneProps> = ({ errorText, ...rest }) => {
         autoFormat
         enableAreaCodeStretch
         countryCodeEditable={false}
-        onlyCountries={['pl', 'ua', 'ge', 'by']}
+        onlyCountries={['pl', 'ua', 'ge', 'by', 'es']}
         {...rest}
       />
 

@@ -1,3 +1,4 @@
 export default {
-  scrollToTop: 'Наверх'
+  scrollToTop: 'Наверх',
+  drawUp: 'Оформить'
 };

@@ -13,6 +13,8 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 10px;
+
+    margin: 50px auto;
   }
 `;
 
@@ -53,5 +55,6 @@ export const SubTitle = styled.h3`
   @media (max-width: 768px) {
     font-size: 18px;
     text-align: left;
+    margin: 0 0 20px 0;
   }
 `;

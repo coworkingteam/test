@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding: 0 10px 0 10px;
+  padding-right: 32px;
   margin-bottom: 60px;
 
   @media (max-width: 768px) {
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 export const InitialWrapper = styled.div<{ bgColor?: string }>`
   display: flex;
   width: 100%;
-  max-width: 280px;
+  max-width: 350px;
   overflow: hidden;
   border-radius: 18px;
   cursor: pointer;

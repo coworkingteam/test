@@ -67,6 +67,9 @@ export interface IArticleFields {
 
   /** slug */
   slug: string;
+
+  /** card color code */
+  cardColorCode: string;
 }
 
 export interface IArticle extends Entry<IArticleFields> {
