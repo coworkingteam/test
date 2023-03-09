@@ -62,7 +62,7 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
 
         <ContactsButton onClick={onClickNumber}>
           <p>+34 633 872 870</p>
-          <p>Бесплатно по Польше</p>
+          <p>Бесплатно по Испании</p>
         </ContactsButton>
 
         <BurgerWrapper>

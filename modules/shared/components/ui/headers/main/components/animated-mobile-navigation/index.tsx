@@ -76,7 +76,7 @@ const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
 
           <ContactsButton onClick={onClickNumber}>
             <p>+34 633 872 870</p>
-            <p>Бесплатно по Польше</p>
+            <p>Бесплатно по Испании</p>
           </ContactsButton>
         </NavigationListWrapper>
       </NavigationWrapper>
