@@ -10,6 +10,24 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const ContactsButton = styled.div`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+  display: flex;
+  padding: 16px 0 0 0;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
+
+  color: ${({ theme }) => theme.colors.white};
+`;
+
 export const Background = styled.div<{ isOpen: boolean }>`
   position: absolute;
   top: 0;

@@ -1,6 +1,8 @@
 import React from 'react';
 // libs
 import { FormattedMessage } from 'react-intl';
+// hooks
+import { useRouter } from 'next/router';
 // components
 import { Logo } from '@md-ui/logos/main';
 import AccordionMenu from '@md-ui/accordions/accordion-menu';
@@ -16,7 +18,8 @@ import {
   LWrapper,
   ItemListWrapper,
   Icon,
-  Title
+  Title,
+  ContactsButton
 } from '@md-ui/headers/main/components/animated-mobile-navigation/views';
 import { NavigationLink } from '@md-ui/accordions/accordion-menu/components/accordion-item/views';
 
@@ -25,6 +28,7 @@ interface Props {
 }
 
 const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
+  const { push } = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -37,6 +41,7 @@ const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
     };
   }, [isOpen]);
 
+  const onClickNumber = () => push('tel:+34 633 872 870');
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
 
   return (
@@ -68,6 +73,11 @@ const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
               data={menuData.map((item) => ({ title: item.label, id: item.label, content: item.data }))}
             />
           </ItemListWrapper>
+
+          <ContactsButton onClick={onClickNumber}>
+            <p>+34 633 872 870</p>
+            <p>Бесплатно по Польше</p>
+          </ContactsButton>
         </NavigationListWrapper>
       </NavigationWrapper>
     </Wrapper>
