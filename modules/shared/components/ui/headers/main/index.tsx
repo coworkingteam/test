@@ -31,7 +31,7 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
 
   const onClickHome = () => push('/');
   const onChangeLocale = (value: Locales) => setLocale(value);
-  const onClickNumber = () => push('tel:+48 500 958 374');
+  const onClickNumber = () => push('tel:+34 633 872 870');
 
   React.useLayoutEffect(() => {
     const scrollHandler = () => {
@@ -61,7 +61,7 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
         </RWrapper>
 
         <ContactsButton onClick={onClickNumber}>
-          <p>+48 500 958 374</p>
+          <p>+34 633 872 870</p>
           <p>Бесплатно по Польше</p>
         </ContactsButton>
 
