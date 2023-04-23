@@ -3,13 +3,17 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 // constants
 import { LOCALES, Locales } from '@md-modules/shared/i18n/providers/main/locales';
+// theme
+import { theme } from '@md-styles/styled/theme';
 // views
 import {
   ChangeLanguageIcon,
+  ChangeLangWrapper,
   Image,
   ToolTipItem,
   ToolTipWrapper
 } from '@md-ui/headers/main/components/lang-button/views';
+import ChangeLangArrow from '../../../../../../../../public/static/icons/change-lang-arrow';
 
 // constants
 const OPTIONS: { label: string; image: string; value: Locales }[] = [
@@ -22,10 +26,11 @@ const OPTIONS: { label: string; image: string; value: Locales }[] = [
 // types
 interface Props {
   activeLang?: Locales;
+  blackTheme?: boolean;
   onSelectLang: (locale: Locales) => void;
 }
 
-const LangButton: React.FC<Props> = ({ onSelectLang, activeLang }) => {
+const LangButton: React.FC<Props> = ({ onSelectLang, activeLang, blackTheme }) => {
   const activeLangImage = React.useMemo(
     () => OPTIONS.find((option) => option.value === activeLang)?.image,
     [activeLang]
@@ -48,16 +53,14 @@ const LangButton: React.FC<Props> = ({ onSelectLang, activeLang }) => {
 
   return (
     <>
-      <ChangeLanguageIcon
-        data-tip
-        data-for='languages'
-        data-event='click'
-        alt='change-language'
-        src={activeLangImage || '/static/icons/change-language.svg'}
-      />
+      <ChangeLangWrapper data-tip data-for={`languages/${blackTheme}`} data-event='click'>
+        <ChangeLanguageIcon alt='change-language' src={activeLangImage || '/static/icons/change-language.svg'} />
+
+        <ChangeLangArrow color={blackTheme ? theme.colors.black600 : theme.colors.white} />
+      </ChangeLangWrapper>
 
       <ReactTooltip
-        id='languages'
+        id={`languages/${blackTheme}`}
         clickable
         delayHide={100}
         effect='solid'

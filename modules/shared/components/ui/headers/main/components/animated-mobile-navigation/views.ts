@@ -2,11 +2,26 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: none;
+  min-height: 36px;
   position: relative;
   margin-left: 44px;
 
   @media (max-width: 1000px) {
     display: block;
+  }
+`;
+
+export const SocialNetworksWrapper = styled.div`
+  margin-top: 24px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray550};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 `;
 
@@ -17,8 +32,8 @@ export const ContactsButton = styled.div`
   transition: all 0.4s ease 0s;
   cursor: pointer;
   display: flex;
-  padding: 16px 0 0 0;
-  align-items: center;
+
+  align-items: flex-end;
   flex-direction: column;
 
   p {
@@ -38,7 +53,7 @@ export const Background = styled.div<{ isOpen: boolean }>`
   z-index: 9999;
   transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
 
-  background: ${({ theme }) => theme.colors.black600};
+  background: ${({ theme }) => theme.colors.black700};
 
   ${({ isOpen }) =>
     isOpen &&
@@ -89,6 +104,8 @@ export const ItemListWrapper = styled.div`
   overflow-x: hidden;
   flex-direction: column;
   display: flex;
+
+  //border-bottom: 1px solid ${({ theme }) => theme.colors.gray550};
 `;
 
 export const Title = styled.p`

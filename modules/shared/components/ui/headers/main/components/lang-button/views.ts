@@ -50,3 +50,10 @@ export const ChangeLanguageIcon = styled.img`
   ${({ theme }) => theme.templates.boxShadow}
   border: 1px solid ${({ theme }) => theme.colors.black600};
 `;
+
+export const ChangeLangWrapper = styled.div`
+  display: flex;
+
+  cursor: pointer;
+  align-items: center;
+`;

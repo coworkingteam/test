@@ -63,6 +63,7 @@ export const RightSide = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -78,8 +79,15 @@ export const TextLogo = styled.img`
 export const SocialNetworkIcon = styled.img`
   cursor: pointer;
   opacity: 0.8;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   margin-right: 14px;
   transition: opacity 450ms ease;
+
+  &:last-child {
+    margin: 0;
+  }
 
   &:hover {
     opacity: 1;
@@ -133,7 +141,6 @@ export const MobileFooterMenuWrapper = styled.div`
 export const MenuItemsWrapper = styled.div`
   display: flex;
   width: 100%;
-
   flex-direction: column;
 
   &:first-child {

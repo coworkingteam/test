@@ -90,4 +90,11 @@ export const RWrapper = styled.div`
 
 export const BurgerWrapper = styled.div`
   display: flex;
+  position: relative;
+`;
+
+export const LandButtonWrapper = styled.div`
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;

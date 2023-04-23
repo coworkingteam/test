@@ -14,7 +14,8 @@ import { MenuAPIContext } from '@md-modules/shared/providers/menu-provider';
 // constants
 import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 // views
-import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper, ContactsButton } from './views';
+import { Wrapper, IWrapper, LWrapper, RWrapper, BurgerWrapper, ContactsButton, LandButtonWrapper } from './views';
+import { FormattedMessage } from 'react-intl';
 
 interface Props {
   breadcrumbSlug?: string;
@@ -62,11 +63,13 @@ const Header: React.FC<Props> = ({ breadcrumbSlug }) => {
 
         <ContactsButton onClick={onClickNumber}>
           <p>+34 633 872 870</p>
-          <p>Бесплатно по Испании</p>
+          <FormattedMessage id='buttons.contactUs' />
         </ContactsButton>
 
         <BurgerWrapper>
-          <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
+          <LandButtonWrapper>
+            <LangButton blackTheme activeLang={locale} onSelectLang={onChangeLocale} />
+          </LandButtonWrapper>
 
           <AnimateMobileNav menuData={menuItems} />
         </BurgerWrapper>

@@ -95,13 +95,13 @@ export const linkPresets = {
   `,
   mobileMenu: css`
     display: inline-block;
-    padding: 10px 0;
+    padding: 16px 0 0 0;
     width: max-content;
-    color: #f4f4f4;
+    color: #c3c3c3;
     text-decoration: none;
     transition: all 0.2s;
 
-    ${({ theme }) => theme.templates.dynamicFont({ minSize: 12, maxSize: 20, maxViewport: 1000, minViewport: 380 })};
+    ${({ theme }) => theme.templates.dynamicFont({ minSize: 14, maxSize: 20, maxViewport: 1000, minViewport: 380 })};
   `
 };
 

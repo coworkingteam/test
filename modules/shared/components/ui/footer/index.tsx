@@ -77,7 +77,7 @@ const Footer = () => {
                     <SocialNetworkIcon
                       alt='facebook'
                       src='/static/icons/facebook.svg'
-                      onClick={() => push('https://m.me/aksis.agency?ref=w18286973')}
+                      onClick={() => push('https://www.facebook.com/aksis.agency/')}
                     />
                     <SocialNetworkIcon
                       alt='twitter'

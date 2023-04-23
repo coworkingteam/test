@@ -35,6 +35,7 @@ export const colors = {
   red400: '#F37A76',
   // other
   black600: '#212121',
+  black700: '#171717',
   black800: '#161616',
   white: '#fff',
   black: '#000'

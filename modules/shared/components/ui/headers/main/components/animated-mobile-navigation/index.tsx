@@ -18,10 +18,15 @@ import {
   LWrapper,
   ItemListWrapper,
   Icon,
+  SocialNetworksWrapper,
   Title,
   ContactsButton
 } from '@md-ui/headers/main/components/animated-mobile-navigation/views';
+import { SocialNetworkIcon } from '@md-ui/footer/views';
 import { NavigationLink } from '@md-ui/accordions/accordion-menu/components/accordion-item/views';
+import LangButton from '@md-ui/headers/main/components/lang-button';
+import { LangAPIContext } from '@md-modules/shared/i18n/providers/main';
+import { Locales } from '@md-modules/shared/i18n/providers/main/locales';
 
 interface Props {
   menuData: IMenuItem[];
@@ -29,6 +34,7 @@ interface Props {
 
 const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
   const { push } = useRouter();
+  const { setLocale, locale } = React.useContext(LangAPIContext);
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -42,6 +48,7 @@ const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
   }, [isOpen]);
 
   const onClickNumber = () => push('tel:+34 633 872 870');
+  const onChangeLocale = (value: Locales) => setLocale(value);
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
 
   return (
@@ -74,10 +81,44 @@ const AnimateMobileNav: React.FC<Props> = ({ menuData }) => {
             />
           </ItemListWrapper>
 
-          <ContactsButton onClick={onClickNumber}>
-            <p>+34 633 872 870</p>
-            <p>Бесплатно по Испании</p>
-          </ContactsButton>
+          <div
+            style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0 0' }}
+          >
+            <LangButton activeLang={locale} onSelectLang={onChangeLocale} />
+
+            <ContactsButton onClick={onClickNumber}>
+              <p>+34 633 872 870</p>
+              <FormattedMessage id='buttons.contactUs' />
+            </ContactsButton>
+          </div>
+
+          <SocialNetworksWrapper>
+            <SocialNetworkIcon
+              alt='instagram'
+              src='/static/icons/instagram.svg'
+              onClick={() => push('https://www.instagram.com/aksis.agency/')}
+            />
+            <SocialNetworkIcon
+              alt='facebook'
+              src='/static/icons/facebook.svg'
+              onClick={() => push('https://www.facebook.com/aksis.agency/')}
+            />
+            <SocialNetworkIcon
+              alt='twitter'
+              src='/static/icons/twitter.svg'
+              onClick={() => push('https://twitter.com/aksisagency')}
+            />
+            <SocialNetworkIcon
+              alt='tik-tok'
+              src='/static/icons/tik-tok.svg'
+              onClick={() => push('https://www.tiktok.com/@aksis.agency')}
+            />
+            <SocialNetworkIcon
+              alt='linkedin'
+              src='/static/icons/linkedin.svg'
+              onClick={() => push('https://www.linkedin.com/company/aksis-agency-consulting-tax-audit/')}
+            />
+          </SocialNetworksWrapper>
         </NavigationListWrapper>
       </NavigationWrapper>
     </Wrapper>

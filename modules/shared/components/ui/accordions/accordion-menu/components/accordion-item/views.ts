@@ -27,7 +27,7 @@ export const ATitle = styled.h3`
   font-size: 26px;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 

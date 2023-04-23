@@ -1,4 +1,5 @@
 export default {
   scrollToTop: 'Top',
-  drawUp: 'Submit'
+  drawUp: 'Submit',
+  contactUs: 'Free in Spain'
 };

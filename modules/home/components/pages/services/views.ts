@@ -32,6 +32,11 @@ export const ServicesWrapper = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.h2`

@@ -1,4 +1,5 @@
 export default {
   scrollToTop: 'Наверх',
-  drawUp: 'Оформить'
+  drawUp: 'Оформить',
+  contactUs: 'Бесплатно по Испании'
 };
