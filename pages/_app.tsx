@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Router, { useRouter } from 'next/router';
 // libs
+import NProgress from 'nprogress';
 import { NextSeo } from 'next-seo';
 import { createClient } from 'contentful';
 import { Toaster } from 'react-hot-toast';
@@ -38,6 +39,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
   React.useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-NHSK3VS' });
 
+    NProgress.configure({ showSpinner: false });
     Router.events.on('routeChangeError', () => setIsPageLoading(false));
     Router.events.on('routeChangeStart', () => setIsPageLoading(true));
     Router.events.on('routeChangeComplete', () => setIsPageLoading(false));
@@ -96,6 +98,7 @@ const MyApp = ({ Component, pageProps, menuItems }: AppProps<IService[]>) => {
           </MenuProvider>
         </LangProvider>
       </ThemeProvider>
+
       <GlobalStyles />
     </>
   );

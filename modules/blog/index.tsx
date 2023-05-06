@@ -48,6 +48,7 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
   const { openToast, startProgress, doneProgress } = useUIActions();
   const [articlesData, setArticlesData] = React.useState(data);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [isPageLoading, setIsPageLoading] = React.useState(false);
 
   const [total, setTotal] = React.useState(totalItems);
   const [activeFilter, setActiveFilter] = React.useState<Filters>('ALL');
@@ -58,7 +59,7 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
       startProgress();
 
       try {
-        setIsLoading(true);
+        setIsPageLoading(true);
 
         const data = await contentfulClient.getEntries<IArticleFields>({
           content_type: 'article',
@@ -74,7 +75,7 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
 
         setPage((prevState) => prevState + 1);
 
-        setIsLoading(false);
+        setIsPageLoading(false);
       } catch (error: any) {
         openToast({ type: 'ERROR', error });
       } finally {
@@ -148,9 +149,11 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
           </Title>
 
           <ContentLoader
+            isAbsolute={false}
+            loaderPreset='small'
+            isLoading={isLoading}
             isEmpty={!articlesData.length}
             emptyPlaceholderText={intl.formatMessage({ id: 'blog.emptyText' })}
-            isLoading={isLoading}
           >
             <CardWrapper>
               {articlesData.map((item) => (
@@ -169,15 +172,17 @@ const Blog: React.FC<Props> = ({ data, totalItems }) => {
             {total > 8 * page && (
               <InnerProgressBarWrapper>
                 <ProgressBarWrapper>
-                  <ProgressBarTitle>
-                    You've viewed {8 * page} of {total} projects
-                  </ProgressBarTitle>
+                  <ContentLoader loaderPreset='small' isAbsolute={false} isLoading={isPageLoading}>
+                    <ProgressBarTitle>
+                      You've viewed {8 * page} of {total} projects
+                    </ProgressBarTitle>
 
-                  <ProgressBar percent={getPercent(page * 8, total)} />
+                    <ProgressBar percent={getPercent(page * 8, total)} />
 
-                  <Button preset='primary' onClick={requestMoreArticles}>
-                    Look more
-                  </Button>
+                    <Button preset='primary' onClick={requestMoreArticles}>
+                      Look more
+                    </Button>
+                  </ContentLoader>
                 </ProgressBarWrapper>
               </InnerProgressBarWrapper>
             )}

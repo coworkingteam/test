@@ -1,9 +1,10 @@
 import React from 'react';
+// libs
+import { FormattedMessage } from 'react-intl';
 // components
 import TopArrow from '../../../../../../public/static/icons/top-arrow';
 // views
 import { Title, Wrapper } from '@md-ui/buttons/scroll-to-top/views';
-import { FormattedMessage } from 'react-intl';
 
 interface Props {
   isScrolling?: boolean;
@@ -42,6 +43,7 @@ const ScrollToTopButton: React.FC<Props> = ({ isScrolling }) => {
   if (!isActive) {
     return null;
   }
+
   return (
     <Wrapper isScrolling={!!isScrolling} onClick={onClick}>
       <Title isScrolling={!!isScrolling}>

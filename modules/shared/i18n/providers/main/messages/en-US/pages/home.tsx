@@ -5,10 +5,29 @@ export default {
     'Legalization services in Poland and the EU. Residence cards (Residence permits), Acceleration of document processing, Car services, Work permits, Issuance of invitations to Poland, Powers of Attorney',
   welcome: {
     title: 'Help with documents in Poland and EU',
+    termsOfCondition: ['Public', 'offer', 'for data processing'],
     subTitle: 'Work permit → residence permit → urgent documents → business and tokenization',
     button: {
       title: 'Free consultation'
     }
+  },
+  whyUs: {
+    title: 'Why us?',
+    cause: 'Cause',
+    items: [
+      {
+        title: 'Payment in installments',
+        subTitle: 'We can divide the payment for services into several payments'
+      },
+      {
+        title: 'Full construction',
+        subTitle: 'Each case is unique. We find an individual solution for you'
+      },
+      {
+        title: 'Result Guaranteed',
+        subTitle: 'If you get rejected, we will refund your money.'
+      }
+    ]
   },
   adsBlock: {
     title: 'Popular Services',
@@ -20,6 +39,10 @@ export default {
       replacementDriverLicense: 'Replacement of  driver’s license'
     }
   },
+  usersFeedBack: {
+    title: 'Your feedback'
+  },
+
   services: {
     title: 'We legalize staying and working in the country',
     subTitle: 'We close the needs of both individuals and employers',

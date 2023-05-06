@@ -89,6 +89,37 @@ export interface IArticle extends Entry<IArticleFields> {
   };
 }
 
+export interface ICommentFields {
+  /** avatar */
+  avatar: Asset;
+
+  /** name */
+  name: string;
+
+  /** text */
+  text: string;
+
+  /** date */
+  date: string;
+}
+
+export interface IComment extends Entry<ICommentFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'comment';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IServiceFields {
   /** Is popular service ? */
   isPopularService: boolean;
@@ -177,9 +208,9 @@ export interface IService extends Entry<IServiceFields> {
   };
 }
 
-export type CONTENT_TYPE = 'adsBlock' | 'article' | 'service';
+export type CONTENT_TYPE = 'adsBlock' | 'article' | 'comment' | 'service';
 
-export type IEntry = IAdsBlock | IArticle | IService;
+export type IEntry = IAdsBlock | IArticle | IComment | IService;
 
 export type LOCALE_CODE = 'en-US' | 'ru';
 

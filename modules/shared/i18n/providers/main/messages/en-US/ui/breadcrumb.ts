@@ -7,5 +7,6 @@ export default {
   RESIDENCE_PERMIT: 'Residence Permit',
   TRANSPORT: 'Transport',
   POPULAR: 'Popular',
-  ALL: 'All'
+  ALL: 'All',
+  'terms-of-condition': 'Terms of condition'
 };

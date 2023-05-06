@@ -54,44 +54,19 @@ const Form: React.FC<Props> = ({ service, toggleModal }) => {
         startProgress();
 
         try {
-          const getContactListResponse = await api.getContactList({ filter: { EMAIL: data.email } });
+          const addLeadResponse = await api.addLead({
+            serviceName: service,
+            ...data
+          });
 
-          if (getContactListResponse.data.result.length) {
-            const addDealResponse = await api.addDeal({
-              title: service,
-              contactID: getContactListResponse.data.result[0].ID
+          if (addLeadResponse.data) {
+            toggleModal();
+
+            openToast({
+              type: 'SUCCESS',
+              message: 'Application successfully sent! Our manager will contact you',
+              position: 'top-center'
             });
-
-            if (addDealResponse.data) {
-              toggleModal();
-
-              openToast({
-                type: 'SUCCESS',
-                message: 'Application successfully sent! Our manager will contact you',
-                position: 'top-center'
-              });
-            }
-
-            return;
-          }
-
-          const addContactResponse = await api.addContact(data);
-
-          if (addContactResponse.data) {
-            const addDealResponse = await api.addDeal({
-              title: service,
-              contactID: addContactResponse.data.result
-            });
-
-            if (addDealResponse.data) {
-              toggleModal();
-
-              openToast({
-                type: 'SUCCESS',
-                message: 'Application successfully sent! Our manager will contact you',
-                position: 'top-center'
-              });
-            }
           }
         } catch (error) {
           openToast({ type: 'ERROR', error: error as Error });

@@ -5,6 +5,14 @@ export const linkPresets = {
     font-size: 18px;
     font-weight: 400;
   `,
+  small: css`
+    font-size: 12px;
+    text-decoration: underline;
+  `,
+  medium: css`
+    font-size: 18px;
+    text-decoration: underline;
+  `,
   large: css`
     font-size: 22px;
     font-weight: 700;

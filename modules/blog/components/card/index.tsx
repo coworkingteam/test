@@ -6,7 +6,15 @@ import { useRouter } from 'next/router';
 // components
 import { Button } from '@md-ui/buttons/main';
 // views
-import { SubTitle, Title, Wrapper, Icon, PreviewImage, FooterWrapper } from '@md-modules/blog/components/card/views';
+import {
+  SubTitle,
+  Title,
+  Wrapper,
+  Icon,
+  PreviewImage,
+  FooterWrapper,
+  FooterInnerWrapper
+} from '@md-modules/blog/components/card/views';
 
 interface Props {
   title: string;
@@ -24,21 +32,19 @@ const Card: React.FC<Props> = ({ title, img, description, cardColorCode, cardCol
 
   return (
     <Wrapper cardColorCode={cardColorCode} cardColorOnHover={cardColorOnHover}>
-      <div>
-        <Title>{<FormattedMessage id={title} />}</Title>
+      <Title>{title}</Title>
 
-        {description && <SubTitle>{description}</SubTitle>}
-      </div>
+      <FooterWrapper>
+        <FooterInnerWrapper>
+          {description && <SubTitle>{description}</SubTitle>}
 
-      {img && (
-        <FooterWrapper>
           <Button onClick={onClick}>
             <FormattedMessage id='blog.readButton' /> <Icon src='/static/icons/send-arrow-white.svg' alt='send-arrow' />
           </Button>
+        </FooterInnerWrapper>
 
-          <PreviewImage src={img} alt={img} />
-        </FooterWrapper>
-      )}
+        {img && <PreviewImage src={img} alt={title} />}
+      </FooterWrapper>
     </Wrapper>
   );
 };

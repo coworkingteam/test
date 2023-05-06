@@ -1,18 +1,21 @@
 import * as React from 'react';
 // libs
 import styled from 'styled-components';
+// types
+import { LoaderPresets } from '@md-ui/loaders/loader/presets';
 // view components
 import { Loader } from '../loader';
 
 interface Props {
   isLoading: boolean;
   isEmpty?: boolean;
-
+  loaderPreset?: LoaderPresets;
+  isAbsolute?: boolean;
   emptyPlaceholderText?: string;
 }
 
-const Wrapper = styled.div`
-  ${({ theme }) => theme.templates.absolute};
+const Wrapper = styled.div<{ isAbsolute?: boolean }>`
+  ${({ theme, isAbsolute }) => isAbsolute && theme.templates.absolute};
   ${({ theme }) => theme.templates.centerContent};
 `;
 const EmptyBlockWrapper = styled.div`
@@ -26,11 +29,18 @@ export const SubTitle = styled.p`
   ${({ theme }) => theme.templates.dynamicFont({ minSize: 14, maxSize: 24, maxViewport: 2000, minViewport: 320 })};
 `;
 
-const ContentLoader: React.FC<Props> = ({ children, emptyPlaceholderText, isEmpty, isLoading }) => {
+const ContentLoader: React.FC<Props> = ({
+  children,
+  loaderPreset,
+  isAbsolute = true,
+  emptyPlaceholderText,
+  isEmpty,
+  isLoading
+}) => {
   if (isLoading) {
     return (
-      <Wrapper>
-        <Loader />
+      <Wrapper isAbsolute={isAbsolute}>
+        <Loader preset={loaderPreset} />
       </Wrapper>
     );
   }

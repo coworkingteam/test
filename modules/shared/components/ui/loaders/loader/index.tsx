@@ -1,10 +1,16 @@
 import * as React from 'react';
 // libs
 import { LottiePlayer } from 'lottie-web';
+// types
+import { LoaderPresets } from '@md-ui/loaders/loader/presets';
 // views
 import { Wrapper } from './views';
 
-const Loader: React.FunctionComponent = () => {
+interface Props {
+  preset?: LoaderPresets;
+}
+
+const Loader: React.FC<Props> = ({ preset }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const [lottie, setLottie] = React.useState<LottiePlayer | null>(null);
 
@@ -27,7 +33,7 @@ const Loader: React.FunctionComponent = () => {
   }, [lottie]);
 
   return (
-    <Wrapper>
+    <Wrapper preset={preset}>
       <div ref={ref} />
     </Wrapper>
   );

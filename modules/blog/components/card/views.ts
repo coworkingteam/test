@@ -28,7 +28,11 @@ export const Wrapper = styled.div<{ cardColorOnHover: string; cardColorCode: str
 
 export const FooterWrapper = styled.div`
   width: 100%;
+  height: 100%;
+  margin: 12px 0 0 0;
+
   display: flex;
+  position: relative;
   justify-content: space-between;
 
   @media (max-width: 768px) {
@@ -38,13 +42,20 @@ export const FooterWrapper = styled.div`
   }
 `;
 
+export const FooterInnerWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const PreviewImage = styled.img`
   max-width: 252px;
   max-height: 184px;
   object-fit: contain;
   position: absolute;
-  bottom: 32px;
-  right: 32px;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 
@@ -77,7 +88,7 @@ export const SubTitle = styled.h2`
   font-weight: 400;
   font-size: 20px;
   line-height: 140%;
-  margin: 12px 0;
+  margin: 0 0 12px 0;
   max-width: 340px;
   white-space: pre-wrap;
 

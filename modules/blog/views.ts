@@ -3,18 +3,15 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media (max-width: 768px) {
-    min-height: unset;
-  }
 `;
 
 export const InnerWrapper = styled.div`
   width: 100%;
+  height: 100%;
   max-width: 1450px;
   margin: 200px auto;
 
@@ -76,10 +73,13 @@ export const FilterButtonsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 
-  button {
-    width: max-content;
+  div {
     margin: 10px;
-    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;

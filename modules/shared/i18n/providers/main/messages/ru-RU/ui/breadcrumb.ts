@@ -7,5 +7,6 @@ export default {
   RESIDENCE_PERMIT: 'Документы Гражданства ВНЖ',
   TRANSPORT: 'Транспорт',
   POPULAR: 'Популярные',
-  ALL: 'Все'
+  ALL: 'Все',
+  'terms-of-condition': 'Условия пользования'
 };

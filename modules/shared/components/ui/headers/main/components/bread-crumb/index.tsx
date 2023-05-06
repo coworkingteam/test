@@ -24,11 +24,12 @@ const STATIC_VALUES = [
   'INDIVIDUALS',
   'RESIDENCE_PERMIT',
   'TRANSPORT',
-  'POPULAR'
+  'POPULAR',
+  'terms-of-condition'
 ];
 
 const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll = false }) => {
-  const { push, pathname, query, locale } = useRouter();
+  const { push, pathname, query, locale, back } = useRouter();
   const { formatMessage } = useIntl();
 
   if (pathname === '/') {
@@ -39,19 +40,23 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll 
     .split('/')
     .filter((item) => item.length && item !== '[...slug]')
     .concat(query.slug || []);
-  const itemListElements = routersList.map((item, index) => ({
-    position: index + 2,
-    name: STATIC_VALUES.includes(item)
-      ? formatMessage({ id: `breadcrumb.${item}` })
-      : breadcrumbSlug ||
-        item
-          .replace('[id]', query.id as string)
-          .split('-')
-          .join(' '),
-    item: `${process.env.SITE_URL || 'http://localhost:3000'}/${locale}/${
-      routersList[index - 1] ? routersList[index - 1] + '/' : ''
-    }${item.replace('[id]', query.id as string)}`
-  }));
+  const itemListElements = routersList.map((item, index) => {
+    console.log(item);
+
+    return {
+      position: index + 2,
+      name: STATIC_VALUES.includes(item)
+        ? formatMessage({ id: `breadcrumb.${item}` })
+        : breadcrumbSlug ||
+          item
+            .replace('[id]', query.id as string)
+            .split('-')
+            .join(' '),
+      item: `${process.env.SITE_URL || 'http://localhost:3000'}/${locale}/${
+        routersList[index - 1] ? routersList[index - 1] + '/' : ''
+      }${item.replace('[id]', query.id as string)}`
+    };
+  });
 
   const onClickHome = () => push('/');
 
@@ -69,7 +74,7 @@ const Breadcrumb: React.FC<Props> = ({ showBreadcrumb, breadcrumbSlug, isScroll 
       />
 
       <Wrapper isScroll={isScroll} showBreadcrumb={showBreadcrumb}>
-        <BackIcon onClick={onClickHome} src='/static/icons/left-arrow.svg' alt='left-arrow' />
+        <BackIcon onClick={back} src='/static/icons/left-arrow.svg' alt='left-arrow' />
         <BreadcrumbName isScroll={isScroll} onClick={onClickHome}>
           <FormattedMessage id='breadcrumb.home' />
         </BreadcrumbName>

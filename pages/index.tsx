@@ -3,11 +3,11 @@ import Home from '@md-modules/home';
 import { GetServerSideProps } from 'next';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 import contentfulClient from '@md-modules/shared/services/contentful';
-import { IAdsBlock, IServiceFields } from '@md-types/generated/contentful';
+import { IAdsBlock, IServiceFields, IComment } from '@md-types/generated/contentful';
 
-const HomePage = ({ ads }: { ads: IAdsBlock }) => (
+const HomePage = ({ ads, commentsData }: { ads: IAdsBlock; commentsData: IComment[] }) => (
   <MainLayout>
-    <Home adData={ads} />
+    <Home adData={ads} commentsData={commentsData} />
   </MainLayout>
 );
 
@@ -17,11 +17,17 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
     locale
   });
 
+  const commentsData = await contentfulClient.getEntries<IServiceFields>({
+    content_type: 'comment',
+    locale
+  });
+
   const [ads] = data.items;
 
   return {
     props: {
-      ads
+      ads,
+      commentsData: commentsData.items
     }
   };
 };

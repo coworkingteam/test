@@ -1,6 +1,6 @@
 export default {
   questionsAndAnswers: {
-    title: 'Questions and answers'
+    title: 'Blog'
   },
   services: {
     menuItemTitle: 'Services',

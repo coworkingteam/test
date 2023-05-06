@@ -15,6 +15,7 @@ import {
   FormDescription,
   LeftSide
 } from '@md-modules/home/components/pages/welcome/views';
+import { Link } from '@md-ui/link';
 
 const Welcome = () => (
   <Wrapper>
@@ -32,7 +33,13 @@ const Welcome = () => (
 
       <FormWrapper>
         <Form />
-        <FormDescription>Публичная офферта на обротку данных</FormDescription>
+        <FormDescription>
+          <FormattedMessage id='home.welcome.termsOfCondition.0' />{' '}
+          <Link preset='small' href='/terms-of-condition'>
+            <FormattedMessage id='home.welcome.termsOfCondition.1' />
+          </Link>{' '}
+          <FormattedMessage id='home.welcome.termsOfCondition.2' />
+        </FormDescription>
       </FormWrapper>
     </InnerWrapper>
   </Wrapper>

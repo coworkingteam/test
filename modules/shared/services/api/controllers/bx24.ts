@@ -12,6 +12,13 @@ interface AddDealParams {
   contactID: string;
 }
 
+interface AddLeadParams {
+  name: string;
+  phone: string;
+  email: string;
+  serviceName?: string;
+}
+
 interface GetContactsParams {
   filter?: { PHONE?: string; EMAIL?: string };
   select?: string[];
@@ -36,5 +43,6 @@ export const bx24Controllers = (api: AxiosInstance) => ({
         SOURCE_ID: 13,
         CONTACT_ID: data.contactID
       }
-    })
+    }),
+  addLead: (data: AddLeadParams) => api.post('', data)
 });
