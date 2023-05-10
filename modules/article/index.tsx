@@ -78,6 +78,13 @@ const Article: React.FC<Props> = ({ article }) => {
           [BLOCKS.PARAGRAPH]: (node, children) => <SubTitle>{children}</SubTitle>,
           [BLOCKS.EMBEDDED_ASSET]: (node) => (
             <Asset alt={node?.data?.target?.fields} src={`https:${node.data.target.fields.file.url}`} />
+          ),
+          [BLOCKS.TABLE]: (node, children) => (
+            <div style={{ flexGrow: 1, overflowX: 'auto', width: '100%', display: 'block' }}>
+              <div style={{ minWidth: 500 }}>
+                <table style={{ width: '100%', marginBottom: '20px', borderSpacing: '0 20px' }}>{children}</table>
+              </div>
+            </div>
           )
         }
       }),

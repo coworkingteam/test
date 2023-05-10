@@ -8,6 +8,73 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-spacing: 0 20px;
+
+    p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      border-spacing: 0 12px;
+    }
+
+    td {
+      background-color: ${({ theme }) => theme.colors.white};
+      font-size: 18px;
+      padding: 14px;
+      text-align: left;
+      vertical-align: middle;
+
+      &:last-child {
+        border-radius: 0 8px 8px 0;
+        padding: 0 14px;
+        min-width: 200px;
+
+        @media (max-width: 1150px) {
+          min-width: auto;
+        }
+      }
+
+      &:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 26px;
+      }
+    }
+
+    tr {
+      border-radius: 10px;
+
+      th {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        padding: 0 14px 0 14px;
+        text-align: left;
+        vertical-align: middle;
+
+        color: ${({ theme }) => theme.colors.gray500};
+
+        &:first-child {
+          padding: 0 14px 0 0;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 12px;
+          line-height: 22px;
+          padding: 10px 10px 0 10px;
+        }
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     min-height: unset;
   }
@@ -30,6 +97,7 @@ export const InnerWrapper = styled.div`
 
 export const ContentWrapper = styled.div`
   max-width: 760px;
+  width: 100%;
 `;
 
 export const LinkLi = styled.li`
